@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" xmlns:library="org.silex.wysiwyg.ui.library.*">
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listModels.adding.ComponentAddInfo;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.utils.StringOperation;
+			/**
+			 * Prepares the componentAddInfo object that would be used by the ToolController
+			 * to create a new Component
+			 * 
+			 * @param event the trigerred ToolsEvent
+			 */ 
+			private function onSelectLibraryItem(event:PluginEvent):void
+			{
+				var _addInfo:ComponentAddInfo = new ComponentAddInfo();
+				//the metaData parameter is the url of the new media, sent
+				//in the data of the event
+				_addInfo.metaData = event.data as String;
+				
+				//the type of the new media is determined by analysing the extension of
+				//the new media url0
+				_addInfo.type = StringOperation.extractExtension(event.data as String);
+				
+				//the name of the new media is also extracted from it's url
+				_addInfo.playerName = StringOperation.extractItemName(event.data as String);
+				SilexAdminApi.getInstance().components.addItem(_addInfo);
+			}
+		]]>
+	</fx:Script>
+	<library:WysiwygLibrary selectLibraryItem="onSelectLibraryItem(event)" targetPath="media/" />
+</mx:Canvas>

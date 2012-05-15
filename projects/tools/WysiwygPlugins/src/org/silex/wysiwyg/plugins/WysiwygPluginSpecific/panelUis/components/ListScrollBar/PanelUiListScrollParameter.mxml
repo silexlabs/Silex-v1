@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+		]]>
+	</fx:Script>	
+	<mx:Form width="100%">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>
+	</mx:Form>
+	<mx:Form width="100%" height="100%" paddingLeft="30">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.isHorizontal.description}">
+			<ns1:WysiwygCheckBox selected="{propertyArray.isHorizontal.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selected, 'isHorizontal')"  />		
+		</mx:FormItem>	
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.scrollStep.description}">
+			<ns1:WysiwygNumericStepper id="scrollStepStepper" styleName="position" 
+									   value="{propertyArray.scrollStep.currentValue}" 
+									   maximum="360"
+									   minimum="0" stepSize="1"
+									   change="updatePropertyValue(event.currentTarget.value, 'scrollStep')"/>
+		</mx:FormItem>		
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.listPath.description}">
+			<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+								 propertyArray.listPath.baseClass)}"
+								 styleName="large"
+								 editable="true"
+								 selectedItem="{propertyArray.listPath.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selectedItem, 'listPath')"  />
+		</mx:FormItem>	
+	</mx:Form>
+</panelUis:PanelUiBase>

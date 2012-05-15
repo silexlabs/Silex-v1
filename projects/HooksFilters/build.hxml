@@ -1,0 +1,45 @@
+#build file
+-cp src
+-cp ../../framework/hx
+-main HooksFilters
+-lib utest
+-x bin/HooksFilters.n
+-debug
+
+--next
+
+-cp src
+-cp ../../framework/hx
+-main HooksFilters
+-lib utest
+-swf bin/HooksFilters7.swf
+-swf-version 8
+-debug
+
+--next
+
+-cp src
+-cp ../../framework/hx
+-main HooksFilters
+-lib utest
+-swf bin/HooksFilters9.swf
+-swf-version 9
+-debug
+
+--next
+
+-cp src
+-cp ../../framework/hx
+-main HooksFilters
+-lib utest
+-js bin/HooksFilters.js
+-debug
+
+--next
+
+-cp src
+-cp ../../framework/hx
+-main HooksFilters
+-lib utest
+-php bin/HooksFilters.phpdir
+-debug

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsToolItemRenderer.mxml -->
+<!---
+The ComponentsUI's list ItemRenderer. Displays the components name along with
+it's visible/hidden and locked/unlocked state
+
+@author Yannick
+-->
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						  xmlns:s="library://ns.adobe.com/flex/spark" 
+						  xmlns:mx="library://ns.adobe.com/flex/mx" 
+						  height="22" width="100%" 
+						  horizontalGap="0"
+						  dataChange="onDataChange(event)"
+						  horizontalScrollPolicy="off" verticalScrollPolicy="off"
+						  xmlns:ns1="org.silex.wysiwyg.ui.*"
+						 >
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			import org.silex.wysiwyg.event.ToolsItemRendererEvent;
+			import org.silex.wysiwyg.io.ToolConfig;
+			
+			private var _isSelectable:Boolean;
+			
+			/**
+			 * when the data is set, checks wheater the show/hide should<br>
+			 * be selected, based on the data visibility
+			 * 
+			 * @param event the trigerred FlexEvent
+			 */ 
+			private function onDataChange(event:FlexEvent):void
+			{
+				_isSelectable = true;
+				
+				if (iconLoader && data)
+				{
+					var iconUrl:String = (data as Component).getIconUrl();
+					if (iconUrl != null)
+					{
+						iconLoader.source = ToolConfig.getInstance().rootUrl + iconUrl;
+					}
+					
+				}
+				
+				
+				//if the show/hide checkbox creation is complete and data are not null
+				if (showHideCheckBox && data)
+				{	
+					if ((data as Component).getIsVisual())
+					{
+						showHideCheckBox.styleName = "showHide";
+						showHideCheckBox.enabled = true;
+						showHideCheckBox.toolTip=resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SHOW_HIDE_BUTTON_TOOLTIP' );
+						if ((data as Component).getVisible())
+						{
+							showHideCheckBox.selected = false;
+						}
+						else
+						{
+							showHideCheckBox.selected = true;
+						}
+					}
+					else
+					{
+						showHideCheckBox.toolTip = null;
+						showHideCheckBox.styleName = "nonVisualComponent";
+						showHideCheckBox.enabled = false;
+					}
+				
+					
+				}
+				
+				//if the lock/unlock checkbox creation is complete and data are not null
+				if (lockUnlockCheckBox && data)
+				{	
+					if ((data as Component).getEditable())
+					{
+						_isSelectable = true;
+						lockUnlockCheckBox.selected = true;
+					
+					}
+					
+					else if ((data as Component).name == null)
+					{
+						_isSelectable = true;
+						lockUnlockCheckBox.selected = true;
+					}
+					else
+					{
+						lockUnlockCheckBox.selected = false;
+						_isSelectable = false;
+					}
+					
+				}
+				
+				if (lblData && data)
+				{
+					lblData.text = data.name;
+				}
+
+			
+				
+			}
+			
+			private function onLoadComplete():void
+			{
+				iconLoaderContainer.includeInLayout = true;
+				iconLoader.visible = true;
+			}
+			
+			private function onIOError():void
+			{
+				iconLoader.visible = false;
+				iconLoaderContainer.includeInLayout = false;
+			}
+			
+			/**
+			 * when the user clicks on the show/hide or lock/unlock button, prevents the item<br>
+			 * to be selected in the list.
+			 * 
+			 * @param event the trigerred MouseEvent
+			 */ 
+			private function disablePropagation(event : MouseEvent) : void
+			{
+				event.stopPropagation();
+			} 
+			
+			
+			/**
+			 * dispatches the show/hide ToolsItemRendererEvent depending on the show/hide check box state
+			 * 
+			 * @param event the trigerred MouseEvent
+			 */ 
+			private function onShowHideClick(event:MouseEvent):void
+			{
+				event.stopPropagation();
+				
+				if (! showHideCheckBox.selected)
+				{
+					
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.SHOW_ITEM, data, true));
+				}
+				else
+				{
+					
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.HIDE_ITEM, data, true));
+				}
+				
+			}
+			
+			/**
+			 * dispatches the lock/unlock ToolsItemRendererEvent depending on the lock/unlock check box state
+			 * 
+			 * @param event the trigerred MouseEvent
+			 */ 
+			private function onLockUnlockClick(event:MouseEvent):void
+			{
+				event.stopPropagation();
+				
+				if (! lockUnlockCheckBox.selected)
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.LOCK_ITEM, data, true));
+				}
+				else
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.UNLOCK_ITEM, data, true));
+				}
+			}
+		]]>
+	</fx:Script>
+	
+
+	<mx:HBox width="24" height="100%" horizontalAlign="center" >
+		
+		<!---
+			The show/hide checkbox. sets the components visibility
+		-->	
+		<ns1:WysiwygCheckBox id="showHideCheckBox" styleName="showHide" 
+					 click="onShowHideClick(event)" mouseDown="disablePropagation(event)"
+					 toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SHOW_HIDE_BUTTON_TOOLTIP' )}"/>
+	</mx:HBox>
+	
+
+	<mx:HBox width="24" height="100%" horizontalAlign="left" >
+		
+		<!---
+			The lock/unlock checkbox. sets the components locked/unlocked state
+		-->	
+		<ns1:WysiwygCheckBox id="lockUnlockCheckBox" width="22" styleName="lockUnlock" click="onLockUnlockClick(event)"
+					 mouseDown="disablePropagation(event)" 
+					 toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_LOCK_UNLOCK_BUTTON_TOOLTIP' )}"/>
+	</mx:HBox>
+	<mx:HBox width="33" height="100%" horizontalAlign="left" id="iconLoaderContainer" paddingLeft="2" >
+		
+		<mx:SWFLoader id="iconLoader" cacheAsBitmap="true" complete="onLoadComplete()" ioError="onIOError()" />
+	</mx:HBox>
+
+	<mx:HBox height="100%" width="100%" horizontalAlign="center" >
+		<!---
+			The component's label
+		-->
+		<mx:Label id="lblData" styleName="list" width="100%" height="100%" />
+	</mx:HBox>
+	
+</mx:HBox>

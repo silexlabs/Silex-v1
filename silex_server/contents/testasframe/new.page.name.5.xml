@@ -1,0 +1,67 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="1" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.AsFrame.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.AsFrame</html5Url>
+					<className>org.silex.ui.players.AsFramePlayerLocation</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Location]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">134.95</y>
+						<x type="Float">892.4</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">491.034482758621</height>
+						<width type="Float">224.712643678161</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<backgroundVisible type="Boolean">false</backgroundVisible>
+						<location><![CDATA[http://google.com]]></location>
+						<embededObject><![CDATA[]]></embededObject>
+						<htmlText><![CDATA[]]></htmlText>
+						<asFrameType><![CDATA[location]]></asFrameType>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.AsFrame.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.AsFrame</html5Url>
+					<className>org.silex.ui.players.AsFramePlayerEmbeddedObject</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Frame]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">446.75</height>
+						<width type="Float">649.5</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText><![CDATA[]]></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[ ]]></iconDeeplinkName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<descriptionText><![CDATA[]]></descriptionText>
+						<backgroundVisible type="Boolean">true</backgroundVisible>
+						<location><![CDATA[http://google.com]]></location>
+						<embededObject><![CDATA[]]></embededObject>
+						<htmlText><![CDATA[]]></htmlText>
+						<asFrameType><![CDATA[location]]></asFrameType>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%">
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>		
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.formServiceName.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.formServiceName.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'formServiceName')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.formServiceName)}" />				
+			</mx:HBox>
+		</mx:FormItem>		
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.gatewayUrl.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.gatewayUrl.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'gatewayUrl')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.gatewayUrl)}" />				
+			</mx:HBox>
+		</mx:FormItem>	
+	</mx:Form>
+</panelUis:PanelUiBase>

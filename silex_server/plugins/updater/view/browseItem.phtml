@@ -1,0 +1,36 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItems"));?>" ><?php print $this->localisedStrings["ARIANE_INSTALL_NEW_ITEMS_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category" =>serialize(urlencodeArray($this->currentCategory))));?>" ><?php print $this->currentCategory['nicename']; ?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseItem", "category" =>serialize(urlencodeArray($this->currentCategory)), "item_id"=>$this->item["id"]));?>" ><?php print $this->item['title']; ?></a>
+</div>
+
+<span class="updater_title"><?php print $this->item["title"]; ?></span>
+<span class="updater_item_author"><?php printf($this->localisedStrings["ITEM_BROWSE_ITEM_POSTED_LABEL"], $this->item["postDate"], $this->item["authorName"], $this->item["authorUrl"], $this->item["authorMail"]); ?></span>
+<span class="updater_item_version"><?php printf($this->localisedStrings["ITEM_BROWSE_ITEM_COMPATIBLE_LABEL"], $this->item["itemCurrentVersion"], $this->item["selectedVersions"]); ?></span>
+
+<div class="updater_item_content">
+<?php print $this->item["postContent"]; ?>
+</div>
+
+<?php
+if($this->isInstallable)
+{
+	?>
+	<div class="updater_centeredContent updater_marginTop">
+		<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItem", "item"=>serialize(urlencodeArray($this->item))));?>">
+			<?php print $this->localisedStrings['ITEM_INSTALL_ITEM_LABEL']; ?>
+		</button>
+	</div>
+	<?php
+} else {
+	?>
+	<div class="updater_centeredContent updater_marginTop">
+		<span class="updater_text"><?php print $this->localisedStrings["ITEM_BROWSE_PLATFORM_MSG"]; ?></span>
+		<a class="" href="<?php print $this->item["platformLink"]; ?>">
+			<?php printf($this->localisedStrings['ITEM_BROWSE_PLATFORM_LABEL'], $this->item["title"]); ?>
+		</a>
+	</div>
+	<?php
+}
+?>

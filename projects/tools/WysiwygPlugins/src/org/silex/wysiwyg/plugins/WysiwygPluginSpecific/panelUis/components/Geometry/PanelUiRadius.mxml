@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  width="100%" 
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" 
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  xmlns:Geometry="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.Geometry.*" >
+	
+	
+	<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_CORNER_RADIUS')}" styleName="PropertiesGroupTitle"/>
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.TLcornerRadius.description}" direction="horizontal">
+					<ns1:WysiwygNumericStepper id="positionTLcornerRadiusStepper" styleName="position" 
+											   value="{propertyArray.TLcornerRadius.currentValue}" minimum="0"								
+											   maximum="50000" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'TLcornerRadius')"/>
+					<Geometry:CornerRadiusComponent targetCorner="{CornerRadiusComponent.TOP_LEFT_CORNER}" cornerRadius="{positionTLcornerRadiusStepper.value}"
+													MCWidth="{propertyArray.width.currentValue}"
+													MCHeight="{propertyArray.height.currentValue}"/>
+			</mx:FormItem>
+				
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.BLcornerRadius.description}" direction="horizontal">
+					<ns1:WysiwygNumericStepper id="positionBLcornerRadiusStepper" styleName="position" 
+											   value="{propertyArray.BLcornerRadius.currentValue}" 
+											   maximum="50000" minimum="0" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'BLcornerRadius')"/>
+					<Geometry:CornerRadiusComponent targetCorner="{CornerRadiusComponent.BOTTOM_LEFT_CORNER}" cornerRadius="{positionBLcornerRadiusStepper.value}"
+												MCWidth="{propertyArray.width.currentValue}"
+												MCHeight="{propertyArray.height.currentValue}"/>
+			</mx:FormItem>
+			
+		</mx:Form>
+		</mx:HBox>
+
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			
+			<mx:FormItem width="100%" height="100%" direction="horizontal">
+					<Geometry:CornerRadiusComponent targetCorner="{CornerRadiusComponent.TOP_RIGHT_CORNER}" cornerRadius="{positionTRcornerRadiusStepper.value}"
+												MCWidth="{propertyArray.width.currentValue}"
+												MCHeight="{propertyArray.height.currentValue}"/>
+					<ns1:WysiwygNumericStepper id="positionTRcornerRadiusStepper" styleName="position" 
+											   value="{propertyArray.TRcornerRadius.currentValue}"  maximum="50000" minimum="0" stepSize="1"  
+											   change="updatePropertyValue(event.currentTarget.value, 'TRcornerRadius')"/>
+					<mx:Label text="{propertyArray.TRcornerRadius.description}" />
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" height="100%" direction="horizontal">
+				<Geometry:CornerRadiusComponent targetCorner="{CornerRadiusComponent.BOTTOM_RIGHT_CORNER}" cornerRadius="{positionBRcornerRadiusStepper.value}"
+												MCWidth="{propertyArray.width.currentValue}"
+												MCHeight="{propertyArray.height.currentValue}"/>		
+					<ns1:WysiwygNumericStepper id="positionBRcornerRadiusStepper" styleName="position" 
+											   value="{propertyArray.BRcornerRadius.currentValue}" 
+											   maximum="50000" minimum="0" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'BRcornerRadius')"/>
+					<mx:Label text="{propertyArray.BRcornerRadius.description}" />
+			</mx:FormItem>
+			
+		</mx:Form>
+		</mx:HBox>
+		
+	</mx:HBox>
+	
+</panelUis:PanelUiBase>

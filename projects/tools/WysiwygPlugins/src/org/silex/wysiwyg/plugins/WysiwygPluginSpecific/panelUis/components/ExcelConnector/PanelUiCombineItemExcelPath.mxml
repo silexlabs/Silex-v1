@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%">
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>		
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.selectedFieldNames.description}">			
+			<ns1:WysiwygTextArea text="{propertyArray.selectedFieldNames.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'selectedFieldNames')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.selectedFieldNames)}" />
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.combineItemsFrom.description}">			
+			<ns1:WysiwygTextArea text="{propertyArray.combineItemsFrom.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'combineItemsFrom')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.combineItemsFrom)}" />
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.excelFilePath.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.excelFilePath.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'excelFilePath')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.excelFilePath)}" />				
+		</mx:FormItem>
+		<mx:FormItem  direction="horizontal" width="100%" height="100%" label="{propertyArray.urlBase.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.urlBase.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'urlBase')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.urlBase)}" />				
+		</mx:FormItem>	
+	</mx:Form>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

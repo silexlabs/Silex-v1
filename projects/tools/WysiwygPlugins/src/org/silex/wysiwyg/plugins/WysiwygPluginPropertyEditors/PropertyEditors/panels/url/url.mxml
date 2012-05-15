@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<propertyEditors:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" 
+				xmlns:propertyEditors="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*"
+				xmlns:library="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.panels.url.*"
+				creationComplete="onCreationComplete()"
+				paddingBottom="0" paddingRight="0" paddingTop="0" paddingLeft="0" 
+				xmlns:library1="org.silex.wysiwyg.ui.library.*">
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.io.RemotingConnection;
+			import org.silex.wysiwyg.io.ToolConfig;
+
+
+			
+			/**
+		 	 * an array conaining the extensions of the files to display to allow filtering
+			 */ 
+			private var _libraryFilters:Array;
+			
+			/**
+			 * Instantiate the library finder, sets listener on it and adds it to the display list
+			 */ 
+			public function onCreationComplete():void
+			{
+				_libraryFilters = new Array();
+			}
+			
+			/**
+			 * override the refresh property so we know when we need to refresh tht library target path
+			 */ 
+			override protected function refreshProperty():void
+			{
+				super.refreshProperty();
+				_libraryFilters = new Array();
+				//search for the file extensions to display
+				if (_selectedProperty.extensions != null)
+				{
+					
+					_libraryFilters = _selectedProperty.extensions.split(","); 
+					
+					
+				}
+				
+				wysiwygLibrary.libraryFilters = _libraryFilters;
+				
+				wysiwygLibrary.targetPath = _selectedProperty.currentValue;
+			}
+			
+			/**
+			 * When the user selects an item in the library, update 
+			 * the url property value
+			 * 
+			 * @param event the triggered PluginEvent
+			 */ 
+			private function onSelectLibraryItem(event:PluginEvent):void
+			{
+				updateSelectedProperties(event.data);
+				closeEditor();
+			}
+			
+		]]>
+	</fx:Script>
+	<library1:WysiwygLibrary id='wysiwygLibrary' 
+							 selectLibraryItem="onSelectLibraryItem(event)" />
+		
+	
+</propertyEditors:PropertyEditorsBase>

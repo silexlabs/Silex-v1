@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.bufferTime.description}">
+			<ns1:WysiwygNumericStepper id="bufferTimeStepper" styleName="position" 
+									   value="{propertyArray.bufferTime.currentValue}" 
+									   stepSize="1"
+									   change="updatePropertyValue(event.currentTarget.value, 'bufferTime')"/>
+		</mx:FormItem>	
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.initialVolume.description}">
+			<ns1:WysiwygNumericStepper id="initialVolumeStepper" styleName="position" 
+									   value="{propertyArray.initialVolume.currentValue}" 
+									   maximum="100"
+									   minimum="0" stepSize="1"
+									   change="updatePropertyValue(event.currentTarget.value, 'initialVolume')"/>
+		</mx:FormItem>	
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.fadeDuration.description}">
+			<ns1:WysiwygNumericStepper id="fadeDurationStepper" styleName="position" 
+									   value="{propertyArray.fadeDuration.currentValue}" 
+									   maximum="360"
+									   minimum="0" stepSize="1"
+									   change="updatePropertyValue(event.currentTarget.value, 'fadeDuration')"/>
+		</mx:FormItem>		
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.singleMediaUrl.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.singleMediaUrl.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'singleMediaUrl')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.singleMediaUrl)}" />				
+			</mx:HBox>
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.urlPrefix.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.urlPrefix.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'urlPrefix')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.urlPrefix)}" />				
+		</mx:FormItem>	
+	</mx:Form>
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

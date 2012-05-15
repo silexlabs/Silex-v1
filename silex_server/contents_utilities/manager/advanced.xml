@@ -1,0 +1,233 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="4" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[filet012]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">275</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">1</height>
+						<width type="Integer">858</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[media/logosilex.jpg]]></bitmapFillUrl>
+						<fill><![CDATA[solid]]></fill>
+						<bgColor type="Integer">6710886</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_07.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">165</y>
+						<x type="Integer">1010</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[export]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_07.cmp.swf]]></playerName>
+						<height type="Integer">22</height>
+						<width type="Integer">120</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>Export</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:export>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#A63E26"><b>((<<silex.paramsFile.btn:manage:export>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:export>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:export>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>aideHelp.tf.htmlText=((&lt;&lt;silex.paramsFile.help:export:1&gt;&gt;))</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_07.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">165</y>
+						<x type="Integer">915</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[layout]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_07.cmp.swf]]></playerName>
+						<height type="Integer">22</height>
+						<width type="Integer">120</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#A63E26"><b>Layouts</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:layout>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#A63E26"><b>((<<silex.paramsFile.btn:manage:layout>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:layout>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:layout>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>aideHelp.tf.htmlText=((&lt;&lt;silex.paramsFile.help:layout:1&gt;&gt;))&lt;br&gt;&lt;br&gt;((&lt;&lt;silex.paramsFile.help:layer&gt;&gt;))&lt;br&gt;&lt;br&gt;((&lt;&lt;silex.paramsFile.help:loader&gt;&gt;))&lt;br&gt;&lt;br&gt;((&lt;&lt;silex.paramsFile.help:tools&gt;&gt;))</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>&lt;br&gt;&lt;br&gt;</functionName>
+							<modifier>null</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_07.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">false</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">165</y>
+						<x type="Integer">700</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[context]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_07.cmp.swf]]></playerName>
+						<height type="Integer">22</height>
+						<width type="Integer">120</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>Context</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:context>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#A63E26"><b>((<<silex.paramsFile.btn:manage:context>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:context>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:context>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>aideHelp.tf.htmlText=((&lt;&lt;silex.paramsFile.help:context:1&gt;&gt;))</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_07.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">165</y>
+						<x type="Integer">800</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">true</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[parameters]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_07.cmp.swf]]></playerName>
+						<height type="Integer">22</height>
+						<width type="Integer">140</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>Parameters</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.text:settings:list:parameters>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#A63E26"><b>((<<silex.paramsFile.text:settings:list:parameters>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.text:settings:list:parameters>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="15" COLOR="#63594D"><b>((<<silex.paramsFile.text:settings:list:parameters>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>aideHelp.tf.htmlText=((&lt;&lt;silex.paramsFile.help:params:1&gt;&gt;))</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

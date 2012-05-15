@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>ListUi</componentName>
+	<as2Url>as2/ListUi.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.ui.ListUi</className>
+	<specificEditorUrl>editors/ListUi.swf</specificEditorUrl>
+	<parentDescriptorClassName>flash.MovieClip</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>ListUi</name>
+			<uid>silex.AddComponent.ToolItem.AddListUi</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.UIElements</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_LIST_UI</label>
+			<description>DESCRIPTION_ADD_BUTTON_LIST_UI</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_ui-elements.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>ListUi skin 1</label>
+					<url>as2/ListUi/ListUi1.swf</url>
+					<description>skin1 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<listPath>
+			<type>String</type>
+			<subType>Reference</subType>
+			<description>PROPERTIES_LABEL_LIST_PATH</description>			
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+			<baseClass>org.oof.lists.CustomList</baseClass>	
+		</listPath>	
+		<isHorizontal>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_IS_HORIZONTAL</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</isHorizontal>		
+		<loopList>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_LOOP_LIST</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</loopList>		
+		<scrollStep>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_SCROLL_STEP</description>
+			<defaultValue>1</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</scrollStep>
+	</properties>
+</componentDescriptor>

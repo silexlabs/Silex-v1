@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+		
+		<mx:Form width="100%" height="100%">
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.swapDuration.description}">
+				<ns1:WysiwygNumericStepper id="swapDurationStepper" styleName="position" 
+										   value="{propertyArray.swapDuration.currentValue}" 
+											stepSize="0.5"
+										   change="updatePropertyValue(event.currentTarget.value, 'swapDuration')"/>
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.swapEasingFunctionName.description}">
+				<mx:HBox width="100%" height="100%" >
+					<ns1:WysiwygTextArea text="{propertyArray.swapEasingFunctionName.currentValue}" width="100%" styleName="small"
+										 change="updatePropertyValue(event.currentTarget.text, 'swapEasingFunctionName')"  />
+					<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.swapEasingFunctionName)}" />						
+				</mx:HBox>
+			</mx:FormItem>	
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.swapEasingType.description}">
+				<mx:HBox height="100%" width="100%">
+					<ns1:WysiwygTextArea text="{propertyArray.swapEasingType.currentValue}" width="100%" styleName="small"
+										 change="updatePropertyValue(event.currentTarget.text, 'swapEasingType')"  />
+					<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.swapEasingType)}" />						
+				</mx:HBox>
+			</mx:FormItem>	
+		</mx:Form>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

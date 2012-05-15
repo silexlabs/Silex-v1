@@ -1,0 +1,167 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="2" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ThumbList/ThumbList1.swf</as2Url>
+					<html5Url>plugins/oofComponents/</html5Url>
+					<className>org.oof.lists.ThumbList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ThumbList skin 3]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">55.85</y>
+						<x type="Integer">350</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<cellRendererLibUrl><![CDATA[]]></cellRendererLibUrl>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<labels type="Array">
+							<item><![CDATA[a]]></item>
+						</labels>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<icons type="Array">
+							<item><![CDATA[media/test/image/logo_lex.png]]></item>
+						</icons>
+						<rowHeight type="Integer">100</rowHeight>
+						<easingDuration type="Float">0.5</easingDuration>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<data type="Array">
+							<item><![CDATA[a]]></item>
+						</data>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellMarginX type="Integer">0</cellMarginX>
+						<cellRenderer><![CDATA[ThumbCellRenderer]]></cellRenderer>
+						<verticalAlign><![CDATA[middle]]></verticalAlign>
+						<horizontalAlign><![CDATA[center]]></horizontalAlign>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<removeExtraRowHeight type="Boolean">false</removeExtraRowHeight>
+						<keepProportions type="Boolean">false</keepProportions>
+						<resizeImages type="Boolean">true</resizeImages>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ThumbList/ThumbList1.swf</as2Url>
+					<html5Url>plugins/oofComponents/</html5Url>
+					<className>org.oof.lists.ThumbList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ThumbList skin 2]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">55.85</y>
+						<x type="Integer">200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">568.548387096774</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<cellRendererLibUrl><![CDATA[]]></cellRendererLibUrl>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<labels type="Array">
+							<item><![CDATA[a]]></item>
+							<item><![CDATA[b]]></item>
+							<item><![CDATA[c]]></item>
+						</labels>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<icons type="Array">
+							<item><![CDATA[media/test/image/1.png]]></item>
+							<item><![CDATA[media/test/image/2.png]]></item>
+							<item><![CDATA[media/test/image/3.png]]></item>
+						</icons>
+						<rowHeight type="Integer">50</rowHeight>
+						<easingDuration type="Float">0.5</easingDuration>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<data type="Array">
+							<item><![CDATA[a]]></item>
+							<item><![CDATA[b]]></item>
+							<item><![CDATA[c]]></item>
+						</data>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellMarginX type="Integer">0</cellMarginX>
+						<cellRenderer><![CDATA[ThumbCellRenderer]]></cellRenderer>
+						<verticalAlign><![CDATA[middle]]></verticalAlign>
+						<horizontalAlign><![CDATA[center]]></horizontalAlign>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<removeExtraRowHeight type="Boolean">false</removeExtraRowHeight>
+						<keepProportions type="Boolean">false</keepProportions>
+						<resizeImages type="Boolean">true</resizeImages>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ThumbList/ThumbList1.swf</as2Url>
+					<html5Url>plugins/oofComponents/</html5Url>
+					<className>org.oof.lists.ThumbList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ThumbList skin 1]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">55.85</y>
+						<x type="Float">12.9</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">568.548387096774</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<cellRendererLibUrl><![CDATA[]]></cellRendererLibUrl>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<labels type="Array">
+							<item><![CDATA[a]]></item>
+							<item><![CDATA[b]]></item>
+							<item><![CDATA[c]]></item>
+						</labels>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<icons type="Array">
+							<item><![CDATA[media/test/image/1.jpg]]></item>
+							<item><![CDATA[media/test/image/2.jpg]]></item>
+							<item><![CDATA[media/test/image/3.jpg]]></item>
+						</icons>
+						<rowHeight type="Integer">50</rowHeight>
+						<easingDuration type="Float">0.5</easingDuration>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<data type="Array">
+							<item><![CDATA[a]]></item>
+							<item><![CDATA[b]]></item>
+							<item><![CDATA[c]]></item>
+						</data>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellMarginX type="Integer">0</cellMarginX>
+						<cellRenderer><![CDATA[ThumbCellRenderer]]></cellRenderer>
+						<verticalAlign><![CDATA[middle]]></verticalAlign>
+						<horizontalAlign><![CDATA[center]]></horizontalAlign>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<removeExtraRowHeight type="Boolean">false</removeExtraRowHeight>
+						<keepProportions type="Boolean">false</keepProportions>
+						<resizeImages type="Boolean">true</resizeImages>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

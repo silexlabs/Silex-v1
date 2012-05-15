@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<fx:Script>
+		<![CDATA[
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" paddingLeft="50">
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="product name" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%" height="100%">
+				
+				<mx:HBox width="50%" height="100%">
+					
+					<mx:FormItem width="100%" height="100%" label="show" >
+						<ns1:WysiwygCheckBox  selected="{propertyArray.showProductNameZoomedState.currentValue}"
+											  change="updatePropertyValue(event.currentTarget.selected, 'showProductNameZoomedState')"/>
+					</mx:FormItem>	
+					
+					<mx:FormItem width="100%" height="100%" label="label" >
+						<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.productName)}"/>	
+					</mx:FormItem>	
+				</mx:HBox>
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="horizontal alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.hAlignProductNameZoomedState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.hAlignProductNameZoomedState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'hAlignProductNameZoomedState')"  />					
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="vertical alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.vAlignProductNameZoomedState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.vAlignProductNameZoomedState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'vAlignProductNameZoomedState')"  />	
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXProductNameZoomedStateStepper" styleName="dimension" width="100%"
+												   value="{propertyArray.offsetXProductNameZoomedState.currentValue}"
+												   maximum="{propertyArray.offsetXProductNameZoomedState.maxValue}"
+												   minimum="{propertyArray.offsetXProductNameZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXProductNameZoomedState')"/>					
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y">
+						<ns1:WysiwygNumericStepper id="offsetYBackgroundInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetYBackgroundInitialState.currentValue}"
+												   maximum="{propertyArray.offsetYBackgroundInitialState.maxValue}"
+												   minimum="{propertyArray.offsetYBackgroundInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYBackgroundInitialState')"/>				
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="background" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%" height="100%">
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXBackgroundZoomedStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetXBackgroundZoomedState.currentValue}" width="100%"
+												   maximum="{propertyArray.offsetXBackgroundZoomedState.maxValue}"
+												   minimum="{propertyArray.offsetXBackgroundZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXBackgroundZoomedState')"/>
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y" >
+						<ns1:WysiwygNumericStepper id="offsetYBackgroundZoomedStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetYBackgroundZoomedState.currentValue}"
+												   maximum="{propertyArray.offsetYBackgroundZoomedState.maxValue}"
+												   minimum="{propertyArray.offsetYBackgroundZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYBackgroundZoomedState')"/>	
+					</mx:FormItem>	
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="50%" height="100%" label="margin width">
+						<ns1:WysiwygNumericStepper id="marginWidthBackgroundZoomedStateStepper" styleName="dimension"
+												   value="{propertyArray.marginWidthBackgroundZoomedState.currentValue}" width="100%"
+												   maximum="{propertyArray.marginWidthBackgroundZoomedState.maxValue}"
+												   minimum="{propertyArray.marginWidthBackgroundZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'marginWidthBackgroundZoomedState')"/>
+					</mx:FormItem>
+					<mx:FormItem width="50%" height="100%" label="margin height">
+						<ns1:WysiwygNumericStepper id="marginHeightBackgroundZoomedStateStepper" styleName="dimension"
+												   value="{propertyArray.marginHeightBackgroundZoomedState.currentValue}"
+												   maximum="{propertyArray.marginHeightBackgroundZoomedState.maxValue}"
+												   minimum="{propertyArray.marginHeightBackgroundZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'marginHeightBackgroundZoomedState')"/>
+					</mx:FormItem>
+				</mx:HBox>			
+			</mx:Form>			
+		</mx:HBox>
+		
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="cart button" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%">
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="show">
+						<ns1:WysiwygCheckBox  selected="{propertyArray.showCartButtonZoomedState.currentValue}"
+											  change="updatePropertyValue(event.currentTarget.selected, 'showCartButtonZoomedState')"/>
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="horizontal alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.hAlignCartButtonZoomedState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.hAlignCartButtonZoomedState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'hAlignCartButtonZoomedState')"  />						
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="vertical alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.vAlignCartButtonZoomedState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.vAlignCartButtonZoomedState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'vAlignCartButtonZoomedState')"  />						
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXCartButtonZoomedStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetXCartButtonZoomedState.currentValue}"
+												   maximum="{propertyArray.offsetXCartButtonZoomedState.maxValue}"
+												   minimum="{propertyArray.offsetXCartButtonZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXCartButtonZoomedState')"/>				
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y">
+						<ns1:WysiwygNumericStepper id="offsetYCartButtonZoomedStatestepper" styleName="dimension"
+												   value="{propertyArray.offsetYCartButtonZoomedState.currentValue}"
+												   maximum="{propertyArray.offsetYCartButtonZoomedState.maxValue}"
+												   minimum="{propertyArray.offsetYCartButtonZoomedState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYCartButtonZoomedState')"/>				
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>				
+		</mx:HBox>
+		<mx:HRule width="95%" />	
+		<mx:HBox width="100%" height="100%" >
+			<mx:Label text="close button" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%">
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="horizontal alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.hAlignCloseButton.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.hAlignCloseButton.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'hAlignCloseButton')"  />						
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="vertical alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.vAlignCloseButton.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.vAlignCloseButton.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'vAlignCloseButton')"  />						
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXCloseButtonStepper" styleName="dimension"
+												   value="{propertyArray.offsetXCloseButton.currentValue}"
+												   maximum="{propertyArray.offsetXCloseButton.maxValue}"
+												   minimum="{propertyArray.offsetXCloseButton.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXCloseButton')"/>				
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y">
+						<ns1:WysiwygNumericStepper id="offsetYCloseButtonstepper" styleName="dimension"
+												   value="{propertyArray.offsetYCloseButton.currentValue}"
+												   maximum="{propertyArray.offsetYCloseButton.maxValue}"
+												   minimum="{propertyArray.offsetYCloseButton.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYCloseButton')"/>				
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>				
+		</mx:HBox>
+	</mx:VBox>
+	
+</panelUis:PanelUiBase>

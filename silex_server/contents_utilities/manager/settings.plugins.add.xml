@@ -1,0 +1,139 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="4" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ThumbList/ThumbList_manager.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">182</y>
+						<x type="Integer">580</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<height type="Integer">350</height>
+						<width type="Integer">545</width>
+						<playerName><![CDATA[ThumbList_01_plugins]]></playerName>
+						<cellMarginX type="Integer">0</cellMarginX>
+						<cellMarginY type="Integer">0</cellMarginY>
+						<cellRenderer><![CDATA[ThumbCellRenderer]]></cellRenderer>
+						<_useHandCursor type="Boolean">true</_useHandCursor>
+						<easingDuration type="Float">0.5</easingDuration>
+						<rowHeight type="Integer">182</rowHeight>
+						<itemsPerRow type="Integer">4</itemsPerRow>
+						<isHorizontal type="Boolean">true</isHorizontal>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<resizeImages type="Boolean">false</resizeImages>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_gauche.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">350</y>
+						<x type="Integer">565</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName><![CDATA[listUi_manager_gauche.cmp]]></playerName>
+						<listPath><![CDATA[ThumbList_01_plugins]]></listPath>
+						<isHorizontal type="Boolean">true</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">4</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_droite.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">350</y>
+						<x type="Integer">1133</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName><![CDATA[listUi_manager_droite.cmp]]></playerName>
+						<listPath><![CDATA[ThumbList_01_plugins]]></listPath>
+						<isHorizontal type="Boolean">true</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">4</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/DataSelector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataUsers.DataSelector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[DataSelector_plugins]]></playerName>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[settings.plugins.add.conf.<<DataSelector_plugins.selectedItem.title>>]]></iconDeeplinkName>
+						<iconPageName><![CDATA[settings.plugins.add.conf]]></iconPageName>
+						<rollOverResultContainerPath><![CDATA[]]></rollOverResultContainerPath>
+						<resultContainerPath><![CDATA[]]></resultContainerPath>
+						<orderBy type="Array">
+							<item>label</item>
+						</orderBy>
+						<offset type="Integer">0</offset>
+						<limit type="Integer">50</limit>
+						<idField><![CDATA[id]]></idField>
+						<iconFieldName><![CDATA[]]></iconFieldName>
+						<selectedFieldNames type="Array">
+							<item>*</item>
+						</selectedFieldNames>
+						<deeplinkFormat><![CDATA[<<title>>]]></deeplinkFormat>
+						<whereClause><![CDATA[1]]></whereClause>
+						<cellFormat><![CDATA[<<link>>/plugin.png]]></cellFormat>
+						<listBoxPath><![CDATA[ThumbList_01_plugins]]></listBoxPath>
+						<getIndividualRecordsOnClick type="Boolean">true</getIndividualRecordsOnClick>
+						<getRecordsOnLoad type="Boolean">true</getRecordsOnLoad>
+						<formName><![CDATA[rss_browse_folder.php?folder_path=plugins&allow_folder=true&allow_file=false]]></formName>
+						<connectorPath><![CDATA[RssConnector_plugins]]></connectorPath>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RssConnector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataConnectors.RssConnector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[RssConnector_plugins]]></playerName>
+						<urlBase><![CDATA[<<silex.rootUrl>>cgi/scripts/]]></urlBase>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

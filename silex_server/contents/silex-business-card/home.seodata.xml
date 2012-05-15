@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>home</title>
+		<pubDate>Fri Mar 9 19:03:26 GMT+0100 2012</pubDate>
+		<components>
+			<component>
+				<playerName>visicard_photo2</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="visicard_photo2" src="../../../media/silex-business-card/visicard_photo.jpg">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>Text_column_01</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FF3300" LETTERSPACING="0" KERNING="0">Welcome on your Silex site ! To edit this site, right click and login.<FONT COLOR="#5A5A5A">quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam. </FONT></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0">Est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem mergitur !</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Welcome on your Silex site ! To edit this site, right click and login.quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam.    Est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem mergitur ! </text>
+			</component>
+			<component>
+				<playerName>Text_column_02</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0">Quia dolor sit amet fluctuat, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam estum.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0">Sincerely yours</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0">MFF</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Quia dolor sit amet fluctuat, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam estum.  Sincerely yours MFF </text>
+			</component>
+			<component>
+				<playerName>Text_open_youtube</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="_sans" SIZE="15" COLOR="#FF6600" LETTERSPACING="0" KERNING="0">[[onRelease openUrl:http://www.youtube.com Open Youtube]]</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>[[onRelease openUrl:http://www.youtube.com Open Youtube]] </text>
+			</component>
+			<component>
+				<playerName>visicard_link_video2</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="visicard_link_video2" src="../../../media/silex-business-card/visicard_link_video.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>stroke_around_visicard_link</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

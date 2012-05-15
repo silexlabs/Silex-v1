@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panels:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"
+				creationComplete="onCreationComplete()" 
+				xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*" 
+				xmlns:ns="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.rich_text.*" 
+				xmlns:ui="org.silex.wysiwyg.ui.*"
+				paddingRight="10">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.ColorPicker;
+			import mx.core.FlexGlobals;
+			import mx.core.UITextField;
+			import mx.events.StyleEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listModels.Messages;
+			import org.silex.adminApi.listedObjects.Property;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.io.ToolConfig;
+
+			
+			private var _textProperty:Property;
+			
+			private var _embedFontProperty:Property;
+			
+ 
+			private function setProperty():void
+			{
+				if (_selectedProperty == null)
+				{
+					return;
+				}
+				
+				rteEditor.htmlText = _selectedProperty.currentValue;
+				_textProperty = _selectedProperty as Property;
+				rteEditor.ta.text = unescape(_selectedProperty.currentValue);
+				if (_propertyArray.embedFonts != null)
+				{
+					rteEditor.embeddedFontCheckbox.includeInLayout = true;
+					rteEditor.embeddedFontCheckboxLabel.includeInLayout = true;
+					rteEditor.embeddedFontCheckbox.visible = true;
+					rteEditor.embeddedFontCheckboxLabel.visible = true;
+					rteEditor.switchFontList((_propertyArray.embedFonts as Property).currentValue as Boolean);
+					_embedFontProperty = _propertyArray.embedFonts as Property;
+					checkLegacyFont();
+				}
+				else
+				{
+					rteEditor.embeddedFontCheckbox.includeInLayout = false;
+					rteEditor.embeddedFontCheckboxLabel.includeInLayout = false;
+					rteEditor.embeddedFontCheckbox.visible = false;
+					rteEditor.embeddedFontCheckboxLabel.visible = false;
+					rteEditor.switchFontList(false);
+				}
+				
+				
+				
+				
+				
+			
+			}
+			
+
+			
+			/**
+			 * check if the user has used a non-available embedded font
+			 * and displays a warning
+			 */ 
+			private function checkLegacyFont():void
+			{
+				if (_textProperty.currentValue == null)
+				{
+					return;
+				}
+				
+				if (_embedFontProperty.currentValue == true)
+				{
+					var embeddedFonts:Array = SilexAdminApi.getInstance().publicationModel.getEmbeddedFonts();
+					var fontFaces:Array = (_textProperty.currentValue as String).match(/<FONT FACE=[^<]+?"/g);
+					
+					for (var i:int=0; i<fontFaces.length; i++)
+					{
+						var temp:Array = (fontFaces[i] as String).split("\"")
+						fontFaces[i] = temp[1];
+					}
+					
+					for (i=0; i<fontFaces.length; i++)
+					{
+						var flagFont:Boolean = false;
+						if (embeddedFonts != null)
+						{
+							for (var j:int = 0; j<embeddedFonts.length; j++)
+								{
+									if (fontFaces[i] == embeddedFonts[j])
+									{
+										flagFont = true;
+									}
+									
+							}
+						}
+						
+						if (flagFont == false)
+						{
+							SilexAdminApi.getInstance().messages.addItem({
+								text:fontFaces[i] + " " + resourceManager.getString(ToolConfig.getInstance().wysiwygLanguageBundleName, "ERROR_FONT_NOT_FOUND"),
+								status:Messages.STATUS_ERROR,
+								time:10000
+							});
+							
+								
+						}
+					}
+					
+				}
+			}
+			
+			private function onHTMLTextChange(event:Event):void
+			{
+				rteEditor.ta.text = rteEditor.htmlText;
+				updateSelectedProperties(rteEditor.htmlText);
+			}
+			
+			private function onTextChange(event:Event):void
+			{
+				rteEditor.htmlText = rteEditor.ta.text;
+				updateSelectedProperties(event.currentTarget.ta.text);
+			}
+			
+			private function onEmbeddedFontChange(event:PluginEvent):void
+			{
+				updatePropertyValue((event.data as Boolean), "embedFonts");
+			}
+			
+			private function onCreationComplete():void
+			{
+				/**var systemFonts:Array = Font.enumerateFonts(true);
+				var systemFontsLength:int = systemFonts.length;
+				for (var i:int = 0; i<systemFontsLength; i++)
+				{
+					systemFonts[i] = (systemFonts[i] as Font).fontName;
+				}*/
+				var systemFonts:Array = ["_sans","Arial","Arial Black","Helvetica","Verdana","Trebuchet MS",
+					"_serif","Times New Roman","Times","Georgia","Courier","Courier New","Comic Sans MS"
+					];
+				
+				rteEditor.systemFontArray = systemFonts;
+				rteEditor.embeddedFontArray =  splitFont(SilexAdminApi.getInstance().publicationModel.getEmbeddedFonts());
+				
+				rteEditor.addEventListener(PluginEvent.PROPERTIES_DATA_CHANGED, onEmbeddedFontChange);
+				rteEditor.addEventListener(Event.COMPLETE, onEditingComplete);
+				
+			}
+			
+			private function splitFont(embeddedFontArray:Array):Array
+			{
+				var ret:Array = new Array();
+				if (embeddedFontArray == null)
+				{
+					SilexAdminApi.getInstance().messages.addItem({
+						text:resourceManager.getString(ToolConfig.getInstance().wysiwygLanguageBundleName, "WARNING_NO_EMBED_FONTS"),
+						status:Messages.STATUS_WARNING,
+						time:10000
+					});
+					return ret;
+				}
+				
+				else if (embeddedFontArray.length == 1)
+				{
+					if (embeddedFontArray[0] == null)
+					{
+						SilexAdminApi.getInstance().messages.addItem({
+							text:resourceManager.getString(ToolConfig.getInstance().wysiwygLanguageBundleName, "WARNING_NO_EMBED_FONTS"),
+							status:Messages.STATUS_WARNING,
+							time:10000
+						});
+						return ret;
+					}
+				}
+				
+				for (var i:int = 0; i<embeddedFontArray.length; i++)
+				{
+					if (embeddedFontArray[i] != null)
+					{
+						if ((embeddedFontArray[i] as String).indexOf("-bold") == -1 && (embeddedFontArray[i] as String).indexOf("-italic") == -1)
+						{
+							ret.push(embeddedFontArray[i]);
+						}
+					}
+					
+				}
+				
+				return ret;
+			}
+			
+			private function onEditingComplete(event:Event):void
+			{
+				closeEditor();
+			}
+			
+			override protected function refreshProperty():void
+			{
+				super.refreshProperty();
+				setProperty();
+			}
+		]]>
+	</fx:Script>
+	
+
+	
+	<ns:CustomRichTextEditor  id="rteEditor" change="onHTMLTextChange(event)" plainTextChange="{onTextChange(event)}"  width="100%" height="100%" />
+	
+			
+
+	
+	
+</panels:PropertyEditorsBase>

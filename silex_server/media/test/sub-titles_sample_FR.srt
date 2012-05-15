@@ -1,0 +1,33 @@
+﻿1
+00:00:01,245 --> 00:00:05,636
+Ouvrez le couvercle de l'imprimante.
+
+2
+00:00:08,196 --> 00:00:10,987
+Munissez-vous d'un coton-tige fourni par 
+Evolis  et pressez le milieu du tube 
+
+3
+00:00:10,987 --> 00:00:14,004
+jusqu'à obtention d'un CLIC afin 
+de libérer le produit nettoyant.
+
+4
+00:00:14,004 --> 00:00:15,926
+Frottez délicatement de gauche 
+à droite le coton-tige
+
+5
+00:00:15,926 --> 00:00:19,904
+ sur la tête d'impression pendant 
+quelques secondes.
+
+6
+00:00:21,074 --> 00:00:22,681
+Refermer le couvercle. 
+
+7
+00:00:22,782 --> 00:00:26,000
+Attendez deux minutes la totale 
+évaporation du nettoyant avant 
+d'utiliser l'imprimante.

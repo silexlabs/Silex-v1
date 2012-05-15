@@ -1,0 +1,36 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.AsFrame.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.AsFrame</html5Url>
+					<className>org.silex.ui.players.AsFramePlayerEmbeddedObject</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[frame]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">481.841414141414</height>
+						<width type="Float">813.611111111111</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<backgroundVisible type="Boolean">true</backgroundVisible>
+						<location><![CDATA[http://projects.silexlabs.org/cgi/scripts/get_section_preview.php]]></location>
+						<embededObject><![CDATA[]]></embededObject>
+						<htmlText><![CDATA[]]></htmlText>
+						<asFrameType><![CDATA[location]]></asFrameType>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >	
+	<mx:Form width="100%">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BASIC_PARAMETER')}" fontSize="16" color="0x686765" textAlign="left"/>
+		</mx:FormItem>
+	</mx:Form>	
+
+	<mx:HBox width="50%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">			
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.enabled.description}">
+					<ns1:WysiwygCheckBox selected="{propertyArray.enabled.currentValue}"
+										 change="updatePropertyValue(event.currentTarget.selected, 'enabled')"  />
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.visibleOutOfAdmin.description}">
+					<ns1:WysiwygCheckBox selected="{propertyArray.visibleOutOfAdmin.currentValue}"
+										 change="updatePropertyValue(event.currentTarget.selected, 'visibleOutOfAdmin')"  />		
+				</mx:FormItem>					
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>											
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.minHeight.description}">
+					<ns1:WysiwygNumericStepper id="positionminHeightStepper" styleName="position" 
+											   value="{propertyArray.minHeight.currentValue}" 
+											   maximum="360"
+											   minimum="0" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'minHeight')"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.minWidth.description}">
+					<ns1:WysiwygNumericStepper id="positionminWidthStepper" styleName="position" 
+											   value="{propertyArray.minWidth.currentValue}" 
+											   maximum="360" minimum="0" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'minWidth')"/>			
+				</mx:FormItem>	
+			</mx:Form>	
+		</mx:HBox>
+	</mx:HBox>			
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>properties.manage</title>
+		<pubDate>Thu Oct 27 01:15:46 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>label_btn_plus_cadre_03_create_theme</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#85827E"><b>((<<silex.paramsFile.btn:manage:create_theme>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>create_theme</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>create_theme</title>
+						<link>create_theme</link>
+						<deeplink>create_theme</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Text_description</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.htmlDescription>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>champstexte8</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:55>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>filet0552</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_02_delete</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:delete>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>delete</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>delete</title>
+						<link>delete</link>
+						<deeplink>delete</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_03_duplicate</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#85827E"><b>((<<silex.paramsFile.btn:manage:duplicate>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>duplicate</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>duplicate</title>
+						<link>duplicate</link>
+						<deeplink>duplicate</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_03_rename</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#85827E"><b>((<<silex.paramsFile.btn:manage:rename>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>rename</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>rename</title>
+						<link>rename</link>
+						<deeplink>rename</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>ImageDisplay_preview</playerName>
+				<className>org.oof.dataIos.displays.ImageDisplay</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>label_btn_plus_scale9_01.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#85827E"><b>((<<silex.paramsFile.btn:manage:yes>>))</b></FONT></p>]]></htmlEquivalent>
+				<text><![CDATA[((>)) ]]></text>
+			</component>
+			<component>
+				<playerName>Text_clear_just_created_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial_black" SIZE="10" COLOR="#0B333C" LETTERSPACING="0" KERNING="0"> </FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text></text>
+			</component>
+			<component>
+				<playerName>RichTextList_04_scale</playerName>
+				<className>org.oof.lists.RichTextList</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>ColorView_background</playerName>
+				<className>org.oof.DataIo</className>
+				<iconIsIcon>true</iconIsIcon>
+				<iconPageName>bgcolor</iconPageName>
+				<links>
+					<link>
+						<title>bgcolor</title>
+						<link>bgcolor</link>
+						<deeplink>bgcolor</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Text_color_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.bgColor>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>Text_height_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.layoutStageHeight>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>Text_width_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.layoutStageWidth>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>Text_keyword_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.htmlKeywords>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>Text_icon_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.htmlIcon>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>Text_title_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.config.siteConfTxt.htmlTitle>>))</p>]]></htmlEquivalent>
+				<text><![CDATA[((>))]]></text>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_03_rename</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#85827E"><b><<silex.paramsFile.btn:manage:rename>></b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>change.start</iconPageName>
+				<text><![CDATA[> ]]></text>
+				<links>
+					<link>
+						<title>change.start</title>
+						<link>change.start</link>
+						<deeplink>change.start</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Text_first_page_site</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.config.siteConfTxt.CONFIG_START_SECTION>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="right"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:15>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:12>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:10>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:8>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:7>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:6>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:5>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><<silex.paramsFile.manage:text:4>></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="15" COLOR="#332E28" LETTERSPACING="0" KERNING="0">((<<silex.paramsFile.manage:text:9>>))<FONT FACE="_sans" COLOR="#FFFFFF"></FONT></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[((>))  ]]></text>
+			</component>
+			<component>
+				<playerName>filet01</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet02</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet03</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet04</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet05</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet055</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet06</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_01.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b><<silex.paramsFile.btn:create:save>></b></FONT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>champstexte</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte2</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte3</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte4</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte5</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte6</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champstexte7</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>champscolor8</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

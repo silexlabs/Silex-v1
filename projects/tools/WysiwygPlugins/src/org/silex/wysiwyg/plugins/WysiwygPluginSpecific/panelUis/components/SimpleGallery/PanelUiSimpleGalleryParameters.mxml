@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%" 
+					  horizontalAlign="center"
+					  xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+
+	<fx:Script>
+		<![CDATA[			
+			/**
+			 * function to change the strings to arrays
+			 */
+			public function generateTransitionTypeArray(transitionTypeString:String):Array
+			{
+				var transitionTypeArray:Array = transitionTypeString.split(",");
+				return transitionTypeArray;
+			}
+			
+			public function generateVerticalAlignTypeArray(verticalAlignTypeString:String):Array
+			{
+				var verticalAlignArray:Array = verticalAlignTypeString.split(",");
+				return verticalAlignArray;
+			}
+			
+			public function generateScaleModeTypeArray(scaleModeTypeString:String):Array
+			{
+				var scaleModeArray:Array = scaleModeTypeString.split(",");
+				return scaleModeArray;
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>
+	</mx:Form>
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.autoPlay.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.autoPlay.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'autoPlay')"/>	
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.autoPlayDuration.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="autoPlayDurationStepper" styleName="dimension" 
+											   value="{propertyArray.autoPlayDuration.currentValue}" 
+											   maximum="{propertyArray.autoPlayDuration.maxValue}"
+											   minimum="{propertyArray.autoPlayDuration.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'autoPlayDuration')"/>
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+	
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.transitionType.description}" >
+					<ns1:WysiwygComboBox styleName="pageProperties" 
+										 dataProvider="{generateTransitionTypeArray(propertyArray.transitionType.values)}" 
+										 selectedItem="{propertyArray.transitionType.currentValue}" width="100%"
+										 change="updatePropertyValue(event.currentTarget.selectedItem, 'transitionType')"
+										 editable="true"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.transitionDuration.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="transitionDurationStepper" styleName="dimension" 
+											   value="{propertyArray.transitionDuration.currentValue}" 
+											   maximum="{propertyArray.transitionDuration.maxValue}"
+											   minimum="{propertyArray.transitionDuration.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'transitionDuration')"/>
+				</mx:FormItem>
+				
+			</mx:Form>
+		</mx:HBox>
+		
+	</mx:HBox>
+	
+	<mx:HRule width="100%" />
+		
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+				
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.showControls.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.showControls.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'showControls')"/>	
+				</mx:FormItem>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.showLoading.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.showLoading.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'showLoading')"/>	
+				</mx:FormItem>
+				
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.controlsVerticalAlign.description}" >
+					<ns1:WysiwygComboBox styleName="pageProperties" 
+										 dataProvider="{generateVerticalAlignTypeArray(propertyArray.controlsVerticalAlign.values)}" 
+										 selectedItem="{propertyArray.controlsVerticalAlign.currentValue}" width="100%"
+										 change="updatePropertyValue(event.currentTarget.selectedItem, 'controlsVerticalAlign')"
+										 editable="true"/>
+				</mx:FormItem>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.scaleMode.description}" >
+					<ns1:WysiwygComboBox styleName="pageProperties" 
+										 dataProvider="{generateScaleModeTypeArray(propertyArray.scaleMode.values)}" 
+										 selectedItem="{propertyArray.scaleMode.currentValue}" width="100%"
+										 change="updatePropertyValue(event.currentTarget.selectedItem, 'scaleMode')"
+										 editable="true"/>
+				</mx:FormItem>
+			
+				
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.showBackground.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.showBackground.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'showBackground')"/>	
+				</mx:FormItem>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.backgroundColor.description}" >
+					<ns1:WysiwygColorPicker width="100%" height="100%"
+											selectedColor="{propertyArray.backgroundColor.currentValue}"
+											change="updatePropertyValue(event.currentTarget.selectedColor, 'backgroundColor')" />
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+		
+	</mx:HBox>
+
+</panelUis:PanelUiBase>

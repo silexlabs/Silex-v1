@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="22" paddingBottom="0" paddingTop="0"
+		 dataChange="onDataChange(event)" 
+		 xmlns:ns1="org.silex.wysiwyg.ui.*"
+		 horizontalScrollPolicy="off" 
+		 >
+
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.List;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.listedObjects.Layer;
+			import org.silex.adminApi.listedObjects.Layout;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			import org.silex.wysiwyg.event.ToolsItemRendererEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+			
+			/**
+			 * When data is set, checks the data type and sets appropriate styles and listeners
+			 * 
+			 * @param event The FlexEvent dispatched when data changes
+			 */ 
+			private function onDataChange(event:FlexEvent):void
+			{
+				if (data)
+				{
+					
+					nameLabel.text = data.name;
+					
+					if (data is Layout)
+					{
+						nameLabel.toolTip = data.name;
+						typeIcone.styleName = "folder";
+						nameLabel.styleName = "Layout";
+						
+						//if this layout is the first of the list, then it is "start"
+						//and can't be deleted
+						if ((owner as mx.controls.List).itemRendererToIndex(this) == 0)
+						{
+							deleteLayout.visible = false;
+						}
+						else
+						{
+							deleteLayout.visible = true;
+						}
+						lockUnlockCheckBox.visible = false;
+						
+						typeIcone.removeEventListener(MouseEvent.MOUSE_DOWN, stopPropagation);
+						typeIcone.removeEventListener(MouseEvent.MOUSE_UP, onShowHideClick);
+						this.addEventListener(MouseEvent.MOUSE_DOWN, stopPropagation);
+						//this.addEventListener(MouseEvent.ROLL_OVER, stopPropagation);
+						//this.addEventListener(MouseEvent.MOUSE_OVER, stopPropagation);
+						
+						//add a visual signal showing if the layout is dirty (needs to be saved)
+						if ((data as Layout).getDirty())
+						{
+							if (resourceManager.getString("WYSIWYG", "LAYER_TOOLBOX_NOT_SAVED_LABEL") != null)
+							{
+								nameLabel.text += resourceManager.getString("WYSIWYG", "LAYER_TOOLBOX_NOT_SAVED_LABEL");
+							}
+						}
+
+					}
+						
+					else if (data is Layer)
+					{
+						nameLabel.toolTip = null;
+						deleteLayout.visible = false;
+						lockUnlockCheckBox.visible = true;
+						typeIcone.styleName = "showHide";
+						nameLabel.styleName = "Layer";
+						typeIcone.toolTip = resourceManager.getString("WYSIWYG", "LAYER_TOOLBOX_SHOW_HIDE_BUTTON_TOOLTIP");
+						typeIcone.addEventListener(MouseEvent.MOUSE_DOWN, stopPropagation, false, 0, true);
+						typeIcone.addEventListener(MouseEvent.MOUSE_UP, onShowHideClick, false, 0, true);
+						this.removeEventListener(MouseEvent.MOUSE_DOWN, stopPropagation);
+						
+						//if the lock/unlock checkbox creation is complete 
+						if (lockUnlockCheckBox)
+						{	
+							if ((data as Layer).getEditable())
+							{
+								lockUnlockCheckBox.selected = true;
+							}
+								
+							else
+							{
+								lockUnlockCheckBox.selected = false;
+							}
+							
+						}
+					}
+				}
+			}
+			
+			private function removeHighlight(event:MouseEvent):void
+			{
+				canvasContainer.setStyle("backgroundAlpha", 0);
+				if (data is Layer)
+				{
+					switch(event.type)
+					{
+						case MouseEvent.ROLL_OUT:
+							this.dispatchEvent(new ListEvent(ListEvent.ITEM_ROLL_OUT, true, false, -1,-1,null,this));
+							break;
+					}
+				}
+			}
+			
+			private function preventHighlight(event:MouseEvent):void
+			{
+				
+				if (data is Layout)
+				{
+					canvasContainer.setStyle("backgroundAlpha", 0);
+				}
+				else
+				{
+					switch(event.type)
+					{
+						case MouseEvent.ROLL_OVER:
+							this.dispatchEvent(new ListEvent(ListEvent.ITEM_ROLL_OVER, true, false, -1,-1,null,this));
+							break;
+					}
+					canvasContainer.setStyle("backgroundAlpha", 100);
+				}
+					
+			}
+			
+			private function stopPropagation(event:MouseEvent):void
+			{
+				event.stopPropagation();
+			}
+			
+			/**
+			 * dispatches the show/hide event depending on the show/hide check box state
+			 */ 
+			private function onShowHideClick(event:MouseEvent):void
+			{
+				event.stopPropagation();
+				
+				if (! typeIcone.selected)
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.HIDE_ITEM, data, true));
+				}
+				else
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.SHOW_ITEM, data, true));
+				}
+				
+			}
+			
+			/**
+			 * dispatches the lock/unlock ToolsItemRendererEvent depending on the lock/unlock check box state
+			 * 
+			 * @param event the trigerred MouseEvent
+			 */ 
+			private function onLockUnlockClick(event:MouseEvent):void
+			{
+				event.stopPropagation();
+				
+				if (! lockUnlockCheckBox.selected)
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.LOCK_ITEM, data, true));
+				}
+				else
+				{
+					dispatchEvent(new ToolsItemRendererEvent(ToolsItemRendererEvent.UNLOCK_ITEM, data, true));
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	<mx:Canvas width="100%" height="100%" id="canvasContainer" backgroundAlpha="0" 
+			   mouseOver="preventHighlight(event)"
+			   rollOver="preventHighlight(event)"  backgroundColor="0xCDD2D7"  x="24"
+			   rollOut="removeHighlight(event)"
+			   mouseOut="removeHighlight(event)"
+			   mouseDown="removeHighlight(event)" horizontalScrollPolicy="off">
+		
+		<mx:HBox width="100%" height="100%" paddingLeft="0" paddingBottom="0" paddingTop="0" paddingRight="3" horizontalGap="0">
+			<mx:HBox width="24" height="100%" horizontalScrollPolicy="off">
+			<ns1:WysiwygCheckBox id="typeIcone" width="22"
+								 toolTip="{}"/>
+			</mx:HBox>
+			
+			<mx:HBox width="24" height="100%" horizontalAlign="left" paddingLeft="0" paddingRight="0" >
+					
+					<ns1:WysiwygCheckBox id="lockUnlockCheckBox"  mouseDown="stopPropagation(event)"  width="22" styleName="lockUnlock" click="onLockUnlockClick(event)" 
+										 toolTip="{resourceManager.getString('WYSIWYG', 'LAYERS_TOOLBOX_LOCK_UNLOCK_BUTTON_TOOLTIP' )}"/>
+			</mx:HBox>
+			<mx:HBox width="100%" height="100%">
+				<mx:Label id="nameLabel" truncateToFit="true" width="210"  height="100%" />
+			</mx:HBox>
+		
+			<mx:Button width="15" height="15" styleName="deleteButton" id="deleteLayout"
+					   buttonMode="true"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.DELETE_ITEM, data, true))}"
+					   toolTip="{resourceManager.getString('WYSIWYG', 'LAYER_TOOLBOX_REMOVE_BUTTON_TOOLTIP')}"/>
+		</mx:HBox>
+
+	</mx:Canvas>
+
+	
+	
+</mx:HBox>

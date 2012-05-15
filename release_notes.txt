@@ -1,0 +1,55 @@
+
+= About Silex =
+
+Silex is a CMS, classified in the Flash CMS (Flash content management system) family. Key features are an WYSIWYG environment to edit a publication and a manager application to manage permissions and multiple publications settings. Source: wikipedia.
+
+Links
+  * Wikipedia http://en.wikipedia.org/wiki/Silex_Flash_CMS
+  * OS Flash http://osflash.org/silex
+  * demo: http://demos.silexlabs.org/silex/
+  * website: http://projects.silexlabs.org/?/silex/
+  * download: http://sourceforge.net/projects/silex/files/
+  * documentation: http://community.silexlabs.org/silex/help/
+  * forum: http://community.silexlabs.org/silex/forum_en/
+  * source code: https://silex.svn.sourceforge.net/svnroot/silex/trunk
+  * mailing lists: http://sourceforge.net/mail/?group_id=192954
+  * license: http://www.gnu.org/licenses/gpl.html
+  * Developer Guide: http://community.silexlabs.org/silex/codex/
+  * Bug report: http://sourceforge.net/tracker/?group_id=192954&atid=943477
+
+= Installation / Upgrade =
+
+See http://community.silexlabs.org/silex/help/?page_id=21 for instructions
+
+upgrade v1.5.x to v1.6.x
+  * embedded fonts have to be embedded with the new fonts system: http://community.silexlabs.org/silex/help/?page_id=351
+  * some components may be relocated from media/ to plugins/ - use firebug to check what is not found, and the replace the missing components
+
+upgrade v1.3.x to v1.3.4
+  * in silex_server.ini :
+	; USE_URL_REWRITE
+	; if true - url rewrite enabled, the sitemap will output links like http://myserver.com/mysite/mysection/mypage/
+	; if false - url rewrite disabled, the sitemap will output links like http://myserver.com/?/mysite/mysection/mypage/
+	; default is false
+	USE_URL_REWRITE = true
+	
+	; deprecated : PASSWORD_FILE  = conf/pass.txt
+	
+	; Istalled Plugins
+	; Coma separated list. The names are those of the folders in the folder "content/plugins/"
+	PLUGINS_LIST = plugins/text_editor_tool/index.php
+	
+  * to use the amf optimization:
+	- update to v1.3.4
+	- open your website, go on each page and save it
+	- in the manager, go to your website avanced parameters and set "use amf file format" to "yes"
+	- check if your website display correctly (each page)
+	- delete all *.xml files in content/yoursite/ but not the *.seodata.xml
+
+
+upgrade v1rc1 to v1rc2
+  * in silex_server.ini : LOG_LEVEL = INFO
+
+upgrade v1beta4 to v1rc1
+  * in website tool box set initialLayoutFile to "start.swf" (Error: Le gabarit n'a pas été trouvé 'minimal.swf': URLNotFound)
+

@@ -1,0 +1,255 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="under">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[manager-fond_renommer_la_premiere_page]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">505</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">350</height>
+						<width type="Integer">655</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/manager/design/manager-fond_renommer_la_premiere_page.swf]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+		<subLayer zIndex="3" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Text]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">311.1</y>
+						<x type="Float">695.85</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">89.1477272727273</height>
+						<width type="Float">316.704545454545</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type><![CDATA[dynamic]]></type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollbar type="Boolean">true</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText><![CDATA[<p align="center"><font face="arial" size="15" color="#3B3024">((<<silex.paramsFile.param:server:delete:confirm>>))</font></p>]]></htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_02.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">410.9</y>
+						<x type="Integer">710</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_cadre_02.cmp]]></playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">120</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>Confirmer</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:confirm>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:confirm>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:confirm>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:confirm>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>silex.config.siteConfTxt.del</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>((&lt;&lt;escape RichTextList_01_adv_params.selectedItem.label&gt;&gt;))</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_adv_params._data.splice</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>&lt;&lt;RichTextList_01_adv_params.selectedIndex&gt;&gt;</parameter>
+								<parameter>1</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_adv_params._labels.splice</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>&lt;&lt;RichTextList_01_adv_params.selectedIndex&gt;&gt;</parameter>
+								<parameter>1</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_adv_params.assembleDataProvider</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_adv_params.close</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_01.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">410.9</y>
+						<x type="Integer">880</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_cadre_01.cmp]]></playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">120</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>Annuler</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:cancel>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:cancel>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:cancel>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:cancel>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>label_btn_plus_cadre_02_delete.close</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.GradientRectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[fondpopup]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">296.45</y>
+						<x type="Integer">680</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">158.352272727273</height>
+						<width type="Integer">350</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">5</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">5</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">0</dropShadowDistance>
+						<dropShadowColor><![CDATA[0x666666]]></dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">90</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">7</item>
+							<item type="Integer">120</item>
+							<item type="Integer">142</item>
+							<item type="Integer">250</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16777215</item>
+							<item type="Integer">14212852</item>
+							<item type="Integer">11910348</item>
+							<item type="Integer">14803954</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[media/logosilex.jpg]]></bitmapFillUrl>
+						<bgColor type="Integer">3355443</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">11910348</borderColor>
+						<border type="Boolean">true</border>
+						<BLcornerRadius type="Integer">10</BLcornerRadius>
+						<BRcornerRadius type="Integer">10</BRcornerRadius>
+						<TRcornerRadius type="Integer">10</TRcornerRadius>
+						<TLcornerRadius type="Integer">10</TLcornerRadius>
+						<fill><![CDATA[linear]]></fill>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

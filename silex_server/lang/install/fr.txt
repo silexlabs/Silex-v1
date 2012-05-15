@@ -1,0 +1,46 @@
+﻿;File generated via Silex_translations official file – Please use this file for any modification or addition: https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE
+
+;general
+TITLE=Installeur Silex&
+STEP1=Installation&
+STEP2=Identification&
+STEP3=Lancez-vous !&
+
+;step1
+WELCOME_INTRO_1=Ok, nous allons maintenant installer &
+WELCOME_INTRO_2=ensemble. &
+WELCOME_RUN_TESTS=D'abord nous devons faire quelques tests. &
+WELCOME_LABEL_BUTTON=Allons-y!&
+WELCOME_CHOOSE_LANGUAGE_DESCRIPTION=changer de langue&
+WELCOME_CHOOSE_LANGUAGE_BUTTON=changer&
+
+;step2
+ACCOUNT_SERVER_ALREADY_INSTALLED=Votre serveur Silex est déjà installé.&
+ACCOUNT_ASK_LOGIN=Veuillez vous logger:&
+ACCOUNT_LOGIN=pseudo :&
+ACCOUNT_PASSWORD=mot de passe :&
+ACCOUNT_NEXT=Suivant&
+ACCOUNT_SERVER_ABLE=Votre serveur est capable de faire tourner Silex.&
+ACCOUNT_CHOOSE_LOGIN_AND_PASSWORD=Veuillez choisir un pseudo et un mot de passe pour votre compte d'administration : &
+
+;step3
+ACCOUNT_CREATED=compte administrateur créé&
+SERVER_INSTALLED=Le serveur a été installé avec succès.&
+LAST_STEP=La dernière étape est la réécriture d'URL
+URL_REWRITING_SUCCESS=La réécriture d'URL a été installée avec succès&
+THATS_IT=C'est tout! Maintenant si vous êtes prêt,&
+GOTO_MANAGER=Démarrer&
+URL_REWRITING_OK=La réécriture d'URL a été configurée avec succès&
+URL_REWRITING_NOK=Votre hébergeur ne supporte pas la réécriture d'URL (URL Rewriting) &
+URL_REWRITING_NOK_SO_WHAT=Sans ça votre site ne sera pas référencé par les moteurs de recherche&
+
+;tests
+TEST_RIGHTS_HAS_RIGHTS=a le droit de lire, écrire et éxecuter&
+TEST_RIGHTS_HAS_NO_RIGHTS=n'a pas le droit de lire, écrire et éxecuter&
+TEST_RIGHTS_CHMOD_OK=Les droits d'accès ont été changé à 755&
+TEST_RIGHTS_CHMOD_NOK=Erreur: Les droits d'accès n'ont pas pu être changé à 755&
+TEST_RIGHTS_HELP=Vous n'avez pas les droits sur le système de fichier et Silex ne pouvait pas les changer pour vous. Ca veut dire que vous ne pourrez pas maquetter avec Silex, mais ça devrait ok pour un visiteur. Essayez de les changer vous même, avec votre client FTP par exemple<br/> <br/> Silex a besoin de droits de lecture, écriture et exécution sur les répertoires media, contents, et logs et sur cgi/scripts/upload.cgi .<br/>Si tout le reste est impossible, vous pouvez toujours utiliser ce site uniquement pour la consulation. Pour ce faire, créer un fichier vide à conf/pass.php&
+
+TEST_SESSION_HELP=Votre héergeur n'authorise pas les sessions. Silex a besoin de sessions pour tourner correctement&
+TEST_PHP_VERSION_HELP=Silex a besoin de PHP5 ou plus. Certains hébergeurs fournissent par défaut un PHP plus ancien, et parfois ça peut être changé. Pour ce faire, ajouter un fichier .htaccess à la racine de Silex, et essayer diverses façons de passer la version de PHP à 5. Essayez d'ajouter une de ces lignes au .htaccess, et rafraîchissez. Si ça ne marche pas, essayez-en une autre <br/> <br/> SetEnv PHP_VER 5 <br/> AddHandler x-httpd-php5 .php <br/> AddType x-mapp-php5 .php <br/>AddType application/x-httpd-php5 .php<br/>&
+TEST_SET_INCLUDE_PATH_HELP=Votre hébergeur n'authorise pas set_include_path. Silex a besoin de set_include_path pour fonctionner correctement. &

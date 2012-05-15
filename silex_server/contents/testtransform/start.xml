@@ -1,0 +1,738 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="15" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle34]]></playerName>
+						<rotation type="Float">-67.9399136954182</rotation>
+						<y type="Integer">618</y>
+						<x type="Integer">770</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">204</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">12237498</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle33]]></playerName>
+						<rotation type="Integer">180</rotation>
+						<y type="Integer">625</y>
+						<x type="Integer">668</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">204</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">12237498</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>skins/default_as2/ListScrollBar/ListScrollBarBIG.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListScrollBar</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ListScrollBarBIG.swf]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">180</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<scrollStep type="Integer">1</scrollStep>
+						<listPath><![CDATA[RichTextList skin 1]]></listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ListScrollBar/ListScrollBar1.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListScrollBar</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ListScrollBar skin 1]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">220</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<scrollStep type="Integer">1</scrollStep>
+						<listPath><![CDATA[RichTextList skin 1]]></listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RichTextList/RichTextList_01.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.lists.RichTextList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[RichTextList skin 1]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">-71</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">276</height>
+						<width type="Integer">269</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<cellRendererLibUrl><![CDATA[]]></cellRendererLibUrl>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<labels type="Array">
+							<item>a</item>
+							<item>s</item>
+							<item>dsf</item>
+							<item>gh</item>
+							<item>jhg</item>
+							<item>ghj</item>
+							<item>df</item>
+							<item>zt</item>
+							<item>y</item>
+						</labels>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<rowHeight type="Integer">50</rowHeight>
+						<easingDuration type="Float">0.5</easingDuration>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<data type="Array">
+							<item>dsq</item>
+							<item>ds</item>
+							<item>qsd</item>
+							<item>sq</item>
+							<item>qs</item>
+							<item>qra</item>
+							<item>ar</item>
+							<item>zar</item>
+							<item>e</item>
+						</data>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellMarginX type="Integer">0</cellMarginX>
+						<cellRenderer><![CDATA[RichTextCellRenderer]]></cellRenderer>
+						<minWidth type="Integer">0</minWidth>
+						<minHeight type="Integer">0</minHeight>
+						<enabled type="Boolean">true</enabled>
+						<wordWrap type="Boolean">true</wordWrap>
+						<html type="Boolean">true</html>
+						<embedFonts type="Boolean">false</embedFonts>
+						<autoSize type="Boolean">true</autoSize>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>skins/default_as2/ListScrollBar/ListScrollBar.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListScrollBar</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ListScrollBar.swf]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<scrollStep type="Integer">1</scrollStep>
+						<listPath><![CDATA[RichTextList skin 1]]></listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[preview]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">140</y>
+						<x type="Integer">672</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url><![CDATA[media/preview.png]]></url>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">184</height>
+						<width type="Integer">353</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle22]]></playerName>
+						<rotation type="Integer">45</rotation>
+						<y type="Integer">153</y>
+						<x type="Integer">211</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">213</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">3355392</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle32]]></playerName>
+						<rotation type="Integer">95</rotation>
+						<y type="Integer">319</y>
+						<x type="Integer">469</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">400</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">207</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">12237498</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle3]]></playerName>
+						<rotation type="Float">-161.374317729884</rotation>
+						<y type="Integer">760</y>
+						<x type="Integer">789</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">204</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">12237498</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle2]]></playerName>
+						<rotation type="Integer">20</rotation>
+						<y type="Integer">-23</y>
+						<x type="Integer">56</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">204</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">3355392</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Rectangle]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">-98</y>
+						<x type="Integer">-200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle><![CDATA[round]]></jointStyle>
+						<capsStyle><![CDATA[none]]></capsStyle>
+						<noScale><![CDATA[normal]]></noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape><![CDATA[Rectangle]]></shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode><![CDATA[normal]]></fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">221</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">12237498</item>
+							<item type="Integer">6316128</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl><![CDATA[plugins/baseComponents/geometry_tile.swf]]></bitmapFillUrl>
+						<fill><![CDATA[linear]]></fill>
+						<bgColor type="Integer">6684672</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">true</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">41.9</y>
+						<x type="Float">-116.95</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">false</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">true</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[search.result.num]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Float">36.7857142857143</height>
+						<width type="Float">35.6696428571429</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RichTextList/RichTextList1.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.lists.RichTextList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">0</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<enabled type="Boolean">true</enabled>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/DataSelector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataUsers.DataSelector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[DataSelectorSearch]]></playerName>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<rollOverResultContainerPath><![CDATA[]]></rollOverResultContainerPath>
+						<resultContainerPath><![CDATA[]]></resultContainerPath>
+						<orderBy type="Array">
+							<item>label</item>
+						</orderBy>
+						<offset type="Integer">0</offset>
+						<limit type="Integer">0</limit>
+						<idField><![CDATA[id]]></idField>
+						<iconFieldName><![CDATA[]]></iconFieldName>
+						<selectedFieldNames type="Array">
+							<item>*</item>
+						</selectedFieldNames>
+						<deeplinkFormat><![CDATA[<<title>>]]></deeplinkFormat>
+						<whereClause><![CDATA[1]]></whereClause>
+						<cellFormat><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="20" COLOR="#000000" LETTERSPACING="0" KERNING="1"><<deeplink>></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="1"><<text>></FONT></P></TEXTFORMAT>]]></cellFormat>
+						<listBoxPath><![CDATA[RichTextListSearch]]></listBoxPath>
+						<getIndividualRecordsOnClick type="Boolean">true</getIndividualRecordsOnClick>
+						<getRecordsOnLoad type="Boolean">true</getRecordsOnLoad>
+						<formName><![CDATA[<<silex.rootUrl>>plugins/search/feed.php?id_site=<<silex.config.id_site>>&query=<<search_text.tf.text>>]]></formName>
+						<connectorPath><![CDATA[RssConnectorSearch]]></connectorPath>
+					</properties>
+					<actions>
+						<action>
+							<functionName>open</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>&lt;&lt;selectedItem.deeplink&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>TextNumberResults.TEXT=&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;20&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;1&quot;&gt;Number of Results: ((&lt;&lt;RichTextListSearch.dataProvider.length&gt;&gt;))&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</functionName>
+							<modifier>//onResult</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RssConnector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataConnectors.RssConnector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[RssConnectorSearch]]></playerName>
+						<urlBase><![CDATA[]]></urlBase>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

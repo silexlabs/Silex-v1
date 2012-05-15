@@ -1,0 +1,138 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="1" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/silexComponents/as2/labelButton/button.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">43</y>
+						<x type="Integer">-2592</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_base.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[menu]]></iconPageName>
+						<playerName><![CDATA[button_spot_menu]]></playerName>
+						<height type="Float">32.65</height>
+						<width type="Float">79.25</width>
+						<label><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="16" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">button_spot_menu</FONT></P></TEXTFORMAT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">false</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="16" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">button_spot_menu</FONT></P></TEXTFORMAT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><B>button_spot_menu</B></FONT></P></TEXTFORMAT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><U>button_spot_menu</U></FONT></P></TEXTFORMAT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><B>button_spot_menu</B></FONT></P></TEXTFORMAT>]]></buttonLabelPress>
+						<autoSize type="Boolean">true</autoSize>
+						<wordWrap type="Boolean">false</wordWrap>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/silexComponents/as2/labelButton/button.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">false</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">12</y>
+						<x type="Integer">-2500</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_base.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[login.flag]]></iconPageName>
+						<playerName><![CDATA[button_spot_login]]></playerName>
+						<height type="Float">40.25</height>
+						<width type="Float">97.65</width>
+						<label><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><B>spot login.flag</B></FONT></P></TEXTFORMAT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">false</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="14" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">spot login.flag</FONT></P></TEXTFORMAT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><B>spot login.flag</B></FONT></P></TEXTFORMAT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><U>spot login.flag</U></FONT></P></TEXTFORMAT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="0"><B>spot login.flag</B></FONT></P></TEXTFORMAT>]]></buttonLabelPress>
+						<autoSize type="Boolean">true</autoSize>
+						<wordWrap type="Boolean">false</wordWrap>
+					</properties>
+					<actions>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onLoad</modifier>
+							<parameters>
+								<parameter>readConfigFile</parameter>
+								<parameter>onLoadIniFileSuccess</parameter>
+								<parameter>onLoadIniFileFailed</parameter>
+								<parameter>media/manager/language/&lt;&lt;silex.config.SILEX_ADMIN_DEFAULT_LANGUAGE&gt;&gt;.txt</parameter>
+								<parameter>flashvars</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>silex.config.language=&lt;&lt;silex.config.SILEX_ADMIN_DEFAULT_LANGUAGE&gt;&gt;</functionName>
+							<modifier>onLoad</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onLoadIniFileFailed</modifier>
+							<parameters>
+								<parameter>((&lt;&lt;silex.paramsFile.errorMessage&gt;&gt;))</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>silex.paramsFile=&lt;&lt;silex.lastResult&gt;&gt;</functionName>
+							<modifier>onLoadIniFileSuccess</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onLoadIniFileSuccess</modifier>
+							<parameters>
+								<parameter>readConfigFile</parameter>
+								<parameter>onLoadManagerConfigSuccess</parameter>
+								<parameter>onLoadManagerConfigFailed</parameter>
+								<parameter>contents_utilities/manager/conf.txt</parameter>
+								<parameter>flashvars</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onLoadManagerConfigFailed</modifier>
+							<parameters>
+								<parameter>&lt;&lt;silex.paramsFile.errorMessageLoading&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>silex.configManager=&lt;&lt;silex.lastResult&gt;&gt;</functionName>
+							<modifier>onLoadManagerConfigSuccess</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>open</functionName>
+							<modifier>onLoadManagerConfigSuccess</modifier>
+							<parameters>
+								<parameter>start/login.flag</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

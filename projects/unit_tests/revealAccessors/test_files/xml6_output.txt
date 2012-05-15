@@ -1,0 +1,30 @@
+Generated xml:
+stdClass Object
+(
+    [B] => stdClass Object
+        (
+            [attributes] => stdClass Object
+                (
+                    [b1] => valb1
+                    [b2] => valb2
+                )
+
+            [C1] => stdClass Object
+                (
+                    [D1] => _hx_array Object
+                        (
+                            [»a] => Array
+                                (
+                                    [0] => ValD1
+                                    [1] => ValD2
+                                )
+
+                            [length] => 2
+                        )
+
+                )
+
+            [C2] => ValC2
+        )
+
+)

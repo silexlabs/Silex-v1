@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_VISUAL_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>	
+				<mx:FormItem label="{propertyArray.dropShadowDistance.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowDistanceStepper" styleName="dimension" 
+											   value="{propertyArray.dropShadowDistance.currentValue}" 
+											   maximum="{propertyArray.dropShadowDistance.maxValue}"
+											   minimum="{propertyArray.dropShadowDistance.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowDistance')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.dropShadowAngle.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowAngleStepper" styleName="dimension" 
+											   value="{propertyArray.dropShadowAngle.currentValue}" 
+											   maximum="{propertyArray.dropShadowAngle.maxValue}"
+											   minimum="{propertyArray.dropShadowAngle.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowAngle')"/>
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />	
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>		
+				<mx:FormItem label="{propertyArray.dropShadowBlurX.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowBlurXStepper" styleName="dimension" 
+											   value="{propertyArray.dropShadowBlurX.currentValue}" 
+											   maximum="{propertyArray.dropShadowBlurX.maxValue}"
+											   minimum="{propertyArray.dropShadowBlurX.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowBlurX')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.dropShadowBlurY.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowBlurYStepper" styleName="dimension" 
+											   value="{propertyArray.dropShadowBlurY.currentValue}" 
+											   maximum="{propertyArray.dropShadowBlurY.maxValue}"
+											   minimum="{propertyArray.dropShadowBlurY.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowBlurY')"/>
+				</mx:FormItem>
+			</mx:Form>		
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />	
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>		
+				<mx:FormItem label="{propertyArray.dropShadowAlpha.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowAlphaStepper" styleName="dimension" 
+											   value="{propertyArray.dropShadowAlpha.currentValue}" 
+											   maximum="{propertyArray.dropShadowAlpha.maxValue}"
+											   minimum="{propertyArray.dropShadowAlpha.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowAlpha')"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.dropShadowColor.description}" >
+					<ns1:WysiwygColorPicker width="100%" height="100%"
+											selectedColor="{propertyArray.dropShadowColor.currentValue}"
+											change="updatePropertyValue(event.currentTarget.selectedColor, 'dropShadowColor')" />
+				</mx:FormItem>	
+			</mx:Form>		
+		</mx:HBox>			
+		
+	</mx:HBox>	
+	
+	<mx:HRule width="100%" />
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.dropShadowKnockout.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.dropShadowKnockout.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'dropShadowKnockout')"/>	
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.dropShadowIsInner.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.dropShadowIsInner.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'dropShadowIsInner')"/>	
+				</mx:FormItem>
+			</mx:Form>
+			
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.dropShadowStrength.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="dropShadowStrengthStepper" styleName="position" 
+											   value="{propertyArray.dropShadowStrength.currentValue}" 
+											   maximum="{propertyArray.dropShadowStrength.maxValue}"
+											   minimum="{propertyArray.dropShadowStrength.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowStrength')"/>
+				</mx:FormItem>				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.dropShadowQuality.description}" >
+					<ns1:WysiwygNumericStepper id="dropShadowQualityStepper" styleName="position" 
+											   value="{propertyArray.dropShadowQuality.currentValue}" 
+											   maximum="{propertyArray.dropShadowQuality.maxValue}" minimum="{propertyArray.dropShadowQuality.minValue}" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'dropShadowQuality')"/>
+				</mx:FormItem>
+			</mx:Form>
+			
+		</mx:HBox>
+		
+	</mx:HBox>
+	
+</panelUis:PanelUiBase>

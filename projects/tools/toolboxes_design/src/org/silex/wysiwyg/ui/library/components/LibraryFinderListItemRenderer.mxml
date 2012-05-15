@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+The LibraryToolBox's list itemRenderer.
+
+@author Yannick
+-->
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="22"  dataChange="onDataChange()" horizontalGap="0"
+		 paddingLeft="2"
+		 horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.List;
+			import mx.core.mx_internal;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.SWFMediaPlayer;
+				
+			
+			[Bindable]
+			private var _itemName:String;
+			
+			/**
+			 * when the data is set, sets the visual elements based on the item type
+			 */ 
+			private function onDataChange():void
+			{
+				if (data)
+				{
+					
+					switch(data['item type'])
+					{
+						case 'folder':
+							icone.source = this.getStyle('folderButton') as Class;
+							next.source = this.getStyle('nextArrow') as Class;
+							this.doubleClickEnabled = false;
+							break;
+						
+						case 'file':
+							icone.source = getDataTypeIcon();
+							
+							//if the file is an swf, we need to check if it is
+							//an AS2 or AS3 swf, as AS3 swf can't be imported
+							if (data.ext == "swf")
+							{
+								var swfPlayer:SWFMediaPlayer = new SWFMediaPlayer();
+								swfPlayer.addEventListener(SWFMediaPlayer.AVM1_MOVIE, onAVMIdentified);
+								swfPlayer.addEventListener(SWFMediaPlayer.AVM2_MOVIE, onAVMIdentified);
+							}
+							else
+							{
+								this.doubleClickEnabled = true;
+							}
+							next.source = null;
+							
+							
+							break;
+					}
+					
+					_itemName = data['item name'];
+				}
+			}
+			
+			/**
+			 * When the swf has been loaded, we check if it is an 
+			 * AS3 swf and if it is, we disable the doubleclick, making the
+			 * swf non-importable
+			 */ 
+			private function onAVMIdentified(event:Event):void
+			{
+				event.target.removeEventListener(SWFMediaPlayer.AVM1_MOVIE, onAVMIdentified);
+				event.target.removeEventListener(SWFMediaPlayer.AVM2_MOVIE, onAVMIdentified);
+				if (event.type == SWFMediaPlayer.AVM1_MOVIE)
+				{
+					this.doubleClickEnabled = true;
+				}
+				
+				else
+				{
+					this.doubleClickEnabled = false;
+				}
+			}
+			
+		
+			
+			/**
+			 * returns the class of the icon that needs to be instantaited based on the 
+			 * item type
+			 * 
+			 */
+			private function getDataTypeIcon():Class
+			{
+				switch (data.ext)
+				{
+					case "jpg" :
+						return this.getStyle('JPGButton');
+						break;
+					
+					case "gif" :
+						return this.getStyle('GIFButton');
+						break;
+					
+					case "png" :
+						return this.getStyle('PNGButton');
+						break;
+					
+					case "flv" :
+						return this.getStyle('FLVButton');
+						break;
+					
+					case "flv" :
+						return this.getStyle('FLVButton');
+						break;
+					
+					case "swf" :
+						return this.getStyle('SWFButton');
+						break;
+					
+					case "mp3" :
+						return this.getStyle('MP3Button');
+						break;
+					
+					case "mp4" :
+						return this.getStyle('MP4Button');
+						break;
+					
+					default : 
+						return this.getStyle('undefined');
+						break;	
+				}
+			}
+			
+		]]>
+	</fx:Script>
+		
+	
+	<mx:HBox width="33" height="22" horizontalAlign="center" verticalAlign="middle" verticalScrollPolicy="off">
+		<mx:Image id="icone" horizontalAlign="center" verticalAlign="middle" scaleContent="false"   />
+	</mx:HBox>
+	
+	<mx:HBox height="100%" width="100%" verticalAlign="middle" verticalScrollPolicy="off">
+		<mx:Label styleName="list" id="lblData" text="{_itemName}" width="200" height="100%" truncateToFit="true" />
+	</mx:HBox>
+	
+	<mx:HBox width="22" height="100%" horizontalAlign="right" verticalAlign="middle" verticalScrollPolicy="off">
+		<mx:Image id="next"
+				  width="22" height="22" scaleContent="false" verticalAlign="middle" />
+	</mx:HBox>
+	
+	
+</mx:HBox>

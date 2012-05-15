@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+					  width="100%" 
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	
+	<mx:Form width="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BASIC_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">			
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.x.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="positionXStepper" styleName="position" 
+											   value="{propertyArray.x.currentValue}" 
+											   maximum="{propertyArray.x.maxValue}"
+											   minimum="{propertyArray.x.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'x')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.y.description}" width="100%" height="100%" >
+					<ns1:WysiwygNumericStepper id="positionYStepper" styleName="position"
+											   value="{propertyArray.y.currentValue}"
+											   maximum="{propertyArray.y.maxValue}"
+											   minimum="{propertyArray.y.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'y')"
+											   />
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />	
+		
+		<mx:HBox width="100%" horizontalAlign="center">			
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.width.description}">
+					
+					<ns1:WysiwygNumericStepper id="widthStepper" styleName="dimension"
+											   value="{propertyArray.width.currentValue}"
+											   maximum="{propertyArray.width.maxValue}"
+											   minimum="{propertyArray.width.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'width')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.height.description}">
+					<ns1:WysiwygNumericStepper id="heightStepper" styleName="dimension"
+											   value="{propertyArray.height.currentValue}"
+											   maximum="{propertyArray.height.maxValue}"
+											   minimum="{propertyArray.height.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'height')"/>
+				</mx:FormItem>	
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" verticalAlign="middle" horizontalAlign="center">
+			
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.scale.description}">
+					<ns1:WysiwygNumericStepper id="scaleStepper" styleName="dimension"
+											   value="{propertyArray.scale.currentValue}"
+											   maximum="{propertyArray.scale.maxValue}"
+											   minimum="{propertyArray.scale.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'scale')"/>
+				</mx:FormItem>	
+			</mx:Form>
+			
+		</mx:HBox>	
+	</mx:HBox>			
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

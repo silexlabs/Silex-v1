@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>Error</componentName>
+	<as2Url>as2/error.swf</as2Url>
+	<className>org.silex.ui.error</className>
+	<componentRoot>main</componentRoot>
+	<properties>
+	</properties>
+</componentDescriptor>

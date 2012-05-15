@@ -1,0 +1,9 @@
+#build file
+-cp hx
+-main org.silex.core.CodeInjection
+-swf bin/CodeInjection.swf
+-swf-version 8
+-cp hx
+-swf-lib bin/silexApiAs2Lib.swf
+--no-traces 
+-lib hsl-1

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+the page properties UI body. Displays a form filled by the user to create a new layout
+
+@author Yannick
+-->
+<ns:StdUIBody xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*" width="100%"
+			  dataChange="onDataChange()" xmlns:ui="ui.*" 
+			  xmlns:ns2="org.silex.wysiwyg.ui.*"
+			  >
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.ToolsEvent;
+			import org.silex.wysiwyg.io.ToolConfig;
+			
+			private var _pagePropertiesVO:PagePropertiesVO;
+			
+			[Bindable]
+			private var updatedTileWidth:Number;
+			
+			/**
+			 * Sets the form item datas when the data are set on the toolbox body
+			 */ 
+			private function onDataChange():void
+			{
+				
+				_pagePropertiesVO = data as PagePropertiesVO;
+				
+				layoutComboBox.dataProvider = _pagePropertiesVO.layoutList;
+				layoutComboBox.selectedItem = _pagePropertiesVO.selectedLayout;
+				
+				iconeComboBox.dataProvider = _pagePropertiesVO.componentsList;
+				iconeComboBox.selectedItem = _pagePropertiesVO.selectedComponent;
+				
+				defaultIconCheckBox.selected = _pagePropertiesVO.getIsDefaultIcon().currentValue;
+				defaultIconCheckBox.enabled = _pagePropertiesVO.hasDefaultIcon != true;
+				
+				gabaritComboBox.selectedItem = _pagePropertiesVO.getGabarit().currentValue;
+				
+				pageNameInput.text = _pagePropertiesVO.getPageName().currentValue;
+				deeplinkInput.text = _pagePropertiesVO.getPageDeepLink().currentValue;
+				
+			}
+			
+			/**
+			 * Dispatch an ICON_SELECTION_CHANGED event when the user changes the selection of the icon combobox,
+			 * sending the new data
+			 * 
+			 * @param event the trigerred Event
+			 */ 
+			private function onComponentSelectionChanged(event:Event):void
+			{
+				_pagePropertiesVO.selectedComponent = event.target.selectedItem;
+				dispatchEvent(new ToolsEvent(ToolsEvent.ICON_SELECTION_CHANGED, _pagePropertiesVO));
+			}
+			
+			/**
+			 * Dispatch an PARENT_PAGE_SELECTION_CHANGED event when the user changes the selection of the parent page combobox,
+			 * sending the new data
+			 * 
+			 * @param event the trigerred Event
+			 */ 
+			private function onLayoutSelectionChanged(event:Event):void
+			{
+				_pagePropertiesVO.selectedLayout = event.target.selectedItem;
+				dispatchEvent(new ToolsEvent(ToolsEvent.PARENT_PAGE_SELECTION_CHANGED, _pagePropertiesVO));
+			}
+			
+			/**
+			 * Validates the form when the user clicks the validate button
+			 */ 
+			private function validateForm():void
+			{
+				//cheks if the user entered a layout name
+				if (pageNameInput.text.length > 0)
+				{
+					_pagePropertiesVO.newIsIconeDefault = defaultIconCheckBox.selected;
+					_pagePropertiesVO.newPageName = pageNameInput.text;
+					
+					_pagePropertiesVO.newPageDeepLink = deeplinkInput.text;
+					_pagePropertiesVO.newGabarit = gabaritComboBox.selectedItem as String;
+					
+					dispatchEvent(new ToolsEvent(ToolsEvent.DATA_CHANGED, _pagePropertiesVO));
+					
+				}
+				
+				//dispatch an error event if the user didn't fill the layout name input
+				else
+				{
+					dispatchEvent(new ToolsEvent(ToolsEvent.FORM_ERROR));
+				}
+			}
+
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+
+	
+	<mx:HBox  width="100%" horizontalAlign="center" verticalAlign="middle" >
+				
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			
+		<mx:Form>
+			<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_LAYER_NAME_LABEL')}">
+				<ns2:WysiwygTextInput id="pageNameInput" styleName="pageProperties" width="180" />
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_DEEPLINK_LABEL')}" >
+				<ns2:WysiwygTextInput id="deeplinkInput" styleName="pageProperties" width="180" />
+			</mx:FormItem>
+		</mx:Form>
+		
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			
+			<mx:Form>
+				<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_PARENT_PAGE_LABEL')}" >
+				<ns2:WysiwygComboBox id="layoutComboBox" labelField="name" styleName="pageProperties"
+									change="onLayoutSelectionChanged(event)"/>
+				</mx:FormItem>	
+				
+				<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_ANIMATION_LAYOUT_LABEL')}">
+				<ns2:WysiwygComboBox id="gabaritComboBox" styleName="pageProperties"
+									dataProvider="{ToolConfig.getInstance().gabaritList}" />
+				</mx:FormItem>
+				
+			</mx:Form>
+			
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Form>
+				
+			
+				<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_ICON_LABEL')}" >
+				<ns2:WysiwygComboBox id="iconeComboBox" labelField="name"  styleName="pageProperties"
+							 change="onComponentSelectionChanged(event)"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%" label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_DEFAULT_ICON_LABEL')}" >
+					<ns2:WysiwygCheckBox id="defaultIconCheckBox" />
+				</mx:FormItem>		
+	
+			</mx:Form>
+		</mx:HBox>	
+	</mx:HBox>
+		<mx:HRule width="100%" />
+	
+	<mx:HBox width="100%" horizontalAlign="right" verticalAlign="middle">
+		
+
+	
+		<mx:HBox width="33%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>
+			<mx:FormItem width="100%" direction="horizontal"  >
+	
+				<ns2:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CONFIRM_BUTTON_LABEL')}" click="validateForm()" />
+				<ns2:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CANCEL_BUTTON_LABEL')}" click="dispatchEvent(new ToolsEvent(ToolsEvent.CANCEL_DATA_CHANGED))" />
+			
+			</mx:FormItem>
+				
+			<mx:FormItem width="100%" label="icône par défaut" visible="false">
+				
+			</mx:FormItem>
+				
+			</mx:Form>
+		</mx:HBox>
+	</mx:HBox>
+		
+			
+	
+</ns:StdUIBody>

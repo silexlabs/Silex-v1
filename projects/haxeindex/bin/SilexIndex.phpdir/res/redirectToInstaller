@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>Silex installation</title>
+		<meta http-equiv="REFRESH" content="0;url=::ROOTURL::install">
+	</HEAD>
+	<BODY>
+		<br /><br /><br /><br /><br /><hr />
+		<a href="http://projects.silexlabs.org/?/silex">powered by silex ::version::</a> - <a href="http://projects.silexlabs.org/?/silex">Silex, free Flash CMS, open source web application</a>, live web creation<br />
+		<a href="http://www.silexlabs.org/">Open source free software by Silex Labs</a><br />
+	</BODY>
+</HTML>

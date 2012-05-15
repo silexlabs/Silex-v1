@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIBody.mxml -->
+<!---
+The LayoutsUI's footer. Contains the add, remove and update layouts buttons
+
+@author Yannick
+-->
+<ns1:StdUIFooter xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="tools.tools_ui.*" width="100%" 
+				height="100%" xmlns:ns1="org.silex.wysiwyg.toolboxes.toolboxes_base.*"
+				creationComplete="onCreationComplete()" xmlns:ui="org.silex.wysiwyg.ui.*">
+	<fx:Declarations>
+		<!--
+			the boolean used to enable/disable the footer's buttons
+		-->
+		<fx:Boolean id="isPropertiesButtonEnabled" />
+		<fx:Boolean id="isDeleteButtonEnabled" />
+		<fx:Boolean id="isSaveLayoutButtonEnabled" />
+		<fx:Boolean id="isUnselectLayerButtonEnabled" />
+		<fx:Boolean id="isAddButtonEnabled" />
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.ToolsEvent;
+			
+			private function onCreationComplete():void
+			{
+				isSaveLayoutButtonEnabled = true;
+			}
+		]]>
+	</fx:Script>
+	<mx:VBox height="100%" width="100%" verticalGap="0">
+		<ui:WysiwygButton styleName="addLayerComponent" 
+						  label="{resourceManager.getString('WYSIWYG', 'LAYER_TOOLBOX_ADD_BUTTON_TOOLTIP' )}" width="100%"
+						  click="{dispatchEvent(new ToolsEvent(ToolsEvent.ADD_ITEM))}"
+						  toolTip="{resourceManager.getString('WYSIWYG', 'LAYER_TOOLBOX_ADD_BUTTON_TOOLTIP' )}"
+						  enabled="{isAddButtonEnabled}"/>
+		
+		<mx:HBox  width="100%" height="100%" styleName="ToolBoxFooter" horizontalAlign="right" verticalAlign="middle" horizontalGap="5">
+			
+	<!--		<mx:Button width="15" height="15" styleName="saveButton" enabled="{isSaveLayoutButtonEnabled}" 
+					   buttonMode="true" 
+					   click="dispatchEvent(new ToolsEvent(ToolsEvent.SAVE_LAYOUT))"
+					   toolTip="{resourceManager.getString('WYSIWYG', 'LAYER_TOOLBOX_SAVE_BUTTON_TOOLTIP')}"/>
+	-->		
+			
+		</mx:HBox>	
+	
+	</mx:VBox>
+	
+</ns1:StdUIFooter>

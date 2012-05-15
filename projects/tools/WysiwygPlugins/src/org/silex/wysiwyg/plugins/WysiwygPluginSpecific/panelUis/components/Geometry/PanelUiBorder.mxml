@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%" 
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+
+	<fx:Script>
+		<![CDATA[
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BORDER')}" styleName="PropertiesGroupTitle" />
+		
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem label="{propertyArray.border.description}" width="100%" height="100%">
+				<ns1:WysiwygCheckBox  selected="{propertyArray.border.currentValue}"
+									  change="updatePropertyValue(event.currentTarget.selected, 'border')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.borderColor.description}" >
+				<ns1:WysiwygColorPicker width="100%" height="100%" 
+										selectedColor="{propertyArray.borderColor.currentValue}"
+										change="updatePropertyValue(event.currentTarget.selectedColor, 'borderColor')" />
+			</mx:FormItem>
+				
+			<mx:FormItem label="{propertyArray.pixelHinting.description}" width="100%" height="100%">
+				<ns1:WysiwygCheckBox  selected="{propertyArray.pixelHinting.currentValue}"
+									  change="updatePropertyValue(event.currentTarget.selected, 'pixelHinting')"/>
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem label="{propertyArray.borderAlpha.description}" width="100%" height="100%" >
+				<ns1:WysiwygNumericStepper id="positionBorderAlphaStepper" styleName="position"
+										   value="{propertyArray.borderAlpha.currentValue}"
+										   maximum="{propertyArray.borderAlpha.maxValue}"
+										   minimum="{propertyArray.borderAlpha.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'borderAlpha')"
+										   />
+			</mx:FormItem>
+		
+			<mx:FormItem label="{propertyArray.lineThickness.description}" width="100%" height="100%">
+				<ns1:WysiwygNumericStepper id="positionLineThickNessStepper" styleName="position" 
+										   value="{propertyArray.lineThickness.currentValue}" 
+										   maximum="{propertyArray.lineThickness.maxValue}"
+										   minimum="{propertyArray.lineThickness.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'lineThickness')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem label="{propertyArray.miterLimit.description}" width="100%" height="100%">
+				<ns1:WysiwygNumericStepper id="positionmiterLimitStepper" styleName="position" 
+										   value="{propertyArray.miterLimit.currentValue}" 
+										   maximum="{propertyArray.miterLimit.maxValue}"
+										   minimum="{propertyArray.miterLimit.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'miterLimit')"/>
+			</mx:FormItem>
+			
+		</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.noScale.description}" >
+				<ns1:WysiwygComboBox styleName="pageProperties" 
+									 dataProvider="{generateArray(propertyArray.noScale.values)}" 
+									 selectedItem="{propertyArray.noScale.currentValue}" width="100%"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'noScale')"
+									 editable="true"/>
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.capsStyle.description}" >
+				<ns1:WysiwygComboBox styleName="pageProperties" 
+									 dataProvider="{generateArray(propertyArray.capsStyle.values)}" 
+									 selectedItem="{propertyArray.capsStyle.currentValue}" width="100%"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'capsStyle')"
+									 editable="true"/>
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.jointStyle.description}" >
+				<ns1:WysiwygComboBox styleName="pageProperties" 
+									 dataProvider="{generateArray(propertyArray.jointStyle.values)}" 
+									 selectedItem="{propertyArray.jointStyle.currentValue}" width="100%"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'jointStyle')"
+									 editable="true"/>
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+		
+	</mx:HBox>
+		
+</panelUis:PanelUiBase>

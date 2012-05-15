@@ -1,0 +1,111 @@
+<layer>
+  <subLayers>
+    <subLayer zIndex="2" id="fade">
+      <components>
+        <component>
+          <as2Url>media/components/oof/RichTextList.cmp.swf</as2Url>
+          <properties>
+          <tabIndex type="Integer">1</tabIndex>
+          <tabEnabled type="Boolean">false</tabEnabled>
+          <visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+          <rotation type="Integer">0</rotation>
+          <y type="Float">397.35</y>
+          <x type="Float">447.35</x>
+          <alpha type="Integer">100</alpha>
+          <iconIsDefault type="Boolean">false</iconIsDefault>
+          <iconIsIcon type="Boolean">false</iconIsIcon>
+          <iconLayoutName>minimal.swf</iconLayoutName>
+          <iconPageName>new page name</iconPageName>
+          <height type="Float">175.942028985507</height>
+          <width type="Float">231.161541991739</width>
+          <playerName>RichTextList</playerName>
+          <autoSize>center</autoSize>
+          <embedFonts type="Boolean">false</embedFonts>
+          <html type="Boolean">true</html>&lt;_useHandCursor
+          type="Boolean"&gt;false&lt;/_useHandCursor&gt;
+          <wordWrap type="Boolean">true</wordWrap>
+          <cellMarginX type="Integer">10</cellMarginX>
+          <cellMarginY type="Integer">10</cellMarginY>
+          <cellRenderer>RichTextCellRenderer</cellRenderer>
+          <easingDuration type="Float">0.5</easingDuration>
+          <rowHeight type="Integer">50</rowHeight>
+          <itemsPerRow type="Integer">1</itemsPerRow>
+          <isHorizontal type="Boolean">false</isHorizontal>
+          <multipleSelection type="Boolean">false</multipleSelection>
+          <useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+          <enabled type="Boolean">true</enabled>
+          <visible type="Boolean">true</visible>
+          <minHeight type="Integer">0</minHeight>
+          <minWidth type="Integer">0</minWidth></properties>
+          <actions />
+        </component>
+        <component>
+          <as2Url>media/components/oof/DatabaseConnector.cmp.swf</as2Url>
+          <properties>
+            <tabIndex type="Integer">1</tabIndex>
+            <tabEnabled type="Boolean">false</tabEnabled>
+            <visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+            <rotation type="Integer">0</rotation>
+            <y type="Integer">200</y>
+            <x type="Integer">-9999</x>
+            <alpha type="Integer">100</alpha>
+            <iconIsDefault type="Boolean">false</iconIsDefault>
+            <iconIsIcon type="Boolean">false</iconIsIcon>
+            <iconLayoutName>minimal.swf</iconLayoutName>
+            <iconPageName>new page name</iconPageName>
+            <height type="Integer">34</height>
+            <width>none</width>
+            <playerName>DatabaseConnector</playerName>
+            <gatewayUrl>
+            http://localhost:8888/workspace/SilexTrunk/silex_server/cgi/gateway.php</gatewayUrl>
+            <serviceName>form_web_service</serviceName>
+            <enabled type="Boolean">true</enabled>
+            <visible type="Boolean">true</visible>
+            <minHeight type="Integer">0</minHeight>
+            <minWidth type="Integer">0</minWidth>
+          </properties>
+          <actions />
+        </component>
+        <component>
+          <as2Url>media/components/oof/DataSelector.cmp.swf</as2Url>
+          <properties>
+            <tabIndex type="Integer">1</tabIndex>
+            <tabEnabled type="Boolean">false</tabEnabled>
+            <visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+            <rotation type="Integer">0</rotation>
+            <y type="Integer">200</y>
+            <x type="Integer">-9999</x>
+            <alpha type="Integer">100</alpha>
+            <iconIsDefault type="Boolean">false</iconIsDefault>
+            <iconIsIcon type="Boolean">false</iconIsIcon>
+            <iconLayoutName>minimal.swf</iconLayoutName>
+            <iconPageName>new page name</iconPageName>
+            <height type="Float">21.4</height>
+            <width type="Float">72.1</width>
+            <playerName>DataSelector</playerName>
+            <connectorPath>DatabaseConnector</connectorPath>
+            <formName>testtable</formName>
+            <getRecordsOnLoad type="Boolean">true</getRecordsOnLoad>
+            <getIndividualRecordsOnClick type="Boolean">true</getIndividualRecordsOnClick>
+            <listBoxPath>RichTextList</listBoxPath>
+            <visible type="Boolean">true</visible>
+            <cellFormat>&lt;&lt;name&gt;&gt; &lt;&lt;age&gt;&gt;</cellFormat>
+            <whereClause>1</whereClause>
+            <deeplinkFormat>&lt;&lt;title&gt;&gt;</deeplinkFormat>
+            <selectedFieldNames type="Array">
+              <item>*</item>
+            </selectedFieldNames>
+            <iconFieldName></iconFieldName>
+            <idField>id</idField>
+            <limit type="Integer">50</limit>
+            <offset type="Integer">0</offset>
+            <orderBy type="Array"></orderBy>
+            <resultContainerPath></resultContainerPath>
+            <rollOverResultContainerPath></rollOverResultContainerPath>
+          </properties>
+          <actions />
+        </component>
+      </components>
+    </subLayer>
+  </subLayers>
+</layer>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>start</title>
+		<pubDate>Thu Oct 27 18:04:57 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>ThumbList skin 3</playerName>
+				<className>org.oof.lists.ThumbList</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>ThumbList skin 2</playerName>
+				<className>org.oof.lists.ThumbList</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>ThumbList skin 1</playerName>
+				<className>org.oof.lists.ThumbList</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

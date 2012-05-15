@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"
+				 xmlns:ns1="org.silex.wysiwyg.ui.*">
+				 <!--creationComplete="init()"-->
+
+	<fx:Script> 
+		<![CDATA[
+			
+			import flash.events.MouseEvent;
+			
+			import org.silex.wysiwyg.plugins.WysiwygPluginGroups.ComponentsGroups;
+			private var groupsClass:ComponentsGroups = new ComponentsGroups();
+			/*private function init() {
+				var groupsClass:ComponentsGroups = new ComponentsGroups();
+				//loadButton.addEventListener(MouseEvent.MOUSE_DOWN, groupsClass.loadButtonMouseDownHandler);
+				//saveButton.addEventListener(MouseEvent.MOUSE_DOWN, groupsClass.saveButtonMouseDownHandler);
+				//groupToSave.text
+			}*/
+			/**
+			 * This handler is called when saveButton is clicked to store selected components in the group specified in groupToSave textinput
+			 */
+			private function saveButtonClickHandler(event:MouseEvent):void
+			{
+				//groupsClass.save("group");
+				groupsClass.save(groupToSave.text);
+			}
+			/**
+			 * This handler is called when loadButton is clicked to load the group specified in groupToLoad combobox on the seleced layer
+			 */
+			private function loadButtonClickHandler(event:MouseEvent):void
+			{
+				groupsClass.load(groupToSave.text);
+				//groupsClass.load(groupToLoad.selectedItem);
+			}
+			
+		]]>
+	</fx:Script>
+	<mx:VBox width="100%">
+		<mx:HBox>
+			<mx:VBox>
+				<mx:Label text="Save a Group" />
+				<mx:Label text="Load a Group" />
+			</mx:VBox>
+			<mx:VBox>
+				<ns1:WysiwygTextInput id="groupToSave"/>
+				<!--<ns1:WysiwygComboBox id="groupToLoad"/>-->
+			</mx:VBox>
+			<mx:VBox>
+				<ns1:WysiwygButton id="saveButton" label="Save" click="saveButtonClickHandler(event)"/>			
+				<ns1:WysiwygButton id="loadButton" label="Load" click="loadButtonClickHandler(event)"/>
+			</mx:VBox>
+		</mx:HBox>
+	</mx:VBox>
+</panel:PanelBase>

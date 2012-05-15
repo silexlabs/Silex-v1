@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>ListScrollBar</componentName>
+	<as2Url>as2/ListScrollBar.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.ui.ListScrollBar</className>
+	<specificEditorUrl>editors/ListScrollBar.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>ListScrollBar</name>
+			<uid>silex.AddComponent.ToolItem.AddListScrollBar</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.UIElements</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_LIST_SCROLL_BAR</label>
+			<description>DESCRIPTION_ADD_BUTTON_LIST_SCROLL_BAR</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_ui-elements.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>ListScrollBar skin 1</label>
+					<url>as2/ListScrollBar/ListScrollBar1.swf</url>
+					<description>skin1 description</description>
+				</skin>
+				<skin>
+					<label>ListScrollBar skin 2</label>
+					<url>as2/ListScrollBar/ListScrollBar_manager_01.swf</url>
+					<description>skin2 description</description>
+				</skin>
+				<skin>
+					<label>ListScrollBar skin 3</label>
+					<url>as2/ListScrollBar/ListScrollBar_manager_02.swf</url>
+					<description>skin3 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<isHorizontal>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_IS_HORIZONTAL</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</isHorizontal>	
+		<listPath>
+			<type>String</type>
+			<subType>Reference</subType>
+			<description>PROPERTIES_LABEL_LIST_PATH</description>
+			<defaultValue>list</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+			<baseClass>org.oof.lists.CustomList</baseClass>	
+		</listPath>		
+		<scrollStep>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_SCROLL_STEP</description>
+			<defaultValue>1</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</scrollStep>		
+	</properties>
+</componentDescriptor>

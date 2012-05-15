@@ -1,0 +1,5 @@
+Generated xml:
+stdClass Object
+(
+    [child1Name] => child1Value
+)

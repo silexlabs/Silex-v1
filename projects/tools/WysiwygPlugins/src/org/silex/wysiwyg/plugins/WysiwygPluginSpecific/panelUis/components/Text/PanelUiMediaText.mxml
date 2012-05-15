@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+		 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+		 xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+	
+	<mx:Form width="33%">
+		<mx:FormItem width="100%" horizontalAlign="center">
+			<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_TEXT_BUTTON_LABEL')}" 
+								   click="selectProperty(propertyArray.htmlText)" />
+		</mx:FormItem>	
+			
+	</mx:Form>	
+		
+	<mx:VRule height="100%" />
+		
+	<mx:Form width="66%">
+		<mx:FormItem width="100%" label="{propertyArray.playerName.description}" >
+		<ns1:WysiwygTextInput text="{propertyArray.playerName.currentValue}" width="100%"
+							  restrict="[a-zA-Z0-9]_éàèâî"
+					  change="{updatePropertyValue(event.currentTarget.text, 'playerName')}"/>
+		</mx:FormItem>	
+	</mx:Form>
+	
+	
+		
+	</mx:HBox>	
+	<mx:HRule width="100%" />
+	
+
+</panelUis:PanelUiBase>

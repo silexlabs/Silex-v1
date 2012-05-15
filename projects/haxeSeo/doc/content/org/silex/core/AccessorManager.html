@@ -1,0 +1,155 @@
+<html>
+
+<head>
+
+<title>HaXe Bundle automatic AutoDoc</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #7D7E86;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 10px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #F6FAFD;
+}
+
+.title {
+	font-size: 35;
+	font-weight: bold;
+	text-align: center;
+	background-color : #FF4D1F;
+	color : white;
+	padding : 5 10 5 10;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 30px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #FF4D1F;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #FF4D1F;
+	text-decoration : underline;
+}
+
+a.package {
+	color : black;
+}
+
+.index {
+	margin : 20px 0 5px 10px;
+}
+
+.kwd {
+	color : #330033;
+}
+
+.classname {
+	font-size : 30;
+	font-weight : bold;
+	margin-left : 10px;
+	margin-bottom : 20px;
+}
+
+.classdoc {
+	border : 1px  #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	background-color : #DDD;
+	-moz-border-radius : 10px;
+	border-radius: 10px;
+	padding : 5 5 5 10;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0 20 20 40;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 11pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title"><img alt="Logo" src="http://code.google.com/p/sugar-hx/logo?logo_id=1265779922" align="ABSBOTTOM"></img>HaXe Bundle AutoDoc</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.silex.core.AccessorManager</div><div class="classdoc"><p>Class managing accessors resolution</p>
+<p>@author Raphael Harmel
+  @version 1.0
+  @date   2011-06-15</p></div><dl><dt><span class="kwd">var </span>accessors : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>getInstance(idSite : <a href="../../../String.html" class="type">String</a>) : <a href="../../../org/silex/core/AccessorManager.html" class="type">AccessorManager</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>getTarget(pathString : <a href="../../../String.html" class="type">String</a>, accessorsList : <a href="../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd><p>Retrieves a Dynamic from its path
+	  This Haxe version is a light version of the as2 org.silex.core.Utils.getTarget one, because it is used only by seo</p>
+<p>@param	pathString		the target path
+	  @param	accessorsList	the accessors list used to reveal the accessor
+	  @return the targeted Dynamic</p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>revealAccessors(toBeRevealed : <a href="../../../String.html" class="type">String</a>, accessorsList : <a href="../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd><p>Takes toBeRevealed string and resolves its accessors using accessorsList.
+	  "Resolve" means to replace each accessor by its equivalent string value.</p>
+<p>example1:
+	  		if accessor is '<<DataSelector1.selectedItem.title>>'
+	  		and accessorsList:{DataSelector1=>selectedItem=>title:"layer1",silex.config=>version:"v1.6.1"},
+	  			=> result will be 'layer1'
+	  example2:
+	  		"my text is for <<dbdata.name1>>!!! not for <<dbdata.name2>> ((nor for <<dbdata.name3>>!!!))" becomes
+	  			=> "my text is for valueName1!!! not for valueName2 nor for valueName3!!!" if all name variables exist
+	  			=> "my text is for valueName1!!! not for valueName2" if only dbdata.name1 & dbdata.name2 exists
+	  			=> "" if only dbdata.name1 or dbdata.name2 exists
+	  			=> "nor for valueName3!!!" if only dbdata.name3 exists</p>
+<p>@param	toBeRevealed		the string to be revealed, containing accessors ("((...<<path.to.a.variable>>...))")
+	  @param	accessorsList		the accessors list used to reveal the accessor
+	  @return	Dynamic				the resolved accessor, which can be a string, an array<Dynamic> or a Hash<Dynamic></p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>splitAndRevealTags(inputString : <a href="../../../String.html" class="type">String</a>, accessorsList : <a href="../../../Dynamic.html" class="type">Dynamic</a>, ?leftTag : <a href="../../../String.html" class="type">String</a>, ?rightTag : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../Dynamic.html" class="type">Dynamic</a>&gt;</dt><dd><p>Use the accessors delimiters paterns to split the input string into an array and reveal the accessors in it.</p>
+<p>@param	inputString	a string containing accessors
+	  @param	leftTag		<code>[optional]</code>left delimiter, << by default
+	  @param	rightTag	<code>[optional]</code>right delimiter, >> by default
+	  @return	the array of strings containing accessors</p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>splitTags(inputString : <a href="../../../String.html" class="type">String</a>, ?leftTag : <a href="../../../String.html" class="type">String</a>, ?rightTag : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd><p>Use the accessors delimiters paterns to split the input string into an array.</p>
+<p>@param	inputString	a string containing accessors
+	  @param	leftTag		<code>[optional]</code>left delimiter, (( by default
+	  @param	rightTag	<code>[optional]</code>right delimiter, )) by default
+	  @return	the array of strings containing accessors</p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

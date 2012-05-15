@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+the properties UI Header. Displays the title of the toolbox, the names of the selected components
+and buttons to switch between display mode
+
+@author Yannick
+-->
+<ns:StdUIHeader xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*"
+				horizontalGap="0" 
+				creationComplete="onCreationComplete()"
+				title="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_TITLE')}"
+				xmlns:ns1="org.silex.wysiwyg.ui.toolItemUI.*" 
+				>
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			import org.silex.wysiwyg.toolboxes.properties.PropertiesUI;
+			
+			private function onCreationComplete():void
+			{
+				_toolBoxSubTitle.truncateToFit = true;
+				_toolBoxSubTitle.width = 250;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:HBox id="buttonBox" horizontalAlign="right" width="100%" height="100%" horizontalGap="5" >
+		<ns1:HToolItemView iconHeight="30" iconWidth="19" toolUid="silex.Properties.Tool" width="100%" horizontalAlign="right" />
+		
+	</mx:HBox>
+	
+</ns:StdUIHeader>

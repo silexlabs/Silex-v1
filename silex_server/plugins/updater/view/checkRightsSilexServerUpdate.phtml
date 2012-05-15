@@ -1,0 +1,36 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"checkRightsSilexServerTree"));?>" ><?php print $this->localisedStrings["ARIANE_UPDATE_SILEX_SRV_LABEL"];?></a>
+</div>
+
+
+<?php	
+if(!empty($this->updateRightsReport))
+{
+	?>
+	<span class="updater_error updater_marginTop"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_PERM_LIST_MSG"]); ?></span>
+	<div class='updater_reportList'>
+		<?php
+		foreach($this->updateRightsReport as $resultItem)
+			print $resultItem."<br>";
+		?>
+	</div>
+	<div class='updater_centeredContent updater_marginTop'>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( array("action"=>"checkRightsSilexServerUpdate"), $forwardParams ) ); ?>">
+			<?php print $this->localisedStrings["UPDT_SILEX_SRV_RECHECK_PERM_CONTINUE_LABEL"]; ?>
+		</button>
+	</div>
+	<?php
+}
+else
+{
+	?>
+	<script type="text/javascript">
+		<?php $this->generateForwarding( array_merge( array("action"=>"updateSilexServer"), $this->filesInfos ) ); ?>
+	</script>
+	<?php
+}
+?>
+<div class='updater_centeredContent updater_marginTop'>
+	<span class="updater_informative"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_RUN_INFO_MSG"]); ?></span>
+</div>

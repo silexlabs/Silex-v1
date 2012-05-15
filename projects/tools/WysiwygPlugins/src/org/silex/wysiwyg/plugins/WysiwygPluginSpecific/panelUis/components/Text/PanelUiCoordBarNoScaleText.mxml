@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiCoordBarNoScale xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+		 xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*">
+
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.text.org_silex_ui_players_Text;
+			
+			/**
+			 * If the rotation or alpha of the text is updated while the font is not embedded, dispatch an event
+			 * that will trigger a warning for the user that his text won't be displayed
+			 */ 
+			override protected function updatePropertyValue(value:*, propertyName:String):void
+			{
+				super.updatePropertyValue(value, propertyName);
+				if (propertyName == "rotation" || propertyName == "alpha")
+				{
+					if (propertyArray.embedFonts.currentValue == false)
+					{
+						dispatchEvent(new Event(org_silex_ui_players_Text.EVENT_CHECK_EMBEDDED_FONT));
+					}
+				}
+			}
+		]]>
+	</fx:Script>	
+
+	
+</panelUis:PanelUiCoordBarNoScale>

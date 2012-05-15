@@ -1,0 +1,163 @@
+<html>
+
+<head>
+
+<title>HaXe Bundle automatic AutoDoc</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #7D7E86;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 10px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #F6FAFD;
+}
+
+.title {
+	font-size: 35;
+	font-weight: bold;
+	text-align: center;
+	background-color : #FF4D1F;
+	color : white;
+	padding : 5 10 5 10;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 30px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #FF4D1F;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #FF4D1F;
+	text-decoration : underline;
+}
+
+a.package {
+	color : black;
+}
+
+.index {
+	margin : 20px 0 5px 10px;
+}
+
+.kwd {
+	color : #330033;
+}
+
+.classname {
+	font-size : 30;
+	font-weight : bold;
+	margin-left : 10px;
+	margin-bottom : 20px;
+}
+
+.classdoc {
+	border : 1px  #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	background-color : #DDD;
+	-moz-border-radius : 10px;
+	border-radius: 10px;
+	padding : 5 5 5 10;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0 20 20 40;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 11pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title"><img alt="Logo" src="http://code.google.com/p/sugar-hx/logo?logo_id=1265779922" align="ABSBOTTOM"></img>HaXe Bundle AutoDoc</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.silex.serverApi.SiteEditor</div><dl><dt><span class="kwd">function </span>new() : <a href="../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>createSection(siteName : <a href="../../../String.html" class="type">String</a>, newSectionName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Creates newSectionName in siteName.
+</dd><dt><span class="kwd">function </span>createWebsite(id_site : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Creates a new website (Publication) named id_site.
+</dd><dt><span class="kwd">function </span>deleteSection(siteName : <a href="../../../String.html" class="type">String</a>, sectionName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Void.html" class="type">Void</a></dt><dd>
+	  Deletes sectionName in siteName.
+</dd><dt><span class="kwd">function </span>deleteWebsite(id_site : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Delete the whole id_site Website (Publication).
+</dd><dt><span class="kwd">function </span>duplicateSection(siteName : <a href="../../../String.html" class="type">String</a>, oldSectionName : <a href="../../../String.html" class="type">String</a>, newSectionName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Duplicates oldSectionName from siteName to newSectionName.
+</dd><dt><span class="kwd">function </span>duplicateWebsite(id_site : <a href="../../../String.html" class="type">String</a>, newName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Duplicates id_site as newName.
+</dd><dt><span class="kwd">function </span>getPagePreview(siteName : <a href="../../../String.html" class="type">String</a>, pageName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd>
+	  Return type is Dynamic since it can be a php.NativeArray or a String in case of error.
+</dd><dt><span class="kwd">function </span>getSectionSeoData(id_site : <a href="../../../String.html" class="type">String</a>, deeplink : <a href="../../../String.html" class="type">String</a>, ?urlBase : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../Dynamic.html" class="type">Dynamic</a>&gt;</dt><dd>
+	  Finds and returns SEO informations about a page.<br/>
+	  If several layers are composing the deeplink all data are merged.
+</dd><dt><span class="kwd">function </span>getSiteThumb(siteName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd>
+	  Return type is Dynamic since it can be a php.NativeArray or a String in case of error.
+</dd><dt><span class="kwd">function </span>getWebsiteConfig(id_site : <a href="../../../String.html" class="type">String</a>, ?mergeWithServerConfig : <a href="../../../Bool.html" class="type">Bool</a>) : <a href="../../../Null.html" class="type">Null</a>&lt;<a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;&gt;</dt><dd>
+	  Return's id_site's configuration.
+</dd><dt><span class="kwd">function </span>loadPublicationStructure(siteName : <a href="../../../String.html" class="type">String</a>, ?isPublishedVersion : <a href="../../../Bool.html" class="type">Bool</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Loads and returns either the published version or the unpublished version of PublicationStructure of siteName.
+</dd><dt><span class="kwd">function </span>parse_client_site_ini_file(filePath : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Do not use, we are trying to get rid of it.
+</dd><dt><span class="kwd">function </span>renameSection(siteName : <a href="../../../String.html" class="type">String</a>, oldSectionName : <a href="../../../String.html" class="type">String</a>, newSectionName : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Renames oldSectionName in siteName to newSectionName.
+</dd><dt><span class="kwd">function </span>renameWebsite(id_site : <a href="../../../String.html" class="type">String</a>, new_id : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Renames website (Publication) from id_site to new_id.
+</dd><dt><span class="kwd">function </span>savePublicationStructure(siteName : <a href="../../../String.html" class="type">String</a>, xmlContent : <a href="../../../String.html" class="type">String</a>, xmlContentPublished : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Saves xmlContent and xmlContentPublished into the corresponding files depending on siteName.
+</dd><dt><span class="kwd">function </span>storeSeoData(websiteContentFolderPath : <a href="../../../String.html" class="type">String</a>, sectionName : <a href="../../../String.html" class="type">String</a>, seoObject : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Stores seo data from seoObject in the file corresponding to sectionName and websiteContentFolderPath.
+</dd><dt><span class="kwd">function </span>writeSectionData(xmlData : <a href="../../../String.html" class="type">String</a>, xmlFileName : <a href="../../../String.html" class="type">String</a>, sectionName : <a href="../../../String.html" class="type">String</a>, id_site : <a href="../../../String.html" class="type">String</a>, seoObject : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, domObject : <a href="../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Writes xmlData into xmlFileName.
+</dd><dt><span class="kwd">function </span>writeWebsiteConfig(websiteInfo : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, id_site : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Saves websiteInfo.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

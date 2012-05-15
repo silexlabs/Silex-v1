@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>ColorPick</componentName>
+	<as2Url>as2/ColorPick.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.dataIos.ColorPick</className>
+	<specificEditorUrl>editors/ColorPick.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>ColorPick</name>
+			<uid>silex.AddComponent.ToolItem.AddColorPick</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.UIElements</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_COLOR_PICK</label>
+			<description>DESCRIPTION_ADD_BUTTON_COLOR_PICK</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_ui-elements.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>ColorPick skin 1</label>
+					<url>as2/ColorPick/ColorPick1.swf</url>
+					<description>skin1 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>
+	</properties>
+</componentDescriptor>

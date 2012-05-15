@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   frameRate="3"
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" initialize="application1_initializeHandler(event)">
+	<s:BorderContainer 
+		backgroundColor="red" cornerRadius="10" width="100%" height="100%"
+		borderStyle="inset" borderWeight="4" >
+		<s:layout >
+			<s:HorizontalLayout 
+				
+				paddingLeft="5" paddingRight="5" 
+				paddingTop="5" paddingBottom="5"/> 
+		</s:layout>
+		<mx:TabNavigator width="100%" height="100%"> 
+			<mx:Tile label="general" 
+					 direction="horizontal" 
+					 borderStyle="solid"
+					 paddingTop="10" paddingBottom="10" 
+					 paddingRight="10" paddingLeft="10" 
+					 verticalGap="15" horizontalGap="10">
+				<s:Button click="getLayouts()" label="get layouts"/>
+				<s:Button click="selectFirstLayout()" label="select first layout"/>
+				<s:Button click="selectSecondLayout()" label="select second layout"/>
+				<s:Button click="getSelectedLayouts()" label="getSelectedLayouts"/>
+				<s:Button click="getLayers()" label="get layers"/>
+				<s:Button click="selectFirstLayer()" label="select first layer"/>
+				<s:Button click="getComponents()" label="get components"/>
+				<s:Button click="getProperties()" label="get properties"/>			
+				<s:Button click="toggleLayerVisibility()" label="toggleLayerVisibility"/>
+				<s:Button click="saveLayout()" label="saveLayout"/>
+				<s:Button click="switchToPopup()" label="switchToPopup"/>
+				<s:Button click="switchToDiv()" label="switchToDiv"/>
+				<s:Button click="hide()" label="hide"/>
+			</mx:Tile>
+			<mx:Tile label="component">
+				<s:Button click="getComponents()" label="get components"/>
+				<s:Button click="getProperties()" label="get properties"/>			
+				<s:Button click="selectFirstComponent()" label="select 1st component"/>
+				<s:Button click="selectSecondComponent()" label="select 2nd component"/>
+				<s:Button click="select3rdComponent()" label="select3rdComponent"/>
+				<s:Button click="select4thComponent()" label="select4thComponent"/>
+				<s:Button click="select5thComponent()" label="select5thComponent"/>
+				<s:Button click="selectSixthComponent()" label="select 6th component"/>
+				<s:Button click="addImage()" label="add image"/>
+				<s:Button click="changeProperty()" label="x++"/>
+				<s:Button click="renameComponent()" label="renameComponent"/>
+				<s:Button click="getTypeArray()" label="getTypeArray"/>
+				<s:Button click="addSound()" label="addSound"/>
+				<s:Button click="addVideo()" label="addVideo"/>
+				<s:Button click="addFramedEmbeddedObject()" label="addFramedEmbeddedObject"/>
+				<s:Button click="addFramedHtmlText()" label="addFramedHtmlText"/>
+				<s:Button click="addFramedLocation()" label="addFramedLocation"/>
+				<s:Button click="addText()" label="addText"/>
+				<s:Button click="addComponent()" label="addComponent"/>
+				<s:Button click="openIconOnComponent()" label="open icon"/>
+				<s:Button click="addViewMenuItem()" label="addViewMenuItem"/>
+				<s:Button click="invertComponentsOrder()" label="invertComponentsOrder"/>
+				<s:Button click="deleteFirstComponent()" label="delete 1st component"/>
+				<s:Button click="swapComponentDepths()" label="swap depths"/>
+				<s:Button click="toggleComponentVisibility()" label="toggleComponentVisibility"/>
+				<s:Button click="toggleComponentEditable()" label="toggleComponentEditable"/>
+			</mx:Tile>
+			<mx:Tile label="action">
+				<s:Button click="getActions()" label="get actions"/>			
+				<s:Button click="updateAction()" label="update Action"/>		
+				<s:Button click="addAction()" label="add Action"/>		
+				<s:Button click="deleteAction()" label="delete Action"/>	
+				<s:Button click="swapActionDepths()" label="swapActionDepths"/>	
+				<s:Button click="invertActionsOrder()" label="invertActionsOrder"/>
+				
+			</mx:Tile>			
+		</mx:TabNavigator>
+			
+			
+		
+		<s:TextArea id="outText" width="600"/>
+	</s:BorderContainer> 
+
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			import mx.utils.ObjectUtil;
+			
+			import org.silex.adminApi.AdminApiEvent;
+			import org.silex.adminApi.Err;
+			import org.silex.adminApi.ExternalInterfaceController;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.WysiwygModel;
+			import org.silex.adminApi.listModels.Components;
+			import org.silex.adminApi.listModels.ListModelBase;
+			import org.silex.adminApi.listModels.adding.ComponentAddInfo;
+			import org.silex.adminApi.listedObjects.Action;
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.adminApi.listedObjects.Layer;
+			import org.silex.adminApi.listedObjects.Layout;
+			import org.silex.adminApi.listedObjects.Property;
+			
+			private var _recoveredLayouts:Array;
+			private var _recoveredLayers:Array;
+			private var _recoveredComponents:Array;
+			private var _recoveredProperties:Array;
+			private var _recoveredActions:Array;
+			private function application1_initializeHandler(event:FlexEvent):void 
+			{
+				var api:SilexAdminApi = SilexAdminApi.getInstance();
+				api.layouts.addEventListener(AdminApiEvent.EVENT_DATA_CHANGED, onLayoutDataChanged);
+				api.components.addEventListener(AdminApiEvent.EVENT_DATA_CHANGED, onComponentDataChanged);
+				api.properties.addEventListener(AdminApiEvent.EVENT_DATA_CHANGED, onPropertiesDataChanged);
+				api.layouts.addEventListener(AdminApiEvent.EVENT_SELECTION_CHANGED, onLayoutSelectionChanged);
+				api.layers.addEventListener(AdminApiEvent.EVENT_SELECTION_CHANGED, onLayerSelectionChanged);
+				api.layouts.addEventListener(AdminApiEvent.EVENT_SAVE_LAYOUT_OK, onLayoutSaved);
+				api.layouts.addEventListener(AdminApiEvent.EVENT_SAVE_LAYOUT_ERROR, onLayoutSaveError);
+				api.viewMenuItems.addEventListener(AdminApiEvent.EVENT_DATA_CHANGED, onViewMenuItemsDataChanged);
+				Err.setTextField(outText.getChildAt(0) as TextField); 
+				//return;
+				getLayouts(); 
+				selectFirstLayout();
+				getLayers(); 
+				selectFirstLayer();
+				getComponents(); 
+				selectFirstComponent();
+			}
+			
+			/**
+			 * tests work with the cv-2009 site. Set it as default site on your server, then you can debug your Flex by setting the 
+			 * "url or path to launch" to your server (for example http://localhost:8888/SilexTrunk/silex_server/)
+			 * in the Debug launch configuration
+			 * */
+			
+			private function onLayoutDataChanged(event:AdminApiEvent):void{
+				outText.text = "onLayoutDataChanged";
+			}
+			
+			private function onComponentDataChanged(event:AdminApiEvent):void{
+				outText.text = "onComponentDataChanged";
+				//SilexAdminApi.getInstance().components.getData();
+			}
+			
+			private function onPropertiesDataChanged(event:AdminApiEvent):void{
+				outText.text = "onPropertiesDataChanged";
+				//SilexAdminApi.getInstance().components.getData();
+			}
+			
+			private function onLayoutSelectionChanged(event:AdminApiEvent):void{
+				outText.text = "onLayoutSelectionChanged" + ObjectUtil.toString(event.data);
+			}
+			
+			private function onLayerSelectionChanged(event:AdminApiEvent):void{
+				outText.text = "onLayerSelectionChanged";
+			}
+			
+			private function onLayoutSaved(event:AdminApiEvent):void{
+				outText.text = "onLayoutSaved" + ObjectUtil.toString(event.data);
+			}
+						
+			private function onLayoutSaveError(event:AdminApiEvent):void{
+				outText.text = "onLayoutSaveError" + ObjectUtil.toString(event.data);
+			}
+			
+			private function onViewMenuItemsDataChanged(event:AdminApiEvent):void{
+				outText.text = "onViewMenuItemsDataChanged" + ObjectUtil.toString(SilexAdminApi.getInstance().viewMenuItems.getData());
+				
+			}
+
+			private function getLayouts():void
+			{
+				_recoveredLayouts = SilexAdminApi.getInstance().layouts.getData();
+				outText.text = "get layouts " + ObjectUtil.toString(_recoveredLayouts);
+			} 
+			
+			private function selectFirstLayout():void
+			{
+				var selection:Array = new Array(_recoveredLayouts[0][0].uid)
+				SilexAdminApi.getInstance().layouts.select(selection);
+				outText.text = "selectFirstLayout, selection " + ObjectUtil.toString(SilexAdminApi.getInstance().layouts.getSelection());
+				
+			}
+			
+			
+			private function selectSecondLayout():void
+			{
+				var selection:Array = new Array(_recoveredLayouts[0][1].uid)
+				SilexAdminApi.getInstance().layouts.select(selection);
+			}
+			
+			private function getSelectedLayouts():void{
+				var selected:Array = SilexAdminApi.getInstance().layouts.getSelection();
+				outText.text = "getSelected layout uids : " + ObjectUtil.toString(selected);
+			}
+			private function getLayers():void
+			{
+				_recoveredLayers = SilexAdminApi.getInstance().layers.getData();
+				outText.text = "get layers " + ObjectUtil.toString(_recoveredLayers);
+			}
+			
+			private function selectFirstLayer():void
+			{
+				var selection:Array = new Array(_recoveredLayers[0][0].uid)
+				SilexAdminApi.getInstance().layers.select(selection);
+			}
+			
+			
+			private function getComponents():void
+			{
+				_recoveredComponents = SilexAdminApi.getInstance().components.getData();
+				outText.text = "get components " + ObjectUtil.toString(_recoveredComponents);
+			}
+
+			/**
+			 * select 1st component
+			 * */
+			private function selectFirstComponent():void
+			{
+				var component:Component = _recoveredComponents[0][0] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+			
+			/**
+			 * select 2nd component
+			 * */
+			private function selectSecondComponent():void
+			{
+				var component:Component = _recoveredComponents[0][1] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+			
+			
+			/**
+			 * select 3rd component
+			 * */
+			private function select3rdComponent():void
+			{
+				var component:Component = _recoveredComponents[0][2] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+			
+			
+			/**
+			 * select 4th component
+			 * */
+			private function select4thComponent():void
+			{
+				var component:Component = _recoveredComponents[0][3] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+			
+			/**
+			 * select 5th component
+			 * */
+			private function select5thComponent():void
+			{
+				var component:Component = _recoveredComponents[0][4] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+			
+			/**
+			 * select 6th component
+			 * */
+			private function selectSixthComponent():void
+			{
+				var component:Component = _recoveredComponents[0][5] as Component;
+				outText.text = "selecting" + component.name; 
+				var selection:Array = new Array(component.uid);
+				SilexAdminApi.getInstance().components.select(selection);
+			}
+						
+						
+			/**
+			 * open icon on component
+			 * */
+			private function openIconOnComponent():void
+			{
+				var comp:Component = _recoveredComponents[0][5] as Component;
+				comp.openIcon();
+			}
+			
+			/** 
+			 * get component properties
+			 * */
+			private function getProperties():void
+			{
+				_recoveredProperties = SilexAdminApi.getInstance().properties.getData();
+				outText.text = "get properties " + ObjectUtil.toString(_recoveredProperties);
+			}
+			
+			/**
+			 * x++
+			 * */
+			private function changeProperty():void  
+			{
+				//only works where _x is 12th property!
+				var property:Property = _recoveredProperties[0][12];
+				property.updateCurrentValue(property.currentValue + 1);
+				outText.text = "13th property (should be x) ++ : " + property.description + ", " + property.currentValue;
+			}
+			
+			private function getTypeArray():void{
+				var component:Component = _recoveredComponents[0][0] as Component;
+				outText.text = "type array :" + ObjectUtil.toString(component.typeArray) ;				
+			}
+			
+			private function renameComponent():void
+			{
+				//only works where playerName is 22nd property!
+				var property:Property = _recoveredProperties[0][21];
+				property.updateCurrentValue("testName");
+				outText.text = "22nd property (should be playerName) ++ : " + property.description + ", " + property.currentValue;
+			}
+			
+			
+			/**
+			 * get component actions
+			 * there is an action on the second layout, first layer, second media(the image of the person, portrait_home.swf)
+			 * */
+			private function getActions():void
+			{
+				_recoveredActions = SilexAdminApi.getInstance().actions.getData();
+				outText.text = "get actions " + ObjectUtil.toString(_recoveredActions);
+			}
+			
+			/**
+			 * update action
+			 * */
+			private function updateAction():void
+			{
+				var action:Action = _recoveredActions[0][0];
+				action.update("onRelease", "alert", ["updateAction"]);
+				outText.text = "updateAction";
+			}
+			
+			/**
+			 * add action
+			 * */
+			private function addAction():void
+			{
+				var action:Object = new Object();
+				action.functionName = "onRelease";
+				action.modifier = "alert";
+				action.parameters = ["addAction"];
+				SilexAdminApi.getInstance().actions.addItem(action);
+				outText.text = "addAction";
+			}
+			
+			/**
+			 * delete action
+			 * */
+			private function deleteAction():void
+			{
+				var action:Action = _recoveredActions[0][0];
+				SilexAdminApi.getInstance().actions.deleteItem(action.uid);
+				outText.text = "deleteAction";
+			}
+			
+			private function swapActionDepths():void{
+				var action1:Action = _recoveredActions[0][0] as Action;				
+				var action2:Action = _recoveredActions[0][1] as Action;				
+				SilexAdminApi.getInstance().actions.swapItemDepths(action1.uid, action2.uid);
+				outText.text = "swapActionDepths";
+				
+			}
+			
+			
+			/**
+			 * add an image to the selected layer
+			 * */
+			private function addImage():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "media/logosilex.jpg";
+				addInfo.playerName = "remotelyCreatedTestImage";
+				addInfo.type = ComponentAddInfo.TYPE_IMAGE;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+				outText.text = "logo added";
+			}
+
+			private function addSound():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "media/inexistant.mp3";
+				addInfo.playerName = "remotelyCreatedTestSound";
+				addInfo.type = ComponentAddInfo.TYPE_AUDIO;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+
+			private function addVideo():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "media/inexistant.flv";
+				addInfo.playerName = "remotelyCreatedTestVideo";
+				addInfo.type = ComponentAddInfo.TYPE_VIDEO;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			private function addText():void{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.playerName = "remotelyCreatedTestText";
+				addInfo.type = ComponentAddInfo.TYPE_TEXT;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			private function addComponent():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "media/components/3dscene.cmp.swf";
+				addInfo.playerName = "remotelyAddedComponent";
+				addInfo.type = ComponentAddInfo.TYPE_COMPONENT;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			private function addFramedLocation():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "http://www.afcomponents.com/components/umap_as3/umap_preview_movie.swf";
+				addInfo.playerName = "asframe";
+				addInfo.type = ComponentAddInfo.TYPE_FRAMED_LOCATION;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			private function addFramedEmbeddedObject():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = " http://www.afcomponents.com/components/umap_as3/umap_preview_movie.swf";
+				//note: use '', because " in embed code
+//				addInfo.metaData = '<object width="480" height="270"><param name="movie" value="http://www.dailymotion.com/swf/video/xbi4z6_cafe-allonge-happy-hour-film-comple_fun"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/xbi4z6_cafe-allonge-happy-hour-film-comple_fun" width="480" height="270" allowfullscreen="true" allowscriptaccess="always"></embed></object>';
+				addInfo.playerName = "asframe";
+				addInfo.type = ComponentAddInfo.TYPE_FRAMED_EMBEDDED_OBJECT;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			private function addFramedHtmlText():void
+			{
+				var addInfo:ComponentAddInfo = new ComponentAddInfo();
+				addInfo.metaData = "http://goole.com";
+				addInfo.playerName = "remotelyCreatedFramedPage";
+				addInfo.type = ComponentAddInfo.TYPE_FRAMED_LOCATION;
+				SilexAdminApi.getInstance().components.addItem(addInfo);
+			}
+			
+			/**
+			 * remove an image from the selected layer
+			 * make sure _recoveredComponents is up to date 
+			 * */
+			private function deleteFirstComponent():void
+			{
+				var comp:Component = _recoveredComponents[0][0] as Component;				
+				SilexAdminApi.getInstance().components.deleteItem(comp.uid);
+				//action.updateCurrentValue(action.currentValue + 1);
+				outText.text = "component deleted";
+			}
+			
+			private function swapComponentDepths():void{
+				var comp1:Component = _recoveredComponents[0][0] as Component;				
+				var comp2:Component = _recoveredComponents[0][1] as Component;				
+				SilexAdminApi.getInstance().components.swapItemDepths(comp1.uid, comp2.uid);
+				
+			}
+			
+			private function toggleComponentVisibility():void{
+				var comp:Component = _recoveredComponents[0][0] as Component;			
+				comp.setVisible(!comp.getVisible());
+			}
+			
+			private function toggleComponentEditable():void{
+				
+				var comp:Component = _recoveredComponents[0][0] as Component;		
+				comp.setEditable(true);//!comp.getEditable());
+			}
+			
+			private function toggleLayerVisibility():void{
+				var layer:Layer = _recoveredLayers[0][0] as Layer;			
+				layer.setVisible(!layer.getVisible());
+			}
+			
+			private function saveLayout():void{
+				var layout:Layout = Layout(_recoveredLayouts[0][0]);
+				layout.save();
+			}
+			 
+			private function addViewMenuItem():void{
+				SilexAdminApi.getInstance().viewMenuItems.addItem("/plugins/toto.swf");
+			} 
+			
+			private function invertComponentsOrder():void{
+				var componentsInFirstLayer:Array = _recoveredComponents[0];
+				var objectIds:Array = new Array();
+				for each(var component:Component in componentsInFirstLayer){
+					objectIds.push(component.uid);
+				}
+				objectIds.sort(Array.DESCENDING);
+				SilexAdminApi.getInstance().components.changeOrder(objectIds);
+			} 
+			
+			private function invertActionsOrder():void{
+				var actionsInFirstComponent:Array = _recoveredActions[0];
+				var objectIds:Array = new Array();
+				for each(var action:Action in actionsInFirstComponent){
+					objectIds.push(action.uid);
+				}
+				objectIds.sort(Array.DESCENDING);
+				SilexAdminApi.getInstance().actions.changeOrder(objectIds);
+			} 
+			
+			private function switchToPopup():void{
+				SilexAdminApi.getInstance().wysiwygModel.setToolBoxDisplayMode(WysiwygModel.TOOLBOX_DISPLAY_MODE_POPUP);
+			}
+			private function switchToDiv():void{
+				SilexAdminApi.getInstance().wysiwygModel.setToolBoxDisplayMode(WysiwygModel.TOOLBOX_DISPLAY_MODE_DIV);
+			}
+			private function hide():void{
+				SilexAdminApi.getInstance().wysiwygModel.setToolBoxVisibility(false);
+				
+			}
+		]]>
+	</fx:Script>
+</s:Application>

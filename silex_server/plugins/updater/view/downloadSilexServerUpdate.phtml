@@ -1,0 +1,53 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"checkRightsSilexServerTree"));?>" ><?php print $this->localisedStrings["ARIANE_UPDATE_SILEX_SRV_LABEL"];?></a>
+</div>
+
+
+<div style="margin-top:17%;">
+	<?php
+	// we display the progress bar if download is beeing performed
+	if($this->originalFileListSize > 0)
+	{
+		$progressLevel = 100 - $this->fileListSize / $this->originalFileListSize * 100;
+		$progressLabel = ($this->originalFileListSize - $this->fileListSize)." / ".$this->originalFileListSize;
+		$this->generateProgressBar( $progressLevel, $progressLabel, $this->localisedStrings["UPDT_SILEX_SRV_DOWNLOADING_MSG"] );
+	}
+	?>
+</div>
+
+<?php
+// We continue downloading if there are still some files to download, else we go to permissions check before updating
+if($this->fileListSize > 0)
+{
+	if(isset($this->signatureMismatch))
+	{
+		?>
+		<br><span class="updater_error"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_SIG_MISMATCH_ERR"], $this->signatureMismatch); ?></span><br>
+		<div class='updater_centeredContent'>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( array( "action" => "downloadSilexServerUpdate" ) , $this->filesInfos ) ); ?>">
+				<?php printf($this->localisedStrings["GENERAL_RETRY_LABEL"]); ?>
+			</button>
+		</div>
+		<?php
+		
+	} else {
+		?>
+		<script type="text/javascript">
+			<?php $this->generateForwarding( array_merge( array( "action" => "downloadSilexServerUpdate" ) , $this->filesInfos ), null, false ); ?>
+		</script>
+		<?php
+	}
+}
+else
+{
+	?>
+	<script type="text/javascript">
+		<?php $this->generateForwarding( array_merge( array( "action" => "checkRightsSilexServerUpdate" ) , $this->filesInfos ), null, "<span class=updater_text>".$this->localisedStrings["UPDT_SILEX_SRV_CHECK_PERM_MSG"]."</span>" ); ?>
+	</script>
+	<?php
+}	
+?>
+<div class='updater_centeredContent updater_marginTop'>
+	<span class="updater_informative"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_RUN_INFO_MSG"]); ?></span>
+</div>

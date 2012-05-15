@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="30" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 creationComplete="onCreationComplete()"
+		 styleName="ArrayEditor">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import flash.events.TextEvent;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.ColorPickerEvent;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.NumericStepperEvent;
+			import mx.events.SliderEvent;
+			import mx.managers.DragManager;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+			import org.silex.adminApi.listModels.Components;
+			
+			public var newValue:Object;
+			
+			
+			private function onCreationComplete():void
+			{
+				
+				
+				newValue = {value:data.value,selected:data.selected, xoffets:data.xoffets, yoffets:data.yoffets, index:data.index};
+				boxData.selectedItem = newValue.value;
+				selectBox.selected = data.selected;
+				xPositionStepper.value=data.xoffets;
+				yPositionStepper.value=data.yoffets;
+				this.addEventListener(FlexEvent.DATA_CHANGE, onDataChange);	
+				
+				
+			}
+			
+			private function onDataChange(event:FlexEvent):void
+			{ 
+				boxData.selectedItem = newValue.value;
+				selectBox.selected = data.selected;
+				xPositionStepper.value = data.xoffets;
+				yPositionStepper.value = data.yoffets;
+				newValue = {value:boxData.selectedItem, selected:selectBox.selected, xoffets:xPositionStepper.value, yoffets:yPositionStepper.value, index:data.index};
+				
+			}
+			
+			
+			/**
+			 * event function when checkbox has changed state
+			 */ 
+			private function onCheckboxChange(event:Event):void
+			{
+				newValue.value = boxData.selectedItem;
+				newValue.selected=selectBox.selected;
+				newValue.xoffets = xPositionStepper.value;
+				newValue.yoffets=yPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+			}
+			
+			/**
+			 * event function when change change x position
+			 */ 
+			private function onXPositionNumericEditEnd(event:Event):void
+			{
+				newValue.value = boxData.selectedItem;
+				newValue.selected=selectBox.selected;
+				newValue.xoffets = xPositionStepper.value;
+				newValue.yoffets=yPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+			}
+			/**
+			 * event function when change change gradient numericstepper position 
+			 */ 
+			private function onYPositionNumericEditEnd(event:NumericStepperEvent):void
+			{
+				newValue.value = boxData.selectedItem;
+				newValue.selected=selectBox.selected;
+				newValue.xoffets = xPositionStepper.value;
+				newValue.yoffets=yPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+				
+				
+			}
+			private function activateDrag(event:MouseEvent):void
+			{
+				if (owner)
+				{
+					if (event.type == MouseEvent.MOUSE_OVER)
+					{	
+						(owner as WysiwygList).dragEnabled = true;
+					}
+						
+					else
+					{
+						(owner as WysiwygList).dragEnabled = false;
+					}
+				}
+			}
+			/**
+			 * event function when change component name at the combbox 
+			 */ 
+			
+			private function onComboxValueEdit(event:Event)
+			{
+				newValue.value = boxData.selectedItem;
+				newValue.selected=selectBox.selected;
+				newValue.xoffets = xPositionStepper.value;
+				newValue.yoffets=yPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue, true));
+			}
+			
+			private function getCombBoxData():Array{
+				
+				var dataProviderArr:Array = org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+					'org.silex.ui.UiBase');
+				return dataProviderArr;			
+			}
+			
+		]]>
+	</fx:Script>
+	<ns:WysiwygCheckBox id="selectBox" change="onCheckboxChange(event)" />
+	<ns:WysiwygButton styleName="dragItem" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_DRAG_ITEM_BUTTON_LABEL')}" 
+					  mouseOver="activateDrag(event)" mouseOut="activateDrag(event)" />
+	<ns:WysiwygComboBox id="boxData" dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+						 'org.silex.ui.UiBase')}"
+						 styleName="large"
+						 editable="true" change="onComboxValueEdit(event)"/>
+	<mx:Form height="100%">
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:FormItem label="xOffeset">
+				<ns:WysiwygNumericStepper id="xPositionStepper" styleName="position" 										    
+										  maximum="500000"
+										  minimum="0" stepSize="1"
+										  change="onXPositionNumericEditEnd(event)"/>
+			</mx:FormItem>
+			<mx:FormItem label="yOffset">
+				<ns:WysiwygNumericStepper id="yPositionStepper" styleName="position" 
+										  maximum="500000"
+										  minimum="0" stepSize="1" 
+										  change="onYPositionNumericEditEnd(event)"
+										  />
+			</mx:FormItem>	
+		</mx:HBox>
+	</mx:Form>	
+</mx:HBox>

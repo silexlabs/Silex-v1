@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 styleName="ArrayEditor">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.PluginEvent;
+			private function onAddClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.ADD_ITEM, data, true));
+			}
+			
+			private function onRemoveClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.REMOVE_ITEM, data, true));
+			}
+			
+			
+			
+			private function onCopyClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.COPY_ITEM, data, true));
+			}
+			
+			private function onOKClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.VALIDATE_ITEM, data, true));
+			}
+			
+			private function onKOClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.CANCEL_ITEM, null, true));
+			}
+			
+			public function deactivate():void
+			{
+				validateButton.enabled = true;
+				addButton.enabled = true;
+				removeButton.enabled = false;
+				copyButton.enabled = false;
+			}
+			
+			public function activate():void
+			{
+				validateButton.enabled = true;
+				addButton.enabled = true;
+				removeButton.enabled = true;
+				copyButton.enabled = true;
+			}
+		]]>
+	</fx:Script>
+	
+	<ns:WysiwygButton id="validateButton" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_VALIDATE_ITEM_BUTTON_LABEL')}" 
+					  label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_CONFIRM_BUTTON_LABEL')}" 
+					  click="onOKClick(event)" />
+	<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CANCEL_BUTTON_LABEL')}" 
+					  click="onKOClick(event)" />
+	<ns:WysiwygButton id="addButton" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_ADD_ITEM_BUTTON_LABEL')}" styleName="addItem"   click="onAddClick(event)" />
+	<ns:WysiwygButton id="removeButton"  toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_REMOVE_ITEM_BUTTON_LABEL')}" styleName="removeItem"    click="onRemoveClick(event)" />
+	<ns:WysiwygButton id="copyButton" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_COPY_ITEM_BUTTON_LABEL')}" styleName="copyItem"  click="onCopyClick(event)" />
+		
+</mx:HBox>

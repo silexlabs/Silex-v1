@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns:StdUIHeader xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" 
+				xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*" 
+				title="{resourceManager.getString('WYSIWYG', 'ADD_COMPONENT_LIBRARY_TOOLBOX_TITLE')}"
+				width="400" height="300" xmlns:ui="org.silex.wysiwyg.ui.*" 
+				xmlns:addComponentsLibrary="org.silex.wysiwyg.toolboxes.addComponentsLibrary.*">
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.ToolsEvent;
+			
+			/**
+			 * the array of extension available to display
+			 */ 
+			private var _libraryFilters:Array;
+			
+			/**
+			 * an array storing the buttons diplayed in the toolbox header
+			 */ 
+			private var _filterButtons:Array;
+			
+			/**
+			 * when the library filters are updated add the correct filter buttons
+			 * to the header of the toolbox
+			 * 
+			 * @param value the array of extensions to filter
+			 */ 
+			public function set libraryFilters(value:Array):void
+			{
+				filterContainer.removeAllChildren();
+				
+				_filterButtons = new Array();
+				
+				for (var i:int = 0; i<value.length; i++)
+				{
+					var newButton:FilterButton = new FilterButton();
+					newButton.toggle = true;
+					newButton.extension = value[i];
+					newButton.isSelected = true;
+					newButton.addEventListener(MouseEvent.CLICK, onFilterButtonClick);
+					filterContainer.addChild(newButton);
+					_filterButtons.push(newButton);
+				}
+				
+				_libraryFilters = value;
+				
+			}
+			
+			
+			/**
+			 * refresh the library when a filter is selected
+			 * 
+			 * @param event the triggerred MouseEvent
+			 */ 
+			private function onFilterButtonClick(event:MouseEvent):void
+			{
+				onFilterChange();
+			}
+			
+			/**
+			 * When the one of the filter is toggled, search for all 
+			 * the selected filters and send the array to the ToolUI via
+			 * an event
+			 */ 
+			private function onFilterChange():void
+			{
+				var filterArray:Array = new Array();
+				
+				for (var i:int = 0; i<_filterButtons.length; i++)
+				{
+					if ((_filterButtons[i] as FilterButton).isSelected == true)
+					{
+						filterArray.push((_filterButtons[i] as FilterButton).extension);
+					}
+				}
+				if (filterArray.length == 0)
+				{
+					filterArray = _libraryFilters;
+				}
+				
+				dispatchEvent(new ToolsEvent(ToolsEvent.LIST_CHANGE, filterArray));
+			}
+			
+			/**
+			 * When the "All" button is clicked, deselect all filter buttons then refreshthe library
+			 */ 
+			private function onAllButtonClick(event:MouseEvent):void
+			{
+				for (var i:int =0; i<_filterButtons.length; i++)
+				{
+					(_filterButtons[i] as FilterButton).isSelected = true;
+				}
+				onFilterChange();
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<addComponentsLibrary:FilterButton id="allButton" toggle="false" extension="all" click="onAllButtonClick(event)" />
+	<mx:HBox id="filterContainer" />
+	<mx:HBox width="100%" horizontalAlign="right">
+		<ui:WysiwygTextInput id="urlInput" width="100%" />
+		<ui:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_CONFIRM_BUTTON_LABEL')}"
+					  click="{dispatchEvent(new ToolsEvent(ToolsEvent.CHOOSE_MEDIA, urlInput.text))} " />
+	</mx:HBox>
+		
+</ns:StdUIHeader>

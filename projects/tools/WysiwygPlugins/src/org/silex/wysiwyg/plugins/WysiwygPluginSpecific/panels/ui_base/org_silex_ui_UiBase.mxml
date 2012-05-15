@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+			   xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(coordBar, mediaBar, pageInfoBar);
+			}
+		]]>
+	</fx:Script>
+	
+	<components:PanelUiCoordBarNoScale id="coordBar"  />
+	<components:PanelUiMedia id="mediaBar" />
+	<components:PanelUiPageInfo id="pageInfoBar" />
+
+	
+</panel:PanelBase>

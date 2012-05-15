@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_VISUAL_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>		
+				<mx:FormItem label="{propertyArray.blurBlurX.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="blurBlurXStepper" styleName="dimension" 
+											   value="{propertyArray.blurBlurX.currentValue}" 
+											   maximum="{propertyArray.blurBlurX.maxValue}"
+											   minimum="{propertyArray.blurBlurX.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'blurBlurX')"/>
+				</mx:FormItem>
+			</mx:Form>	
+		</mx:HBox>
+			
+		<mx:VRule height="100%" />
+	
+			
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.blurBlurY.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="blurBlurYStepper" styleName="dimension" 
+											   value="{propertyArray.blurBlurY.currentValue}" 
+											   maximum="{propertyArray.blurBlurY.maxValue}"
+											   minimum="{propertyArray.blurBlurY.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'blurBlurY')"/>
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+			
+				
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form>	
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.blurQuality.description}" >
+					<ns1:WysiwygNumericStepper id="blurQualityStepper" styleName="position" 
+											   value="{propertyArray.blurQuality.currentValue}" 
+											   maximum="{propertyArray.blurQuality.maxValue}" minimum="{propertyArray.blurQuality.minValue}" stepSize="1"
+											   change="updatePropertyValue(event.currentTarget.value, 'blurQuality')"/>
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>	
+		
+	</mx:HBox>
+	
+	<mx:HRule width="100%" />
+	
+</panelUis:PanelUiBase>

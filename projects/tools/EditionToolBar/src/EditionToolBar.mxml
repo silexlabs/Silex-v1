@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   preinitialize="onPreInitialize()"
+			   xmlns:ui="org.silex.wysiwyg.ui.toolItemUI.*"
+			   verticalScrollPolicy="off">
+
+	<fx:Script>
+		<![CDATA[
+			import mx.core.FlexGlobals;
+			import mx.events.StyleEvent;
+			import org.silex.adminApi.SilexAdminApi;
+			
+			private function onInit():void{ 
+				this.addEventListener(KeyboardEvent.KEY_DOWN, SilexAdminApi.getInstance().shortcut.onKeyDown);
+			}
+			
+			private function onPreInitialize():void
+			{
+				var loader:IEventDispatcher = styleManager.loadStyleDeclarations(FlexGlobals.topLevelApplication.parameters.baseUrlWysiwygStyle);
+				loader.addEventListener(StyleEvent.COMPLETE, onStyleLoaded);
+				loader.addEventListener(StyleEvent.ERROR, onStyleLoaded);
+			}
+			
+			private function onStyleLoaded(event:StyleEvent):void
+			{
+				event.target.removeEventListener(StyleEvent.COMPLETE, onStyleLoaded);
+				event.target.removeEventListener(StyleEvent.ERROR, onStyleLoaded);
+				createComponentsFromDescriptors();
+				onInit();
+			}
+		]]>
+	</fx:Script> 
+	<ui:VToolItemView id="VToolItemView" toolUid="silex.EditionToolBar.Tool"
+		  backgroundColor="0xD6D6D6"
+		  iconHeight="27" iconWidth="35"  />
+
+
+</mx:Application>

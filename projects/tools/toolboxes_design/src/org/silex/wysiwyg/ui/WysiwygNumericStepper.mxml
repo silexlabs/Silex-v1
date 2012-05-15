@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\StandardAlertUIHeader.mxml -->
+<!---
+A numericStepper used in the application and sub-applications. It's height  and width can be set by css.
+
+@author Yannick
+-->
+<mx:NumericStepper xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx"
+				   width="{getStyle('width')}" height="{getStyle('height')}"
+				   maxChars="{getStyle('maxChars')}" stepSize="0.1"
+				   creationComplete="onCreationComplete()" buttonMode="true"
+				   >
+	<fx:Metadata>
+		[Event(name="editEnd", type="flash.events.Event")]
+	</fx:Metadata>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.core.mx_internal;
+			import mx.events.FlexEvent;
+			
+			public static const EDIT_END:String = "editEnd";
+			
+			private function onCreationComplete():void
+			{
+				this.mx_internal::nextButton.addEventListener(MouseEvent.MOUSE_UP, onMouseEditEnd);
+				this.mx_internal::prevButton.addEventListener(MouseEvent.MOUSE_UP, onMouseEditEnd);
+				this.mx_internal::inputField.addEventListener(FocusEvent.FOCUS_OUT, onEditEnd);
+				this.mx_internal::inputField.addEventListener(FlexEvent.ENTER, onInputKeyDown);
+			}
+			
+			
+			private function onMouseEditEnd(event:MouseEvent):void
+			{
+				sendEditEnd();
+			}
+			
+			private function onEditEnd(event:Event):void
+			{
+				sendEditEnd();
+				
+			}
+			
+			private function sendEditEnd():void
+			{
+				dispatchEvent(new Event(WysiwygNumericStepper.EDIT_END));
+			}
+			
+			private function onInputKeyDown(event:FlexEvent):void
+			{
+				sendEditEnd();
+			}
+			
+			/**
+			 * Used to check if a stepsize, being dynamic,  is not null before using it
+			 */ 
+			override public function set stepSize(value:Number):void
+			{
+				if (isNaN(value))
+				{
+					super.stepSize = this.stepSize;
+				}
+				else
+				{
+					super.stepSize = value;
+				}
+			}
+		]]>
+	</fx:Script>
+	
+	
+	
+</mx:NumericStepper>

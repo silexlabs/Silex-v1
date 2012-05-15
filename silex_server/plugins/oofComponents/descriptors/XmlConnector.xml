@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>XmlConnector</componentName>
+	<as2Url>as2/XmlConnector.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.dataConnectors.XmlConnector</className>
+	<specificEditorUrl>editors/XmlConnector.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.Base</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<isVisual>false</isVisual>
+		<addComponentParams>
+			<name>XmlConnector</name>
+			<uid>silex.AddComponent.ToolItem.AddXmlCoonector</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.ExternalData</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_XML_CONNECTOR</label>
+			<description>DESCRIPTION_ADD_BUTTON_XML_CONNECTOR</description>
+			<level>2</level>
+			<action>addComponent</action>
+			<iconUrl>icons/oof_external_datas.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>	
+		<urlBase>
+			<type>String</type>
+			<subType>Text</subType>
+			<description>PROPERTIES_LABEL_URL_BASE</description>
+			<defaultValue><![CDATA[<<silex.rootUrl>>cgi/scripts/proxy.php?url=]]></defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</urlBase>
+		<xmlRootNodePath>
+			<type>String</type>
+			<subType>Text</subType>
+			<description>PROPERTIES_LABEL_XML_ROOT_NODE_PATH</description>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</xmlRootNodePath>
+	</properties>
+</componentDescriptor>

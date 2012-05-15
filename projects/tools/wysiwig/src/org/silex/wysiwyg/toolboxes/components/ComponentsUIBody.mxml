@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIBody.mxml -->
+<!---
+The ComponentsUI's body. Contains the list of components
+
+@author Yannick
+-->
+<ns:StdUIBody xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:s="library://ns.adobe.com/flex/spark" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" 
+			  xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*"
+			  xmlns:ns2="org.silex.wysiwyg.ui.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			
+			/**
+			 * a reference to the currently dragged list items
+			 */ 
+			private var _currentDraggedItem:Array;
+			
+			
+			
+			/**
+			 * search for the components whose name changed and set it's new name
+			 * 
+			 * @param arguments the object containing the old and new name
+			 */  
+			public function refreshComponentsName(arguments:Object):void
+			{
+				
+				var componentLength:int = (componentList.dataProvider as ArrayCollection).source.length;
+				
+				for (var i:int = 0; i<componentLength; i++)
+				{
+					if (((componentList.dataProvider as ArrayCollection).getItemAt(i) as Component).uid == arguments.uid)
+					{
+						((componentList.dataProvider as ArrayCollection).getItemAt(i) as Component).name = arguments.newName;
+					}
+				}
+				componentList.invalidateList();
+			}
+			
+			/**
+			 * Sets the selected item on the list or unselect all the items if the
+			 * selected items object is null
+			 * 
+			 * @param value the selected items object
+			 */ 
+			override public function selectListItem(value:Object):void
+			{
+				if (value != null)
+				{
+					componentList.selectedItems = value as Array;
+					currentSelection = value;
+				}
+				else
+				{
+					componentList.selectedItems = [];
+					currentSelection = null;
+				}
+			}
+			
+			
+			/**
+			 * Dispatches a list change event for the ComponentsUI with the
+			 * uid of the selected components in the list
+			 * 
+			 * @param event the triggered Event
+			 */ 
+			private function onListChange(event:ListEvent):void
+			{
+				
+				var selectedUids:Array = new Array();
+				
+				//check for editable components among the list
+				for (var i:int = 0; i<componentList.selectedItems.length; i++)
+				{
+					if ((componentList.selectedItems[i] as Component).getEditable() == true)
+					{
+						selectedUids.push((componentList.selectedItems[i] as Component).uid);
+					}
+				}
+				
+				//if at least one editable component is selected, 
+				//send an event to actually select it
+				//on SilexAdminApi
+				if (selectedUids.length > 0)
+				{
+					dispatchEvent(new ToolsEvent(ToolsEvent.LIST_CHANGE, selectedUids));
+				}
+					
+			}
+			
+			/**
+			 * When an item is rolled over, send an event with the uid 
+			 * of the rolled over item
+			 */ 
+			private function onListItemRollOver(event:ListEvent):void
+			{
+				dispatchEvent(new ToolsEvent(ToolsEvent.COMPONENT_LIST_ROLL_OVER, [event.itemRenderer.data.uid]));
+			}
+			
+			/**
+			 * When an item is rolled out, send an event without data that will
+			 * hide the hovered component asset on the scene
+			 */ 
+			private function onListItemRollOut():void
+			{
+				dispatchEvent(new ToolsEvent(ToolsEvent.COMPONENT_LIST_ROLL_OVER, null));
+			}
+			
+			/**
+			 * when one or many list item have been dragged, stores their data
+			 * and dispatch a CHANGE_ORDER event with the stored data
+			 * 
+			 * @param event the trigerred DragEvent
+			 */ 
+			private function onDragComplete(event:DragEvent):void
+			{
+				var objectData:Object = new Object();
+				objectData.uidArray = data;
+				objectData.currentSelectedItemUid = _currentDraggedItem;
+				
+				dispatchEvent(new ToolsEvent(ToolsEvent.CHANGE_ORDER, objectData));
+			}
+			
+			/**
+			 * Sets the currently dragged item when the drag starts
+			 * 
+			 * @param event the trigerred DragEvent
+			 */ 
+			private function onDragStart(event:DragEvent):void
+			{
+				var flagLocked:Boolean = false;
+				
+				var selectedItems:Array = event.target.selectedItems as Array
+				
+				//check if the component(s) are locked and cancel
+				//the drag if they are
+				for (var i:int=0; i<selectedItems.length; i++)
+				{
+					if (! (selectedItems[i] as Component).getEditable())
+					{
+						flagLocked = true;
+						event.preventDefault();
+					}
+				}
+				
+				if (! flagLocked)
+				{
+					_currentDraggedItem = event.target.selectedItems;
+				}
+			}
+			
+		
+		]]>
+	</fx:Script>
+
+	<!---
+		a canvas used as a container for the list and for the VRule delimiting the List itemRenderer
+		zones (show/hide button, lock/unlock button and component's label)
+	-->
+	<mx:Canvas width="100%" height="100%">
+		
+		<!---
+			The ComponentsToolBox list, displays the components info. The user can select one or many item(s)
+			and switch the item order by Drag'n'Drop
+		-->
+		<ns2:WysiwygList id="componentList" dataProvider="{data}" allowMultipleSelection="true"
+				 height="100%" width="100%"
+				 itemRenderer="org.silex.wysiwyg.toolboxes.components.ComponentsToolItemRenderer"
+				 styleName="components"
+				 change="onListChange(event)"
+				 dragEnabled="true"
+				 itemRollOver="onListItemRollOver(event)"
+				 itemRollOut="onListItemRollOut()"
+				 dropEnabled="true"
+				 dragMoveEnabled="true"
+				 dragComplete="onDragComplete(event)"
+				 dragStart="onDragStart(event)"/>
+		
+		<mx:VRule x="22" height="100%" />
+		<mx:VRule x="46" height="100%" />
+		
+	</mx:Canvas>
+	
+</ns:StdUIBody>

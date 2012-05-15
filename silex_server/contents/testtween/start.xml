@@ -1,0 +1,1247 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="16" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">406.1</y>
+						<x type="Float">165.7</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>Round</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">13421772</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">25</BLcornerRadius>
+						<BRcornerRadius type="Integer">25</BRcornerRadius>
+						<TRcornerRadius type="Integer">25</TRcornerRadius>
+						<TLcornerRadius type="Integer">25</TLcornerRadius>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_x</parameter>
+								<parameter>500</parameter>
+								<parameter>2</parameter>
+								<parameter>easeInSine</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_x</parameter>
+								<parameter>20</parameter>
+								<parameter>2</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_y</parameter>
+								<parameter>500</parameter>
+								<parameter>2</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_y</parameter>
+								<parameter>20</parameter>
+								<parameter>2</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">406.1</y>
+						<x type="Float">277.45</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>Bounce</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">16750848</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">25</BLcornerRadius>
+						<BRcornerRadius type="Integer">25</BRcornerRadius>
+						<TRcornerRadius type="Integer">25</TRcornerRadius>
+						<TLcornerRadius type="Integer">25</TLcornerRadius>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle3</parameter>
+								<parameter>_x</parameter>
+								<parameter>0</parameter>
+								<parameter>4</parameter>
+								<parameter>easeOutSine</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle3</parameter>
+								<parameter>_y</parameter>
+								<parameter>500</parameter>
+								<parameter>4</parameter>
+								<parameter>easeOutBounce</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>Circle3._x=700</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>Circle3._y=20</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">406.1</y>
+						<x type="Float">610.75</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>StartVideo2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">6684774</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">25</BLcornerRadius>
+						<BRcornerRadius type="Integer">25</BRcornerRadius>
+						<TRcornerRadius type="Integer">25</TRcornerRadius>
+						<TLcornerRadius type="Integer">25</TLcornerRadius>
+					</properties>
+					<actions>
+						<action>
+							<functionName>michelinuscommercial.PLAY</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>michelinuscommercial</parameter>
+								<parameter>_rotation</parameter>
+								<parameter>1080</parameter>
+								<parameter>4</parameter>
+								<parameter>linear</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>michelinuscommercial</parameter>
+								<parameter>_x</parameter>
+								<parameter>500</parameter>
+								<parameter>4</parameter>
+								<parameter>easeInQuad</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>michelinuscommercial</parameter>
+								<parameter>_y</parameter>
+								<parameter>550</parameter>
+								<parameter>4</parameter>
+								<parameter>easeOutQuad</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">406.1</y>
+						<x type="Float">500.05</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>StartVideo</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">16711731</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">25</BLcornerRadius>
+						<BRcornerRadius type="Integer">25</BRcornerRadius>
+						<TRcornerRadius type="Integer">25</TRcornerRadius>
+						<TLcornerRadius type="Integer">25</TLcornerRadius>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>//onRelease</modifier>
+							<parameters>
+								<parameter>michelinuscommercial</parameter>
+								<parameter>_rotation</parameter>
+								<parameter>3000</parameter>
+								<parameter>5</parameter>
+								<parameter>easeInQuart</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial._width=0</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>michelinuscommercial</parameter>
+								<parameter>_width</parameter>
+								<parameter>400</parameter>
+								<parameter>2</parameter>
+								<parameter>easeOutElastic</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial.PLAY</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">406.1</y>
+						<x type="Float">390.15</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>ResetVideo</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">26367</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">25</BLcornerRadius>
+						<BRcornerRadius type="Integer">25</BRcornerRadius>
+						<TRcornerRadius type="Integer">25</TRcornerRadius>
+						<TLcornerRadius type="Integer">25</TLcornerRadius>
+					</properties>
+					<actions>
+						<action>
+							<functionName>michelinuscommercial._rotation=0</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial._scale=100</functionName>
+							<modifier>//onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial._x=120</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial._y=50</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial._width=0</functionName>
+							<modifier>//onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>michelinuscommercial.STOP</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">20</y>
+						<x type="Integer">20</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>logosilex</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/logosilex.jpg</url>
+						<scaleMode>none</scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_x</parameter>
+								<parameter>500</parameter>
+								<parameter>2</parameter>
+								<parameter>easeInSine</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_x</parameter>
+								<parameter>20</parameter>
+								<parameter>2</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_y</parameter>
+								<parameter>500</parameter>
+								<parameter>2</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters>
+								<parameter>logosilex</parameter>
+								<parameter>_y</parameter>
+								<parameter>20</parameter>
+								<parameter>2</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Circle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">20</y>
+						<x type="Integer">700</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">70</height>
+						<width type="Integer">70</width>
+						<playerName>Circle3</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">16750899</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+						<shape>Ellipse</shape>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle3</parameter>
+								<parameter>_x</parameter>
+								<parameter>0</parameter>
+								<parameter>4</parameter>
+								<parameter>easeOutSine</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle3</parameter>
+								<parameter>_y</parameter>
+								<parameter>500</parameter>
+								<parameter>4</parameter>
+								<parameter>easeOutBounce</parameter>
+								<parameter>onAnimEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>Circle3._x=700</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>Circle3._y=20</functionName>
+							<modifier>onAnimEnd</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Video.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Video</html5Url>
+					<className>org.silex.ui.players.Video</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">50</y>
+						<x type="Integer">120</x>
+						<alpha type="Integer">400</alpha>
+						<height type="Integer">300</height>
+						<width type="Integer">400</width>
+						<playerName>michelinuscommercial</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<volume type="Integer">50</volume>
+						<mute type="Boolean">false</mute>
+						<bufferSize type="Integer">6</bufferSize>
+						<showNavigation type="Boolean">false</showNavigation>
+						<loop type="Boolean">false</loop>
+						<autoSize type="Boolean">false</autoSize>
+						<autoPlay type="Boolean">false</autoPlay>
+						<url>media/test/smallvideo.flv</url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">507.65</y>
+						<x type="Float">610.7</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">24.15</height>
+						<width type="Integer">100</width>
+						<playerName>StartVideoText2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">0</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<scrollbar type="Boolean">true</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Video Rotation&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">507.65</y>
+						<x type="Float">390.15</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">24.15</height>
+						<width type="Integer">100</width>
+						<playerName>ResetVideoText</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">0</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<scrollbar type="Boolean">true</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Reset Video&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">507.65</y>
+						<x type="Integer">495</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">28.98</height>
+						<width type="Integer">120</width>
+						<playerName>VideoReboundText</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<restrict> </restrict>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">0</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<cssUrl> </cssUrl>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Video Rebound&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">507.65</y>
+						<x type="Float">278.85</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">24.15</height>
+						<width type="Integer">100</width>
+						<playerName>BounceText</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<restrict> </restrict>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">0</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">false</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<cssUrl> </cssUrl>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Bounce&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">507.65</y>
+						<x type="Float">167.15</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">24.15</height>
+						<width type="Integer">100</width>
+						<playerName>RoundText</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<restrict> </restrict>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">0</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">false</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<cssUrl> </cssUrl>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Round&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Circle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">150.85</y>
+						<x type="Float">40.15</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">20</height>
+						<width type="Integer">20</width>
+						<playerName>Ellipse2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">0</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+						<shape>Ellipse</shape>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>0</parameter>
+								<parameter>0.1</parameter>
+								<parameter>easeOutExpo</parameter>
+								<parameter>onAnimationEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Ellipse</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>0</parameter>
+								<parameter>0.1</parameter>
+								<parameter>easeOutExpo</parameter>
+								<parameter>onAnimationEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Ellipse2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>0</parameter>
+								<parameter>0.1</parameter>
+								<parameter>easeOutExpo</parameter>
+								<parameter>onAnimationEnd</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimationEnd</modifier>
+							<parameters>
+								<parameter>Circle2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimationEnd</modifier>
+							<parameters>
+								<parameter>Ellipse</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onAnimationEnd</modifier>
+							<parameters>
+								<parameter>Ellipse2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Circle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">135.7</y>
+						<x type="Float">25.85</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">50</height>
+						<width type="Integer">50</width>
+						<playerName>Ellipse</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">255</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+						<shape>Ellipse</shape>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Circle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">135.65</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">50</height>
+						<width type="Integer">100</width>
+						<playerName>Circle2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">15658734</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+						<shape>Ellipse</shape>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Circle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">110</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>Circle</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">13382604</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">13369548</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+						<shape>Ellipse</shape>
+					</properties>
+					<actions>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Circle2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Ellipse</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>_global.silexTween.startTween</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>Ellipse2</parameter>
+								<parameter>_alpha</parameter>
+								<parameter>100</parameter>
+								<parameter>1</parameter>
+								<parameter>easeInSine</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

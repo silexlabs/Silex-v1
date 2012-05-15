@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:dataContainerViewer="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.DataContainerViewer.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(datacontainerViewMedia,visualParameter,dataContainerBase, objToWatchPath);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="datacontainerViewMedia" />	
+	<oof:PanelUiVisual id="visualParameter" />
+	<oof:PanelUiBaseParameter id="dataContainerBase" />
+	<dataContainerViewer:PanelUiobjToWatchPath id="objToWatchPath" />
+	
+</panel:PanelBase>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	
+	
+	<fx:Script>
+		<![CDATA[
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+		]]>
+	</fx:Script>
+	
+
+	<mx:Form width="100%" height="100%" >
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>
+	</mx:Form>	
+
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:Form width="100%" height="100%" >					
+				<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.playerName.description}" >
+					<ns1:WysiwygTextInput text="{propertyArray.playerName.currentValue}" restrict="[a-zA-Z0-9]_éàèâî"
+										  change="{updatePropertyValue(event.currentTarget.text, 'playerName')}"/>
+				</mx:FormItem>					
+			</mx:Form>	
+		</mx:HBox>
+		
+		
+	<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.deezerPlaylistId.description}" >
+				<ns1:WysiwygTextInput text="{propertyArray.deezerPlaylistId.currentValue}"
+									  change="{updatePropertyValue(event.currentTarget.text, 'deezerPlaylistId')}"/>
+			</mx:FormItem>	
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:FormItem label="{propertyArray.autoDeezerPlay.description}" width="100%" height="100%" >
+				<ns1:WysiwygCheckBox
+					selected="{propertyArray.autoDeezerPlay.currentValue}"
+					change="updatePropertyValue(event.currentTarget.selected, 'autoDeezerPlay')" 
+					/>
+			</mx:FormItem>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.langUser.description}" >
+				<ns1:WysiwygComboBox styleName="pageProperties" 
+									 dataProvider="{generateArray(propertyArray.langUser.values)}" 
+									 selectedItem="{propertyArray.langUser.currentValue}" width="100%"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'langUser')"
+									 editable="true"/>
+			</mx:FormItem>
+		</mx:HBox>
+		
+	</mx:HBox>
+	
+	<mx:HRule width="100%" />
+		
+</panelUis:PanelUiBase>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panels:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+							creationComplete="onCreationComplete()"
+							xmlns:propertyEditors="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*"
+							xmlns:ns1="org.silex.wysiwyg.ui.*" 
+							xmlns:component="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.ultralign.*" 
+							xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*" >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:Boolean id="isListItemSelected" />
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.operations.CopyOperation;
+			
+			import mx.collections.ArrayCollection;
+			import mx.core.ContainerCreationPolicy;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listModels.Components;
+			
+			
+			/**
+			 * the array containing the new data
+			 */ 
+			[Bindable]
+			private var _ultralignData:ArrayCollection;
+			
+			/**
+			 * when add a new gradient alpha
+			 */		
+			static const DEFAULT_XOFFSET:int= 100;
+			/**
+			 * when add a new gradient position
+			 */			
+			static const DEFAULT_YOFFSET:int=0;
+			/**
+			 * height value for itemRender of list
+			 */
+			static const DEFAULT_GRADIENT_LIST_ITEM_HEIGHT:int = 35;
+			
+			static var listComponent:Array = org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+				'org.silex.ui.UiBase');
+			
+			/**
+			 * add listener to the array control bar and to the array list
+			 */ 
+			private function onCreationComplete():void
+			{	
+				ultralignControlBar.addEventListener(PluginEvent.ADD_ITEM, onAddItem);
+				ultralignEditorConfirmationBar.addEventListener(PluginEvent.VALIDATE_ITEM, onValidateItem);
+				ultralignEditorConfirmationBar.addEventListener(PluginEvent.CANCEL_ITEM, onCancelItem);
+				ultralignControlBar.addEventListener(PluginEvent.REMOVE_ITEM, onDeleteItem);
+				ultralignControlBar.addEventListener(PluginEvent.COPY_ITEM, onCopyItem);
+				
+				ultrailgnList.addEventListener(PluginEvent.DATA_CHANGED, onDataChanged);
+				
+				ultralignConfirmBar.addEventListener(PluginEvent.VALIDATE_ITEM, onCopyValidateItem);
+				ultralignConfirmBar.addEventListener(PluginEvent.CANCEL_ITEM, onCopyCancelItem);
+				
+			}
+			
+			override protected function refreshProperty():void
+			{
+				super.refreshProperty();
+				setProperty();
+			}
+			
+			/**
+			 * when the property is set, wrap the property data in an array collection
+			 * used by the list, then check the list state
+			 * 
+			 * @param propertyArray the array sent by the main application
+			 */ 
+			public function setProperty():void
+			{			
+				
+				currentState = "default";
+				var tempArray:Array = new Array();
+				
+				if(_propertyArray.alignedComponents.currentValue != null && _propertyArray.xOffsets.currentValue != null && _propertyArray.yOffsets.currentValue!= null)
+				{
+					
+					var tempNameArray:Array = _propertyArray.alignedComponents.currentValue;		
+					var tempXoffsetArray:Array = _propertyArray.xOffsets.currentValue;		
+					var tempYoffsetArray:Array = _propertyArray.yOffsets.currentValue;
+					
+					for (var i:int=0; i<(tempNameArray as Array).length; i++)
+					{				
+						tempArray.push({value:tempNameArray[i], selected:false, xoffets:tempXoffsetArray[i], yoffets:tempYoffsetArray[i], index:i});				
+					}
+				}else
+				{
+					tempArray.push({value:listComponent[1], selected:false, xoffets:DEFAULT_XOFFSET, yOffsets:DEFAULT_YOFFSET,index:0});
+				}
+				
+				
+				_ultralignData = new ArrayCollection(tempArray);
+				checkList();
+			}
+			
+			
+			/**
+			 * when a change of data occurs, sends the new value to the main application
+			 */ 
+			private function onPropertyChange():void
+			{
+				var retNameArray:Array = new Array();
+				var retXoffsetArray:Array = new Array();
+				var retYoffsetArray:Array = new Array();
+				
+				for (var i:int = 0; i<_ultralignData.length; i++)
+				{
+					retNameArray.push(_ultralignData.getItemAt(i).value);
+					retXoffsetArray.push(_ultralignData.getItemAt(i).xoffets);
+					retYoffsetArray.push(_ultralignData.getItemAt(i).yoffets);
+				}
+				
+				updatePropertyValue(retNameArray,"alignedComponents");
+				updatePropertyValue(retXoffsetArray,"xOffsets");		
+				updatePropertyValue(retYoffsetArray,"yOffsets");
+				
+			}
+			
+			/**
+			 * method called when the user clicks the 'ok' button
+			 * 
+			 * @param event the triggerred plugin event
+			 */ 
+			private function onValidateItem(event:PluginEvent):void
+			{
+				onPropertyChange();
+				closeEditor();
+			}
+			/**
+			 * method called when the user clicks the 'cancel' button
+			 * 
+			 * @param event the triggerred plugin event
+			 */ 			
+			private function onCancelItem(event:PluginEvent):void
+			{	
+				closeEditor();
+			}
+			
+			
+			/**
+			 * add an item with a random value when the user clicks on the add button
+			 * 
+			 * @param event the trigerred plugin event
+			 */ 
+			private function onAddItem(event:PluginEvent):void
+			{
+				_ultralignData.addItem({value:listComponent[1], selected:false, xoffets:DEFAULT_XOFFSET, yOffsets:DEFAULT_YOFFSET, index:_ultralignData.length});
+				
+				refreshIndexes();
+				checkList();
+			}
+			/**
+			 * Called when the user uses drag'n'drop to re-order the list
+			 * 
+			 * @param event the trigerred dragEvent
+			 */ 
+			private function onDragComplete(event:DragEvent):void
+			{
+				refreshIndexes();
+			}
+			
+			/**
+			 * when add or delete the table to refresh index
+			 * 
+			 */
+			
+			private function refreshIndexes():void
+			{
+				for (var i:int =0; i<_ultralignData.length; i++)
+				{
+					var data:Object = _ultralignData.getItemAt(i);
+					data.index = i;
+					_ultralignData.setItemAt(data, i);
+				}
+			}
+			
+			/**
+			 * listene to if the listitemRender change data
+			 * 
+			 * @param event the trigerred plugin event
+			 */ 			
+			private function onDataChanged(event:PluginEvent):void
+			{
+				_ultralignData.setItemAt(event.data ,event.data.index);
+				checkList();
+				
+			}
+			
+			/**
+			 * When the user clicks the copy button, changes the current state
+			 * to display a text area allowing the user to copy or paste the data
+			 * 
+			 * @param event the triggered PluginEvent
+			 */ 
+			private function onCopyItem(event:PluginEvent):void
+			{
+				currentState = "copy";
+				
+				copyTextArea.text = "";
+				
+				for (var i:int =_ultralignData.length - 1; i>=0; i--)
+				{
+					if (_ultralignData.getItemAt(i).selected == true)
+					{
+						copyTextArea.text +=_ultralignData.getItemAt(i).value+"\,"+_ultralignData.getItemAt(i).xoffets+"\,"+_ultralignData.getItemAt(i).yoffets+"\r";
+						
+					}
+				}
+			}
+			
+			/**
+			 * When the user clicks the delete button, delete all the selected items
+			 * 
+			 * @param event the trigerred PluginEvent
+			 */ 
+			private function onDeleteItem(event:PluginEvent):void
+			{
+				for (var i:int =_ultralignData.length - 1; i>=0; i--)
+				{
+					if (_ultralignData.getItemAt(i).selected == true)
+					{
+						_ultralignData.removeItemAt(i);
+						
+					}
+				}
+				
+				refreshIndexes();
+				checkList();
+			}
+			
+			
+			/**
+			 * checks the length of the list and activate
+			 * buttons accordingly. Also checks if items are selected to
+			 * activate the delete button
+			 */ 
+			private function checkList():void
+			{
+				if ( _ultralignData.length == 0)
+				{
+					ultralignControlBar.deactivate();
+				}
+					
+				else
+				{
+					ultralignControlBar.activate();
+				}
+				
+				var flagSelected:Boolean = false;
+				
+				ultrailgnList.height = DEFAULT_GRADIENT_LIST_ITEM_HEIGHT*_ultralignData.length;
+				
+				for (var i:int =0 ; i< _ultralignData.length; i++)
+				{
+					if (_ultralignData.getItemAt(i).selected == true)
+					{
+						flagSelected = true;
+					}
+				}
+				
+				if (flagSelected)
+				{
+					ultralignControlBar.removeButton.enabled = true;
+				}
+				else
+				{
+					ultralignControlBar.removeButton.enabled = false;
+				}
+			}
+			
+			private function onListDataChange(event:FlexEvent):void
+			{
+				refreshIndexes();
+				checkList();
+			}
+			
+			
+			private function onCopyCancelItem(event:PluginEvent):void
+			{
+				currentState = "default";
+			}
+			
+			private function onCopyValidateItem(event:PluginEvent):void
+			{
+				var tempCopyArray:Array = copyTextArea.text.split("\r");
+				
+				for (var i:int = 0; i<tempCopyArray.length; i++)
+				{
+					if(tempCopyArray[i] != "")
+					{
+						var tempSubArry:Array = tempCopyArray[i].split(",");
+						_ultralignData.addItem({value:tempSubArry[0], selected:false,xOffsets:tempSubArry[1],yOffsets:tempSubArry[2], index:_ultralignData.length+i});
+					}							
+					
+				}
+				
+				
+				refreshIndexes();
+				checkList();
+				currentState = "default";
+			}
+		]]>
+	</fx:Script>
+	
+	<panels:states >
+		<mx:State name="default"  />
+		<mx:State name="copy" />
+	</panels:states> 
+	
+	<mx:VBox id="listContainer" width="100%" height="100%">
+		<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_ULTRALIGN_TITRE_LABEL')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		
+		<mx:HRule width="100%" />
+		
+		<component:UltralignControlBar id="ultralignControlBar" width="100%"	
+									   visible.copy="false"
+									   visible.default="true"
+									   includeInLayout.copy="false"
+									   includeInLayout.default="true"/>
+		<component:UltralignConfirmBar id="ultralignConfirmBar" width="100%" height="25"
+									   visible.copy="true"
+									   visible.default="false"
+									   includeInLayout.copy="true"
+									   includeInLayout.default="false"/>	
+		
+		<mx:HRule width="100%" />
+		
+		<ns1:WysiwygList 
+			id="ultrailgnList"
+			styleName="noCell"
+			visible.copy="false"
+			visible.default="true"
+			includeInLayout.copy="false"
+			includeInLayout.default="true"
+			itemRenderer="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.ultralign.UltralignListItemRenderer"
+			dataChange="onListDataChange(event)"
+			dragEnabled="false"
+			dropEnabled="true"
+			dragMoveEnabled="true"
+			dragComplete="onDragComplete(event)"
+			dataProvider="{_ultralignData}"
+			variableRowHeight="true"
+			width="100%"
+			/>
+		<mx:HRule width="100%" />
+		
+		<mx:TextArea  id="copyTextArea" width="100%"
+					  visible.copy="true"
+					  visible.default="false"
+					  includeInLayout.copy="true"
+					  includeInLayout.default="false"/>
+		
+		<component:UltralignEditorConfirmBar id="ultralignEditorConfirmationBar" width="100%" height="25"
+											 visible.copy="false"
+											 visible.default="true"
+											 includeInLayout.copy="false"
+											 includeInLayout.default="true"/>
+		
+		<mx:HRule width="100%" />
+		
+		
+	</mx:VBox>
+	
+</panels:PropertyEditorsBase>

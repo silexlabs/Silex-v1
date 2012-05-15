@@ -1,0 +1,31 @@
+﻿htmlTitle=Visicard template html title&
+htmlIcon=media/visicard/visicard.ico&
+htmlKeywords=silex template keywords&
+flashPlayerVersion=8&
+scaleMode=noScale&
+bgColor=140F0F&
+mainRssFeed=&
+layoutStageWidth=960&
+layoutStageHeight=640&
+layoutFolderPath=layouts/&
+initialLayoutFile=minimal.swf&
+layerSkinUrl=ui/layer_skin1.swf&
+CONFIG_START_SECTION=start&
+AVAILABLE_CONTEXT_LIST=*,fr,en&
+globalContext=*,fr,en&
+DEFAULT_LANGUAGE=en&
+AVAILABLE_LANGUAGE_LIST=fr,en&
+ALLOW_LOGIN=true&
+mouse=true&
+PRELOAD_FILES_LIST=&
+FONTS_LIST=&
+ENABLE_DEEPLINKING=true&
+USE_AMF_FILES=false&
+PLUGINS_LIST=htmlGenerator&
+centerVertically=true&
+
+htmlDescription=Silex template description&
+
+
+
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\StandardAlertUIHeader.mxml -->
+<!---
+A list used in the application and sub-applications. the over and selected graphics of tghe list are overriden to match the design of the application
+
+@author Yannick
+-->
+<mx:List xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 rowHeight="26">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.listClasses.IListItemRenderer;
+			import mx.controls.listClasses.ListItemRenderer;
+			import mx.core.BitmapAsset;
+			import mx.core.EventPriority;
+			import mx.core.IUIComponent;
+			import mx.events.DragEvent;
+			import mx.graphics.BitmapFill;
+			
+			
+			override protected function drawHighlightIndicator(
+				indicator:Sprite, x:Number, y:Number,
+											width:Number, height:Number, color:uint,
+											itemRenderer:IListItemRenderer):void
+			{				
+				
+				var g:Graphics = Sprite(indicator).graphics;
+				g.clear();
+				g.beginFill(color);
+				g.drawRect(getStyle("selectionStylePaddingLeft"), 0, width - getStyle("selectionStylePaddingLeft"), height );
+				g.endFill();
+				
+				indicator.x = x;
+				indicator.y = y;
+		}
+			
+			override protected function clearHighlightIndicator(indicator:Sprite,
+													   itemRenderer:IListItemRenderer):void
+			{
+				if (highlightIndicator)
+				{
+					indicator.graphics.clear();
+					if (indicator.numChildren > 0)
+					{
+					//	indicator.removeChildAt(0);
+					}
+					
+				}
+					
+			}
+			
+			override protected function drawSelectionIndicator(
+				indicator:Sprite, x:Number, y:Number,
+				width:Number, height:Number, color:uint,
+				itemRenderer:IListItemRenderer):void
+			{
+				var selectedSkinClass:Class = this.getStyle('cellSelectedSkin') as Class;
+				
+				var selectedSkin:Sprite = new selectedSkinClass();
+				selectedSkin.x = getStyle("selectionStylePaddingLeft");
+				selectedSkin.width = width - getStyle("selectionStylePaddingLeft");
+				selectedSkin.height = height;
+				selectedSkin.alpha =  this.getStyle("cellSelectedSkinAlpha");
+				
+				super.drawSelectionIndicator(indicator, 0, y, unscaledWidth - viewMetrics.left - viewMetrics.right, height, color, itemRenderer);
+				indicator.addChild(selectedSkin);
+				indicator.graphics.clear();
+
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+</mx:List>

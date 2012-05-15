@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+			   creationComplete="onCreationComplete()" 
+			   backgroundAlpha="0" xmlns:ui="org.silex.wysiwyg.ui.*"
+			   verticalGap="0">
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.ProgressBar;
+			import mx.controls.ProgressBarMode;
+			import mx.controls.SWFLoader;
+			import mx.events.FlexEvent;
+			
+			import org.silex.adminApi.AdminApiEvent;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.wysiwyg.toolboxApi.ToolBoxAPIController;
+			
+			/**
+			 * The url of the list plugin the user can open if no specific editor exist for the selected plugins
+			 */ 
+			private static const LIST_PLUGIN_URL:String = "plugins/wysiwyg/panels/ListPlugin.swf";
+			
+			/**
+			 * Stores the current panel to prevent reloading
+			 * the current panel
+			 */ 
+			private var _currentPanelUrl:String = "";
+			
+			/**
+			 * the loader that will load the specifics panels
+			 */ 
+			private var _panelLoader:SWFLoader;
+			
+			/**
+			 * an object storing loaded panels to prevent reloading panels
+			 * where the key is the URL od the SWf
+			 */ 
+			private var _loadedPanels:Object;
+			
+			/**
+			 * Indicates wether the SWFLoader is currently loading so that we can cleanly
+			 * stop a loading in progress
+			 */ 
+			private var _pending:Boolean;
+			
+			/**
+			 * the loadbar displayed during panel loading
+			 */ 
+			private var _loadBar:ProgressBar;
+			
+			/**
+			 * refresh the panel when the panel is done initialising 
+			 * and add the listeners
+			 */ 
+			private function onCreationComplete():void
+			{
+				_loadedPanels = new Object();
+				
+				_loadBar = new ProgressBar();
+				_loadBar.mode = ProgressBarMode.MANUAL;
+				_loadBar.width = 300;
+				
+				this.setStyle("verticalAlign", "middle");
+				this.setStyle("horizontalAlign", "center");
+				
+				_panelLoader = new SWFLoader();
+				_panelLoader.percentWidth = 100;
+				_panelLoader.percentHeight = 100;
+				addChild(_panelLoader);
+				
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage, false, 0, true);
+				
+			}
+			
+			/**
+			 * When the plugin is added to the stage, refresh it's panel and init the listeners
+			 */ 
+			private function onAddedToStage(event:Event):void
+			{
+				this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+				initListeners();
+				refreshPanel();
+			}
+			
+			/**
+			 * Add the listeners on SilexAdminAPi
+			 */ 
+			private function initListeners():void
+			{
+				SilexAdminApi.getInstance().components.addEventListener(
+					AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged, false, 0, true);
+				this.addEventListener(Event.REMOVED_FROM_STAGE, onRemoved, false, 0, true);
+			}
+			
+			/**
+			 * remove the listeners on SilexAdminApi
+			 */ 
+			private function removeListeners():void
+			{
+				SilexAdminApi.getInstance().components.removeEventListener(AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged);
+				this.removeEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			}
+			
+			/**
+			 * When another component is selected, refresh the plugin
+			 */ 
+			private function onComponentSelectionChanged(event:AdminApiEvent):void
+			{
+				refreshPanel();
+			}
+			
+			/**
+			 * When the specific plugin is removed, remove al it's
+			 * listeners, for clean garbage collection
+			 * 
+			 * @param event the trigerred FlexEvent
+			 */ 
+			private function onRemoved(event:Event):void
+			{
+				removeListeners();
+			}
+			
+			/**
+			 * Change the loaded panel if the selected component(s) type has changed
+			 */ 
+			private function refreshPanel():void
+			{
+				var selectedComponentsUids:Array = SilexAdminApi.getInstance().components.getSelection();
+				
+				//do nothing if no component are selected
+				if (selectedComponentsUids == null ||
+					selectedComponentsUids.length == 0)
+				{
+					return;
+				}
+				
+				//retrieve the new panal to load's url
+				var specificPluginController:SpecificPluginController = new SpecificPluginController(); 
+				var specificPanelData:Object = specificPluginController.getSpecificPanelUrl();
+				var specificPanelUrl:String = specificPanelData.url;
+				
+				//we set the visibility of the warning button, inviting the user to use the list view
+				//when no editor was designed for this particular component
+				noEditorWarning.visible = !specificPanelData.isSpecificEditor;
+				noEditorWarning.includeInLayout = !specificPanelData.isSpecificEditor;
+				
+				
+				//if the url is different from the one currently loaded
+				if (specificPanelUrl != _currentPanelUrl)
+				{
+					//if the SWFLoader was loading, we stop
+					//it's loading and remove it's Complete listener
+					if (_pending == true)
+					{
+						_panelLoader.removeEventListener(Event.COMPLETE, onPanelLoadComplete);
+						_panelLoader.unloadAndStop();
+						removeChild(_loadBar);
+					}
+					
+					else
+					{
+						//we first remove the current panel
+						removeChild(_panelLoader);
+					}
+					
+					
+					//if the panel was already loaded and stored
+					if (_loadedPanels[specificPanelUrl] != null)
+					{
+						//the panel loader becomes the stored one
+						//preventing us from reloading a panel
+						_panelLoader = _loadedPanels[specificPanelUrl];
+						addChild(_panelLoader);
+					}
+					else
+					{
+						//else we load the new panel
+						_panelLoader = new SWFLoader();
+						_panelLoader.percentWidth = 100;
+						_panelLoader.percentHeight = 100;
+						_panelLoader.addEventListener(Event.COMPLETE, onPanelLoadComplete, false, 0, true);
+						_panelLoader.addEventListener(ProgressEvent.PROGRESS, onPanelLoadProgress, false, 0, true);
+						_pending = true;
+						
+						addChild(_loadBar);
+						_panelLoader.load(specificPanelUrl); 
+						
+					}
+						
+					_currentPanelUrl = specificPanelUrl;
+					
+				}
+				
+			}
+			
+			/**
+			 * Update the progress bar
+			 * 
+			 * @param event the trigerred progress event
+			 */ 
+			private function onPanelLoadProgress(event:ProgressEvent):void
+			{
+				_loadBar.setProgress(event.bytesLoaded, event.bytesTotal);
+			}
+			
+			/**
+			 * When a panel has been successfuly loaded, we store it in the _loadedPanels object,
+			 * where it's key is it's URL
+			 * 
+			 * @param event the Complete event
+			 */ 
+			private function onPanelLoadComplete(event:Event):void
+			{
+				_pending = false;
+				(event.target as SWFLoader).removeEventListener(Event.COMPLETE, onPanelLoadComplete);
+				(event.target as SWFLoader).removeEventListener(ProgressEvent.PROGRESS, onPanelLoadProgress);
+				_loadedPanels[(event.target as SWFLoader).source] = event.target as SWFLoader;
+				removeChild(_loadBar);
+				addChild(event.target as SWFLoader);
+			}
+			
+			/**
+			 * When the user clicks on the "no specific editor" warning, opens the property list view
+			 */ 
+			private function onOpenListClick(event:MouseEvent):void
+			{
+				ToolBoxAPIController.getInstance().loadEditor(LIST_PLUGIN_URL, 'plugin');
+			}
+		]]>
+	</fx:Script>
+	<ui:WysiwygButton id="noEditorWarning" width="100%" styleName="warning" 
+					  label="{resourceManager.getString('WYSIWYG','WARNING_DEFAULT_EDITOR_USED')}"
+					  toolTip="{resourceManager.getString('WYSIWYG','WARNING_DEFAULT_EDITOR_USED')}"
+					  click="onOpenListClick(event)" includeInLayout="false" visible="false" />
+</mx:Application>

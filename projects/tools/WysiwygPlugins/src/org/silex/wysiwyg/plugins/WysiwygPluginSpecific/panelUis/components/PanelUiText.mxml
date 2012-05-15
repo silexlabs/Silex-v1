@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+		 width="100%" xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		
+			<mx:Form>
+				
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.border.description}" >
+				<ns1:WysiwygCheckBox selected="{propertyArray.border.currentValue}" 
+									 change="{updatePropertyValue(event.currentTarget.selected, 'border')}"/>
+			</mx:FormItem>	
+				
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.borderColor.description}" >
+			<ns1:WysiwygColorPicker selectedColor="{propertyArray.borderColor.currentValue}" 
+								change="{updatePropertyValue(event.currentTarget.selectedColor, 'borderColor')}"/>
+		</mx:FormItem>	
+			</mx:Form>	
+			
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			
+			<mx:Form>
+			
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.background.description}" >
+			<ns1:WysiwygCheckBox selected="{propertyArray.background.currentValue}" 
+								change="{updatePropertyValue(event.currentTarget.selected, 'background')}"/>
+			
+			
+			
+			
+		</mx:FormItem>	
+			
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.backgroundColor.description}" >
+			<ns1:WysiwygColorPicker selectedColor="{propertyArray.backgroundColor.currentValue}" 
+							change="{updatePropertyValue(event.currentTarget.selectedColor, 'backgroundColor')}"/>
+				
+				</mx:FormItem>
+			</mx:Form>	
+			
+		</mx:HBox>	
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		
+			<mx:Form>
+			
+
+				
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.multiline.description}" >
+					<ns1:WysiwygCheckBox selected="{propertyArray.multiline.currentValue}" 
+										change="{updatePropertyValue(event.currentTarget.selected, 'multiline')}"/>
+					
+			</mx:FormItem>
+				
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.mouseWheelEnabled.description}" >
+				<ns1:WysiwygCheckBox selected="{propertyArray.mouseWheelEnabled.currentValue}" 
+									 change="{updatePropertyValue(event.currentTarget.selected, 'mouseWheelEnabled')}"/>
+					
+			</mx:FormItem>
+		
+				
+			</mx:Form>	
+			
+		</mx:HBox>
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			
+			<mx:Form>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.selectable.description}" >
+					<ns1:WysiwygCheckBox selected="{propertyArray.selectable.currentValue}" 
+										change="{updatePropertyValue(event.currentTarget.selected, 'selectable')}"/>
+					
+				</mx:FormItem>
+				
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.scrollbar.description}" >
+					<ns1:WysiwygCheckBox selected="{propertyArray.scrollbar.currentValue}" 
+										change="{updatePropertyValue(event.currentTarget.selected, 'scrollbar')}"/>
+					
+				</mx:FormItem>
+				
+				
+			</mx:Form>	
+			
+		</mx:HBox>
+			
+	</mx:HBox>
+	
+	
+	<mx:HRule width="100%" />
+	
+</panelUis:PanelUiBase>

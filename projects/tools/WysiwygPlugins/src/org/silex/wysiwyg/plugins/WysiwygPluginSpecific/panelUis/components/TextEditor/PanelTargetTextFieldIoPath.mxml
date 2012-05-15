@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+		]]>
+	</fx:Script>	
+	
+	<mx:Form width="100%">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" textAlign="left"/>
+		</mx:FormItem>
+	</mx:Form>		
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.targetTextFieldIoPath.description}">
+			<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+								propertyArray.targetTextFieldIoPath.baseClass)}"
+								styleName="large"
+								editable="true"
+								selectedItem="{propertyArray.targetTextFieldIoPath.currentValue}"
+								change="updatePropertyValue(event.currentTarget.selectedItem, 'targetTextFieldIoPath')"  />
+		</mx:FormItem>	
+	</mx:Form>
+</panelUis:PanelUiBase>

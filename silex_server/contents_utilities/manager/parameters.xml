@@ -1,0 +1,293 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="5" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_bas.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">520</y>
+						<x type="Integer">285</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<height type="Float">5.95</height>
+						<width><![CDATA[none]]></width>
+						<playerName><![CDATA[listUi_manager_bas.cmp]]></playerName>
+						<listPath><![CDATA[RichTextList_01_adv_params]]></listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">5</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_haut.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">235</y>
+						<x type="Integer">285</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<height type="Float">5.95</height>
+						<width><![CDATA[none]]></width>
+						<playerName><![CDATA[listUi_manager_haut.cmp]]></playerName>
+						<listPath><![CDATA[RichTextList_01_adv_params]]></listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">5</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RichTextList/RichTextList_01.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">225</y>
+						<x type="Integer">305</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[parameters.change.<<RichTextList_01_adv_params.selectedItem.label>>]]></iconDeeplinkName>
+						<iconPageName><![CDATA[parameters.change]]></iconPageName>
+						<height type="Integer">289</height>
+						<width type="Float">190.1</width>
+						<playerName><![CDATA[RichTextList_01_adv_params]]></playerName>
+						<autoSize><![CDATA[center]]></autoSize>
+						<embedFonts type="Boolean">false</embedFonts>
+						<html type="Boolean">false</html>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<wordWrap type="Boolean">false</wordWrap>
+						<cellMarginX type="Integer">6</cellMarginX>
+						<cellMarginY type="Integer">3</cellMarginY>
+						<cellRenderer><![CDATA[RichTextCellRenderer]]></cellRenderer>
+						<data type="Array">
+							<item><![CDATA[html]]></item>
+							<item><![CDATA[true]]></item>
+							<item><![CDATA[ultralign@htmlGenerator]]></item>
+							<item><![CDATA[false]]></item>
+							<item><![CDATA[true]]></item>
+							<item><![CDATA[]]></item>
+							<item><![CDATA[]]></item>
+							<item><![CDATA[true]]></item>
+							<item><![CDATA[true]]></item>
+							<item><![CDATA[fr,en]]></item>
+							<item><![CDATA[en]]></item>
+							<item><![CDATA[*,fr,en]]></item>
+							<item><![CDATA[*,fr,en]]></item>
+							<item><![CDATA[index.html]]></item>
+							<item><![CDATA[ui/layer_skin1.swf]]></item>
+							<item><![CDATA[minimal_plus.swf]]></item>
+							<item><![CDATA[layouts/]]></item>
+							<item><![CDATA[600]]></item>
+							<item><![CDATA[940]]></item>
+							<item><![CDATA[]]></item>
+							<item><![CDATA[dddddd]]></item>
+							<item><![CDATA[scroll]]></item>
+							<item><![CDATA[8]]></item>
+							<item><![CDATA[Free CSS Template by spyka Webmaster - Ported by lexa to Flash CMS template]]></item>
+							<item><![CDATA[]]></item>
+							<item><![CDATA[My Enterprise]]></item>
+						</data>
+						<easingDuration type="Float">0.5</easingDuration>
+						<rowHeight type="Integer">26</rowHeight>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<labels type="Array">
+							<item><![CDATA[defaultFormat]]></item>
+							<item><![CDATA[centerVertically]]></item>
+							<item><![CDATA[PLUGINS_LIST]]></item>
+							<item><![CDATA[USE_AMF_FILES]]></item>
+							<item><![CDATA[ENABLE_DEEPLINKING]]></item>
+							<item><![CDATA[FONTS_LIST]]></item>
+							<item><![CDATA[PRELOAD_FILES_LIST]]></item>
+							<item><![CDATA[mouse]]></item>
+							<item><![CDATA[ALLOW_LOGIN]]></item>
+							<item><![CDATA[AVAILABLE_LANGUAGE_LIST]]></item>
+							<item><![CDATA[DEFAULT_LANGUAGE]]></item>
+							<item><![CDATA[globalContext]]></item>
+							<item><![CDATA[AVAILABLE_CONTEXT_LIST]]></item>
+							<item><![CDATA[CONFIG_START_SECTION]]></item>
+							<item><![CDATA[layerSkinUrl]]></item>
+							<item><![CDATA[initialLayoutFile]]></item>
+							<item><![CDATA[layoutFolderPath]]></item>
+							<item><![CDATA[layoutStageHeight]]></item>
+							<item><![CDATA[layoutStageWidth]]></item>
+							<item><![CDATA[mainRssFeed]]></item>
+							<item><![CDATA[bgColor]]></item>
+							<item><![CDATA[scaleMode]]></item>
+							<item><![CDATA[flashPlayerVersion]]></item>
+							<item><![CDATA[htmlKeywords]]></item>
+							<item><![CDATA[htmlIcon]]></item>
+							<item><![CDATA[htmlTitle]]></item>
+						</labels>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<enabled type="Boolean">true</enabled>
+						<visible type="Boolean">true</visible>
+						<minHeight type="Integer">0</minHeight>
+						<minWidth type="Integer">0</minWidth>
+					</properties>
+					<actions>
+						<action>
+							<functionName><![CDATA[RichTextList_01_adv_params._labels=<<listArrayKeys silex.config.siteConfTxt>>]]></functionName>
+							<modifier><![CDATA[onLoad]]></modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName><![CDATA[RichTextList_01_adv_params._data=<<listArrayValues silex.config.siteConfTxt>>]]></functionName>
+							<modifier><![CDATA[onLoad]]></modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName><![CDATA[RichTextList_01_adv_params.assembleDataProvider]]></functionName>
+							<modifier><![CDATA[onLoad]]></modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_01.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">555</y>
+						<x type="Integer">275</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[parameters.add]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_cadre_01_add]]></playerName>
+						<height type="Float">29.5</height>
+						<width type="Integer">110</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>Add</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.param:server:add>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.param:server:add>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.param:server:add>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.param:server:add>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[cadre_RichTextList_01]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">225</y>
+						<x type="Integer">275</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">313</height>
+						<width type="Integer">220</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/manager/design/cadre_RichTextList_01.swf]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_01.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">610</y>
+						<x type="Integer">395</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_cadre_01.cmp.swf]]></playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">100</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>Save</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b><<silex.paramsFile.btn:param:server:save>></b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b><<silex.paramsFile.btn:param:server:save>></b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b><<silex.paramsFile.btn:param:server:save>></b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b><<silex.paramsFile.btn:param:server:save>></b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName><![CDATA[serviceCall]]></functionName>
+							<modifier><![CDATA[onRelease]]></modifier>
+							<parameters>
+								<parameter><![CDATA[writeWebsiteConfig]]></parameter>
+								<parameter><![CDATA[onSavePropertiesSuccess]]></parameter>
+								<parameter><![CDATA[onSavePropertiesFailed]]></parameter>
+								<parameter><![CDATA[<<silex.config.siteConfTxt>>]]></parameter>
+								<parameter><![CDATA[<<DataSelector_site.selectedItem.title>>]]></parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName><![CDATA[alert]]></functionName>
+							<modifier><![CDATA[onSavePropertiesFailed]]></modifier>
+							<parameters>
+								<parameter><![CDATA[((<<silex.paramsFile.errorMessage>>))]]></parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName><![CDATA[alert]]></functionName>
+							<modifier><![CDATA[onSavePropertiesSuccess]]></modifier>
+							<parameters>
+								<parameter><![CDATA[((<<silex.paramsFile.successMessage>>))]]></parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

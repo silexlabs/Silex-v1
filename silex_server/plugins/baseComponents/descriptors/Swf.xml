@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>Image</componentName>
+	<as2Url>as2/org.silex.ui.players.Image.swf</as2Url>
+	<html5Url>html5#org.silex.ui.Image</html5Url>
+	<className>org.silex.ui.players.Image.SWF</className>
+	<specificEditorUrl>editors/Image.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.players.Image</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/baseComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>AddSwf</name>
+			<uid>silex.AddComponent.ToolItem.AddSwf</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Animation</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_SWF</label>
+			<description>DESCRIPTION_SWF</description>
+			<level>2</level>
+			<action>addMediaComponent</action>
+			<initPropertyName>url</initPropertyName>
+			<iconUrl>icons/swf.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>		
+		<url>
+			<type>String</type>
+			<subType>Url</subType>
+			<extensions>swf</extensions>
+			<description>PROPERTIES_LABEL_URL</description>
+			<defaultValue>defaultUrl</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</url>
+	</properties>
+</componentDescriptor>

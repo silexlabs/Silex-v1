@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>products</title>
+		<pubDate>Mon Jan 23 15:56:42 GMT+0100 2012</pubDate>
+		<components>
+			<component>
+				<playerName>TextMain</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="12"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="30" COLOR="#000000" LETTERSPACING="0" KERNING="0">Placeat facere possimus</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="1">Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis, <FONT KERNING="0">perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </FONT>Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam<FONT KERNING="0">.<FONT COLOR="#5A5A5A"></FONT></FONT></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Vitae dicta sunt explicabo</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="1">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Neque porro quisquam</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Quasi architecto beatae</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="1">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.<FONT KERNING="0"></FONT></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Placeat facere possimus Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis  Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.    Vitae dicta sunt explicabo  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.  Neque porro quisquam  Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.  Quasi architecto beatae  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.   </text>
+			</component>
+			<component>
+				<playerName>TextHeader</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="35" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">Officia deserunt mollitia animi, id est laborum</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FFE0CC" LETTERSPACING="0" KERNING="1">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.<FONT KERNING="0"> cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </FONT></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Officia deserunt mollitia animi, id est laborum Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi. cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.   </text>
+			</component>
+			<component>
+				<playerName>Text_products</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#EEEEEE" LETTERSPACING="0" KERNING="0">Products</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Products </text>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnSelected2</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

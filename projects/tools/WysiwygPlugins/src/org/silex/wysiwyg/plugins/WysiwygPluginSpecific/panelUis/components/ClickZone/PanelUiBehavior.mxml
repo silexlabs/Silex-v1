@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*"
+					  xmlns:component="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.ClickZone.*" >
+	
+	<mx:Label text="Behavior" fontSize="16" color="0x686765"/>
+	<mx:Label text="roll over" fontSize="16" color="0x686765" paddingLeft="20" />
+	<component:PanelUiRollOver propertyArray="{propertyArray}" horizontalAlign="center" verticalAlign="middle" />
+	<mx:HRule width="100%" />
+	<mx:Label text="on click" fontSize="16" color="0x686765" paddingLeft="20"/>
+	<component:PanelUiClick propertyArray="{propertyArray}"/>
+	<mx:HRule width="100%" />
+	<mx:Label text="selected" fontSize="16" color="0x686765" paddingLeft="20"/>
+	<component:PanelUiSelected propertyArray="{propertyArray}" />
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

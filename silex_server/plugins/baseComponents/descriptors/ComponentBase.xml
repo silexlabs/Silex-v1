@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>ComponentBase</componentName>
+	<className>org.silex.ui.components.ComponentBase</className>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<properties>	
+		<scale>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_SCALE</description>
+			<minValue>1</minValue>
+			<maxValue>100</maxValue>
+			<isRegistered>false</isRegistered>
+			<group>attributes</group>
+		</scale>	
+	</properties>
+</componentDescriptor>

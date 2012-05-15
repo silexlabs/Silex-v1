@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>UiBase</componentName>
+	<className>org.silex.Base</className>
+	<html5Url>html5#org.silex.ui.UiBase</html5Url>
+	<properties>
+		<playerName>
+			<type>String</type>
+			<subType>Text</subType>
+			<description>PROPERTIES_LABEL_PLAYER_NAME</description>
+			<defaultValue>playerContainer.name_str</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</playerName>			
+	</properties>
+</componentDescriptor>

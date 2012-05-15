@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<mx:Form width="100%" paddingLeft="0">
+		
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_LABEL')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.centeredHoriz.description}">
+			<ns1:WysiwygCheckBox selected="{propertyArray.centeredHoriz.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selected, 'centeredHoriz')"  />
+		</mx:FormItem>
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.buttonLabelNormal.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.buttonLabelNormal.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'buttonLabelNormal')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.buttonLabelNormal)}" />				
+			</mx:HBox>
+		</mx:FormItem>
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.buttonLabelSelect.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.buttonLabelSelect.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'buttonLabelSelect')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.buttonLabelSelect)}" />				
+			</mx:HBox>
+		</mx:FormItem>
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.buttonLabelOver.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.buttonLabelOver.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'buttonLabelOver')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.buttonLabelOver)}" />				
+			</mx:HBox>
+		</mx:FormItem>
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.buttonLabelPress.description}">
+			<mx:HBox width="100%" height="100%">
+				<ns1:WysiwygTextArea text="{propertyArray.buttonLabelPress.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'buttonLabelPress')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.buttonLabelPress)}" />				
+			</mx:HBox>
+		</mx:FormItem>
+	</mx:Form>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

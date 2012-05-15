@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+	
+	<fx:Script>
+		<![CDATA[
+			
+			import org.silex.adminApi.listedObjects.Property;
+			
+			public function generateFusionArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}	
+			
+			override public function signalPropertiesUpdate():void
+			{
+				if (propertyArray.positionning != null && positionCombo != null)
+				{
+					positionCombo.selectedItem = propertyArray.positionning.currentValue;
+				}
+				
+				if (propertyArray.targetPoint != null && targetPointCombo != null)
+				{
+					targetPointCombo.selectedItem = propertyArray.targetPoint.currentValue;
+				}
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+		<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_DESCRIPTION')}" styleName="PropertiesGroupTitle"/>
+	
+		<mx:HBox width="50%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		<mx:Form>
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.playerName.description}" >
+				<ns1:WysiwygTextInput text="{propertyArray.playerName.currentValue}" restrict="[a-zA-Z0-9]_éàèâî" width="200" 
+									  change="{updatePropertyValue(event.currentTarget.text, 'playerName')}"/>
+				<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.playerName)}" />
+			</mx:FormItem>	
+		</mx:Form>
+		
+		
+		</mx:HBox>	
+			
+		<mx:HRule width="100%" />
+	
+		<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BEHAVIOR_PARAMETER')}" styleName="PropertiesGroupTitle"/>
+	
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			
+	
+				<mx:Form>	
+					
+					<mx:FormItem width="100%" height="100%" label="{propertyArray.alignedComponents.description}" direction="horizontal">
+						<ns1:WysiwygTextInput width="200" text="{propertyArray.alignedComponents.currentValue}" editable="false"
+											  />
+						<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.alignedComponents)}" />
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="{propertyArray.targetPoint.description}">
+						<ns1:WysiwygComboBox id="targetPointCombo" dataProvider="{generateFusionArray(propertyArray.targetPoint.values)}"
+											 styleName="large"
+											 editable="false"
+											 selectedItem="{propertyArray.targetPoint.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'targetPoint')"  />
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="{propertyArray.positionning.description}" >
+						<ns1:WysiwygComboBox id="positionCombo" dataProvider="{generateFusionArray(propertyArray.positionning.values)}"
+											 styleName="large"
+											 editable="false"
+											 selectedItem="{propertyArray.positionning.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'positionning')"  />
+					</mx:FormItem>
+			
+			
+				</mx:Form>	
+					
+			</mx:HBox>
+				
+			<mx:VRule height="100%" />
+				
+				<mx:HBox width="100%" height="100%" horizontalAlign="center">
+					
+					<mx:Form>	
+						
+						<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.xOffsets.description}" >
+							<ns1:WysiwygTextInput text="{propertyArray.xOffsets.currentValue}" editable="false"
+												  />
+							<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.xOffsets)}" />
+						</mx:FormItem>	
+						
+						<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.yOffsets.description}" >
+							<ns1:WysiwygTextInput text="{propertyArray.yOffsets.currentValue}" editable="false"
+												  />
+							<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.yOffsets)}" />
+						</mx:FormItem>	
+					
+					</mx:Form>	
+					
+				</mx:HBox>
+				
+				
+			</mx:HBox>
+				
+
+	<mx:HRule width="100%" />		
+</panelUis:PanelUiBase>

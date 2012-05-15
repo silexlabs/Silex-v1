@@ -1,0 +1,176 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="4" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex42]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">567.5</y>
+						<x type="Float">-122.75</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText><![CDATA[]]></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[ ]]></iconDeeplinkName>
+						<iconPageName><![CDATA[new page name 6]]></iconPageName>
+						<descriptionText><![CDATA[]]></descriptionText>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<mask><![CDATA[ ]]></mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex4]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">567.5</y>
+						<x type="Float">-32.55</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText><![CDATA[]]></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[ ]]></iconDeeplinkName>
+						<iconPageName><![CDATA[new page name 5]]></iconPageName>
+						<descriptionText><![CDATA[]]></descriptionText>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<mask><![CDATA[ ]]></mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex3]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">468.2</y>
+						<x type="Float">-34.65</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name 3]]></iconPageName>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex2]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">389.65</y>
+						<x type="Float">-32.6</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name 2]]></iconPageName>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[logosilex]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">292.85</y>
+						<x type="Float">-25.7</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<scale type="Integer">100</scale>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/logosilex.jpg]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

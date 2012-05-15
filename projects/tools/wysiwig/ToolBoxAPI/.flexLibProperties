@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" version="3">
+  <includeClasses>
+    <classEntry path="org.silex.wysiwyg.toolboxApi.ToolBoxAPIController"/>
+    <classEntry path="org.silex.wysiwyg.toolboxApi.event.ToolBoxAPIEvent"/>
+    <classEntry path="org.silex.wysiwyg.toolboxApi.interfaces.IAction"/>
+    <classEntry path="org.silex.wysiwyg.toolboxApi.interfaces.IActionArray"/>
+    <classEntry path="org.silex.wysiwyg.toolboxApi.interfaces.IActionPlugin"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

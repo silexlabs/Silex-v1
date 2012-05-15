@@ -1,0 +1,209 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="4" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">16</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>logosilex4</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>p1</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/logosilex.jpg</url>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">82</y>
+						<x type="Integer">1</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>logosilex3</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>p2</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/logosilex.jpg</url>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">149</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>logosilex2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>p3</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/logosilex.jpg</url>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">218</y>
+						<x type="Integer">3</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>logosilex</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>p4</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/logosilex.jpg</url>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">65</height>
+						<width type="Integer">65</width>
+						<clickable type="Boolean">true</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">0</y>
+						<x type="Integer">0</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">400</height>
+						<width type="Integer">400</width>
+						<playerName>Rectangle</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">65280</bgColor>
+						<bgAlpha type="Integer">0</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">65280</borderColor>
+						<border type="Boolean">true</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

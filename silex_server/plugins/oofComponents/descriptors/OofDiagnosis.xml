@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>OofDiagnosis</componentName>
+	<as2Url>as2/OofDiagnosis.swf</as2Url>
+	<html5Url></html5Url>
+	<className>org.oof.designTools.OofDiagnosis</className>
+	<specificEditorUrl>editors/OofDiagnosis.swf</specificEditorUrl>
+	<parentDescriptorClassName>flash.MovieClip</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>OofDiagnosis</name>
+			<uid>silex.AddComponent.ToolItem.AddOofDiagnosis</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Utilities</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_OOF_DIAGNOSIS</label>
+			<description>DESCRIPTION_ADD_BUTTON_OOF_DIAGNOSIS</description>
+			<level>2</level>
+			<action>addComponent</action>
+			<iconUrl>icons/oof_utilities.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>	
+	</properties>
+</componentDescriptor>

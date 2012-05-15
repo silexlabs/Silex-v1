@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.PluginEvent;
+			private function onAddClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.ADD_ITEM, data, true));
+			}
+			
+			private function onRemoveClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.REMOVE_ITEM, data, true));
+			}		
+			
+			private function onCopyClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.COPY_ITEM, data, true));
+			}
+			
+			public function deactivate():void
+			{
+				addButton.enabled = true;
+				removeButton.enabled = false;
+				copyButton.enabled = false;
+			}
+			
+			public function activate():void
+			{
+				addButton.enabled = true;
+				removeButton.enabled = true;
+				copyButton.enabled = true;
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<mx:Form width="100%">
+		<mx:HBox width="70%" horizontalAlign="center" verticalAlign="middle">
+			<mx:FormItem direction="horizontal" width="100%">
+				<ns:WysiwygButton id="addButton" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_ADD_ITEM_BUTTON_LABEL')}" styleName="addItem"   click="onAddClick(event)" />
+				<mx:Label id="addLabel" text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_ADD_ITEM_BUTTON_LABEL')}" /> 							
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" width="100%">
+				<ns:WysiwygButton id="removeButton"  toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_REMOVE_ITEM_BUTTON_LABEL')}" styleName="removeItem"    click="onRemoveClick(event)" />
+				<mx:Label id="removeLabel" text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_REMOVE_ITEM_BUTTON_LABEL')}"/>							
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" width="100%">
+				<ns:WysiwygButton id="copyButton" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_COPY_ITEM_BUTTON_LABEL')}" styleName="copyItem"  click="onCopyClick(event)" />
+				<mx:Label id="copyLabel"  text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_COPY_ITEM_BUTTON_LABEL')}" />						
+			</mx:FormItem>				
+		</mx:HBox>
+	</mx:Form>
+	
+</mx:HBox>

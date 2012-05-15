@@ -1,0 +1,304 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="7" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_bas.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListUi</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[listUi_manager_bas]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">575</y>
+						<x type="Float">537.5</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">5.95</height>
+						<width type="Integer">12</width>
+						<scrollStep type="Integer">1</scrollStep>
+						<loopList type="Boolean">false</loopList>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<listPath><![CDATA[RichTextList_01_params]]></listPath>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_haut.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListUi</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[listUi_manager_haut]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">440</y>
+						<x type="Float">537.5</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">5.95</height>
+						<width type="Integer">12</width>
+						<scrollStep type="Integer">1</scrollStep>
+						<loopList type="Boolean">false</loopList>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<listPath><![CDATA[RichTextList_01_params]]></listPath>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[filet_01]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">400</y>
+						<x type="Integer">525</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">1</height>
+						<width type="Integer">610</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/manager/design/filet_01.swf]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_06.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">560</y>
+						<x type="Integer">780</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[plugins.deactivate.conf.<<RichTextList_01_installed.selectedItem.label>>]]></iconDeeplinkName>
+						<iconPageName><![CDATA[plugins.deactivate.conf]]></iconPageName>
+						<playerName><![CDATA[label_btn_plus_cadre_06_deactivate]]></playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">160</width>
+						<label><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>Deactivate a plugin</b></FONT>]]></label>
+						<imageUrl><![CDATA[media/]]></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:manage:deactivate>>))</b></FONT>]]></buttonLabelNormal>
+						<buttonLabelSelect><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:manage:deactivate>>))</b></FONT>]]></buttonLabelSelect>
+						<buttonLabelOver><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:manage:deactivate>>))</b></FONT>]]></buttonLabelOver>
+						<buttonLabelPress><![CDATA[<FONT FACE="Arial" SIZE="14" COLOR="#FFFFFF"><b>((<<silex.paramsFile.btn:manage:manage:deactivate>>))</b></FONT>]]></buttonLabelPress>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Text]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">405</y>
+						<x type="Integer">525</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">25</height>
+						<width type="Integer">205</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">true</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[plugins.configure.<<RichTextList_01_installed.selectedItem.label>>.home]]></iconDeeplinkName>
+						<iconPageName><![CDATA[plugins.configure.home]]></iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type><![CDATA[dynamic]]></type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText><![CDATA[<p align="center"><font face="arial" size="15" color="#3B3024">((<<silex.paramsFile.text:settings:list:parameters>>))</font></p>]]></htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.AsFrame.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.AsFrame</html5Url>
+					<className>org.silex.ui.players.AsFramePlayerEmbeddedObject</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[asframe]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">160</y>
+						<x type="Integer">525</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">235</height>
+						<width type="Integer">610</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<backgroundVisible type="Boolean">false</backgroundVisible>
+						<location><![CDATA[]]></location>
+						<embededObject><![CDATA[]]></embededObject>
+						<htmlText><![CDATA[<html><body><img src="plugins/snapshot/plugin.png" alt="snapshot" /></body></html>]]></htmlText>
+						<asFrameType><![CDATA[htmlText]]></asFrameType>
+					</properties>
+					<actions>
+						<action>
+							<functionName>frame_plugin.backgroundVisible=false</functionName>
+							<modifier>onLoad</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onLoad</modifier>
+							<parameters>
+								<parameter>getPluginAdminPage</parameter>
+								<parameter>onGetPluginAdminPageSuccess</parameter>
+								<parameter>onGetPluginAdminPageFailed</parameter>
+								<parameter>&lt;&lt;RichTextList_01_installed.selectedItem.label&gt;&gt;</parameter>
+								<parameter>&lt;&lt;silex.config.siteConfTxt&gt;&gt;</parameter>
+								<parameter>&lt;&lt;DataSelector_site.selectedItem.title&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>frame_plugin.htmlText=&lt;&lt;silex.lastResult&gt;&gt;</functionName>
+							<modifier>onGetPluginAdminPageSuccess</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onGetPluginAdminPageFailed</modifier>
+							<parameters>
+								<parameter>ERROR</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RichTextList/RichTextList_01.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">430</y>
+						<x type="Integer">560</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconDeeplinkName><![CDATA[plugins.parameter.<<RichTextList_01_params.selectedItem.name>>]]></iconDeeplinkName>
+						<iconPageName><![CDATA[plugins.parameter]]></iconPageName>
+						<height type="Integer">140</height>
+						<width type="Integer">193</width>
+						<playerName><![CDATA[RichTextList_01_params]]></playerName>
+						<autoSize><![CDATA[center]]></autoSize>
+						<embedFonts type="Boolean">false</embedFonts>
+						<html type="Boolean">true</html>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<wordWrap type="Boolean">false</wordWrap>
+						<cellMarginX type="Integer">4</cellMarginX>
+						<cellMarginY type="Integer">3</cellMarginY>
+						<cellRenderer><![CDATA[RichTextCellRenderer]]></cellRenderer>
+						<easingDuration type="Float">0.5</easingDuration>
+						<rowHeight type="Integer">26</rowHeight>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<enabled type="Boolean">true</enabled>
+						<visible type="Boolean">true</visible>
+						<minHeight type="Integer">0</minHeight>
+						<minWidth type="Integer">0</minWidth>
+					</properties>
+					<actions>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onLoad</modifier>
+							<parameters>
+								<parameter>getPluginParameters</parameter>
+								<parameter>onGetPluginParametersSuccess</parameter>
+								<parameter>onGetPluginParametersFailed</parameter>
+								<parameter>&lt;&lt;RichTextList_01_installed.selectedItem.label&gt;&gt;</parameter>
+								<parameter>&lt;&lt;silex.config.siteConfTxt&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onGetPluginParametersFailed</modifier>
+							<parameters>
+								<parameter>ERROR</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_params.dataProvider=&lt;&lt;silex.lastResult&gt;&gt;</functionName>
+							<modifier>onGetPluginParametersSuccess</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.GIF</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[cadre_RichTextList_02]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">430</y>
+						<x type="Integer">525</x>
+						<alpha type="Integer">100</alpha>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[manager_volet.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode><![CDATA[none]]></scaleMode>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">160</height>
+						<width type="Integer">227</width>
+						<clickable type="Boolean">true</clickable>
+						<url><![CDATA[media/manager/design/cadre_RichTextList_02.swf]]></url>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

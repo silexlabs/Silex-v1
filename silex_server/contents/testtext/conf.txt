@@ -1,0 +1,35 @@
+﻿htmlTitle=This website does not exist&
+htmlIcon=&
+htmlKeywords=Silex Open Source Flash CMS&
+flashPlayerVersion=7&
+scaleMode=showAll&
+bgColor=FFFFFF&
+layoutStageWidth=900&
+layoutStageHeight=720&
+layoutFolderPath=layouts/&
+initialLayoutFile=minimal.swf&
+layerSkinUrl=&
+CONFIG_START_SECTION=start&
+toolsFolderRelativePath=&
+websiteFtpRelativeUrl=&
+screenSaverDelay=0&
+screenSaverActivateCommands=&
+screenSaverDeactivateCommands=&
+googleAnaliticsAccountNumber=&
+phpmyvisitesURL=&
+phpmyvisitesSiteNumber=&
+AVAILABLE_CONTEXT_LIST=*,fr,en&
+globalContext=*&
+DEFAULT_LANGUAGE=en&
+AVAILABLE_LANGUAGE_LIST=fr,en&
+APPLICATION_CONFIG_FILE=&
+PLUGINS_LIST=&
+mouse=true&
+ALLOW_LOGIN=true&
+ENABLE_DEEPLINKING=false&
+FONTS_LIST=DejaVu Sans@DejaVu Sans-italic@DejaVu Sans-bold@DejaVu Sans-bold-italic&
+loaderPath=loaders/loader_wheel.swf&
+centerVertically=true&
+
+
+

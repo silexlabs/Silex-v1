@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>DataContainer</componentName>
+	<as2Url>as2/DataContainer.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.DataContainer</className>
+	<specificEditorUrl>editors/DataContainer.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.Base</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<isVisual>false</isVisual>
+		<addComponentParams>
+			<name>DataContainer</name>
+			<uid>silex.AddComponent.ToolItem.AddDataContainer</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.ExternalData</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_DATA_CONTAINER</label>
+			<description>DESCRIPTION_ADD_BUTTON_DATA_CONTAINER</description>
+			<level>2</level>
+			<action>addComponent</action>
+			<iconUrl>icons/oof_external_datas.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>			
+		<dataNames>
+			<type>Array</type>
+			<description>PROPERTIES_LABEL_DATA_NAMES</description>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</dataNames>	
+	</properties>
+</componentDescriptor>

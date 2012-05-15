@@ -1,0 +1,151 @@
+<html>
+
+<head>
+
+<title>HaXe Bundle automatic AutoDoc</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #7D7E86;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 10px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #F6FAFD;
+}
+
+.title {
+	font-size: 35;
+	font-weight: bold;
+	text-align: center;
+	background-color : #FF4D1F;
+	color : white;
+	padding : 5 10 5 10;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 30px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #FF4D1F;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #FF4D1F;
+	text-decoration : underline;
+}
+
+a.package {
+	color : black;
+}
+
+.index {
+	margin : 20px 0 5px 10px;
+}
+
+.kwd {
+	color : #330033;
+}
+
+.classname {
+	font-size : 30;
+	font-weight : bold;
+	margin-left : 10px;
+	margin-bottom : 20px;
+}
+
+.classdoc {
+	border : 1px  #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	background-color : #DDD;
+	-moz-border-radius : 10px;
+	border-radius: 10px;
+	padding : 5 5 5 10;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0 20 20 40;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 11pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title"><img alt="Logo" src="http://code.google.com/p/sugar-hx/logo?logo_id=1265779922" align="ABSBOTTOM"></img>HaXe Bundle AutoDoc</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.silex.serverApi.ServerConfig</div><dl><dt><span class="kwd">var </span>adminReadOk(getAdminReadOk,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores a list of files and folders that can be read by a user with Admin Role.
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">var </span>adminWriteOk(getAdminWriteOk,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores a list of files and folders that can be written by a user with Admin Role.<br/>
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">var </span>sepCharForDeeplinks(getSepCharForDeeplinks,null) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  The character used to replace spaces in URLs.
+</dd><dt><span class="kwd">var </span>silexClientIni(getSilexClientIni,null) : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores the client's configuration. These properties are sent to the client.<br/>
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">var </span>silexServerIni(getSilexServerIni,null) : <a href="../../../Hash.html" class="type">Hash</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores the server's configuration.<br/>
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">var </span>userReadOk(getUserReadOk,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores a list of files and folders that can be read by a user User Role.
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">var </span>userWriteOk(getUserWriteOk,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd>
+	  Stores a list of files and folders that can written by a user with User Role.
+	  Changes in it won't be reflected. (Consider it immutable.)
+</dd><dt><span class="kwd">function </span>new() : <a href="../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>getContentFolderForPublication(id_publication : <a href="../../../String.html" class="type">String</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  Returns the String representing the content folder of the publication which id is given as parameter.<br/>
+	  For example it may return "contents/".<br/>
+	  Values of CONTENTS_THEMES_FOLDER, CONTENTS_UTILITIES_FOLDER and CONTENT_FOLDER are set in
+	  conf/silex_server.ini.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

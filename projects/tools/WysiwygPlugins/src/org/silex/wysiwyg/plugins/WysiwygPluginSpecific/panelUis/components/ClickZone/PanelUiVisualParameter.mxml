@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+	<fx:Script>
+		<![CDATA[
+			
+			import org.silex.adminApi.listedObjects.Property;
+			
+			/**
+			 * If the lock is activated for width and height, modifiy height value
+			 * along with width value when the data changes, else only update the right value
+			 * 
+			 * @param event the triggerred change event
+			 * @param propertyName the name of the propery to update
+			 */ 
+			private function onWidthHeightChange(event:Event, propertyName:String):void
+			{
+				if (! lockTransform.selected)
+				{
+					
+					var newPercentage:Number = event.currentTarget.value / (propertyArray[propertyName].currentValue);
+					var newStepperValue:Number;
+					if (propertyName == 'width')
+					{
+						newStepperValue = (propertyArray.height.currentValue * newPercentage);
+						updatePropertyValue(newStepperValue, "height");
+						heightStepper.value = newStepperValue;
+					}
+						
+					else if(propertyName == 'height')
+					{
+						newStepperValue = (propertyArray.width.currentValue * newPercentage);
+						updatePropertyValue(newStepperValue, "width");
+						widthStepper.value = newStepperValue;
+					}
+					updatePropertyValue(event.currentTarget.value, propertyName);
+				}
+					
+				else
+				{
+					updatePropertyValue(event.currentTarget.value, propertyName);
+				}
+			}
+			
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_VISUAL_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:HBox width="100%" height="100%" paddingLeft="50" verticalAlign="middle"  >
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%">
+					<mx:Text text="source" />
+				</mx:FormItem>
+			</mx:Form>
+				
+		<mx:Form paddingLeft="30">
+			<mx:FormItem label="{propertyArray.x.description}" width="100%" height="100%">
+				<ns1:WysiwygNumericStepper id="xStepper" styleName="dimension" 
+										   value="{propertyArray.x.currentValue}" 
+										   maximum="{propertyArray.x.maxValue}"
+										   minimum="{propertyArray.x.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'x')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem label="{propertyArray.y.description}" width="100%" height="100%" >
+				<ns1:WysiwygNumericStepper id="yStepper" styleName="dimension"
+										   value="{propertyArray.y.currentValue}"
+										   maximum="{propertyArray.y.maxValue}"
+										   minimum="{propertyArray.y.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'y')"
+										   />
+			</mx:FormItem>
+		</mx:Form>
+		<mx:Form >
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.width.description}">
+				
+				<ns1:WysiwygNumericStepper id="widthStepper" styleName="dimension"
+										   value="{propertyArray.width.currentValue}"
+										   maximum="{propertyArray.width.maxValue}"
+										   minimum="{propertyArray.width.minValue}"
+										   change="onWidthHeightChange(event, 'width')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem width="50%" height="100%" label="{propertyArray.height.description}">
+				<ns1:WysiwygNumericStepper id="heightStepper" styleName="dimension"
+										   value="{propertyArray.height.currentValue}"
+										   maximum="{propertyArray.height.maxValue}"
+										   minimum="{propertyArray.height.minValue}"
+										   change="onWidthHeightChange(event, 'height')"/>
+			</mx:FormItem>				
+		</mx:Form>			
+			
+			<mx:CheckBox id="lockTransform" styleName="lockUnlock"
+						 toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_LOCK_RATIO_BUTTON_TOOLTIP')}"/>
+		
+		<mx:Form>
+			
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.showBackSceneMC.description}">			
+				<ns1:WysiwygCheckBox width="100%" 
+									 selected="{propertyArray.showBackSceneMC.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selected, 'showBackSceneMC')"/>
+			</mx:FormItem>	
+			
+		</mx:Form>	
+		
+	</mx:HBox>
+	
+	<mx:HRule width="95%"/>
+	
+	<mx:HBox width="100%" height="100%" paddingLeft="50" verticalAlign="middle"  >
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%">
+				<mx:Text text="zoom" />
+			</mx:FormItem>
+		</mx:Form>
+		
+		<mx:Form paddingLeft="30">
+			<mx:FormItem label="{propertyArray.zoomX.description}" width="100%" height="100%">
+				<ns1:WysiwygNumericStepper id="positionzoomXStepper" styleName="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.position.position" 
+										   value="{propertyArray.zoomX.currentValue}" 
+										   maximum="{propertyArray.zoomX.maxValue}"
+										   minimum="{propertyArray.zoomX.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'zoomX')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem label="{propertyArray.zoomY.description}" width="100%" height="100%" >
+				<ns1:WysiwygNumericStepper id="positionzoomYStepper" styleName="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.position.position"
+										   value="{propertyArray.zoomY.currentValue}"
+										   maximum="{propertyArray.zoomY.maxValue}"
+										   minimum="{propertyArray.zoomY.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'zoomY')"
+										   />
+			</mx:FormItem>
+			<mx:FormItem label="{propertyArray.easingType.description}" width="100%" height="100%">
+				<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.easingType.values)}"
+									 styleName="large"
+									 editable="true"
+									 selectedItem="{propertyArray.easingType.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'easingType')"  />
+			</mx:FormItem>
+		</mx:Form>
+		<mx:Form >
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.zoomWidth.description}">
+				
+				<ns1:WysiwygNumericStepper id="zoomWidthStepper" styleName="dimension"
+										   value="{propertyArray.zoomWidth.currentValue}"
+										   maximum="{propertyArray.zoomWidth.maxValue}"
+										   minimum="{propertyArray.zoomWidth.minValue}"
+										   change="onWidthHeightChange(event, 'zoomWidth')"/>
+			</mx:FormItem>
+			
+			<mx:FormItem width="50%" height="100%" label="{propertyArray.zoomHeight.description}">
+				<ns1:WysiwygNumericStepper id="zoomHeightStepper" styleName="dimension"
+										   value="{propertyArray.zoomHeight.currentValue}"
+										   maximum="{propertyArray.zoomHeight.maxValue}"
+										   minimum="{propertyArray.zoomHeight.minValue}"
+										   change="onWidthHeightChange(event, 'zoomHeight')"/>
+			</mx:FormItem>		
+			<mx:FormItem label="{propertyArray.easingDuration.description}">
+				<ns1:WysiwygNumericStepper id="easingDurationStepper" styleName="dimension"
+										   value="{propertyArray.easingDuration.currentValue}"
+										   maximum="{propertyArray.easingDuration.maxValue}"
+										   minimum="{propertyArray.easingDuration.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'easingDuration')"/>
+			</mx:FormItem>			
+		</mx:Form>		
+		
+		<mx:CheckBox id="lockzoomTransform" styleName="lockUnlock"
+					 toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_LOCK_RATIO_BUTTON_TOOLTIP')}"/>
+		<mx:Form >
+			<mx:FormItem label="{propertyArray.zoomLevel.description}">
+				<ns1:WysiwygNumericStepper id="zoomLevelStepper" styleName="dimension"
+										   value="{propertyArray.zoomLevel.currentValue}"
+										   maximum="{propertyArray.zoomLevel.maxValue}"
+										   minimum="{propertyArray.zoomLevel.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'zoomLevel')"/>
+			</mx:FormItem>
+		</mx:Form>
+	</mx:HBox>	
+	<mx:HRule width="100%" />
+	
+</panelUis:PanelUiBase>

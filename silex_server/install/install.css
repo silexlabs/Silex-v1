@@ -1,0 +1,170 @@
+/* RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END RESET CSS */
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-align:center;
+	background-color:#46505a;
+}
+
+#page {
+	margin:auto auto;
+	width:870px;
+}
+
+#header {
+	text-transform:uppercase;
+	height:100px;
+	width:100%;
+}
+
+#header h1 {
+	letter-spacing:10px;
+	font-size:30px;
+	font-weight:normal;
+	padding-top:35px;
+	text-shadow: 0px 0px 1px #000;
+	color:#FFF;
+}
+
+#steps {
+	font-size:25px;
+	font-weight:bold;
+	width:100%;
+	color:#FFF;
+	text-shadow: 0px 0px 1px #333;
+}
+
+#step1 {
+	background:url(images/step1.png) no-repeat;
+	height:66px;
+	width:100%;
+	padding-top:18px;
+}
+
+#step2 {
+	background:url(images/step2.png) no-repeat;
+	height:66px;
+	width:100%;
+	padding-top:18px;
+}
+
+#step3 {
+	background:url(images/step3.png) no-repeat;
+	height:66px;
+	width:100%;
+	padding-top:18px;
+}
+
+#content {
+	height:300px;
+	margin:40px 0 55px 0;
+}
+
+#cadre {
+	margin:auto;
+	width:530px;
+	height:240px;
+	background:#d9dff4 url(images/backgroundpopup.png) center repeat-x;
+	padding:25px 0;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	background-color:#e1e1e1;
+	-moz-box-shadow: 0px 0px 6px #000;  
+    -webkit-box-shadow: 0px 0px 6px #000;  
+    box-shadow: 0px 0px 6px #000;
+	border:5px solid #d9dff4;
+}
+
+#cadre p {
+	font-weight:bold;
+	padding-top:10px;
+	line-height:25px;
+	color:#333;
+}
+
+.textsilex {
+    color: #ff4d1f;
+}
+
+#selectlang {
+	padding-bottom:25px;
+}
+
+#footer {
+	width:100%;
+	height:50px;
+}
+
+.footerstep1 {
+	background:url(images/footerstep1.png) center no-repeat;
+}
+
+.footerstep2 {
+	background:url(images/footerstep2.png) center no-repeat;
+}
+
+.footerstep3 {
+	background:url(images/footerstep3.png) center no-repeat;
+}
+
+.welcomebtn {
+	margin: 20px;
+	padding: 10px 20px;
+}

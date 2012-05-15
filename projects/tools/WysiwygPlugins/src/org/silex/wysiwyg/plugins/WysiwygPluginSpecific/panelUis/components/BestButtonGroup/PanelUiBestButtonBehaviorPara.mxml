@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+					  width="100%" 
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	
+	<mx:Form width="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BASIC_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>			
+			<mx:Form width="100%" height="100%" paddingLeft="100">
+				<mx:HBox height="100%" horizontalAlign="center" verticalAlign="middle">
+					<mx:FormItem label="{propertyArray.toggle.description}" width="100%" height="100%" >
+						<ns1:WysiwygCheckBox selected="{propertyArray.toggle.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selected, 'toggle')"  />
+						
+					</mx:FormItem>
+					
+					<mx:FormItem label="{propertyArray.selected.description}" width="100%" height="100%" >
+						<ns1:WysiwygCheckBox selected="{propertyArray.selected.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selected, 'selected')"  />
+						
+					</mx:FormItem>
+					<mx:FormItem label="{propertyArray.disabled.description}" width="100%" height="100%" >
+						<ns1:WysiwygCheckBox selected="{propertyArray.disabled.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selected, 'disabled')"  />
+						
+					</mx:FormItem>
+					<mx:FormItem label="{propertyArray.buttonGroupID.description}" direction="horizontal" >
+						<ns1:WysiwygTextArea text="{propertyArray.buttonGroupID.currentValue}" width="100%" styleName="small"
+											 change="updatePropertyValue(event.currentTarget.text, 'buttonGroupID')"  />
+						<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.buttonGroupID)}" />	
+						
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

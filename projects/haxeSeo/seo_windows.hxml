@@ -1,0 +1,1 @@
+-cp src-cp ../../framework/hx#-lib utest-main Main--php-lib ../../../silex_server/framework/hx-seo-php bin#-xml doc/doc.xml#-cmd haxedoc doc/doc.xml#-cmd move /Y index.html doc\#-cmd rmdir /S /Q doc\content\#-cmd move /Y content doc\

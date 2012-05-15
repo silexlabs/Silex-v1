@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Button xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   styleName="OpenManager"
+		   click="button1_clickHandler(event)"
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx">
+
+	<fx:Script>
+		<![CDATA[
+			import flash.net.navigateToURL;
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				navigateToURL(new URLRequest("./?/manager"));
+			}
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+</mx:Button>

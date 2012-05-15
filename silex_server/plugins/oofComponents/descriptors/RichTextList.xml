@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>RichTextList</componentName>
+	<as2Url>as2/RichTextList.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.lists.RichTextList</className>
+	<specificEditorUrl>editors/RichTextList.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.oof.lists.CustomList</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>RichTextList</name>
+			<uid>silex.AddComponent.ToolItem.AddRichTextList</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.ListsMenus</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_RICH_TEXT_LIST</label>
+			<description>DESCRIPTION_ADD_BUTTON_RICH_TEXT_LIST</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_lists-menus.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>RichTextList skin 1</label>
+					<url>as2/RichTextList/RichTextList_01.swf</url>
+					<description>skin1 description</description>
+				</skin>
+				<skin>
+					<label>RichTextList skin 2</label>
+					<url>as2/RichTextList/RichTextList_02.swf</url>
+					<description>skin2 description</description>
+				</skin>
+				<skin>
+					<label>RichTextList skin 3</label>
+					<url>as2/RichTextList/RichTextList_03.swf</url>
+					<description>skin3 description</description>
+				</skin>
+				<skin>
+					<label>RichTextList skin 4</label>
+					<url>as2/RichTextList/RichTextList_04.swf</url>
+					<description>skin4 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<autoSize>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_AUTOSIZE</description>
+			<defaultValue>true</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</autoSize>	
+		<embedFonts>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_ENABLE_EMBEDDED_FONTS</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</embedFonts>		
+		<html>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_ENABLE_HTML</description>
+			<defaultValue>true</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</html>
+		<wordWrap>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_WORD_WRAP</description>
+			<defaultValue>true</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</wordWrap>
+		<enabled>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_ENABLED</description>
+			<defaultValue>true</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</enabled>
+		<minHeight>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_MIN_HEIGHT</description>
+			<defaultValue>0</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</minHeight>	
+		<minWidth>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_MIN_WIDTH</description>
+			<defaultValue>0</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</minWidth>
+		<cellRenderer>
+			<type>String</type>
+			<subType>Text</subType>
+			<description>PROPERTIES_LABEL_CELL_RENDERER</description>
+			<defaultValue>RichTextCellRenderer</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</cellRenderer>
+	</properties>
+</componentDescriptor>

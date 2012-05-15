@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>ButtonBase</componentName>
+	<className>org.silex.ui.components.buttons.ButtonBase</className>
+	<parentDescriptorClassName>org.silex.ui.components.ComponentAnimated</parentDescriptorClassName>
+	<specificEditorUrl>editors/Button.swf</specificEditorUrl>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/silexComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>Addsimple_flash_button</name>
+			<uid>silex.AddComponent.ToolItem.AddSimple_flash_button</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Buttons</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_BUTTON</label>
+			<description>DESCRIPTION_ADD_BUTTON_BUTTON</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/button.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>help button</label>
+					<description>help button</description>
+					<url>as2/simpleFlashButton/button_help.swf</url>
+				</skin>		
+				<skin>
+					<label>big red button</label>
+					<description>big red button</description>
+					<url>as2/simpleFlashButton/BigRedButton.swf</url>
+				</skin>		
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>	
+		
+	</properties>
+</componentDescriptor>

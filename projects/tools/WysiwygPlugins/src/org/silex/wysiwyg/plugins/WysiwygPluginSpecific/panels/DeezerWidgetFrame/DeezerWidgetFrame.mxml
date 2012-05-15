@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:deezerWidgetFrame = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.DeezerWidgetFrame"
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+				 xmlns:components="components.*" 
+				 xmlns:ns="org.silex.wysiwyg.property_plugins.components.*" 
+				 xmlns:ns1="org.silex.wysiwyg.property_plugins.ui.*" 
+				 xmlns:DeezerWidgetFrame="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.DeezerWidgetFrame.*">
+	
+	<fx:Script>
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(sizeParameters, advencedParameters);
+			}
+		]]>
+	</fx:Script>
+	
+	<DeezerWidgetFrame:PanelUiSizeParameters id="sizeParameters" />
+	<DeezerWidgetFrame:PanelUiAdvencedParameters id="advencedParameters" />
+	
+</panel:PanelBase>

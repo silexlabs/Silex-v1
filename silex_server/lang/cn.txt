@@ -1,0 +1,80 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://spreadsheets.google.com/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE&hl=en&authkey=CL7S-_EG
+
+; Dates
+; months
+DATE_JANUARY=一月&
+DATE_FEBRUARY=二月&
+DATE_MARCH=三月&
+DATE_APRIL=四月&
+DATE_MAY=五月&
+DATE_JUNE=六月&
+DATE_JULY=七月&
+DATE_AUGUST=八月&
+DATE_SEPTEMBER=九月&
+DATE_OCTOBER=十月&
+DATE_NOVEMBER=十一月&
+DATE_DECEMBER=十二月&
+; days
+DATE_SUNDAY=周日&
+DATE_MONDAY=周一&
+DATE_TUESDAY=周二&
+DATE_WEDNESDAY=周三&
+DATE_THURSDAY=周四&
+DATE_FRIDAY=周五&
+DATE_SATURDAY=周六&
+
+; context menu
+CONTEXT_MENU_ABOUT_CAPTION=关于silex((<<silex.config.version>>))&
+CONTEXT_MENU_ABOUT_COMMAND=http://projects.silexlabs.org/?/silex&
+CONTEXT_MENU_REFRESH_COMMAND=刷新(F5)&
+CONTEXT_MENU_REFRESH_NO_CACHE_COMMAND=刷新  (无缓存)(CTRL+F5)&
+CONTEXT_MENU_LOGIN_CAPTION=登录 - SILEX编辑器 (CTRL + L)&
+CONTEXT_MENU_LOGOUT_CAPTION=退出 (CTRL + L)&
+CONTEXT_MENU_FLUSH_LOGINS_CAPTION=刷新登录 (删除cookie)&
+
+; authentication
+MESSAGE_AUTH_FAILD=登录名或密码错误&
+MESSAGE_AUTH_SUCCESS=欢迎您((, <<silex.authentication.currentLogin>>))&
+MESSAGE_PLEASE_WAIT_WHILE_CHECKING_LOGIN_PASS=请等待认证 &
+PROMPT_LOGIN_PASS=请输入您的登录名和密码&
+
+; com
+ERROR_WEBSERVICE_ERROR=服务器错误: ((<<fault.fault.faultstring>>))&
+
+; Gabarit
+MESSAGE_SECTION_DOES_NOT_EXIST=<i>((<<sectionName>>))</i>并不存在t. <b>请有击选择"登录"进入到管理员用户.</b>&
+
+; application
+MESSAGE_WEBSITE_DOES_NOT_EXIST=网站 <i>((<<id_site>>))</i>'  并不存在. 如果你想创建这个网站，请登录然后使用网站工具。 &
+ERROR_LOADING_LAYOUT=错误:布局文件没有找到 '((<<layoutFileName>>))': ((<<error>>))&
+
+; HELP LINKS
+HELP_URL_DOCUMENTATION_ROOT=http://community.silexlabs.org/silex/help/&
+HELP_URL_WYSIWYG_LIBRARY=editing/library.toolbox.和.ftp.client&
+HELP_URL_WYSIWYG_PLAYERS=editing/media.toolbox&
+HELP_URL_WYSIWYG_LAYERS=editing/layer-page.toolbox&
+HELP_URL_WYSIWYG_PROPERTIES=editing/properties.toolbox&
+HELP_URL_WYSIWYG_WEBSITE=editing/website.toolbox&
+HELP_URL_WYSIWYG_ACTIONS=editing/actions.toolbox&
+HELP_URL_WYSIWYG_KEYBOARD_SHORTCUTS=editing/keyboard.shortcuts&
+HELP_URL_WYSIWYG_VIEW_MENU=editing/view.menu&
+HELP_URL_WYSIWYG_SELECTION=editing/editing.home&
+
+
+; Gabarit
+WARNING_MULTIPLE_DEFAULT_ICON=有些默认图标已经存在((<<layout.sectionName>>)): ((<<layout.defaultIcon.playerName>>)) 和 ((<<player.playerName>>))&
+
+; application 
+MESSAGE_SCREEN_SAVER_LOGGED_IN=如果您每登录，那么屏保就会启用。&
+ERROR_PAGE_SAVE_ERROR=在保存过程存在错误，数据没有保存  ((<<error>>))&
+
+; com
+MESSAGE_SAVE_PAGE_DONE=<i>((<<sectionName>>))</i> 成功保存&
+MESSAGE_REGENERATE_INDEX_DONE=索引成功产生<i>((<<id_site>>))</i> - <b>((<<indexedPages>>)) 页面索引</b>&
+
+; UIBase
+QUIT_DIRTY_PAGE_WARNING=此页面还未保存. 你确定要继续其他页面? ((page name: <<sectionName>>))&
+
+; tools manager
+MESSAGE_ADMIN_WELCOME_SUCCESS=欢迎, <b>((<<authentication.currentLogin>>))</b>.<br><u>Tip</u>:把您的鼠标放在屏幕上侧，菜单就会自动出现。&
+WARNING_OLD_VERSION_OF_SILEX=<br><u>In<br><u>Info</u>:新版本SILEX已经存在 , 请打开.<u><a href='http://silex-ria.org/open.source.flash.cms/silex/telecharger'>SILEX网站 </a></u>来获取更多的信息&

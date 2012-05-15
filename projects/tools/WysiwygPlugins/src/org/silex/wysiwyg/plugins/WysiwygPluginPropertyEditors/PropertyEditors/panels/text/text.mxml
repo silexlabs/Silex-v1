@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\StandardAlertUIHeader.mxml -->
+<!---
+A text editor used to edit simple text.
+
+@author Yannick
+-->
+<panels:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"
+				xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*" xmlns:ui="org.silex.wysiwyg.ui.*">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+
+			import org.silex.wysiwyg.event.PluginEvent;
+			
+			private function onTextChange(event:Event):void
+			{
+				updateSelectedProperties(event.currentTarget.text);
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:TextArea id="textField" change="onTextChange(event)" text="{_selectedProperty.currentValue}" width="100%" height="100%" />
+	<mx:HBox width="100%" horizontalAlign="left">
+		<ui:WysiwygButton click="{closeEditor()}" label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_CONFIRM_BUTTON_LABEL')}" />
+	</mx:HBox>
+	
+</panels:PropertyEditorsBase>

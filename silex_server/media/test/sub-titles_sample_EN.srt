@@ -1,0 +1,34 @@
+﻿1
+00:00:01,245 --> 00:00:05,636
+Open the printer cover.
+
+2
+00:00:07,496 --> 00:00:09,987
+Use a cotton swab supplied by Evolis and
+press the center of the tube
+
+3
+00:00:10,187 --> 00:00:14,004
+until it clicks and releases
+the cleaning product.
+
+4
+00:00:14,004 --> 00:00:15,926
+Gently apply the cotton swab onto
+the print head,
+
+5
+00:00:15,926 --> 00:00:19,904
+moving it from left
+to right and for a few seconds.
+
+6
+00:00:21,074 --> 00:00:22,681
+Close the cover.
+
+7
+00:00:22,782 --> 00:00:26,000
+Wait a couple of minutes
+before using the printer until the
+cleaning product has fully evaporated.
+

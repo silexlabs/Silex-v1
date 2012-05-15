@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns1:ToolItemViewBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 horizontalAlign="center" verticalAlign="middle"
+		 creationComplete="onCreationComplete()"
+		 xmlns:ns1="org.silex.wysiwyg.ui.toolItemUI.*"
+		 width="100%" height="100%"
+		 direction="vertical">
+	<fx:Script>
+		<![CDATA[
+			/**
+			 * This module loads all items (icons) on the corresponding toolbar
+			 */
+			import org.silex.adminApi.listedObjects.ToolBarGroup;
+			import org.silex.adminApi.listedObjects.ToolBarItem;
+			import org.silex.wysiwyg.ui.toolItemUI.ToolItemController;
+			
+			/**
+			 * the uid of the target toolUid
+			 */ 
+			public var toolUid:String;
+
+			/**
+			 * Called on init, gives an Array Collection of all items to be loaded on the toolbar
+			 */
+			private function onCreationComplete()
+			{
+				rp.dataProvider = (new ToolItemController).generateItemsArrayCollection(toolUid);
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<mx:HRule width="100%" />
+	<mx:Repeater id="rp" height="100%" width="100%" >
+		<mx:VBox width="100%" horizontalAlign="center" >
+
+			<!--<mx:Label text="{(rp.currentItem.group as ToolBarGroup).label}" toolTip="{(rp.currentItem.group as ToolBarGroup).description}" />-->
+
+			<mx:Repeater id="rp2"  dataProvider="{rp.currentItem.itemGroup}" width="100%"  >
+				<ns1:ToolItemViewItemRenderer width="100%"
+					iconHeight='{iconHeight}'
+					iconWidth='{iconWidth}'
+					SWFSource='{(rp2.currentItem as ToolBarItem).url}' 
+					SWFToolTip='{(rp2.currentItem as ToolBarItem).description}'
+					hasBackground='{(rp2.currentItem as ToolBarItem).hasBackground}'/>	
+			</mx:Repeater>
+			<mx:HRule width="100%" />
+		</mx:VBox>
+	</mx:Repeater>
+</ns1:ToolItemViewBase>

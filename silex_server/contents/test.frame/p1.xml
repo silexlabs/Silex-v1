@@ -1,0 +1,144 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="3" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.AsFrame.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.AsFrame</html5Url>
+					<className>org.silex.ui.players.AsFramePlayerHtmlText</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">400</y>
+						<x type="Integer">120</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">458</height>
+						<width type="Integer">679</width>
+						<playerName>HtmlText</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<backgroundVisible type="Boolean">false</backgroundVisible>
+						<location></location>
+						<embededObject></embededObject>
+						<htmlText>HtmlText HtmlText HtmlText HtmlText HtmlText&lt;br /&gt;HtmlTextHtmlText   HtmlText&lt;br /&gt;&lt;h4&gt;LE TITRE&lt;/h4&gt;le texte</htmlText>
+						<asFrameType>htmlText</asFrameType>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.PNG</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">820</y>
+						<x type="Integer">121</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>preview2</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">347</height>
+						<width type="Integer">665</width>
+						<clickable type="Boolean">true</clickable>
+						<url>media/preview.png</url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image.PNG</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">20</y>
+						<x type="Integer">121</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>preview</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">347</height>
+						<width type="Integer">665</width>
+						<clickable type="Boolean">true</clickable>
+						<url>media/preview.png</url>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Image.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Image</html5Url>
+					<className>org.silex.ui.players.Image</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">-50</y>
+						<x type="Integer">0</x>
+						<alpha type="Float">9.765625</alpha>
+						<playerName>ecatalbookmarkpdf1_imported4</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<tooltipText></tooltipText>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconDeeplinkName> </iconDeeplinkName>
+						<iconPageName>new page name</iconPageName>
+						<descriptionText></descriptionText>
+						<fadeInStep type="Integer">100</fadeInStep>
+						<tabChildren type="Boolean">false</tabChildren>
+						<_focusrect type="Boolean">false</_focusrect>
+						<visibleFrame_bool type="Boolean">false</visibleFrame_bool>
+						<url>media/ecatalbookmarkpdf1/pdfImport/ecatalbookmarkpdf1_imported4.swf</url>
+						<scaleMode>none</scaleMode>
+						<mask> </mask>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<height type="Integer">1169</height>
+						<width type="Integer">901</width>
+						<clickable type="Boolean">false</clickable>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

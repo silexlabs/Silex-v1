@@ -1,0 +1,194 @@
+Generated xml:
+stdClass Object
+(
+    [attributes] => stdClass Object
+        (
+            [type_str] => object
+            [name_str] => root
+        )
+
+    [element] => _hx_array Object
+        (
+            [»a] => Array
+                (
+                    [0] => structure
+                    [1] => lang.config%2Fstr
+                    [2] => Tue+Apr+12+11%3A53%3A00+GMT%2B0200+2011
+                    [3] => http%3A%2F%2Flocalhost%3A80%2Fsilex_trunk%2Fsilex_server%2Fdynamic_demo%2F
+                    [4] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [type_str] => object
+                                    [name_str] => content
+                                )
+
+                            [element] => stdClass Object
+                                (
+                                    [attributes] => stdClass Object
+                                        (
+                                            [type_str] => object
+                                            [name_str] => 0
+                                        )
+
+                                    [element] => stdClass Object
+                                        (
+                                            [attributes] => stdClass Object
+                                                (
+                                                    [type_str] => object
+                                                    [name_str] => links
+                                                )
+
+                                            [element] => _hx_array Object
+                                                (
+                                                    [»a] => Array
+                                                        (
+                                                            [0] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 0
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage01.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page01
+                                                                                    [2] => page01
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                            [1] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 1
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage02.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page02
+                                                                                    [2] => page02
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                            [2] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 2
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage04.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page04
+                                                                                    [2] => page04
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                            [3] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 3
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage06.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page06
+                                                                                    [2] => page06
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                            [4] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 4
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage08.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page08
+                                                                                    [2] => page08
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                            [5] => stdClass Object
+                                                                (
+                                                                    [attributes] => stdClass Object
+                                                                        (
+                                                                            [type_str] => object
+                                                                            [name_str] => 5
+                                                                        )
+
+                                                                    [element] => _hx_array Object
+                                                                        (
+                                                                            [»a] => Array
+                                                                                (
+                                                                                    [0] => cgi%2Fscripts%2Fget_resized_image.php%3Ffile%3Dcontents%2Fdynamic_demo%2Fpage10.png%26width%3D152%26height%3D99%0A
+                                                                                    [1] => page10
+                                                                                    [2] => page10
+                                                                                )
+
+                                                                            [length] => 3
+                                                                        )
+
+                                                                )
+
+                                                        )
+
+                                                    [length] => 6
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [length] => 5
+        )
+
+)

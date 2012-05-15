@@ -1,0 +1,14 @@
+<macromedia-extension name="Silex Loader classes" version="1.0" mxiversion="1.0" plugin-manager-type="all-users">
+  <defaultLanguage>en_US</defaultLanguage>
+  <author name="SilexLabs"/>
+  <description><![CDATA[This is the silex Loader classes]]></description>
+  <products>
+    <product name="Flash" version="11"/>
+  </products>
+  <license-agreement><![CDATA[]]></license-agreement>
+  <ui-access><![CDATA[]]></ui-access>
+  <files>
+    <file source="SilexAs2LoaderClasses.swc" destination="$flash/Components" />
+  </files>
+  <configuration-changes/>
+</macromedia-extension>

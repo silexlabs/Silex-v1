@@ -1,0 +1,72 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="1" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[Text]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">243</y>
+						<x type="Float">201.35</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Float">208.125</width>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type><![CDATA[dynamic]]></type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollbar type="Boolean">true</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText><![CDATA[]]></htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions>
+						<action>
+							<functionName>Text.htmlText=</functionName>
+							<modifier>onLoad</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Audio.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Audio</html5Url>
+					<className>org.silex.ui.players.Audio</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[smallAudio]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">200</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">28.5</height>
+						<width type="Float">97.75</width>
+						<volume type="Integer">50</volume>
+						<url><![CDATA[media/test/smallaudio.mp3]]></url>
+						<mute type="Boolean">false</mute>
+						<showNavigation type="Boolean">true</showNavigation>
+						<loop type="Boolean">false</loop>
+						<autoPlay type="Boolean">false</autoPlay>
+					</properties>
+					<actions>
+						<action>
+							<functionName>Text.htmlText=Artist: &lt;&lt;smallAudio.id3.artist&gt;&gt;&lt;BR&gt;Title: &lt;&lt;smallAudio.id3.songname&gt;&gt;&lt;BR&gt;Album: &lt;&lt;smallAudio.id3.album&gt;&gt;</functionName>
+							<modifier>soundId3</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

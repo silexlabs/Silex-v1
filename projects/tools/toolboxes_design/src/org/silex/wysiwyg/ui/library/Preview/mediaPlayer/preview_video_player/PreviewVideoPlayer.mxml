@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+The Preview video player. Displays a video media and controls for it (play/pause button, volume button and progress/seek bar).
+
+@author Yannick
+-->
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="100%" xmlns:ns="org.silex.tools.library.finder_list.preview.mediaPlayer.preview_video_player.*" 
+		 removedFromStage="{player.stop(); playButton.selected=true}" 
+		 xmlns:ns1="org.silex.wysiwyg.toolboxes.library.preview.mediaPlayer.preview_video_player.*" xmlns:ns2="org.silex.wysiwyg.ui.*">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:String id="source" />
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			private function onPlayButtonClick():void
+			{
+				if (playButton.selected)
+				{
+					player.pause();
+				}
+				
+				else
+				{
+					player.play();
+				}
+			}
+			
+			private function onSlideValueChange():void
+			{
+				if (player.source)
+				{
+					//player.playheadTime = progressSlider.value;
+				}
+			}
+			
+			private function onPlayHeadUpdate():void
+			{
+				//progressSlider.value = player.playheadTime;
+			}
+			
+			private function onLoadProgress():void
+			{
+				//progressBar.setProgress(player.bytesLoaded, player.bytesTotal);
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:VideoDisplay id="player" source="{this.source}"
+					 playheadUpdate="onPlayHeadUpdate()"
+					 width="100%" height="100%"
+					 autoRewind="false"
+					 progress="onLoadProgress()"
+					 volume="{int(! muteButton.selected)}"
+					 complete="{playButton.selected=true}"/>
+	
+	<mx:HBox width="100%" height="30"  >
+		<ns2:WysiwygButton id="playButton" styleName="play" width="22" height="22" toggle="true" click="onPlayButtonClick()"  />
+		<ns2:WysiwygButton id="muteButton" styleName="mute" width="22" height="22" toggle="true" />
+		<!--<mx:ProgressBar id="progressBar" x="40" width="100%" mode="manual" 
+						label="" labelPlacement="right" labelWidth="0" horizontalGap="0" includeInLayout="false"/>
+		<mx:HSlider id="progressSlider" x="40" width="100%"  maximum="{player.totalTime}" styleName="hiddenTrack"
+					slideDuration="0"
+					liveDragging="false" thumbPress="{player.pause()}" thumbRelease="{player.play()}"
+					change="onSlideValueChange()" includeInLayout="false"
+					/>-->
+	</mx:HBox>
+	
+</mx:VBox>

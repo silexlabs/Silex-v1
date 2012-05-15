@@ -1,0 +1,309 @@
+@CHARSET "UTF-8";
+/*
+This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html
+
+File: updater.css
+Styles of the Silex updater plugin
+
+Author: Thomas Fétiveau (¯abojad)  <http://tofee.fr> or <thomas.fetiveau.tech@gmail.com>
+ */
+
+
+/*********************/
+/***** MAIN FRAME *****/
+/*********************/
+
+div#headers_updater
+{
+	width:100%;
+	font-family:"arial";
+	color:#22292B;
+	/*border:1px solid orange;*/
+}
+
+div#updater
+{
+	width:100%;
+	font-family:"arial";
+	padding-top:5px;
+	color:#22292B;
+}
+
+div.loading_screen
+{
+	position:absolute;
+	top:0; left:0;
+	width:100%;
+	text-align:center;
+	padding-top:200px;
+}
+
+/***********************/
+/**** MENU ELEMENTS ****/
+/***********************/
+div.updater_ariane
+{
+	position:relative;
+	margin-top:-20px;
+	height:20px;
+	margin-bottom:10px;
+	/*border:1px solid green;*/
+}
+
+div.updater_main_menu_item
+{
+	width:180px;
+	float:left;
+	text-align:center;
+	margin-right:5px; margin-bottom:5px;
+	
+	/*border:1px solid red;*/
+}
+
+div.updater_category_menu_item
+{
+	width:180px;
+	float:left;
+	text-align:center;
+	margin-right:5px; margin-bottom:5px;
+	
+	/* border:1px solid red; */
+}
+
+div.updater_element_menu_item
+{
+	float:left;
+	text-align:center;
+	margin-left:55px; margin-bottom:90px;
+	width:auto;
+	height:auto;
+	/*border:1px solid yellow;*/
+}
+
+/**********************/
+/*** BUTTONS, LINKS ***/
+/**********************/
+
+.updater_ariane A { cursor:pointer; font-weight:bold; }
+.updater_ariane A:link { text-decoration:none; }
+.updater_ariane A:visited  { text-decoration:none; }
+.updater_ariane A:active  { text-decoration:none; }
+.updater_ariane A:hover { text-decoration:none; color:#A63E26; }
+
+button 
+{
+	margin-left:auto; margin-right:auto;
+    cursor:pointer;
+}
+
+button.updater_element_menu_item_button
+{
+	/*width:auto;
+	height:auto;*/
+	width:310px;
+	height:310px;
+	padding:5px;
+	background-color:#FFFFFF;
+    border:1px solid #000000;
+	border-radius: 1em;
+	-moz-border-radius: 1em;
+ 	-webkit-border-radius: 1em;
+}
+
+.updater_element_menu_item_button img
+{
+	max-width:300px;
+	max-height:300px;
+}
+
+/*******************/
+/** TEXTS, LABELS **/
+/*******************/
+
+.updater_text
+{
+	font-family:"arial";
+	font-size:0.8em;
+	display:block;
+}
+
+.updater_error
+{
+	color:red; font-style:italic; font-weight:bold; font-size:0.8em;
+	display:block;
+}
+
+.updater_success
+{
+	color:green; font-style:italic; font-weight:bold; font-size:0.8em;
+	display:block;
+}
+
+.updater_informative
+{
+	font-size:0.8em; color:grey; font-style:italic; font-family:"arial";
+	display:block;
+}
+
+.updater_title
+{
+	font-size:1.8em; color:#A63E26; font-family:"arial";
+	display:block;
+	clear:both;
+	margin-top:5px; margin-bottom:5px;
+}
+
+.updater_item_author
+{
+	font-size:0.8em; color:grey; font-style:italic; font-family:"arial";
+	display: block;
+}
+
+.updater_item_version
+{
+	font-size:0.9em; color:black; font-family:"arial";
+	display: block;
+}
+
+.updater_item_content
+{
+	width:98%; height:310px;
+	margin-top:5px; margin-bottom:5px;
+	padding-left:5px; padding-right:5px;
+	overflow-y:scroll;
+	font-family:"arial";
+	border: 2px solid #A63E26;
+}
+
+.updater_main_menu_item span
+{
+	font-size:0.8em; color:grey; font-style:italic; font-family:"arial";
+	display: block;
+}
+
+span.updater_element_menu_item_span
+{
+	font-size:0.8em; color:grey; font-style:italic; font-family:"arial"; display: block;
+}
+
+/********************/
+/** POSITIONNING **/
+/********************/
+
+div.updater_centeredContent
+{
+	width:100%; 
+	text-align:center;
+}
+
+div.updater_clearBoth
+{
+	clear:both;
+}
+
+div.updater_marginBottom
+{
+	margin-bottom:10px;
+}
+
+div.updater_marginTop
+{
+	margin-top:10px;
+}
+
+
+/********************/
+/******* LISTS ******/
+/********************/
+
+div.updater_list
+{
+	width:100%;
+}
+
+div.updater_listLine
+{
+	width:100%;
+}
+
+div.updater_listPath
+{
+	width:88%; 
+	float:left;
+	text-align:center; 
+}
+
+div.updater_listPathLine
+{
+	text-align:left; 
+	font-size:0.7em; font-family:"courier new";
+	height:15px;
+}
+
+div.updater_listPathLine span {
+	display:inline-block; vertical-align:middle;
+}
+
+div.updater_listCheckbox
+{
+	width:7%; 
+	float:right;
+	text-align:center; 
+}
+
+div.updater_listUserModifyied
+{
+	background-color:red;
+}
+
+div.updater_reportList
+{
+	font-family:"courier new"; font-size:0.75em; 
+	width:100%;
+}
+
+
+/******************************/
+/******* PROGRESS BARS ******/
+/******************************/
+
+div.updater_progressBarMessage
+{
+	margin-bottom:5px; 
+	width:100%; 
+	text-align:center; 
+	font-size:0.8em; font-style:italic; font-family:"arial"; color:grey;'
+}
+
+div.updater_progressBar
+{
+	position:relative; 
+	margin-left:auto; margin-right:auto; margin-bottom:5px; 
+	height:15px; width:75%; 
+	border:2px solid black;'
+}
+
+div.updater_innerProgressBar
+{
+	position:absolute; z-index:5; 
+	height:100%; 
+	background-color:blue; 
+}
+
+div.updater_progressBarLabel
+{
+	position:absolute; z-index:6; 
+	height:100%; width:100%; 
+	font-size:0.8em; font-family:"arial"; 
+	text-align:center;
+}
+
+

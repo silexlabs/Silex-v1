@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:ui1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+			   xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+			   xmlns:component1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.Text.*"
+			   xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*">
+
+	<fx:Script> 
+		<![CDATA[
+			import mx.containers.Panel;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listModels.Messages;
+			import org.silex.adminApi.listedObjects.Message;
+			import org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.PanelUiBase;
+			
+			/**
+			 * dispatched when the wysiwyg needs to check wether the font is embedded or not
+			 */ 
+			public static const EVENT_CHECK_EMBEDDED_FONT:String = "eventCheckEmbeddedFont";
+			
+			/**
+			 * register the panel and add listener for a signal to chack the embedded fonts
+			 */ 
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(coordBar, mediarBarText, textBar);
+				
+				for (var i:int = 0; i<_panelUis.length; i++)
+				{
+					(_panelUis[i] as PanelUiBase).addEventListener(EVENT_CHECK_EMBEDDED_FONT, warnNonEmbeddedFont);
+				}
+			}
+			
+			
+			/**
+			 * If the user does'nt use an embedded font, displays a warning
+			 * on the font limitation in Flash the first time he tries to rotate it or make it transparent.
+			 */ 
+			private function warnNonEmbeddedFont(event:Event):void
+			{
+				
+				var embedTextWarning:Message = new Message();
+				embedTextWarning.status = Messages.STATUS_WARNING;
+				embedTextWarning.text = resourceManager.getString('WYSIWYG', "WARNING_EMBEDDED_FONT");
+				embedTextWarning.time = 7000;
+				SilexAdminApi.getInstance().messages.addItem(embedTextWarning);
+					
+				for (var i:int = 0; i<_panelUis.length; i++)
+				{
+					(_panelUis[i] as PanelUiBase).removeEventListener(EVENT_CHECK_EMBEDDED_FONT, warnNonEmbeddedFont);
+				}
+				
+			}
+			
+			/**
+			 * Sets the names of the values that needs to be retrieved
+			 * from the SilexAdminApi.
+			 */ 
+			override protected function registerFilterValues():void
+			{
+				_filterValues = ["x","y","width","height", "alpha", "rotation", "playerName",
+					"htmlText", "embedFonts", "scrollbar", "selectable", "border", "borderColor", "multiline"
+				,"background","backgroundColor","mouseWheelEnabled","visibleOutOfAdmin" ];
+			}
+		]]>
+	</fx:Script>
+	
+		<component1:PanelUiCoordBarNoScaleText id="coordBar" />
+		<component1:PanelUiMediaText id="mediarBarText" />
+		<components:PanelUiText id="textBar" />
+	
+</panel:PanelBase>

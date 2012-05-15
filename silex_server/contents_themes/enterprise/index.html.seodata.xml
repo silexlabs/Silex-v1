@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>index.html</title>
+		<pubDate>Sat May 5 23:15:17 GMT+0200 2012</pubDate>
+		<components>
+			<component>
+				<playerName>HomeButton2</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Home</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>home</iconPageName>
+				<context>*</context>
+				<text>Home </text>
+				<links>
+					<link>
+						<title>home</title>
+						<link>home</link>
+						<deeplink>home</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>ExamplesButton2</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Examples</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>examples</iconPageName>
+				<context>*</context>
+				<text>Examples </text>
+				<links>
+					<link>
+						<title>examples</title>
+						<link>examples</link>
+						<deeplink>examples</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>SolutionsButton2</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Solutions</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>solutions</iconPageName>
+				<context>*</context>
+				<text>Solutions </text>
+				<links>
+					<link>
+						<title>solutions</title>
+						<link>solutions</link>
+						<deeplink>solutions</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>ProductsButton2</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Products</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>products</iconPageName>
+				<context>*</context>
+				<text>Products </text>
+				<links>
+					<link>
+						<title>products</title>
+						<link>products</link>
+						<deeplink>products</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>ContactButton2</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Contact</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>contact</iconPageName>
+				<context>*</context>
+				<text>Contact </text>
+				<links>
+					<link>
+						<title>contact</title>
+						<link>contact</link>
+						<deeplink>contact</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>TextFooter3</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">Network sites</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://www.silexlabs.org/silexlabs/ What is Silex Labs ?]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://www.silexlabs.org/silex Silex at Silex Labs]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://www.silexlabs.org/labs/ amf PHP ?]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://www.silexlabs.org/labs/ Our working Labs]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Network sites ______________________________________ [[http://www.silexlabs.org/silexlabs/ What is Silex Labs ?]] ______________________________________ [[http://www.silexlabs.org/silex Silex at Silex Labs]] ______________________________________ [[http://www.silexlabs.org/labs/ amf PHP ?]] ______________________________________ [[http://www.silexlabs.org/labs/ Our working Labs]] ______________________________________ </text>
+			</component>
+			<component>
+				<playerName>TextFooter2</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">About our site</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://projects.silexlabs.org/?/silex/flash.cms/what.is.silex Template powered by Silex]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://projects.silexlabs.org/?/silex&amp;format=flash/#/flash.cms/screenshots/wysiwyg.screenshots WYSIWYG tool]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://projects.silexlabs.org/?/silex&amp;format=flash/#/flash.cms/showcase/templates.and.themes/templates.and.themes.page.1 What is Silex used for?]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="-6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0"><U>[[http://projects.silexlabs.org/?/silex&amp;format=flash/#/flash.cms/download Download Silex, free Flash CMS]]</U></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">______________________________________</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text><![CDATA[About our site ______________________________________ [[http://projects.silexlabs.org/?/silex/flash.cms/what.is.silex Template powered by Silex]] ______________________________________ [[http://projects.silexlabs.org/?/silex&format=flash/#/flash.cms/screenshots/wysiwyg.screenshots WYSIWYG tool]] ______________________________________ [[http://projects.silexlabs.org/?/silex&format=flash/#/flash.cms/showcase/templates.and.themes/templates.and.themes.page.1 What is Silex used for?]] ______________________________________ [[http://projects.silexlabs.org/?/silex&format=flash/#/flash.cms/download Download Silex, free Flash CMS]] ______________________________________ ]]></text>
+			</component>
+			<component>
+				<playerName>TextFooter1</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">About our non-profit organization</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#999999" LETTERSPACING="0" KERNING="0">Morbi fermentum, nunc id pellentesque blandit, lectus velit pellentesque nisl, a condimentum est velit sed nisi. Sed libero velit, eleifend nec porttitor, porta quis leo. In hac habitasse platea dictumst.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="1">[[openUrl:http://www.silexlabs.org Learn more about Silex Labs association]]</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>About our non-profit organization  Morbi fermentum, nunc id pellentesque blandit, lectus velit pellentesque nisl, a condimentum est velit sed nisi. Sed libero velit, eleifend nec porttitor, porta quis leo. In hac habitasse platea dictumst. [[openUrl:http://www.silexlabs.org Learn more about Silex Labs association]] </text>
+			</component>
+			<component>
+				<playerName>RectangleFooter2</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>RectangleFooter</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnDark52</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnDark42</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnDark32</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnDark22</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnDark12</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>shadow</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="shadow" src="../../media/enterprise/shadow.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>bodybg012</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="bodybg012" src="../../media/enterprise/bodybg01.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>theme_plant</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="theme_plant" src="../../media/enterprise/theme_plant.jpg">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>TextSponsors2</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="13" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">You can find this theme, and many other Silex stuff (fonts, plugins...) on :</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="13" COLOR="#FF9900" LETTERSPACING="0" KERNING="0"><B><U>[[http://www.silexlabs.org/category/exchange/exchange-silex/themes/ Silex Labs, exchange platform]]</U></B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>You can find this theme, and many other Silex stuff (fonts, plugins...) on : [[http://www.silexlabs.org/category/exchange/exchange-silex/themes/ Silex Labs, exchange platform]] </text>
+			</component>
+			<component>
+				<playerName>logo</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="logo" src="../../media/enterprise/logo.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>TextSponsors</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="13" COLOR="#FF9900" LETTERSPACING="0" KERNING="0"><B><U>[[http://www.silexlabs.org/128899/exchange/exchange-silex/themes/plant-theme/ Plant theme]]</U></B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="6"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">premium Silex template by Koala</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>[[http://www.silexlabs.org/128899/exchange/exchange-silex/themes/plant-theme/ Plant theme]] premium Silex template by Koala </text>
+			</component>
+			<component>
+				<playerName>LabelButtonSearch</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><font color="#9f9f9f" size="12">Search</font></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Search </text>
+			</component>
+			<component>
+				<playerName>TextSearch</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p></p>]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>RectangleSearch</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>ContactButtonside</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="12" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Contact</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>contact</iconPageName>
+				<context>*</context>
+				<text>Contact </text>
+				<links>
+					<link>
+						<title>contact</title>
+						<link>contact</link>
+						<deeplink>contact</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>productsButtonside</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="12" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Products</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>products</iconPageName>
+				<context>*</context>
+				<text>Products </text>
+				<links>
+					<link>
+						<title>products</title>
+						<link>products</link>
+						<deeplink>products</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>SolutionsButtonside</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="12" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Solutions</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>solutions</iconPageName>
+				<context>*</context>
+				<text>Solutions </text>
+				<links>
+					<link>
+						<title>solutions</title>
+						<link>solutions</link>
+						<deeplink>solutions</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>ExamplesButtonside</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="12" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Examples</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>examples</iconPageName>
+				<context>*</context>
+				<text>Examples </text>
+				<links>
+					<link>
+						<title>examples</title>
+						<link>examples</link>
+						<deeplink>examples</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>HomeButtonside</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="12" COLOR="#9f9f9f" LETTERSPACING="0" KERNING="0">Home</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>home</iconPageName>
+				<context>*</context>
+				<text>Home </text>
+				<links>
+					<link>
+						<title>home</title>
+						<link>home</link>
+						<deeplink>home</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>TextAbout</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#9F9F9F" LETTERSPACING="0" KERNING="0">Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus. Itaque earum rerum hic tenetur a sapiente delectus !</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="12" COLOR="#FF9900" LETTERSPACING="0" KERNING="0">[[openUrl:http://www.silexlabs.org Learn More about Silex Labs association]]</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus. Itaque earum rerum hic tenetur a sapiente delectus ! [[openUrl:http://www.silexlabs.org Learn More about Silex Labs association]] </text>
+			</component>
+			<component>
+				<playerName>Text_sponsors</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="14" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0"><B>TEMPLATES AND THEMES</B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>TEMPLATES AND THEMES </text>
+			</component>
+			<component>
+				<playerName>Text_search</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="14" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0"><B>SEARCH</B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>SEARCH </text>
+			</component>
+			<component>
+				<playerName>Text_about</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0"><B>ABOUT</B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>ABOUT </text>
+			</component>
+			<component>
+				<playerName>Text_navigate</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="14" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0"><B>NAVIGATE</B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>NAVIGATE </text>
+			</component>
+			<component>
+				<playerName>sidebarh4</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="sidebarh4" src="../../media/enterprise/sidebar01.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>sidebarh3</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="sidebarh3" src="../../media/enterprise/sidebar01.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>sidebarh2</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="sidebarh2" src="../../media/enterprise/sidebar01.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>sidebarh1</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="sidebarh1" src="../../media/enterprise/sidebar01.png">]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>GradientRectangle</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>TextTitle</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="45" COLOR="#FFFFFF" LETTERSPACING="-1" KERNING="0">[[open:/index.html/home/ your website]]</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FFE0CC" LETTERSPACING="0" KERNING="0">Neque torro quisquam est qui edit !<FONT SIZE="16" COLOR="#CCCCCC"></FONT></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>[[open:/index.html/home/ your website]] Neque torro quisquam est qui edit !  </text>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

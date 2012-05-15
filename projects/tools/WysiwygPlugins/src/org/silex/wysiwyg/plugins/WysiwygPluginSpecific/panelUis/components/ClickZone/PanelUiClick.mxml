@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" verticalAlign="middle" horizontalAlign="center"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	
+	<fx:Script>
+		<![CDATA[
+			/**
+			 * function to take the radiobutton selected value
+			 */
+			public function actionState(targetMode:String, propertyMode:String):Boolean
+			{
+				if(targetMode == propertyMode)
+				{
+					return true;
+				}else
+				{
+					return false;
+				}
+			}
+		]]>
+	</fx:Script>
+	<mx:Form width="100%" height="100%" paddingLeft="100">
+			
+			<mx:FormItem width="100%" height="100%" direction="horizontal">
+				<ns1:WysiwygRadioButton id="zoomRadioBtn" selected="{actionState('OPEN_ZOOM',propertyArray.onClickAction.currentValue)}" label="open zoom" change="updatePropertyValue('OPEN_ZOOM', 'onClickAction')"/>		
+				<ns1:WysiwygRadioButton id="playerRadioBtn" selected="{actionState('OPEN_LAYER',propertyArray.onClickAction.currentValue)}" label="open child layer" change="updatePropertyValue('OPEN_LAYER', 'onClickAction')" />	
+				<ns1:WysiwygRadioButton id="addCartRadioBtn" selected="{actionState('ADD_TO_CART',propertyArray.onClickAction.currentValue)}" label="add to basket" change="updatePropertyValue('ADD_TO_CART', 'onClickAction')"/>					
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" height="100%" direction="horizontal">
+				<ns1:WysiwygRadioButton id="urlRadioBtn" selected="{actionState('OPEN_URL',propertyArray.onClickAction.currentValue)}" label="open url" change="updatePropertyValue('OPEN_URL', 'onClickAction')" />	
+				<mx:Label text="URL" />
+				<ns1:WysiwygTextInput restrict="[a-zA-Z0-9]_éàèâî" />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.onClickActionURL)}"/>
+			</mx:FormItem>	
+	</mx:Form>			
+	
+</panelUis:PanelUiBase>

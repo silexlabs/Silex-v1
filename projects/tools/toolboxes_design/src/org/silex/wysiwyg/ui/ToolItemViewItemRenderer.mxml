@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   width="100%" height="100%"
+		   mouseChildren="true" 
+		   creationComplete="onCreationComplete()" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var SWFSource:String;
+			[Bindable]
+			public var SWFToolTip:String;
+			[Bindable]
+			public var hasBackground:Boolean;
+			
+			
+			private function onCreationComplete():void
+			{
+				if (hasBackground)
+				{
+					swfCanvas.mask = maskCanvas;
+					swfBox.height = 30;
+					swfBox.width =  19;
+				}
+				else
+				{
+					swfBox.height = 30;
+					viewMenuIcon.addEventListener(Event.COMPLETE, onLoadComplete);
+					overlay.visible = false;
+					viewMenuBackground.visible = false;
+				} 
+			}
+			
+			private function onLoadComplete(event:Event):void
+			{
+				this.width = viewMenuIcon.contentWidth;
+			}
+			
+			
+			
+		]]>
+	</fx:Script>
+	
+	
+	<mx:Canvas height="100%" width="100%" id="swfCanvas"  >
+		
+		<mx:Canvas id="viewMenuBackground" height="19" width="19" styleName="viewMenuItemBackground"  />
+		<mx:HBox id="swfBox"  horizontalAlign="center" verticalAlign="middle"  >
+			<mx:SWFLoader  
+				id="viewMenuIcon" 
+				verticalAlign="middle" 
+				horizontalAlign="center" source="{SWFSource}" toolTip="{SWFToolTip}"
+				rollOver="{overlay.styleName = 'viewMenuItemOvergroundOver'}"
+				mouseOut="{overlay.styleName = 'viewMenuItemOvergroundUp'}"
+				mouseUp="{overlay.styleName = 'viewMenuItemOvergroundOver'}"
+				rollOut="{overlay.styleName = 'viewMenuItemOvergroundUp'}"
+				mouseDown="{overlay.styleName = 'viewMenuItemOvergroundDown'}"
+				/>
+		</mx:HBox>
+		
+	</mx:Canvas>
+	
+	<mx:HBox height="100%" width="100%" horizontalAlign="center" verticalAlign="middle" mouseEnabled="false">
+		<mx:Canvas id="overlay" styleName="viewMenuItemOvergroundUp" width="19" height="19" mouseEnabled="false"      />
+	</mx:HBox>
+	
+	<mx:HBox height="100%" width="100%" visible="false" horizontalAlign="center" verticalAlign="middle" mouseEnabled="false">
+		<mx:Canvas id="maskCanvas"  styleName="viewMenuItemBackground"  width="19" height="19"   />
+	</mx:HBox>
+	
+</mx:Canvas>

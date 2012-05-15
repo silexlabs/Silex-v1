@@ -1,0 +1,126 @@
+<html>
+
+<head>
+
+<title>HaXe Bundle automatic AutoDoc</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #7D7E86;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 10px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #F6FAFD;
+}
+
+.title {
+	font-size: 35;
+	font-weight: bold;
+	text-align: center;
+	background-color : #FF4D1F;
+	color : white;
+	padding : 5 10 5 10;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 30px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #FF4D1F;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #FF4D1F;
+	text-decoration : underline;
+}
+
+a.package {
+	color : black;
+}
+
+.index {
+	margin : 20px 0 5px 10px;
+}
+
+.kwd {
+	color : #330033;
+}
+
+.classname {
+	font-size : 30;
+	font-weight : bold;
+	margin-left : 10px;
+	margin-bottom : 20px;
+}
+
+.classdoc {
+	border : 1px  #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	background-color : #DDD;
+	-moz-border-radius : 10px;
+	border-radius: 10px;
+	padding : 5 5 5 10;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0 20 20 40;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 11pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title"><img alt="Logo" src="http://code.google.com/p/sugar-hx/logo?logo_id=1265779922" align="ABSBOTTOM"></img>HaXe Bundle AutoDoc</div>
+
+<ul class="entry"><li><a href="#" class="package" onclick="return toggle('haxe')">haxe</a><div id="haxe" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('haxe_io')">io</a><div id="haxe_io" class="package_content"><ul class="entry"><li><a href="content/haxe/io/Bytes.html" class="entry">Bytes</a></li><li><a href="content/haxe/io/BytesBuffer.html" class="entry">BytesBuffer</a></li><li><a href="content/haxe/io/BytesData.html" class="entry">BytesData</a></li><li><a href="content/haxe/io/Eof.html" class="entry">Eof</a></li><li><a href="content/haxe/io/Error.html" class="entry">Error</a></li><li><a href="content/haxe/io/Input.html" class="entry">Input</a></li><li><a href="content/haxe/io/Output.html" class="entry">Output</a></li></ul></div></li><li><a href="content/haxe/Int32.html" class="entry">Int32</a></li><li><a href="content/haxe/Log.html" class="entry">Log</a></li><li><a href="content/haxe/PosInfos.html" class="entry">PosInfos</a></li></ul></div></li><li><a href="#" class="package" onclick="return toggle('org')">org</a><div id="org" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('org_silex')">silex</a><div id="org_silex" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('org_silex_core')">core</a><div id="org_silex_core" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('org_silex_core_seo')">seo</a><div id="org_silex_core_seo" class="package_content"><ul class="entry"><li><a href="content/org/silex/core/seo/ComponentSeoLinkModel.html" class="entry">ComponentSeoLinkModel</a></li><li><a href="content/org/silex/core/seo/ComponentSeoModel.html" class="entry">ComponentSeoModel</a></li><li><a href="content/org/silex/core/seo/Constants.html" class="entry">Constants</a></li><li><a href="content/org/silex/core/seo/LayerSeo.html" class="entry">LayerSeo</a></li><li><a href="content/org/silex/core/seo/LayerSeoAggregatedModel.html" class="entry">LayerSeoAggregatedModel</a></li><li><a href="content/org/silex/core/seo/LayerSeoModel.html" class="entry">LayerSeoModel</a></li><li><a href="content/org/silex/core/seo/Utils.html" class="entry">Utils</a></li></ul></div></li><li><a href="content/org/silex/core/AccessorManager.html" class="entry">AccessorManager</a></li><li><a href="content/org/silex/core/XmlUtils.html" class="entry">XmlUtils</a></li></ul></div></li><li><a href="#" class="package" onclick="return toggle('org_silex_serverApi')">serverApi</a><div id="org_silex_serverApi" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('org_silex_serverApi_externs')">externs</a><div id="org_silex_serverApi_externs" class="package_content"><ul class="entry"><li><a href="content/org/silex/serverApi/externs/ServerConfigExtern.html" class="entry">ServerConfigExtern</a></li><li><a href="content/org/silex/serverApi/externs/SiteEditorExtern.html" class="entry">SiteEditorExtern</a></li></ul></div></li><li><a href="content/org/silex/serverApi/RootDir.html" class="entry">RootDir</a></li><li><a href="content/org/silex/serverApi/ServerConfig.html" class="entry">ServerConfig</a></li><li><a href="content/org/silex/serverApi/SiteEditor.html" class="entry">SiteEditor</a></li></ul></div></li></ul></div></li></ul></div></li><li><a href="#" class="package" onclick="return toggle('php')">php</a><div id="php" class="package_content"><ul class="entry"><li><a href="#" class="package" onclick="return toggle('php_io')">io</a><div id="php_io" class="package_content"><ul class="entry"><li><a href="content/php/io/File.html" class="entry">File</a></li><li><a href="content/php/io/FileHandle.html" class="entry">FileHandle</a></li><li><a href="content/php/io/FileInput.html" class="entry">FileInput</a></li><li><a href="content/php/io/FileOutput.html" class="entry">FileOutput</a></li><li><a href="content/php/io/FileSeek.html" class="entry">FileSeek</a></li></ul></div></li><li><a href="content/php/Boot.html" class="entry">Boot</a></li><li><a href="content/php/Exception.html" class="entry">Exception</a></li><li><a href="content/php/FileKind.html" class="entry">FileKind</a></li><li><a href="content/php/FileStat.html" class="entry">FileStat</a></li><li><a href="content/php/FileSystem.html" class="entry">FileSystem</a></li><li><a href="content/php/IteratorAggregate.html" class="entry">IteratorAggregate</a></li><li><a href="content/php/Lib.html" class="entry">Lib</a></li><li><a href="content/php/NativeArray.html" class="entry">NativeArray</a></li><li><a href="content/php/NativeString.html" class="entry">NativeString</a></li><li><a href="content/php/Web.html" class="entry">Web</a></li></ul></div></li><li><a href="content/Array.html" class="entry">Array</a></li><li><a href="content/ArrayAccess.html" class="entry">ArrayAccess</a></li><li><a href="content/Bool.html" class="entry">Bool</a></li><li><a href="content/Class.html" class="entry">Class</a></li><li><a href="content/Date.html" class="entry">Date</a></li><li><a href="content/Dynamic.html" class="entry">Dynamic</a></li><li><a href="content/EReg.html" class="entry">EReg</a></li><li><a href="content/Enum.html" class="entry">Enum</a></li><li><a href="content/Float.html" class="entry">Float</a></li><li><a href="content/Hash.html" class="entry">Hash</a></li><li><a href="content/Int.html" class="entry">Int</a></li><li><a href="content/IntIter.html" class="entry">IntIter</a></li><li><a href="content/Iterable.html" class="entry">Iterable</a></li><li><a href="content/Iterator.html" class="entry">Iterator</a></li><li><a href="content/List.html" class="entry">List</a></li><li><a href="content/Main.html" class="entry">Main</a></li><li><a href="content/Null.html" class="entry">Null</a></li><li><a href="content/Reflect.html" class="entry">Reflect</a></li><li><a href="content/Std.html" class="entry">Std</a></li><li><a href="content/String.html" class="entry">String</a></li><li><a href="content/StringBuf.html" class="entry">StringBuf</a></li><li><a href="content/StringTools.html" class="entry">StringTools</a></li><li><a href="content/Type.html" class="entry">Type</a></li><li><a href="content/ValueType.html" class="entry">ValueType</a></li><li><a href="content/Void.html" class="entry">Void</a></li><li><a href="content/Xml.html" class="entry">Xml</a></li><li><a href="content/XmlType.html" class="entry">XmlType</a></li></ul>
+
+</div>
+
+</body>
+</html>

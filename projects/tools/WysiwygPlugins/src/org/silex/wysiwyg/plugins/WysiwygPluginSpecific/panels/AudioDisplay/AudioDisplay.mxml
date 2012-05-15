@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx"
+				 xmlns:ui1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" 
+				 xmlns:component1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.AudioDisplay.*" 
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*">
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(audioDisplayMedia, audioDisplayParameter);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="audioDisplayMedia" />
+	<component1:PanelUiADParameter id="audioDisplayParameter" />
+
+	
+</panel:PanelBase>

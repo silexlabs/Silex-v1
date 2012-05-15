@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"  width="100%" height="100%"
+				horizontalScrollPolicy="off"
+				styleName="propertyPlugin"
+				creationComplete="onCreationComplete()">
+	
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.AdminApiEvent;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.Action;
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.wysiwyg.event.PluginEvent;
+			
+			private var _actionListController:ActionListController;
+			
+			private function onCreationComplete():void
+			{
+				_actionListController = new ActionListController();
+				
+				_actionListController.addEventListener(PluginEvent.ACTION_DATA_CHANGED, onActionDataChanged);
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage, false, 0, true);
+				addChild(_actionListController.actionList);
+				
+			
+			}
+			
+			private function onAddedToStage(event:Event):void
+			{
+				this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+				initListeners();
+				refreshActions();
+			}
+			
+			private function onRemovedFromStage(event:Event):void
+			{
+				removeListeners();
+			}
+			
+			private function initListeners():void
+			{
+				this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage, false, 0, true);
+				SilexAdminApi.getInstance().components.addEventListener(
+					AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged, false, 0, true);
+			}
+			
+			private function onComponentSelectionChanged(event:AdminApiEvent):void
+			{
+				refreshActions();
+			}
+			
+			private function removeListeners():void
+			{
+				this.removeEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+				SilexAdminApi.getInstance().components.removeEventListener(AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged);
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage, false, 0, true);
+			}
+			
+			private function refreshActions():void
+			{
+				
+				
+				if (SilexAdminApi.getInstance().components.getSelection().length == 0)
+				{
+					this.enabled = false;
+					return;
+				}
+				
+				if (SilexAdminApi.getInstance().layers.getSelection().length > 1)
+				{
+					this.enabled = false;
+					return;
+				}
+				
+				this.enabled = true;
+				
+				var components:Array = getSelectedComponents();
+				var selectedComponentsUids:Array = new Array();
+				for (var i:int = 0; i<components.length; i++)
+				{
+					selectedComponentsUids.push((components[i] as Component).uid);
+				}
+				
+				var actions:Array = SilexAdminApi.getInstance().actions.getData(selectedComponentsUids);
+				
+				if (actions == null)
+				{
+					return;
+				}
+				
+				var actionsArray:Array = new Array();
+				
+				
+				
+				for (var l:int = 0; l< components.length ; l++)
+				{
+				
+					actionsArray[l] = (new ActionArrayWrapper(actions[l] as Array, (components[l] as Component).name));
+					
+					var actionArrayLength:int = (actionsArray[l] as ActionArrayWrapper).actionArray.length;
+					
+					for (var m:int = 0; m< actionArrayLength ; m++)
+					{
+						(actionsArray[l] as ActionArrayWrapper).actionArray[m] = new ActionWrapper((actionsArray[l] as ActionArrayWrapper).actionArray[m] as Action);
+					}
+					
+					
+				}
+				_actionListController.data = actionsArray;
+			}
+			
+			/**
+			 * get the type arrays of the selected components
+			 * from the SilexAdminApi
+			 */ 
+			private function getSelectedComponents():Array
+			{
+				var components:Array = SilexAdminApi.getInstance().components.getData()[0];
+				var selectedComponentsUid:Array = SilexAdminApi.getInstance().components.getSelection();
+				
+				var selectedComponents:Array = new Array();
+				
+				for (var i:int = 0; i<components.length; i++)
+				{
+					for (var j:int = 0; j<selectedComponentsUid.length; j++)
+					{
+						if((components[i] as Component).uid == selectedComponentsUid[j])
+						{
+							selectedComponents.push((components[i] as Component));
+						}
+					}
+				}
+				
+				return selectedComponents;
+				
+			}
+			
+			
+			/**
+			 * Update the action data of the selected component when new values are sent by the Propertytoolbox
+			 * 
+			 * @param	event the trigerred Communication event
+			 */
+			private function onActionDataChanged(event:PluginEvent):void
+			{ 
+				
+				var actionArrayWrapper:ActionArrayWrapper = event.data as ActionArrayWrapper;
+				var tempActionArray:Array = actionArrayWrapper.actionArray.reverse();
+				//removes all the action from the selected component
+				var tempActionArrayLength:int = tempActionArray.length;
+				for (var i:int = 0 ; i < tempActionArrayLength; i++)
+				{
+					SilexAdminApi.getInstance().actions.deleteItem(String((tempActionArray[i] as ActionWrapper).action.uid));
+				}
+				
+				//then adds all the new actions to it	
+				var newActionArrayLength:int = actionArrayWrapper.newActionArray.length;
+				for (var j:int = 0; j< newActionArrayLength; j++)
+				{
+					SilexAdminApi.getInstance().actions.addItem(actionArrayWrapper.newActionArray[j]);
+				}
+				
+				refreshActions();
+
+			}
+			
+			
+			
+		]]>
+	</fx:Script>
+	
+</mx:Application>

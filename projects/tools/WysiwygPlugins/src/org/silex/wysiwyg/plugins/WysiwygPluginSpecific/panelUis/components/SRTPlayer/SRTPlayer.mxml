@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	<mx:HBox width="70%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">			
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.maintainAspectRatio.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.maintainAspectRatio.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'maintainAspectRatio')"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.volume.description}">
+					<ns1:WysiwygNumericStepper id="volumeStepper" styleName="dimension"
+											   value="{propertyArray.volume.currentValue}"
+											   maximum="{propertyArray.volume.maxValue}"
+											   minimum="{propertyArray.volume.minValue}"
+											   change="updatePropertyValue(event.currentTarget.selected, 'volume')"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.bufferTime.description}">
+					<ns1:WysiwygNumericStepper id="bufferTimeStepper" styleName="dimension"
+											   value="{propertyArray.bufferTime.currentValue}"
+											   maximum="{propertyArray.bufferTime.maxValue}"
+											   minimum="{propertyArray.bufferTime.minValue}"
+											   change="updatePropertyValue(event.currentTarget.selected, 'bufferTime')"/>
+				</mx:FormItem>				
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>											
+				<mx:FormItem label="{propertyArray.skinAutoHide.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.skinAutoHide.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'skinAutoHide')"/>
+				</mx:FormItem>
+				<mx:FormItem label="{propertyArray.autoPlay.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.autoPlay.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'autoPlay')"/>
+				</mx:FormItem>	
+				<mx:FormItem label="{propertyArray.autoSize.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.autoSize.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'autoSize')"/>
+				</mx:FormItem>
+				<mx:FormItem label="{propertyArray.autoRewind.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.autoRewind.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'autoRewind')"/>
+				</mx:FormItem>
+			</mx:Form>	
+		</mx:HBox>
+	</mx:HBox>			
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem  direction="horizontal" width="100%" height="100%" label="{propertyArray.contentPath.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.contentPath.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'contentPath')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.contentPath)}" />	
+		</mx:FormItem>
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.srtUrl.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.srtUrl.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'srtUrl')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.srtUrl)}" />	
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.skinUrl.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.skinUrl.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'skinUrl')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.skinUrl)}" />	
+		</mx:FormItem>	
+
+	</mx:Form>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

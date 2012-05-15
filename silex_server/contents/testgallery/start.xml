@@ -1,0 +1,145 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="4" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ImageDisplay.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataIos.displays.ImageDisplay</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ImageDisplay]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">229</y>
+						<x type="Float">288.15</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">411.612903225806</height>
+						<width type="Float">531.720430107527</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<verticalAlign><![CDATA[middle]]></verticalAlign>
+						<horizontalAlign><![CDATA[center]]></horizontalAlign>
+						<singleMediaUrl><![CDATA[]]></singleMediaUrl>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<timeForEachSlide type="Float">99999999999</timeForEachSlide>
+						<fadeDuration type="Integer">1</fadeDuration>
+						<keepImageProportions type="Boolean">false</keepImageProportions>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ListUi.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.ui.ListUi</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ListUi]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">128.3</y>
+						<x type="Float">357.95</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">81.7</height>
+						<width type="Float">81.2</width>
+						<scrollStep type="Integer">1</scrollStep>
+						<loopList type="Boolean">false</loopList>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<listPath><![CDATA[ThumbList]]></listPath>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/ThumbList.swf</as2Url>
+					<html5Url>plugins/oofComponents/</html5Url>
+					<className>org.oof.lists.ThumbList</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[ThumbList]]></playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">68.6</y>
+						<x type="Float">55.4</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">200</height>
+						<width type="Integer">200</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<rowHeight type="Integer">100</rowHeight>
+						<easingDuration type="Float">0.5</easingDuration>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<cellRenderer><![CDATA[ThumbCellRenderer]]></cellRenderer>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellMarginX type="Integer">20</cellMarginX>
+						<verticalAlign><![CDATA[ALIGN_MIDDLE]]></verticalAlign>
+						<horizontalAlign><![CDATA[ALIGN_CENTER]]></horizontalAlign>
+						<urlPrefix><![CDATA[]]></urlPrefix>
+						<removeExtraRowHeight type="Boolean">false</removeExtraRowHeight>
+						<keepProportions type="Boolean">false</keepProportions>
+						<resizeImages type="Boolean">true</resizeImages>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/DataSelector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataUsers.DataSelector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[DataSelector]]></playerName>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName><![CDATA[minimal.swf]]></iconLayoutName>
+						<iconPageName><![CDATA[new page name]]></iconPageName>
+						<rollOverResultContainerPath><![CDATA[]]></rollOverResultContainerPath>
+						<resultContainerPath><![CDATA[]]></resultContainerPath>
+						<orderBy type="Array">
+							<item>label</item>
+						</orderBy>
+						<offset type="Integer">0</offset>
+						<limit type="Integer">50</limit>
+						<idField><![CDATA[id]]></idField>
+						<iconFieldName><![CDATA[link]]></iconFieldName>
+						<selectedFieldNames type="Array">
+							<item>*</item>
+						</selectedFieldNames>
+						<deeplinkFormat><![CDATA[<<title>>]]></deeplinkFormat>
+						<whereClause><![CDATA[1]]></whereClause>
+						<cellFormat><![CDATA[<<title>>]]></cellFormat>
+						<listBoxPath><![CDATA[ThumbList]]></listBoxPath>
+						<outputFormats type="Array">
+							<item>ImageDisplay.value=&lt;&lt;link&gt;&gt;</item>
+						</outputFormats>
+						<getIndividualRecordsOnClick type="Boolean">true</getIndividualRecordsOnClick>
+						<getRecordsOnLoad type="Boolean">true</getRecordsOnLoad>
+						<formName><![CDATA[]]></formName>
+						<connectorPath><![CDATA[RssConnector]]></connectorPath>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RssConnector.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.dataConnectors.RssConnector</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName><![CDATA[RssConnector]]></playerName>
+						<urlBase><![CDATA[<<silex.rootUrl>>cgi/scripts/rss_browse_folder.php?folder_path=media/test/image]]></urlBase>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

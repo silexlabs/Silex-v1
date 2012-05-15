@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"
+				xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"
+				xmlns:ns="org.silex.wysiwyg.ui.*"
+				>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.core.FlexGlobals;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.adminApi.listedObjects.Property;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.plugins.WysiwygPluginSpecific.SpecificPluginController;
+			import org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.multi_selection.AlignController;
+
+			
+			private var _propertyArray:Array;
+			
+			private var _previousXValue:int;
+			private var _previousYValue:int;
+			
+			private var _alignController:AlignController = new AlignController();
+			private var stageState:Boolean;
+			/**
+			 * silex conf information obj
+			 */
+			private var conf:Object = SilexAdminApi.getInstance().publicationModel.getConf();
+			/**
+			 *layout stage width
+			 */
+			var layoutStageWidth:int = conf['layoutStageWidth'];
+			/**
+			 * layout stage height
+			 */
+			var layoutStageHeight:int = conf['layoutStageHeight'];
+			
+			override protected function registerPanelsUi():void
+			{
+				
+			}		
+			
+			/**
+			 * Refresh the panels data by retrieving it from the SilexAdminAPI.
+			 */ 
+			override protected function refreshPanel():void
+			{
+				var selectedComponentsUids:Array = SilexAdminApi.getInstance().components.getSelection();
+				if (selectedComponentsUids.length == 0)
+				{
+					return;
+				}
+				
+				_propertyArray = new Array();
+				
+				
+				var selectedComponents:Array = SilexAdminApi.getInstance().components.getObjectsByUids(selectedComponentsUids);
+				
+				var numSelectedComponents:int = selectedComponents.length;
+				for (var i:int = 0; i<numSelectedComponents; i++)
+				{
+					if ((selectedComponents[i] as Component).getIsVisual() == true)
+					{
+						_propertyArray.push(SilexAdminApi.getInstance().properties.getSortedData([(selectedComponents[i] as Component).uid], ["playerName","x","y","width","height"])[0]);
+					}
+				}
+				
+				if (_propertyArray.length == 0)
+				{
+					this.enabled = false;
+					return;
+				}
+				
+				else
+				{
+					this.enabled = true;
+					setGroupCoord();
+					_previousXValue = positionX.value;
+					_previousYValue = positionY.value;
+				}
+				
+				
+	
+			}
+			
+			override protected function updatePanel(filterValues:Array):void
+			{
+				refreshPanel();
+			}
+			
+			
+			private function setGroupCoord():void
+			{
+				var referenceX:int = _propertyArray[0]["x"].currentValue;
+				var referenceY:int = _propertyArray[0]["y"].currentValue;
+				
+				
+				for (var i:int = 0; i<_propertyArray.length; i++)
+				{
+					if ( _propertyArray[i]["x"].currentValue < referenceX)
+					{
+						referenceX =  _propertyArray[i]["x"].currentValue;
+					}
+					
+					if (_propertyArray[i]["y"].currentValue < referenceY)
+					{
+						referenceY =  _propertyArray[i]["y"].currentValue;
+					}
+				}
+				
+				positionX.value = referenceX;
+				positionY.value = referenceY;
+			}
+			
+			
+			
+			private function onPositionXChange(event:Event):void
+			{
+				var _propertyArrayLength:int = _propertyArray.length;
+				var xDelta:int = positionX.value -_previousXValue  ;
+				
+				for (var i:int = 0; i< _propertyArrayLength; i++)
+				{
+					(_propertyArray[i]['x'] as Property).updateCurrentValue((_propertyArray[i]['x'] as Property).currentValue + xDelta, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+
+				}
+				_previousXValue = positionX.value;
+			}
+			
+			private function onPositionYChange(event:Event):void
+			{
+				var _propertyArrayLength:int = _propertyArray.length;
+				var yDelta:int = positionY.value -_previousYValue  ;
+				
+				for (var i:int = 0; i< _propertyArrayLength; i++)
+				{
+					(_propertyArray[i]['y'] as Property).updateCurrentValue((_propertyArray[i]['y'] as Property).currentValue + yDelta, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+
+				}
+				
+				_previousYValue = positionY.value;
+			}
+			
+			private function onClickAlign(direction:String, alignStageState:Boolean):void
+			{
+				if(alignStageState)
+				{
+					onClickAlignStage(direction);
+					
+				}else
+				{
+					onClickAlignObject(direction);
+				}
+			}
+			
+			private function onClickAlignStage(direction:String):void
+			{
+				var referencePoint:int;
+				
+				var propName:String;
+				switch(direction)
+				{
+					case "left":
+						referencePoint = 0;
+						propName = "x";
+						for (var i:int=0; i<_propertyArray.length; i++)
+						{
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}
+					break;
+					case "right":
+						propName = "x";
+						for (var i:int =0; i<_propertyArray.length; i++)
+						{
+							referencePoint = layoutStageWidth -_propertyArray[i]["width"].currentValue;
+							(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}
+					break;
+					case "center":
+						propName = "x";
+						for (var i:int =0; i<_propertyArray.length; i++)
+						{
+							referencePoint = layoutStageWidth/2-(_propertyArray[i]['width'].currentValue / 2);
+							(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}	
+					break;
+					case "up":
+						referencePoint = 0;
+						propName = "y";
+						for (var i:int=0; i<_propertyArray.length; i++)
+						{
+							(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}
+					break;
+					case "bottom":
+						propName = "y";
+						for (var i:int =0; i<_propertyArray.length; i++)
+						{
+							referencePoint = layoutStageHeight -
+								_propertyArray[i]["height"].currentValue;
+							(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}
+					break;
+					case  "middle":
+						propName = "y";
+						for (var i:int =0; i<_propertyArray.length; i++)
+						{
+							referencePoint = layoutStageHeight/2 -(_propertyArray[i]['height'].currentValue / 2); 
+							(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+						}				
+						
+						break;					
+						
+				}
+			}
+			
+			private function onClickAlignObject(direction:String):void
+			{
+				var referencePoint:int;
+				
+				var propName:String;
+				
+				if (direction == "left")
+				{
+					referencePoint = _propertyArray[0]["x"].currentValue;
+					propName = "x";
+					
+					for (var i:int = 0; i<_propertyArray.length; i++)
+					{
+						if (_propertyArray[i]['x'].currentValue < referencePoint)
+						{
+							referencePoint = _propertyArray[i]['x'].currentValue;
+						}
+					}
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					}
+				}
+				
+				else if (direction == "right")
+				{
+					referencePoint = _propertyArray[0]["x"].currentValue +
+						_propertyArray[0]['width'].currentValue;
+					propName = "x";
+					for (i =0; i<_propertyArray.length; i++)
+					{
+						if (_propertyArray[i]['x'].currentValue +
+							_propertyArray[i]['width'].currentValue
+							> referencePoint)
+						{
+							referencePoint = _propertyArray[i]['x'].currentValue +
+								_propertyArray[i]['width'].currentValue
+								;
+						}
+					}
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint - _propertyArray[i]["width"].currentValue, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					}
+				}
+				
+				else if (direction == "center")
+				{
+					referencePoint = 0;
+					propName = "x";
+					for (i =0; i<_propertyArray.length; i++)
+					{
+						referencePoint = referencePoint + _propertyArray[i]['x'].currentValue
+							+(_propertyArray[i]['width'].currentValue / 2);
+					}
+					
+					referencePoint = referencePoint / i;
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+						
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint - (_propertyArray[i]["width"].currentValue / 2), SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					}
+				}
+				
+				else if (direction == "up")
+				{
+					referencePoint = _propertyArray[0]["y"].currentValue;
+					propName = "y";
+					for (i =0; i<_propertyArray.length; i++)
+					{
+						if (_propertyArray[i]['y'].currentValue < referencePoint)
+						{
+							referencePoint = _propertyArray[i]['y'].currentValue;
+						}
+					}
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+						
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					}
+					
+				}
+				
+				else if (direction == "bottom")
+				{
+					referencePoint = _propertyArray[0]["y"].currentValue
+						+ _propertyArray[0]["height"].currentValue;
+					propName = "y";
+					for (i =0; i<_propertyArray.length; i++)
+					{
+						if (_propertyArray[i]['y'].currentValue +
+							_propertyArray[i]["height"].currentValue > referencePoint)
+						{
+							referencePoint = _propertyArray[i]['y'].currentValue +
+								_propertyArray[i]["height"].currentValue;
+						}
+					}
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+						
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint - _propertyArray[i]["height"].currentValue, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+
+					}
+					
+				}
+				
+				else if (direction == "middle")
+				{
+					referencePoint = 0;
+					propName = "y";
+					for (i =0; i<_propertyArray.length; i++)
+					{
+						referencePoint = referencePoint + _propertyArray[i]['y'].currentValue
+							+(_propertyArray[i]['height'].currentValue / 2); 
+					}
+					
+					referencePoint = referencePoint / i;
+					
+					for (i=0; i<_propertyArray.length; i++)
+					{
+
+						(_propertyArray[i][propName] as Property).updateCurrentValue(referencePoint - (_propertyArray[i]["height"].currentValue / 2), SpecificPluginController.SPECIFIC_PLUGIN_ID) ;
+					}
+					
+				}
+				
+				
+				
+			}
+			
+			private function onScaleChange(event:Event):void
+			{
+				
+				
+				for (var i:int = 0; i<_propertyArray.length; i++)
+				{
+					(_propertyArray[i].width as Property).updateCurrentValue(_propertyArray[i].width.currentValue * (event.target.value *0.01), SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					
+					(_propertyArray[i].height as Property).updateCurrentValue(
+						(_propertyArray[i].height as Property).currentValue * (event.target.value *0.01), SpecificPluginController.SPECIFIC_PLUGIN_ID);
+
+					
+					
+					
+					var newX:int = _propertyArray[i]['x'].currentValue * (event.currentTarget.value * 0.01 );
+					var xDelta:int = positionX.value - (positionX.value * (event.currentTarget.value * 0.01)) ;
+					newX = newX + xDelta;
+					
+					var newY:int = (_propertyArray[i]['y'].currentValue * (event.currentTarget.value * 0.01 ));
+					var yDelta:int = positionY.value - (positionY.value * (event.currentTarget.value * 0.01)) ;
+					newY = newY + yDelta;
+					
+					(_propertyArray[i]['x'] as Property).updateCurrentValue(newX, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+					(_propertyArray[i]['y'] as Property).updateCurrentValue(newY, SpecificPluginController.SPECIFIC_PLUGIN_ID);
+				}
+				
+				scaleStepper.value = 100;
+				setGroupCoord();
+			}
+			
+			/**
+			 * used to disptacheEvent PluginEvent.PROPERTIES_DATA_CHANGED
+			 * */
+			public function updatePropertiesData(dataArray:Array)
+			{
+				for (var i:int =0; i<dataArray.length; i++)
+				{
+					dispatchEvent(new PluginEvent(PluginEvent.PROPERTIES_DATA_CHANGED, dataArray[i], true));
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:VBox horizontalAlign="center" width="100%" >
+		
+	
+	
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_X_POSITION')}" width="100%" height="100%">
+						<mx:NumericStepper id="positionX" minimum="-5000" maximum="5000" change="onPositionXChange(event)" />
+					</mx:FormItem>
+					
+						
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_Y_POSITION')}">
+						<mx:NumericStepper id="positionY" minimum="-5000" maximum="5000"  change="onPositionYChange(event)" />
+					</mx:FormItem>
+						
+				</mx:Form>	
+				
+			</mx:HBox>	
+			
+			<mx:VRule height="100%" />
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+						
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_SCALE')}" width="100%" height="100%">
+						<ns:WysiwygNumericStepper id="scaleStepper" value="100" maximum="1000" minimum="0" change="onScaleChange(event)" />
+					</mx:FormItem>
+					
+				</mx:Form>	
+				
+			</mx:HBox>	
+			
+		</mx:HBox>	
+		
+		<mx:HRule width="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_HORIZONTAL')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_LEFT')}" click="onClickAlign('left',this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_CENTER')}" click="onClickAlign('center',this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_RIGHT')}" click="onClickAlign('right',this.stageState)" />
+					</mx:FormItem>
+				</mx:Form>	
+				
+			</mx:HBox>
+			
+			<mx:VRule height="100%" />
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_VERTICAL')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_TOP')}" click="onClickAlign('up',this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_MIDDLE')}" click="onClickAlign('middle',this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ALIGN_BOTTOM')}" click="onClickAlign('bottom',this.stageState)" />
+					</mx:FormItem>
+				</mx:Form>
+				
+			</mx:HBox>	
+		
+					
+		</mx:HBox>
+		
+		<mx:HRule width="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_HORIZONTAL')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_LEFT')}" click="_alignController.distribution(_propertyArray,AlignController.LEFT, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_CENTER')}" click="_alignController.distribution(_propertyArray,AlignController.VERTI_CENTER, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_RIGHT')}" click="_alignController.distribution(_propertyArray,AlignController.RIGHT, this.stageState)" />
+					</mx:FormItem>
+
+				</mx:Form>	
+				
+			</mx:HBox>
+			
+			<mx:VRule height="100%" />
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_VERTICAL')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_TOP')}" click="_alignController.distribution(_propertyArray,AlignController.UP, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_MIDDLE')}" click="_alignController.distribution(_propertyArray,AlignController.HORIZONTAL_CENTER, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_DISTRIBUTION_BOTTOM')}" click="_alignController.distribution(_propertyArray,AlignController.DOWN, this.stageState)" />
+					</mx:FormItem>
+				</mx:Form>
+				
+			</mx:HBox>	
+			
+		</mx:HBox>
+		
+		<mx:HRule width="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ADJUST')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ADJUST_WIDTH')}" click="_alignController.adjust(_propertyArray,AlignController.ADJUST_WIDTH, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ADJUST_HEIGHT')}" click="_alignController.adjust(_propertyArray,AlignController.ADJUST_HEIGHT, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ADJUST_SIZE')}" click="_alignController.adjust(_propertyArray,AlignController.ADJUST_SIZE, this.stageState)" />
+					</mx:FormItem>
+				</mx:Form>	
+				
+			</mx:HBox>
+			
+			<mx:VRule height="100%" />
+			
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				
+				<mx:Form>
+					<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_SPACE')}" direction="horizontal">
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_SPACE_VERTICAL')}" click="_alignController.space(_propertyArray, AlignController.SPACE_VERTICAL, this.stageState)" />
+						<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_SPACE_HORIZONTAL')}" click="_alignController.space(_propertyArray, AlignController.SPACE_HORIZONTAL, this.stageState)" />
+					</mx:FormItem>
+				</mx:Form>
+				
+			</mx:HBox>				
+			
+		</mx:HBox>		
+		<mx:HRule width="100%" />
+		<mx:Form>
+			<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_LABEL_ADJUST')}" direction="horizontal">
+				<ns:WysiwygCheckBox id="stageCheckBox" click="{this.stageState=stageCheckBox.selected}" />
+			</mx:FormItem>
+		</mx:Form>			
+		
+		
+	</mx:VBox>
+</panel:PanelBase>

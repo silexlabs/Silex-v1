@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>start</title>
+		<pubDate>Thu Oct 27 11:57:56 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>Text3</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="1">((&lt;&lt;silex.config.id_site&gt;&gt;))</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[((<<silex.config.id_site>>)) ]]></text>
+			</component>
+			<component>
+				<playerName>Text2</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="1">&lt;&lt;silex.config.id_site&gt;&gt;</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[<<silex.config.id_site>> ]]></text>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0">This site name is: &lt;&lt;silex.config.id_site&gt;&gt;</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[This site name is: <<silex.config.id_site>> ]]></text>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

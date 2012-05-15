@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:components1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:Geometry="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.Geometry.*">
+	
+	<fx:Script>
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(Geometrydescription, GeometryShape, GeometryBgShadow, GeometryPageInfo);
+			}
+		]]>
+	</fx:Script>
+	
+	<Geometry:PanelUiDescription id="Geometrydescription" />
+	<Geometry:PanelUiShape id="GeometryShape" />
+	<Geometry:PanelUiBackgroudShadow id="GeometryBgShadow" />
+	<components1:PanelUiPageInfo id="GeometryPageInfo" />
+	
+</panel:PanelBase>

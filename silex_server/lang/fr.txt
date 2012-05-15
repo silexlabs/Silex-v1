@@ -1,0 +1,80 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://spreadsheets.google.com/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE&hl=en&authkey=CL7S-_EG
+
+; Dates
+; months
+DATE_JANUARY=janvier&
+DATE_FEBRUARY=fevrier&
+DATE_MARCH=mars&
+DATE_APRIL=avril&
+DATE_MAY=mai&
+DATE_JUNE=juin&
+DATE_JULY=juillet&
+DATE_AUGUST=août&
+DATE_SEPTEMBER=septembre&
+DATE_OCTOBER=octobre&
+DATE_NOVEMBER=novembre&
+DATE_DECEMBER=décembre&
+; days
+DATE_SUNDAY=dimanche&
+DATE_MONDAY=lundi&
+DATE_TUESDAY=mardi&
+DATE_WEDNESDAY=mercredi&
+DATE_THURSDAY=jeudi&
+DATE_FRIDAY=vendredi&
+DATE_SATURDAY=samedi&
+
+; context menu
+CONTEXT_MENU_ABOUT_CAPTION=A propos de SILEX ((<<silex.config.version>>))&
+CONTEXT_MENU_ABOUT_COMMAND=http://projects.silexlabs.org/?/silex&
+CONTEXT_MENU_REFRESH_COMMAND=rafraîchir (F5)&
+CONTEXT_MENU_REFRESH_NO_CACHE_COMMAND=rafraîchir(pas de cache) (CTRL+F5)&
+CONTEXT_MENU_LOGIN_CAPTION=login - éditeur SILEX (CTRL + L)&
+CONTEXT_MENU_LOGOUT_CAPTION=logout (CTRL + L)&
+CONTEXT_MENU_FLUSH_LOGINS_CAPTION=supprimer le cookie&
+
+; authentication
+MESSAGE_AUTH_FAILD=Erreur d'identifiant ou de mot de passe.&
+MESSAGE_AUTH_SUCCESS=Bienvenue à vous((, <<silex.authentication.currentLogin>>))&
+MESSAGE_PLEASE_WAIT_WHILE_CHECKING_LOGIN_PASS=veuillez patienter pendant le chargement de vos identifiants& ; use accessors: login and pass
+PROMPT_LOGIN_PASS=veuillez entrer votre identifiant et mot de passse&
+
+; com
+ERROR_WEBSERVICE_ERROR=Erreur du server : ((<<fault.fault.faultstring>>))& ; also used in authentication
+
+; Gabarit
+MESSAGE_SECTION_DOES_NOT_EXIST=<i>((<<sectionName>>))</i> n'existe pas. <b>CLICK DROIT PUIS "LOGIN" POUR ENTRER EN ADMIN.</b>&
+
+; application
+MESSAGE_WEBSITE_DOES_NOT_EXIST=Le site web '<i>((<<id_site>>))</i>' n'existe pas. Si vous souhaitez le créer, veuillez vous identifier et utiliser la boite à outils siteWeb.&
+ERROR_LOADING_LAYOUT=Error: Le gabarit n'a pas été trouvé '((<<layoutFileName>>))': ((<<error>>))&
+
+; HELP LINKS
+HELP_URL_DOCUMENTATION_ROOT=http://community.silexlabs.org/silex/help/&
+HELP_URL_WYSIWYG_LIBRARY=mise.en.page/boite.librairie.et.client.ftp&
+HELP_URL_WYSIWYG_PLAYERS=mise.en.page/boite.medias&
+HELP_URL_WYSIWYG_LAYERS=mise.en.page/boite.pages.calques&
+HELP_URL_WYSIWYG_PROPERTIES=mise.en.page/boite.proprietes&
+HELP_URL_WYSIWYG_WEBSITE=mise.en.page/boite.site.web&
+HELP_URL_WYSIWYG_ACTIONS=mise.en.page/boite.actions&
+HELP_URL_WYSIWYG_KEYBOARD_SHORTCUTS=mise.en.page/raccourcis.clavier&
+HELP_URL_WYSIWYG_VIEW_MENU=mise.en.page/menu.affichage&
+HELP_URL_WYSIWYG_SELECTION=mise.en.page/mise.en.page.resume&
+
+
+; Gabarit
+WARNING_MULTIPLE_DEFAULT_ICON=il existe déjà une icone par défaut pour cette page ((<<layout.sectionName>>)): ((<<layout.defaultIcon.playerName>>)) and ((<<player.playerName>>))&
+
+; application 
+MESSAGE_SCREEN_SAVER_LOGGED_IN=si vous n'étiez pas loggé, le screen saver serait actif&
+ERROR_PAGE_SAVE_ERROR=Une erreur a empéché l'enregistrement : ((<<error>>))&
+
+; com
+MESSAGE_SAVE_PAGE_DONE=<i>((<<sectionName>>))</i> enregistré avec succcès.& ; available accessors: xmlData, xmlFileName, sectionName, title, keywords, description, href, htmlEquivalent
+MESSAGE_REGENERATE_INDEX_DONE=L'index a été régénéré avec succès pour <i>((<<id_site>>))</i> - <b>((<<indexedPages>>)) pages indexées</b>&
+
+; UIBase
+QUIT_DIRTY_PAGE_WARNING=Vous êtes sur le point de quitter une page sans l'avoir enregistrée. Voulez-vous continuer? ((page name: <<sectionName>>))&
+
+; tools manager
+MESSAGE_ADMIN_WELCOME_SUCCESS=Bienvenue, <b>((<<authentication.currentLogin>>))</b>.<br><u>Tip</u>: placer votre souris en haut de la page, afin de faire apparaître le menu dynamique.&
+WARNING_OLD_VERSION_OF_SILEX=<br><u>Info</u>: une nouvelle version de SILEX existe, vous pouvez mettre votre serveur à jour dans le manager & ; available accessors: all variables in Api

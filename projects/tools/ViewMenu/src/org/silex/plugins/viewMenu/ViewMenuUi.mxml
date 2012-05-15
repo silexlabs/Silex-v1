@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		 styleName="viewMenu" xmlns:ui="org.silex.wysiwyg.ui.toolItemUI.*"
+		 horizontalScrollPolicy="off">
+
+		<mx:SWFLoader source="{FlexGlobals.topLevelApplication.parameters.logoUrl}" click="onLogoMouseDown()" />
+		<ui:HToolItemView toolUid="silex.ViewMenu.Tool"
+			horizontalAlign="center" verticalAlign="middle"
+			width="100%" height="100%"
+			iconHeight="35" iconWidth="27"/>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Image;
+			import mx.controls.SWFLoader;
+			import mx.core.FlexGlobals;
+			import mx.core.UIComponent;
+			
+			import org.silex.adminApi.PublicationModel;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listModels.Messages;
+
+	
+			private var _model:ViewMenuModel;
+			
+			private var _maskArray:Array;
+			
+			//array of display objects added to viewMenuItemsContainer dynamically
+			private var _dynamicItems:Array;
+			/**
+			 * ViewMenuUi. The view. Contains a horizontal list of images each containing the tool ui elements.
+			 * */
+			public function get model():ViewMenuModel 
+			{
+				return _model;
+			}
+			
+			
+			/**
+			 * @private
+			 */
+			public function set model(value:ViewMenuModel):void
+			{
+				_model = value;
+				_model.addEventListener(Event.CHANGE, onModelChanged);			
+				invalidateProperties();
+			}
+			
+			private function onModelChanged(event:Event):void{
+				invalidateProperties();
+			}
+			
+			override protected function createChildren():void{
+				super.createChildren();
+				_dynamicItems = new Array();
+				
+			}
+			
+			/**
+			 * draw and returns the mask for viewMenuItems
+			 */ 
+			private function drawViewMenuMask(target:UIComponent):Sprite
+			{
+				var sp:Sprite = new Sprite();
+				sp.graphics.beginFill(0xFF0000, 1);
+				sp.graphics.drawRect(0,0, 10,10);
+				sp.graphics.endFill();
+				target.addChild(sp);
+				return sp;
+			}
+			
+			/**
+			 * callback to the logo click, opens a site
+			 */ 
+			private function onLogoMouseDown():void
+			{
+				ExternalInterface.call("onLogoClick");
+			}
+			
+			override protected function commitProperties():void{
+				super.commitProperties();
+				if(!_model){
+					return;
+				}
+				//rp.dataProvider = _model.viewMenuItems;
+				/**
+				//TODO optimize and recycle  
+				for each(var displayObj:DisplayObject in _dynamicItems){
+					viewMenuItemsContainer.removeChild(displayObj);	
+				}
+				
+				_dynamicItems = new Array();
+				
+				for each(var viewMenuItem:ViewMenuItemGroup in _model.viewMenuItems){
+					var swfUrl:String = viewMenuItem.uiPath; 
+					var swfLoader:SWFLoader = new SWFLoader();
+					swfLoader.height = 22;
+					swfLoader.scaleContent = false;
+					viewMenuItemsContainer.addChild(swfLoader);
+					_dynamicItems.push(swfLoader);
+					swfLoader.source = swfUrl;
+				}*/
+			}
+
+		]]>
+	</fx:Script>
+</mx:HBox>

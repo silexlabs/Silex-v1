@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIBody.mxml -->
+<!---
+The LayoutsUI's body. Contains the list of Layouts/Layers
+
+@author Yannick
+-->
+<ns3:StdUIBody xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:s="library://ns.adobe.com/flex/spark" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="tools.tools_ui.*" width="100%" height="100%"
+			  xmlns:ns3="org.silex.wysiwyg.toolboxes.toolboxes_base.*"  xmlns:ns4="org.silex.wysiwyg.ui.*" >
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.controls.listClasses.IListItemRenderer;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.listedObjects.Layer;
+			import org.silex.adminApi.listedObjects.Layout;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			
+			
+			/**
+			 * Dispatches an event when the selected list's item change.
+			 * Filter the user seelction to only seelct sublayer (ex layers),
+			 * as layer(ex layout) can't be selected
+			 * 
+			 * @param event the triggered ListEvent
+			 */ 
+			private function onListChange(event:ListEvent):void
+			{
+				currentSelection = layoutList.selectedItems;
+				
+				var selectedLayers:Array = new Array();
+				for (var i:int = 0; i<(currentSelection as Array).length; i++)
+				{
+					if ((currentSelection as Array)[i] is Layer)
+					{
+						selectedLayers.push((currentSelection as Array)[i]);
+					}
+				}
+				
+				layoutList.selectedItems = selectedLayers;
+				
+				dispatchEvent(new ToolsEvent(ToolsEvent.LIST_CHANGE, layoutList.selectedItems));
+			}
+			
+			/**
+			 * sets the selected item on the list the call onListChange to dispatch a LIST_CHANGE event
+			 * 
+			 * @param value the daa to be set
+			 */ 
+			override public function selectListItem(value:Object):void
+			{				
+				if (value == null)
+				{
+					layoutList.selectedItem = null;
+					currentSelection = null;
+				}
+				
+				else
+				{
+					layoutList.selectedItems = value as Array;
+					currentSelection = value;
+				}
+				
+			}
+			
+			/**
+			 * returns the current selected item in the list
+			 */ 
+			public function getSelectedItem():Object
+			{
+				return layoutList.selectedItems;
+			}
+			
+			public function checkDirty():void
+			{
+				layoutList.invalidateList();
+			}
+			
+			/**
+			 * returns the parent layout of the selected item
+			 */ 
+			public function getParentLayout():Layout
+			{
+
+				var startIndex:int = layoutList.selectedIndex - 1;
+				
+				
+				for (var i:int = startIndex ; i >= 0; i--)
+				{
+					if ((layoutList.dataProvider as ArrayCollection).getItemAt(i) is Layout)
+					{
+						return (layoutList.dataProvider as ArrayCollection).getItemAt(i) as Layout;
+					}
+				}
+				
+				return null;
+			}
+			
+			/**
+			 * returns the index of the selected item
+			 */ 
+			public function getSelectedIndex():int
+			{
+				return layoutList.selectedIndex;
+			}
+			
+			/**
+			 * when a layer item is rolled over in the list, dispatches an event with it's uid
+			 * that will highlight all of it's components on the scene
+			 */ 
+			private function onListItemRollOver(event:ListEvent):void
+			{
+				dispatchEvent(new ToolsEvent(ToolsEvent.LAYOUT_LIST_ROLL_OVER, [event.itemRenderer.data.uid]));
+			}
+			
+			/**
+			 * When a layer item is rolled out, hides all of it's component highlight on the scene
+			 */ 
+			private function onListItemRollOut(event:ListEvent):void
+			{
+				dispatchEvent(new ToolsEvent(ToolsEvent.LAYOUT_LIST_ROLL_OVER, null));
+			}
+			
+		]]>
+	</fx:Script>
+	
+		<!---
+		a canvas used as a container for the list and for the VRule delimiting the List itemRenderer
+		zones (show/hide button and layouts/layers's label)
+		-->
+		<mx:Canvas width="100%" height="100%">
+			
+			<ns4:WysiwygList id="layoutList" 
+					 dataProvider="{data}" 
+					 styleName="components"
+					 height="100%" width="100%"  
+					 useRollOver="false"
+					 itemRollOver="onListItemRollOver(event)"
+					 itemRollOut="onListItemRollOut(event)"
+					 allowMultipleSelection="true"
+					 itemRenderer="org.silex.wysiwyg.toolboxes.layouts.LayoutsToolItemRenderer"
+					 change="onListChange(event)"
+					 />
+			
+			<mx:VRule x="22" height="100%" />
+			<mx:VRule x="46" height="100%" />
+			
+			
+		</mx:Canvas>
+	
+</ns3:StdUIBody>

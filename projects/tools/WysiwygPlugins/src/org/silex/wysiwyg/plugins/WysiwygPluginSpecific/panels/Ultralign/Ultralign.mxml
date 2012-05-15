@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:visiualPara="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.AudioDisplay.*"
+				 xmlns:component="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.Ultralign.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(visibleParameter,behaviorParameter);
+			}
+		]]>
+	</fx:Script>
+	<component:PanelUIBehaviorParameter id="behaviorParameter" />	
+	<visiualPara:PanelUiVisual id="visibleParameter" />
+
+	
+	
+</panel:PanelBase>

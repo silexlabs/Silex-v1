@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>home</title>
+		<pubDate>Mon Oct 24 14:55:00 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>silexlogo</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="807.4" height="478.45" ><param name="movie" value="../../../../media/coming.soon/design/silex-logo.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#323232" /><embed src = "../../../../media/coming.soon/design/silex-logo.swf" quality = "best" bgcolor = "#323232" width = "807.4" height = "478.45" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

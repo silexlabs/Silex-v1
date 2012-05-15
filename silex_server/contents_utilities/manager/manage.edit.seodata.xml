@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>manage.edit</title>
+		<pubDate>Thu Oct 27 01:19:39 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>filet02</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>filet01</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>label_btn_plus_cadre_03.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="14" COLOR="#332E28"><b><<silex.paramsFile.btn:create:edit>></b></FONT></p>]]></htmlEquivalent>
+				<text><![CDATA[> ]]></text>
+			</component>
+			<component>
+				<playerName>label_btn_plus_06.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="20" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:advanced>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>advanced</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>advanced</title>
+						<link>advanced</link>
+						<deeplink>advanced</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>label_btn_plus_06</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="20" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:fonts>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>fonts</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>fonts</title>
+						<link>fonts</link>
+						<deeplink>fonts</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>label_btn_plus_06.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="20" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:plugins>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>plugins</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>plugins</title>
+						<link>plugins</link>
+						<deeplink>plugins</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>label_btn_plus_06.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="20" COLOR="#63594D"><b>((<<silex.paramsFile.btn:manage:properties>>))</b></FONT></p>]]></htmlEquivalent>
+				<iconPageName>properties.manage</iconPageName>
+				<text><![CDATA[((>)) ]]></text>
+				<links>
+					<link>
+						<title>properties.manage</title>
+						<link>properties.manage</link>
+						<deeplink>properties.manage</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="20" COLOR="#332E28" LETTERSPACING="0" KERNING="0"><B><I>(([[onRelease openUrl:?/&lt;&lt;DataSelector_site.selectedItem.title&gt;&gt;&amp;autologin=0 &lt;&lt;DataSelector_site.selectedItem.title&gt;&gt;]]))</I></B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[(([[onRelease openUrl:?/<<DataSelector_site.selectedItem.title>>&autologin=0 <<DataSelector_site.selectedItem.title>>]])) ]]></text>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

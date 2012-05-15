@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:componentbase="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.buttonComponentBase.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:labelbutton="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.LabelButton.*" xmlns:button="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.button.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(buttonMedia,buttonComponentBase, pageInfo);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="buttonMedia" />
+	<button:PanelUiButtonComponentBase id="buttonComponentBase" />
+	<components:PanelUiPageInfo id="pageInfo" />
+</panel:PanelBase>

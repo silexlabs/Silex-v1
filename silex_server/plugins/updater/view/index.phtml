@@ -1,0 +1,76 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a>
+</div>
+
+<div class="updater_main_menu_item buttons">
+	<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItems"));?>">
+        <img src="plugins/updater/img/install_new_items.png" alt="<?php print $this->localisedStrings["MAIN_INST_NEW_ITEMS_LABEL"];?>"/> 
+    </button>
+	<span class=""><?php print $this->localisedStrings["MAIN_INST_NEW_ITEMS_SHORT_LABEL"]; ?></span>
+</div>
+
+
+
+<?php
+if( ($this->latestVersion!==false) && ($this->testService!==false) )
+{
+	if($this->latestVersion != $this->currentVersion)
+	{
+?>
+		<div class="updater_main_menu_item buttons">
+			<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"checkRightsSilexServerTree"));?>">
+				<img src="plugins/updater/img/install_silex_update.png" alt=""/>
+			</button>
+			<span class=""><?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_TO_LABEL"], $this->latestVersion); ?></span>
+		</div>
+		<?php $this->addToHeaders( "<span class='updater_error'>".$this->localisedStrings["MAIN_SILEX_UPDT_EXST_MSG"]."</span>" ); ?>
+<?php
+	}
+	else
+	{
+		$this->addToHeaders( "<span class=updater_success>".vsprintf($this->localisedStrings["MAIN_SILEX_LAST_UPDT_MSG"], array( urldecode($_POST["update_server_address"]) ))."</span>" );
+	}
+}
+else
+{
+	$this->latestVersion = "unknown"; // TODO useful ?
+	$this->addToHeaders( "<span class=updater_error>".vsprintf($this->localisedStrings["MAIN_SILEX_UPDT_SERVER_ERR"], array( urldecode($_POST["update_server_address"]) ))."</span>" );
+}
+?>
+
+
+
+<?php
+if(!empty($this->itemsToUpdate))
+{
+	foreach($this->itemsToUpdate as $itemToUpdate)
+	{
+		?>
+		<div class="updater_main_menu_item button">
+			<button class="" onclick="javascript:<?php $this->generateForwarding(array( "action"=>"updateItem" , "item"=>serialize(urlencodeArray($itemToUpdate)) , 
+				"item_file"=>$itemToUpdate["file"]));?>">
+				<!-- <img src="plugins/updater/img/update_item.png" alt=""/> -->
+				<img height="58px" src="<?php print($itemToUpdate["thumb"]); ?>" alt=""/>
+			</button>
+			<span class=""><?php printf($this->localisedStrings["ITEM_UPDATE_TO_LABEL"], $itemToUpdate['title'] , $itemToUpdate['itemCurrentVersion']); ?></span>
+		</div>
+		<?php
+	}
+}
+?>
+
+
+
+<?php
+if(!empty($this->installedItems))
+{
+	?>
+	<div class="updater_main_menu_item">
+		<button class="" onclick="javascript:<?php $this->generateForwarding(array( "action"=>"uninstallItems" , "installed_items"=>serialize(urlencodeArray($this->installedItems)) )); ?>">
+			<img src="plugins/updater/img/uninstall_items.png" alt=""/>
+		</button>
+		<span class=""><?php printf($this->localisedStrings["ITEM_UNINSTALL_LABEL"]); ?></span>
+	</div>
+	<?php
+}
+?>

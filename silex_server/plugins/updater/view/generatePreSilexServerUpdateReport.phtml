@@ -1,0 +1,90 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"checkRightsSilexServerTree"));?>" ><?php print $this->localisedStrings["ARIANE_UPDATE_SILEX_SRV_LABEL"];?></a>
+</div>
+
+
+<?php
+if(!empty($this->itemsToUpdate))
+{	
+	?>
+	<span class="updater_text"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_LIST_MSG"]); ?></span>
+	<?php
+	$fileCount = 0; $folderCount = 0;
+	?>
+	<div class='updater_list'>
+		<div class='updater_listLine'>
+			<div class='updater_listPath'><img src='plugins/updater/img/path_01.png' alt='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' /></div>
+			<div class='updater_listCheckbox'><img src='plugins/updater/img/update_01.png' alt='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_LIST_LABEL"]); ?>' /></div>
+			<div class='updater_clearBoth'></div>
+		</div>
+		<?php
+		foreach($this->itemsToUpdate as $itemToUpdate)
+		{	
+			if($itemToUpdate instanceof FileModel)
+				$this->displayFileToUpdate($fileCount, $itemToUpdate, $this->userModifiedFiles);
+			else
+				$this->displayFolderToUpdate($folderCount, $fileCount, $itemToUpdate, $this->userModifiedFiles);
+		}
+		?>
+	</div>
+	<?php
+}
+
+if(!empty($this->itemsToDelete))
+{
+	$deleteCount = 0;
+	?>
+	<span class="updater_text"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_OBSOLETE_LIST_MSG"]); ?></span>
+	
+	<div class='updater_list'>
+		<div class='updater_listLine'>
+			<div class='updater_listPath'><img src='plugins/updater/img/path_03.png' alt='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' /></div>
+			<div class='updater_listCheckbox'><img src='plugins/updater/img/keep_03.png' alt='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_KEEP_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_KEEP_LIST_LABEL"]); ?>' /></div>
+			<div class='updater_clearBoth'></div>
+		</div>
+		<?php
+		foreach($this->itemsToDelete as $itemToDelete)
+		{	
+			if($itemToDelete instanceof FileModel)
+				$this->displayFileToDelete($deleteCount, $itemToDelete);
+			else
+				$this->displayFolderToDelete($deleteCount, $itemToDelete);
+		}
+		?>
+	</div>
+	<?php
+}
+
+if(empty($this->itemsToUpdate) && empty($this->itemsToDelete))
+{
+	?>
+	<span class="updater_text"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_NOFILE_MSG"]); ?></span>
+	<?php
+}
+else
+{
+	?>
+	<input class='params' type='hidden' name='file_list_size' value='<?php echo $fileCount;?>' />
+	<input class='params' type='hidden' name='original_file_list_size' value='<?php echo $fileCount;?>' />
+	<input class='params' type='hidden' name='folder_list_size' value='<?php echo $folderCount;?>' />
+	<?php
+	
+	if(isset($deleteCount))
+	{
+		?>
+		<input class='params' type='hidden' name='delete_list_size' value='<?php echo $deleteCount;?>' />
+		<?php
+	}
+	?>
+	<div class='updater_centeredContent'>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"downloadSilexServerUpdate") , array(".update", ".delete", ".params"), "<span class=updater_text>".$this->localisedStrings["UPDT_SILEX_SRV_INIT_DOWNLOAD_MSG"]."</span>" ); ?>">
+			<?php print $this->localisedStrings["UPDT_SILEX_SRV_UPDATE_NOW_LABEL"]; ?>
+		</button>
+	</div>
+	<?php
+}
+?>
+<div class='updater_centeredContent updater_marginTop'>
+	<span class="updater_informative"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_RUN_INFO_MSG"]); ?></span>
+</div>

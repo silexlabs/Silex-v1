@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TextArea xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			 xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			private var _autoSize : Boolean = true;
+			
+			[Inspectable(defaultValue="true", variable = "autoSize", type = "Boolean", name = "autoSize", format = "Boolean")]
+			public function set autoSize(value : Boolean) : void
+			{
+				_autoSize = value;
+				invalidateSize();
+			}
+			
+			public function get autoSize() : Boolean
+			{
+				return _autoSize;
+			}
+			
+			override protected function measure() : void
+			{
+				super.measure();
+				
+				if (_autoSize)
+				{
+					var lineHeight : uint = 6;
+					for (var i : int = 0; i < this.mx_internal::getTextField().numLines; i++)
+					{
+						lineHeight += this.mx_internal::getTextField().getLineMetrics(i).height;
+					}
+					this.measuredHeight = lineHeight;
+					this.verticalScrollPolicy = "off";
+				}
+			}
+			
+
+		]]>
+	</fx:Script>
+	
+</mx:TextArea>

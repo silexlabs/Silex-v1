@@ -1,0 +1,7 @@
+#build file
+-cp src
+-main HooksFilters
+-lib utest
+-x bin/HooksFilters.n
+-debug
+

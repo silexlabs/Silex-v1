@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+					 width="100%" height="100%"  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" xmlns:ui="org.silex.wysiwyg.ui.*">
+
+	<fx:Metadata>
+		[Event(name="editEnd", type="flash.events.Event")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.Property;
+			
+			
+			/**
+			 * reset the scale to 100% and manually adjust
+			 * the stepper value to 100
+			 */ 
+			private function resetSize():void
+			{
+				updatePropertyValue(100, "scale");
+				scaleStepper.value = 100;
+				dispatchEvent(new Event(WysiwygNumericStepper.EDIT_END));
+			}
+			
+			private function onScaleEditEnd(event:Event):void
+			{
+				updatePropertyValue(event.currentTarget.value, "scale");
+				dispatchEvent(new Event(WysiwygNumericStepper.EDIT_END));
+			}
+			
+			public function refresh():void
+			{
+				var propertiesObj:Object = SilexAdminApi.getInstance().properties.getSortedData(null,["scale"])[0];
+				propertyArray.scale = propertiesObj.scale;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		
+		
+		<mx:Form>
+			
+			<mx:FormItem label="{propertyArray.scale.description}" width="100%" height="100%">
+				
+				<ui:WysiwygNumericStepper id="scaleStepper" value="{propertyArray.scale.currentValue}"
+										   styleName="scale"
+										   editEnd="onScaleEditEnd(event)"
+										   maximum="{propertyArray.scale.maxValue}"
+										   minimum="{propertyArray.scale.minValue}"
+										   change="{updatePropertyValue(event.currentTarget.value, 'scale')}"
+										   
+										   />
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%">
+				<ui:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_RESET_SIZE_BUTTON_LABEL')}" click="resetSize()" />
+			</mx:FormItem>	
+			
+		</mx:Form>
+	</mx:HBox>
+	
+</panelUis:PanelUiBase>

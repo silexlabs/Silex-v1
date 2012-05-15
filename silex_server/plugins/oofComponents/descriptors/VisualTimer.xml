@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>VisualTimer</componentName>
+	<as2Url>as2/VisualTimer.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.ui.VisualTimer</className>
+	<specificEditorUrl>editors/VisualTimer.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>VisualTimer</name>
+			<uid>silex.AddComponent.ToolItem.AddVisualTimer</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Utilities</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_VISUAL_TIMER</label>
+			<description>DESCRIPTION_ADD_BUTTON_VISUAL_TIMER</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_utilities.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>VisualTimer1</label>
+					<url>as2/VisualTimer/VisualTimer1.swf</url>
+					<description>skin1 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>		
+		<interval>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_INTERVAL</description>
+			<defaultValue>5000</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</interval>
+	</properties>
+</componentDescriptor>

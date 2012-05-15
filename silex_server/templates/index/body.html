@@ -1,0 +1,135 @@
+<!--[if IE]>
+<script type="text/javascript" event="FSCommand(command,args)" for="silex">
+  silex_DoFSCommand(command, args);
+</script>
+<![endif]-->
+<div id="silexScene" name="silexScene" style="overflow-x:hidden; overflow-y:auto; position: absolute;  top: 0px; z-index: 0; width: 100%; height: 100%;">
+	<div style="overflow:none; position: absolute; z-index: 1000;" id="frameContainer" name="frameContainer"></div>
+	<div id="flashcontent" name="flashcontent" style="overflow:none; position: absolute;  top: 0px; z-index: 0; width: 100%; height: 100%;">
+		<noscript>
+			<object id="silex"  classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%"  bgcolor="000000" height="100%" standby="Loading... Please wait." wmode="transparent">
+				$$getFlashParamAsHTML()
+				<noembed>
+					$$callHooks(index-noembed)
+		    		<h2>::htmlTitle:: website informations :</h2>
+					<h3>links :</h3><p>::seoData.links::</p><p><a href="::rootUrl::sitemap.php?id_site=::idSite::">sitemap</a></p>
+					<h3>keywords :</h3><p>::htmlKeywords::</p>
+					<h3>html equivalent :</h3><p>::htmlEquivalent::</p>
+					<h2>About Silex :</h2>
+					<ul>
+						<li><a href="http://projects.silexlabs.org/?/silex">powered by silex ::version:: (open source)</a></li>
+						<li><a href="http://www.silexlabs.org/category/the-blog/blog-silex/">released by Silex team</a></li>
+						<li><a href="http://www.silexlabs.org/silex/docs-silex/">Silex online help : user guide and technical documentation</a></li>
+						<li><a href="http://www.silexlabs.org/category/exchange/exchange-silex/">exchange platform : download themes, plugins, components, tools, etc. for Silex Labs projects</a></li>
+					</ul>
+				</noembed>
+				<embed height="100%" width="100%" $$flashParamAsParamString()>
+				</embed>
+			</object>
+		</noscript>
+	</div>
+</div>
+<iframe style="display:none" id="downloadFrame" name="downloadFrame"></iframe>
+<div id="leftToolsContainerDiv"></div>
+<div id="rightToolsContainerDiv"></div>
+<div id="toolsContainerDiv"></div>
+<script type="text/javascript">
+	::if doRedirect::::else::
+		
+		// here $autologin may be defined
+		
+		
+		$no_flash_page = "no-flash.html";
+		$php_str = '';
+		$additional_flashvars = '';
+		$enableDeeplinking = "::if websiteConfig.ENABLE_DEEPLINKING::::websiteConfig.ENABLE_DEEPLINKING::::else::true::end::";
+		$DEFAULT_WEBSITE="::serverConfig.DEFAULT_WEBSITE::";
+		$php_id_site="::idSite::";
+		$php_website_conf_file="::contentFolderForPublication::::idSite::/::serverConfig.WEBSITE_CONF_FILE::";
+		$SILEX_CLIENT_CONF_FILES_LIST=$php_website_conf_file + "," + "::serverConfig.SILEX_CLIENT_CONF_FILES_LIST::";
+		$flashPlayerVersion="::if websiteConfig.flashPlayerVersion::::websiteConfig.flashPlayerVersion::::else::8::end::";
+		$CONFIG_START_SECTION="::if websiteConfig.CONFIG_START_SECTION::::websiteConfig.CONFIG_START_SECTION::::else::start::end::";
+		$SILEX_ADMIN_AVAILABLE_LANGUAGES="";
+		$SILEX_ADMIN_DEFAULT_LANGUAGE="::serverConfig.SILEX_ADMIN_DEFAULT_LANGUAGE::";
+		$htmlTitle="::htmlTitle::";
+		$wmode="transparent";
+		
+		$preload_files_list="::websiteConfig.layoutFolderPath::::websiteConfig.initialLayoutFile::::if websitePreloadFileList::,::websitePreloadFileList::::end::::if websiteFonts::,::websiteFonts::::end::";
+
+
+		$bgColor="#::websiteConfig.bgColor::";
+		$loaderPath="::loaderPath::";
+	::end::
+
+</script>
+$$callHooks(index-script)
+<script type="text/javascript">
+	::if doRedirect::::else::
+		var onLoadBodyCallbackOccured = false;
+		function onLoadBodyCallback()
+		{
+			// only one time (useful??)
+			if (onLoadBodyCallbackOccured == true) {return;}
+			onLoadBodyCallbackOccured= true;
+			
+			// include the javascirpt scripts
+			/*
+			// now they are all in one script :
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"jquery.min.js");
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"swfobject.min.js");
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"utils.min.js");
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"jsframe.min.js");
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"deeplink.min.js");
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"silex.min.js");
+			*/
+			silexNS.SilexApi.addScript(javascriptFolderUrl+"compressed.min.js");
+			// load scripts and call the callback
+			silexNS.SilexApi.includeJSSCripts(onScriptsLoadedCallback);
+		}
+		/**
+		 * callback function passed to SilexApi::includeJSSCripts
+		 * so that it will be called by silex API after all scripts are loaded
+		 */
+		function onScriptsLoadedCallback()
+		{
+			$$callHooks(index-all-js-scripts-loaded)
+
+			//alert($DEFAULT_WEBSITE);
+			// silexJsObj is used for deep link and tracking, it is accessed by plugins and silex core ActionScript framework
+			
+			silexJsObj=SilexJsStart(
+				$flashPlayerVersion,
+				$DEFAULT_WEBSITE,
+				$CONFIG_START_SECTION,
+				$SILEX_CLIENT_CONF_FILES_LIST,
+				$enableDeeplinking,
+				$SILEX_ADMIN_DEFAULT_LANGUAGE,
+				$SILEX_ADMIN_AVAILABLE_LANGUAGES,
+				$htmlTitle,
+				$preload_files_list,
+				$bgColor,
+				$php_str,
+				$php_id_site,
+				$additional_flashvars, // additional flash vars
+				$rootUrl, // rootUrl
+				$$printFlashVars(),
+				$$printFlashParam(),
+				$no_flash_page,
+				$loaderPath
+			);
+					
+			// check hash compatibility with previous deeplinking system (id_site was after the hash)
+			var currentHash = getUrlHash(); // comes from deeplink.js
+			var isCompatible = silexNS.SilexApi.checkCompatibility($CONFIG_START_SECTION,$DEFAULT_WEBSITE,currentHash,$rootUrl);
+		}
+		silexNS.HookManager.addHook("silexAdminApiReady",loadAdminPlugins);
+		function loadAdminPlugins()
+		{
+			$("#adminDiv").load($rootUrl+"silexAdminPluginsFrame.php?websitePlugins=$$encodeUrl(::websiteConfigPlugins::)");
+		}
+	::end::
+	
+	window.onload=onLoadBodyCallback;
+	window.onresize=silexNS.SilexApi.resize;
+</script>
+<div id="adminDiv"></div>

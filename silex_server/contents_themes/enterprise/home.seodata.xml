@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>home</title>
+		<pubDate>Sat May 5 23:13:32 GMT+0200 2012</pubDate>
+		<components>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="14" COLOR="#EEEEEE" LETTERSPACING="0" KERNING="0">Home</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Home </text>
+			</component>
+			<component>
+				<playerName>TextMain</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="12"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="30" COLOR="#000000" LETTERSPACING="0" KERNING="0">Laboriosam</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Maxime placeat facere possimu :</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><LI><FONT FACE="_sans" SIZE="15" COLOR="#5A5A5A" LETTERSPACING="0" KERNING="0"></FONT></LI></TEXTFORMAT><TEXTFORMAT LEADING="8"><LI><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Firefox 9.0.1<FONT COLOR="#5A5A5A"></FONT></FONT></LI></TEXTFORMAT><TEXTFORMAT LEADING="8"><LI><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Opera 11.60<FONT COLOR="#5A5A5A"></FONT></FONT></LI></TEXTFORMAT><TEXTFORMAT LEADING="8"><LI><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">IE 8 and 9<FONT COLOR="#5A5A5A"></FONT></FONT></LI></TEXTFORMAT><TEXTFORMAT LEADING="8"><LI><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Chrome<FONT COLOR="#5A5A5A"></FONT></FONT></LI></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Nam libero tempore</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Maiores alias consequatur</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="18" COLOR="#BC6637" LETTERSPACING="0" KERNING="0"><B>Nostrum exercitationem</B></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="8"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#000000" LETTERSPACING="0" KERNING="0">fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum totam rem aperiam, eaque ipsa quae ab illo inventore veritatis facere possimus, omnis voluptas assumenda.</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Laboriosam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo etempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis.  Maxime placeat facere possimu :  Firefox 9.0.1  Opera 11.60  IE 8 and 9  Chrome   Nam libero tempore  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.  Maiores alias consequatur  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.  Nostrum exercitationem  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum totam rem aperiam, eaque ipsa quae ab illo inventore veritatis facere possimus, omnis voluptas assumenda. </text>
+			</component>
+			<component>
+				<playerName>TextHeader</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="35" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">Excepteur sint occaecat cupidatat non proident.</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FFE0CC" LETTERSPACING="0" KERNING="0">occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text>Excepteur sint occaecat cupidatat non proident. occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi. </text>
+			</component>
+			<component>
+				<playerName>GradientRectangleBtnSelected</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

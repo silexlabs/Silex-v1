@@ -1,0 +1,46 @@
+﻿;File generated via Silex_translations official file – Please use this file for any modification or addition: https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE
+
+;general
+TITLE=Silex Installer&
+STEP1=Installation&
+STEP2=Identification&
+STEP3=Launch Silex !&
+
+;step1
+WELCOME_INTRO_1=Ok, we are now going to install &
+WELCOME_INTRO_2=together. &
+WELCOME_RUN_TESTS=First we must run some tests. &
+WELCOME_LABEL_BUTTON=Let's Go!&
+WELCOME_CHOOSE_LANGUAGE_DESCRIPTION=change language&
+WELCOME_CHOOSE_LANGUAGE_BUTTON=change&
+
+;step2
+ACCOUNT_SERVER_ALREADY_INSTALLED=Your silex server is already installed.&
+ACCOUNT_ASK_LOGIN=Please log in:&
+ACCOUNT_LOGIN=login :&
+ACCOUNT_PASSWORD=password :&
+ACCOUNT_NEXT=Next&
+ACCOUNT_SERVER_ABLE=Your server is able to run Silex.&
+ACCOUNT_CHOOSE_LOGIN_AND_PASSWORD=Please choose a login and a password for your admin account : &
+
+;step3
+ACCOUNT_CREATED=admin account created&
+SERVER_INSTALLED=The server is successfully installed.&
+LAST_STEP=The last step is url rewriting&
+URL_REWRITING_SUCCESS=Url rewriting was successfully installed&
+THATS_IT=That's it! Now if you're ready, let's&
+GOTO_MANAGER=Start&
+URL_REWRITING_OK=Url rewriting was successfully installed.&
+URL_REWRITING_NOK=Your host doesn't support url rewriting. &
+URL_REWRITING_NOK_SO_WHAT=Without it your site won't be indexed by search engines&
+
+;tests
+TEST_RIGHTS_HAS_RIGHTS=has read, write and execute rights ok'&
+TEST_RIGHTS_HAS_NO_RIGHTS=has NOT read, write and execute rights ok - '&
+TEST_RIGHTS_CHMOD_OK=The access rights have been changed to 755&
+TEST_RIGHTS_CHMOD_NOK=Error: the access rights could not be changed to 755.&
+TEST_RIGHTS_HELP=You don't have the rights on the file system and silex couldn't get them for you. This means you can't do certain things with silex, but it should be ok for a visitor. Try setting them yourself, with your FTP client for example <br/> <br/> Silex needs read, write and execute rights(0755) on the media, contents, and logs directories and on cgi/scripts/upload.cgi .<br/>If all else fails you can still use this site without editing it. To do this, create an empty file at conf/pass.php&
+
+TEST_SESSION_HELP=Your host doesn't allow sessions. Silex needs sessions to run properly. &
+TEST_PHP_VERSION_HELP=PHP 5 or more is needed. Some web hosts provide an older PHP by default, and sometimes this can be changed. To do this you need to try adding a file called .htaccess at the root of silex, and try a variety of ways of setting the PHP version to 5. Try adding one of the following lines to it, then refresh. If this doesn't work, try another. <br/> <br/> SetEnv PHP_VER 5 <br/> AddHandler x-httpd-php5 .php <br/> AddType x-mapp-php5 .php <br/>AddType application/x-httpd-php5 .php<br/>&
+TEST_SET_INCLUDE_PATH_HELP=Your host doesn't allow set_include_path. Silex needs set_include_path to run properly. &

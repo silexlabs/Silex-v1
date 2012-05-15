@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+		]]>
+	</fx:Script>
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		<mx:Form width="100%" height="100%">
+			<mx:FormItem label="{propertyArray.listBoxPath.description}" width="100%" height="100%">
+				<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+									 propertyArray.listBoxPath.baseClass)}"
+									 styleName="large"
+									 editable="true"
+									 selectedItem="{propertyArray.listBoxPath.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'listBoxPath')"  />
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.getRecordsOnLoad.description}">
+				<ns1:WysiwygCheckBox selected="{propertyArray.getRecordsOnLoad.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selected, 'getRecordsOnLoad')"  />
+			</mx:FormItem>
+		</mx:Form>
+		
+		<mx:Form width="100%" height="100%">
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.limit.description}">
+				<ns1:WysiwygNumericStepper id="limitStepper" styleName="dimension"
+										   value="{propertyArray.limit.currentValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'limit')"/>
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.offset.description}">
+				<ns1:WysiwygNumericStepper id="offsetStepper" styleName="dimension"
+										   value="{propertyArray.offset.currentValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'offset')"/>
+			</mx:FormItem>
+		</mx:Form>
+	</mx:HBox>	
+	
+	<mx:HRule width="100%" />	
+	<mx:Form width="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="Interactions" fontSize="16" color="0x686765" textAlign="left"/>
+		</mx:FormItem>
+	</mx:Form>		
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.getIndividualRecordsOnClick.description}">
+			<ns1:WysiwygCheckBox selected="{propertyArray.getIndividualRecordsOnClick.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selected, 'getIndividualRecordsOnClick')"  />
+		</mx:FormItem>
+		<mx:FormItem label="{propertyArray.resultContainerPath.description}" width="100%" height="100%">
+			<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+								 propertyArray.resultContainerPath.baseClass)}"
+								 styleName="large"
+								 editable="true"
+								 selectedItem="{propertyArray.resultContainerPath.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selectedItem, 'resultContainerPath')"  />
+		</mx:FormItem>	
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.rollOverResultContainerPath.description}">
+			<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+								 propertyArray.rollOverResultContainerPath.baseClass)}"
+								 styleName="large"
+								 editable="true"
+								 selectedItem="{propertyArray.rollOverResultContainerPath.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selectedItem, 'rollOverResultContainerPath')"  />
+		</mx:FormItem>
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.outputFormats.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.outputFormats.currentValue}" width="100%" styleName="small" editable="false"
+								 change="updatePropertyValue(event.currentTarget.text, 'outputFormats')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.outputFormats)}" />
+		</mx:FormItem>
+	</mx:Form>
+	
+		<mx:HRule width="100%" />	
+		
+		<mx:Form width="100%" height="100%">	
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.orderBy.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.orderBy.currentValue}" width="100%" styleName="small" enabled="false"
+									 change="updatePropertyValue(event.currentTarget.text, 'orderBy')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.orderBy)}" />
+			</mx:FormItem>	
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.cellFormat.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.cellFormat.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'cellFormat')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.cellFormat)}" />
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.whereClause.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.whereClause.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'whereClause')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.whereClause)}" />
+			</mx:FormItem>	
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.deeplinkFormat.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.deeplinkFormat.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'deeplinkFormat')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.deeplinkFormat)}" />
+			</mx:FormItem>	
+		</mx:Form>	
+		
+		<mx:HRule width="100%" />	
+		
+		<mx:Form width="100%" height="100%">											
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.selectedFieldNames.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.selectedFieldNames.currentValue}" width="100%" styleName="small" enabled="false"
+									 change="updatePropertyValue(event.currentTarget.text, 'selectedFieldNames')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.selectedFieldNames)}" />
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.iconFieldName.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.iconFieldName.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'iconFieldName')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.iconFieldName)}" />
+			</mx:FormItem>	
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.idField.description}">
+				<ns1:WysiwygTextArea text="{propertyArray.idField.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'idField')"  />
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.idField)}" />
+			</mx:FormItem>	
+		</mx:Form>
+	<mx:HRule width="100%" />		
+</panelUis:PanelUiBase>

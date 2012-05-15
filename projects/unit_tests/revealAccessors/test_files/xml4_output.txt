@@ -1,0 +1,137 @@
+Generated xml:
+stdClass Object
+(
+    [entry] => _hx_array Object
+        (
+            [»a] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 25
+                                )
+
+                            [title] => page01
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page01
+                            [page-number] => 1
+                            [order] => 1
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 70
+                                )
+
+                            [title] => page02
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page02
+                            [page-number] => 2-3
+                            [order] => 2
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 71
+                                )
+
+                            [title] => page04
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page04
+                            [page-number] => 4-5
+                            [content] => stdClass Object
+                                (
+                                    [item] => stdClass Object
+                                        (
+                                            [attributes] => stdClass Object
+                                                (
+                                                    [id] => 30
+                                                    [handle] => 
+                                                    [section-handle] => 
+                                                    [section-name] => 
+                                                )
+
+                                        )
+
+                                )
+
+                            [order] => 3
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 72
+                                )
+
+                            [title] => page06
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page06
+                            [page-number] => 6-7
+                            [order] => 4
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 73
+                                )
+
+                            [title] => page08
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page08
+                            [page-number] => 8-9
+                            [order] => 5
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [id] => 74
+                                )
+
+                            [title] => page10
+                            [group] => stdClass Object
+                                (
+                                    [item] => structure
+                                )
+
+                            [page-name] => page10
+                            [page-number] => 10
+                            [order] => 6
+                        )
+
+                )
+
+            [length] => 6
+        )
+
+)

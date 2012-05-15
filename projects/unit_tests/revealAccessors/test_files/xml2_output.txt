@@ -1,0 +1,108 @@
+Generated xml:
+stdClass Object
+(
+    [subLayers] => stdClass Object
+        (
+            [subLayer] => stdClass Object
+                (
+                    [attributes] => stdClass Object
+                        (
+                            [zIndex] => 5
+                            [id] => fade
+                        )
+
+                    [components] => stdClass Object
+                        (
+                            [component] => _hx_array Object
+                                (
+                                    [»a] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [as2Url] => plugins/baseComponents/as2/org.silex.ui.players.Image.swf
+                                                    [html5Url] => plugins/baseComponents/html5#org.silex.ui.Image
+                                                    [className] => org.silex.ui.players.Image
+                                                    [componentRoot] => main
+                                                    [properties] => stdClass Object
+                                                        (
+                                                            [playerName] => logosilex4
+                                                            [rotation] => 0
+                                                            [y] => 16
+                                                            [x] => 0
+                                                            [alpha] => 100
+                                                            [tabIndex] => 1
+                                                            [tabEnabled] => false
+                                                            [tooltipText] => 
+                                                            [visibleOutOfAdmin] => true
+                                                            [iconIsDefault] => false
+                                                            [iconIsIcon] => true
+                                                            [iconLayoutName] => minimal.swf
+                                                            [iconPageName] => p1
+                                                            [descriptionText] => 
+                                                            [scale] => 100
+                                                            [fadeInStep] => 100
+                                                            [tabChildren] => false
+                                                            [_focusrect] => false
+                                                            [visibleFrame_bool] => false
+                                                            [url] => media/logosilex.jpg
+                                                            [mask] => 
+                                                            [useHandCursor] => false
+                                                            [height] => 65
+                                                            [width] => 65
+                                                            [clickable] => true
+                                                        )
+
+                                                    [actions] => 
+                                                )
+
+                                            [1] => stdClass Object
+                                                (
+                                                    [as2Url] => plugins/baseComponents/as2/org.silex.ui.players.Image.swf
+                                                    [html5Url] => plugins/baseComponents/html5#org.silex.ui.Image
+                                                    [className] => org.silex.ui.players.Image
+                                                    [componentRoot] => main
+                                                    [properties] => stdClass Object
+                                                        (
+                                                            [playerName] => logosilex4
+                                                            [rotation] => 0
+                                                            [y] => 16
+                                                            [x] => 0
+                                                            [alpha] => 100
+                                                            [tabIndex] => 1
+                                                            [tabEnabled] => false
+                                                            [tooltipText] => 
+                                                            [visibleOutOfAdmin] => true
+                                                            [iconIsDefault] => false
+                                                            [iconIsIcon] => true
+                                                            [iconLayoutName] => minimal.swf
+                                                            [iconPageName] => p1
+                                                            [descriptionText] => 
+                                                            [scale] => 100
+                                                            [fadeInStep] => 100
+                                                            [tabChildren] => false
+                                                            [_focusrect] => false
+                                                            [visibleFrame_bool] => false
+                                                            [url] => media/logosilex.jpg
+                                                            [scaleMode] => none&$<jj<kk>
+                                                            [mask] => 
+                                                            [useHandCursor] => false
+                                                            [height] => 65
+                                                            [width] => 65
+                                                            [clickable] => true
+                                                        )
+
+                                                    [actions] => 
+                                                )
+
+                                        )
+
+                                    [length] => 2
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panels:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+							creationComplete="onCreationComplete()"
+							xmlns:propertyEditors="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*"
+							xmlns:ns1="org.silex.wysiwyg.ui.*" 
+							xmlns:gradient1="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.gradient.*" 
+							xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*" >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:Boolean id="isListItemSelected" />
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.operations.CopyOperation;
+			
+			import mx.collections.ArrayCollection;
+			import mx.core.ContainerCreationPolicy;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+			
+			
+			/**
+			 * the array containing the new data
+			 */ 
+			[Bindable]
+			private var _gradientData:ArrayCollection;
+			
+			/**
+			 * when add a new gradient color
+			 */
+			static const DEFAULT_GRADIENT_COLOR:String = "ff0000";
+			/**
+			 * when add a new gradient alpha
+			 */		
+			static const DEFAULT_GRADIENT_ALPHA:int= 100;
+			/**
+			 * when add a new gradient position
+			 */			
+			static const DEFAULT_GRADIENT_RATIO:int=0;
+			/**
+			 * height value for itemRender of list
+			 */
+			static const DEFAULT_GRADIENT_LIST_ITEM_HEIGHT:int = 35;
+			
+			/**
+			 * add listener to the array control bar and to the array list
+			 */ 
+			private function onCreationComplete():void
+			{
+				
+				gradientControlBar.addEventListener(PluginEvent.ADD_ITEM, onAddItem);
+				gradientEditorConfirmationBar.addEventListener(PluginEvent.VALIDATE_ITEM, onValidateItem);
+				gradientEditorConfirmationBar.addEventListener(PluginEvent.CANCEL_ITEM, onCancelItem);
+				gradientControlBar.addEventListener(PluginEvent.REMOVE_ITEM, onDeleteItem);
+				gradientControlBar.addEventListener(PluginEvent.COPY_ITEM, onCopyItem);
+				
+				gradientList.addEventListener(PluginEvent.DATA_CHANGED, onDataChanged);
+				
+				gradientConfirmBar.addEventListener(PluginEvent.VALIDATE_ITEM, onCopyValidateItem);
+				gradientConfirmBar.addEventListener(PluginEvent.CANCEL_ITEM, onCopyCancelItem);
+				
+			}
+			
+			override protected function refreshProperty():void
+			{
+				super.refreshProperty();
+				setProperty();
+			}
+			
+			/**
+			 * when the property is set, wrap the property data in an array collection
+			 * used by the list, then check the list state
+			 * 
+			 * @param propertyArray the array sent by the main application
+			 */ 
+			public function setProperty():void
+			{
+				currentState = "default";
+				var tempArray:Array = new Array();
+				
+				if(_propertyArray.gradientColors.currentValue != null && _propertyArray.gradientAlpha.currentValue != null && _propertyArray.gradientRatio.currentValue!= null)
+				{
+					var tempColorArray:Array = _propertyArray.gradientColors.currentValue;		
+					var tempAlphaArray:Array = _propertyArray.gradientAlpha.currentValue;		
+					var tempPositionArray:Array = _propertyArray.gradientRatio.currentValue;
+					
+					for (var i:int=0; i<tempColorArray.length; i++)
+					{				
+						tempArray.push({value:changeColorStr(tempColorArray[i].toString(16)), selected:false, gradientColor:tempColorArray[i].toString(16), gradientAlpha:tempAlphaArray[i], gradientposition:tempPositionArray[i], index:i});
+						
+					}	
+				}else
+				{
+					tempArray.push({value:'0x'+DEFAULT_GRADIENT_COLOR, selected:false,gradientColor:DEFAULT_GRADIENT_COLOR,gradientAlpha:DEFAULT_GRADIENT_ALPHA, gradientposition:DEFAULT_GRADIENT_RATIO, index:0});
+				}
+				
+								
+				_gradientData = new ArrayCollection(tempArray);
+				checkList();
+			}
+			
+			
+			/**
+			 * when a change of data occurs, sends the new value to the main application
+			 */ 
+			private function onPropertyChange():void
+			{
+				var retColorArray:Array = new Array();
+				var retAlphaArray:Array = new Array();
+				var retPositionArray:Array = new Array();
+				
+				for (var i:int = 0; i<_gradientData.length; i++)
+				{	
+					retColorArray.push(uint('0x'+_gradientData.getItemAt(i).gradientColor));
+					retAlphaArray.push(_gradientData.getItemAt(i).gradientAlpha);
+					retPositionArray.push(_gradientData.getItemAt(i).gradientposition);
+				}
+				
+				updatePropertyValue(retColorArray,"gradientColors");
+				updatePropertyValue(retAlphaArray,"gradientAlpha");		
+				updatePropertyValue(retPositionArray,"gradientRatio");
+				
+			}
+			
+			/**
+			 * method called when the user clicks the 'ok' button
+			 * 
+			 * @param event the triggerred plugin event
+			 */ 
+			private function onValidateItem(event:PluginEvent):void
+			{
+				onPropertyChange();
+				closeEditor();
+			}
+			/**
+			 * method called when the user clicks the 'cancel' button
+			 * 
+			 * @param event the triggerred plugin event
+			 */ 			
+			private function onCancelItem(event:PluginEvent):void
+			{	
+				closeEditor();
+			}
+			
+			
+			/**
+			 * add an item with a random value when the user clicks on the add button
+			 * 
+			 * @param event the trigerred plugin event
+			 */ 
+			private function onAddItem(event:PluginEvent):void
+			{
+				_gradientData.addItem({value:'0x'+DEFAULT_GRADIENT_COLOR, selected:false,gradientColor:DEFAULT_GRADIENT_COLOR,gradientAlpha:DEFAULT_GRADIENT_ALPHA, gradientposition:DEFAULT_GRADIENT_RATIO, index:_gradientData.length});
+				
+				refreshIndexes();
+				checkList();
+			}
+			/**
+			 * Called when the user uses drag'n'drop to re-order the list
+			 * 
+			 * @param event the trigerred dragEvent
+			 */ 
+			private function onDragComplete(event:DragEvent):void
+			{
+				refreshIndexes();
+			}
+			
+			/**
+			 * when add or delete the table to refresh index
+			 * 
+			 */
+			
+			private function refreshIndexes():void
+			{
+				for (var i:int =0; i<_gradientData.length; i++)
+				{
+					var data:Object = _gradientData.getItemAt(i);
+					data.index = i;
+					_gradientData.setItemAt(data, i);
+				}
+			}
+			private function refreshSelectedInput(index:int, charIndex:int):void
+			{
+				for (var i:int = 0; i<_gradientData.length; i++)
+				{
+					var data:Object = _gradientData.getItemAt(i);
+					data.selectedTextInput = index;
+					data.selectedCharIndex = charIndex;
+					_gradientData.setItemAt(data, i);
+				}
+			}
+			/**
+			 * listene to if the listitemRender change data
+			 * 
+			 * @param event the trigerred plugin event
+			 */ 			
+			private function onDataChanged(event:PluginEvent):void
+			{
+				_gradientData.setItemAt(event.data ,event.data.index);
+				refreshSelectedInput(event.data.index, event.data.selectedCharIndex);
+				checkList();
+				
+			}
+			
+			/**
+			 * When the user clicks the copy button, changes the current state
+			 * to display a text area allowing the user to copy or paste the data
+			 * 
+			 * @param event the triggered PluginEvent
+			 */ 
+			private function onCopyItem(event:PluginEvent):void
+			{
+				currentState = "copy";
+				
+				copyTextArea.text = "";
+				
+				for (var i:int =_gradientData.length - 1; i>=0; i--)
+				{
+					if (_gradientData.getItemAt(i).selected == true)
+					{
+						copyTextArea.text += changeColorStr(_gradientData.getItemAt(i).gradientColor)+"\,"+_gradientData.getItemAt(i).gradientAlpha+"\,"+_gradientData.getItemAt(i).gradientposition+"\r";
+						
+					}
+				}
+			}
+			
+			/**
+			 * When the user clicks the delete button, delete all the selected items
+			 * 
+			 * @param event the trigerred PluginEvent
+			 */ 
+			private function onDeleteItem(event:PluginEvent):void
+			{
+				for (var i:int =_gradientData.length - 1; i>=0; i--)
+				{
+					if (_gradientData.getItemAt(i).selected == true)
+					{
+						_gradientData.removeItemAt(i);
+						
+					}
+				}
+				
+				refreshIndexes();
+				checkList();
+			}
+			
+			
+			/**
+			 * checks the length of the list and activate
+			 * buttons accordingly. Also checks if items are selected to
+			 * activate the delete button
+			 */ 
+			private function checkList():void
+			{
+				if ( _gradientData.length == 0)
+				{
+					gradientControlBar.deactivate();
+				}
+					
+				else
+				{
+					gradientControlBar.activate();
+				}
+				
+				var flagSelected:Boolean = false;
+				
+				gradientList.height = DEFAULT_GRADIENT_LIST_ITEM_HEIGHT*_gradientData.length;
+				
+				for (var i:int =0 ; i< _gradientData.length; i++)
+				{
+					if (_gradientData.getItemAt(i).selected == true)
+					{
+						flagSelected = true;
+					}
+				}
+				
+				if (flagSelected)
+				{
+					gradientControlBar.removeButton.enabled = true;
+				}
+				else
+				{
+					gradientControlBar.removeButton.enabled = false;
+				}
+			}
+			
+			private function onListDataChange(event:FlexEvent):void
+			{
+				refreshIndexes();
+				checkList();
+			}
+			
+			
+			private function onCopyCancelItem(event:PluginEvent):void
+			{
+				currentState = "default";
+			}
+			
+			private function onCopyValidateItem(event:PluginEvent):void
+			{
+				var tempCopyArray:Array = copyTextArea.text.split("\r");
+				
+				for (var i:int = 0; i<tempCopyArray.length; i++)
+				{
+					if(tempCopyArray[i] != "")
+					{
+						var tempSubArry:Array = tempCopyArray[i].split(",");
+						var colorStr:String = tempSubArry[0].split("0x").join("");
+						_gradientData.addItem({value:tempSubArry[0], selected:false,gradientColor:colorStr,gradientAlpha:tempSubArry[1],gradientposition:tempSubArry[2], index:_gradientData.length+i});
+					}							
+					
+				}
+				
+				
+				refreshIndexes();
+				checkList();
+				currentState = "default";
+			}
+			/**
+			 * function return the color string with good format like: 0xff0000 and 0x000000
+			 */
+			private function changeColorStr(colorStr:String):String
+			{
+				var colorValueStr:String = new String;	
+				var hexString:* = colorStr.toUpperCase();
+				var zeroNum:int = 6 - hexString.length;
+				var zeroStr:String = "";
+				
+				for (var m:int = 0; m < zeroNum; m++) 
+				{
+					zeroStr += "0";
+				}
+				
+				colorValueStr =  "0x" + zeroStr + hexString;	
+				return colorValueStr;
+			}
+		]]>
+	</fx:Script>
+	
+	<panels:states >
+		<mx:State name="default"  />
+		<mx:State name="copy" />
+	</panels:states> 
+	
+	<mx:VBox id="listContainer" width="100%" height="100%">
+		<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_GRADIENT_TITRE_LABEL')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		
+		<mx:HRule width="100%" />
+		
+		<gradient1:GradientControlBar id="gradientControlBar" width="100%"
+									  visible.copy="false"
+									  visible.default="true"
+									  includeInLayout.copy="false"
+									  includeInLayout.default="true"/>
+		<gradient1:GradientConfirmBar id="gradientConfirmBar" width="100%" height="25"
+									  visible.copy="true"
+									  visible.default="false"
+									  includeInLayout.copy="true"
+									  includeInLayout.default="false"/>		
+		
+		<mx:HRule width="100%" />
+		
+		<ns1:WysiwygList 
+			id="gradientList"
+			styleName="noCell"
+			visible.copy="false"
+			visible.default="true"
+			includeInLayout.copy="false"
+			includeInLayout.default="true"
+			itemRenderer="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.gradient.GradientListItemRenderer"
+			dataChange="onListDataChange(event)"
+			dragEnabled="false"
+			dropEnabled="true"
+			dragMoveEnabled="true"
+			dragComplete="onDragComplete(event)"
+			dataProvider="{_gradientData}"
+			variableRowHeight="true"
+			width="100%"
+			/>
+		<mx:HRule width="100%" />
+		
+		<mx:TextArea  id="copyTextArea" width="100%"
+					  visible.copy="true"
+					  visible.default="false"
+					  includeInLayout.copy="true"
+					  includeInLayout.default="false"/>
+		
+		<gradient1:GradientEditorConfirmBar id="gradientEditorConfirmationBar" width="100%" height="25"
+											visible.copy="false"
+											visible.default="true"
+											includeInLayout.copy="false"
+											includeInLayout.default="true"/>
+		
+		<mx:HRule width="100%" />
+		
+		
+	</mx:VBox>
+	
+</panels:PropertyEditorsBase>

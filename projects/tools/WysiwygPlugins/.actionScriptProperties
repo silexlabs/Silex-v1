@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties mainApplicationPath="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/base/Base.mxml" projectUUID="55804261-3b18-46d3-af92-0d1701d0b920" version="6">
+  <compiler additionalCompilerArguments="-locale fr_FR" autoRSLOrdering="false" copyDependentFiles="false" flexSDK="Flex 4.1" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderLocation="DOCUMENTS/silex_server/plugins/wysiwyg/panels" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="false" verifyDigests="true" warn="false">
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/framework/as3"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/projects/tools/toolboxes_design/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/projects/tools/wysiwig/src"/>
+    </compilerSourcePath>
+    <libraryPath defaultLinkType="0">
+      <libraryPathEntry kind="4" path="">
+        <modifiedEntries>
+          <libraryPathEntry index="2" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/framework.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="false" policyFileUrl="" rslUrl="%2e%2e/%2e%2e/framework/flex/framework_4.1.0.16076.swz"/>
+              <crossDomainRslEntry autoExtract="false" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/framework_4.1.0.16076.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+          <libraryPathEntry index="4" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/rpc.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="false" policyFileUrl="" rslUrl="%2e%2e/%2e%2e/framework/flex/rpc_4.1.0.16076.swz"/>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/rpc_4.1.0.16076.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+          <libraryPathEntry index="1" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/textLayout.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="false" policyFileUrl="" rslUrl="%2e%2e/%2e%2e/framework/flex/textLayout_1.1.0.604.swz"/>
+              <crossDomainRslEntry autoExtract="false" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/framework_4.1.0.16076.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+        </modifiedEntries>
+        <excludedEntries>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flex.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry index="5" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/sparkskins.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/sparkskins_4.1.0.16076.swz"/>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="" rslUrl="sparkskins_4.1.0.16076.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/datavisualization.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry index="2" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/osmf.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/osmf_flex.4.0.0.13495.swz"/>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="" rslUrl="osmf_flex.4.0.0.13495.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+          <libraryPathEntry index="4" kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/spark.swc" useDefaultLinkType="true">
+            <crossDomainRsls>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="http://fpdownload.adobe.com/pub/swz/crossdomain.xml" rslUrl="http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/spark_4.1.0.16076.swz"/>
+              <crossDomainRslEntry autoExtract="true" policyFileUrl="" rslUrl="spark_4.1.0.16076.swz"/>
+            </crossDomainRsls>
+          </libraryPathEntry>
+        </excludedEntries>
+      </libraryPathEntry>
+      <libraryPathEntry kind="3" linkType="1" path="/ToolBoxAPI/bin/ToolBoxAPI.swc" useDefaultLinkType="false"/>
+    </libraryPath>
+    <sourceAttachmentPath/>
+  </compiler>
+  <applications>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/SpecificPlugin.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/ShoppingCart/ShoppingCart.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/PanelBase.as"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginPropertyEditors/PropertyEditors/panels/PropertyEditorsBase.as"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/Ultralign/Ultralign.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginPropertyEditors/PropertyEditors/panels/ultralign/ultralignEditor.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/BestButtonGroup/BestBackgroundButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/BestButtonGroup/BestButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/BestButtonGroup/BestLabelButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/DownloadButton/DownloadButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/PrintButton/PrintButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/SendToFriendButton/SendToFriendButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/ShareButton/ShareButton.mxml"/>
+    <application path="org/silex/wysiwyg/plugins/WysiwygPluginSpecific/panels/pagesNavigationUi/pagesNavigationUi.mxml"/>
+  </applications>
+  <modules/>
+  <buildCSSFiles/>
+</actionScriptProperties>

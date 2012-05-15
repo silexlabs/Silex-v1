@@ -1,0 +1,329 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="under">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">109.05</y>
+						<x type="Integer">261</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">535</height>
+						<width type="Integer">892</width>
+						<playerName>FondBlanc</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">0</item>
+							<item type="Integer">255</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16711680</item>
+							<item type="Integer">65280</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>solid</fill>
+						<bgColor type="Integer">16777215</bgColor>
+						<bgAlpha type="Integer">80</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">16711680</borderColor>
+						<border type="Boolean">false</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+		<subLayer zIndex="4" id="over">
+			<components>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">335</y>
+						<x type="Integer">590</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">40</height>
+						<width type="Integer">235</width>
+						<playerName>Text</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<scrollbar type="Boolean">false</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;24&quot; COLOR=&quot;#63594D&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;((&amp;lt;&amp;lt;DataSelector_site.selectedItem.title&amp;gt;&amp;gt;))&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">280</y>
+						<x type="Integer">590</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">48.9</height>
+						<width type="Integer">235</width>
+						<playerName>Text</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">true</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<scrollbar type="Boolean">false</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;CENTER&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;15&quot; COLOR=&quot;#63594D&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;((&amp;lt;&amp;lt;silex.paramsFile.manage:suredelete&amp;gt;&amp;gt;)) &lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_02.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">385</y>
+						<x type="Integer">725</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<playerName>label_btn_plus_cadre_02.cmp.swf</playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">100</width>
+						<label>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;Annuler&lt;/b&gt;&lt;/FONT&gt;</label>
+						<imageUrl>media/</imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:cancel&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelNormal>
+						<buttonLabelSelect>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:cancel&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelSelect>
+						<buttonLabelOver>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:cancel&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelOver>
+						<buttonLabelPress>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:cancel&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>label_btn_plus_cadre_02_delete.close</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_02.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">385</y>
+						<x type="Integer">585</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<playerName>label_btn_plus_cadre_02.cmp.swf</playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">100</width>
+						<label>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;Effacer&lt;/b&gt;&lt;/FONT&gt;</label>
+						<imageUrl>media/</imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:delete&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelNormal>
+						<buttonLabelSelect>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:delete&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelSelect>
+						<buttonLabelOver>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:delete&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelOver>
+						<buttonLabelPress>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:delete&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>deleteWebsite</parameter>
+								<parameter>onDeleteSuccess</parameter>
+								<parameter>onDeleteFailed</parameter>
+								<parameter>&lt;&lt;DataSelector_site.selectedItem.title&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>open</functionName>
+							<modifier>onDeleteSuccess</modifier>
+							<parameters>
+								<parameter>start/menu/manage/manage1</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>DataSelector_site.getRecords</functionName>
+							<modifier>onDeleteSuccess</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_site.selectedIndex=-10000</functionName>
+							<modifier>onDeleteSuccess</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onDeleteFailed</modifier>
+							<parameters>
+								<parameter>ERROR</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.GradientRectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">265</y>
+						<x type="Integer">560</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">175</height>
+						<width type="Integer">290</width>
+						<playerName>fondpopup</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">5</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">5</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">0</dropShadowDistance>
+						<dropShadowColor>0x666666</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">90</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">7</item>
+							<item type="Integer">120</item>
+							<item type="Integer">142</item>
+							<item type="Integer">250</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">16777215</item>
+							<item type="Integer">14212852</item>
+							<item type="Integer">11910348</item>
+							<item type="Integer">14803954</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<bgColor type="Integer">3355443</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">11910348</borderColor>
+						<border type="Boolean">true</border>
+						<BLcornerRadius type="Integer">10</BLcornerRadius>
+						<BRcornerRadius type="Integer">10</BRcornerRadius>
+						<TRcornerRadius type="Integer">10</TRcornerRadius>
+						<TLcornerRadius type="Integer">10</TLcornerRadius>
+						<fill>linear</fill>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

@@ -1,0 +1,7 @@
+#build file
+-cp src
+-main Html5silexComponents
+-cp ../../framework/hx
+-cp ../../../apps/third-party/plugins/html5generator/src
+-cp ../html5basecomponents/src
+-php bin/html5silexComponents.phpdir

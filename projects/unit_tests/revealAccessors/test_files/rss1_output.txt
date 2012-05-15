@@ -1,0 +1,6 @@
+{
+link:http://www.example.org/actu1
+pubDate:Sat, 07 Sep 2002 00:00:01 GMT
+description:Ceci est ma première actualité
+title:Actualité N°1
+}

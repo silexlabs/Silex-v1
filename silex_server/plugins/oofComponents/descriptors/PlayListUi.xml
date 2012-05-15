@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>PlayListUi</componentName>
+	<as2Url>as2/PlayListUi.swf</as2Url>
+	<html5Url> </html5Url>
+	<className>org.oof.ui.PlayListUi</className>
+	<specificEditorUrl>editors/PlayListUi.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/oofComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>PlayListUi</name>
+			<uid>silex.AddComponent.ToolItem.AddPlayListUi</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.UIElements</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_PLAY_LIST_UI</label>
+			<description>DESCRIPTION_ADD_BUTTON_PLAY_LIST_UI</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/oof_ui-elements.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>PlayListUi skin 1</label>
+					<url>as2/PlayListUi/PlayListUi1.swf</url>
+					<description>skin1 description</description>
+				</skin>
+				<skin>
+					<label>PlayListUi skin 2</label>
+					<url>as2/PlayListUi/listUi_manager_bas.swf</url>
+					<description>skin2 description</description>
+				</skin>
+				<skin>
+					<label>PlayListUi skin 2</label>
+					<url>as2/PlayListUi/listUi_manager_haut.swf</url>
+					<description>skin2 description</description>
+				</skin>
+				<skin>
+					<label>PlayListUi skin 2</label>
+					<url>as2/PlayListUi/listUi_manager_gauche.swf</url>
+					<description>skin2 description</description>
+				</skin>
+				<skin>
+					<label>PlayListUi skin 2</label>
+					<url>as2/PlayListUi/listUi_manager_droite.swf</url>
+					<description>skin2 description</description>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<automaticNext>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_AUTOMATIC_NEXT</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+		</automaticNext>	
+		<displayPath>
+			<type>String</type>
+			<subType>Reference</subType>
+			<description>PROPERTIES_LABEL_DISPLAY_PATH</description>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>
+			<baseClass>org.silex.ui.UiBase</baseClass>	
+		</displayPath>		
+		<isHorizontal>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_IS_HORIZONTAL</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</isHorizontal>		
+		<listPath>
+			<type>String</type>
+			<subType>Reference</subType>
+			<description>PROPERTIES_LABEL_LIST_PATH</description>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>	
+			<baseClass>org.oof.lists.CustomList</baseClass>			
+		</listPath>
+		<loopList>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_LOOP_LIST</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</loopList>	
+		<scrollStep>
+			<type>Float</type>
+			<description>PROPERTIES_LABEL_SCROLL_STEP</description>
+			<defaultValue>1</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>attributes</group>			
+		</scrollStep>			
+	</properties>
+</componentDescriptor>

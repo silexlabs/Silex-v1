@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.PluginEvent;
+			
+			private function onOKClick(event:MouseEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.VALIDATE_ITEM, data, true));
+			}
+		]]>
+	</fx:Script>
+	<ns:WysiwygButton id="validateButton" label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_CONFIRM_BUTTON_LABEL')}" click="onOKClick(event)" />				
+	<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CANCEL_BUTTON_LABEL')}" click="dispatchEvent(new PluginEvent(PluginEvent.CANCEL_ITEM, null))" />			
+	
+</mx:HBox>

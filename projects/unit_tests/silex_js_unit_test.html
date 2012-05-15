@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<script type="text/javascript" src="silex.js"></script>
+	</head>
+	<body>
+		Zone de texte : <input type="text" id="hash_txt" value=""> 
+		<input type="button" value="go" onClick="javascript:go_hash()">
+		<script>
+			silex=silexJsObj=new cSilex;
+			silexJsObj.init("defaultSectionName");
+			function go_hash(){silexJsObj.changeSection(document.getElementById("hash_txt").value);}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%"
+		 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+		 xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			/**
+			 * use this method to force the combobox update when switching
+			 * between frame components
+			 */ 
+			override public function signalPropertiesUpdate():void
+			{
+				if (propertyArray.asFrameType != null && htmlFrameCombo != null)
+				{
+					htmlFrameCombo.selectedItem = propertyArray.asFrameType.currentValue;
+				}
+					
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		
+		<fx:Array id="frameArray">
+			<fx:Object label="location" />
+			<fx:Object label="htmlText"  />
+			<fx:Object label="embeddedObject"  />
+		</fx:Array>
+		
+	</fx:Declarations>
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >	
+		
+	
+		
+		<mx:HBox width="33%" height="100%" horizontalAlign="center" verticalAlign="middle" >	
+			
+		<mx:Form width="90%" >
+		<mx:FormItem  width="100%"  label="{propertyArray.playerName.description}" >
+			<ns1:WysiwygTextInput
+								text="{propertyArray.playerName.currentValue}" change="{updatePropertyValue(event.currentTarget.text, 'playerName')}" 
+								restrict="[a-zA-Z0-9]_éàèâî"
+								 width="100%"/>
+		</mx:FormItem>
+		</mx:Form>	
+		</mx:HBox>
+	 
+		<mx:HBox width="66%" height="100%" horizontalAlign="center" verticalAlign="middle"  >		
+			
+			<mx:ComboBox change="{updatePropertyValue(htmlFrameCombo.selectedItem, 'asFrameType')}" id="htmlFrameCombo" height="22" 
+						 selectedItem="{propertyArray.asFrameType.currentValue}"  dataProvider="{propertyArray.asFrameType.values.split(',')}" />
+
+			<mx:ViewStack width="100%" height="100%" selectedIndex="{htmlFrameCombo.selectedIndex}"
+						  creationPolicy="all"  >
+				
+					<mx:Form>
+						
+						
+						<mx:FormItem width="100%" label="{propertyArray.location.description}">
+							<ns1:WysiwygTextInput id="htmlFrameInput" width="100%" text="{propertyArray.location.currentValue}"
+												  change="{updatePropertyValue(event.currentTarget.text, 'location')}" />
+						</mx:FormItem>
+					</mx:Form>
+				
+					<mx:Form >
+						<mx:FormItem width="100%" height="100%" label="{propertyArray.htmlText.description}" direction="horizontal">
+							<mx:HBox width="100%" height="100%">
+								<ns1:WysiwygTextInput id="htmlTextInput" width="100%" text="{propertyArray.htmlText.currentValue}"
+												 change="{updatePropertyValue(event.currentTarget.text, 'htmlText')}" />
+								<ns1:WysiwygButton label="editer text" click="selectProperty(propertyArray.htmlText)" />
+							</mx:HBox>
+							
+						</mx:FormItem>	
+					</mx:Form>
+					
+						<mx:Form>
+							
+					
+					<mx:FormItem width="100%" label="{propertyArray.embededObject.description}">
+						<ns1:WysiwygTextInput id="embeddedObjectInput" width="100%" text="{propertyArray.embededObject.currentValue}"
+											 change="{updatePropertyValue(event.currentTarget.text, 'embededObject')}" />
+					</mx:FormItem>
+						</mx:Form>
+
+				
+
+					
+					
+				</mx:ViewStack>
+		
+		</mx:HBox>
+	
+	</mx:HBox>
+
+	
+	<mx:HRule width="100%" />
+	
+	
+</panelUis:PanelUiBase>

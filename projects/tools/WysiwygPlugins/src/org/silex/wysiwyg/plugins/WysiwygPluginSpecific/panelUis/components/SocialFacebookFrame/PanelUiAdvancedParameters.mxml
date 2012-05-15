@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*">
+	
+	
+	<fx:Script>
+		<![CDATA[
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+		]]>
+	</fx:Script>
+	
+
+	<mx:Form width="100%" height="100%" >
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>
+	</mx:Form>
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+		<mx:Form>
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.facebookFanpage.description}" >
+					<ns1:WysiwygTextInput text="{propertyArray.facebookFanpage.currentValue}"
+										  change="{updatePropertyValue(event.currentTarget.text, 'facebookFanpage')}"/>
+				</mx:FormItem>	
+			</mx:HBox>
+		</mx:Form>
+	</mx:HBox>
+	
+	
+	<mx:HRule width="100%" />
+	
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" >
+		<mx:Form>
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				<mx:FormItem label="{propertyArray.showFaces.description}" width="100%" height="100%" >
+					<ns1:WysiwygCheckBox
+						selected="{propertyArray.showFaces.currentValue}"
+						change="updatePropertyValue(event.currentTarget.selected, 'showFaces')" 
+						/>
+				</mx:FormItem>
+			</mx:HBox>
+		</mx:Form>
+			<mx:VRule height="100%" />
+		<mx:Form>
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				<mx:FormItem label="{propertyArray.showStream.description}" width="100%" height="100%" >
+					<ns1:WysiwygCheckBox
+						selected="{propertyArray.showStream.currentValue}"
+						change="updatePropertyValue(event.currentTarget.selected, 'showStream')" 
+						/>
+				</mx:FormItem>
+			</mx:HBox>
+		</mx:Form>
+			<mx:VRule height="100%" />
+		<mx:Form>
+			<mx:HBox width="100%" height="100%" horizontalAlign="center">
+				<mx:FormItem label="{propertyArray.showHeader.description}" width="100%" height="100%" >
+					<ns1:WysiwygCheckBox
+						selected="{propertyArray.showHeader.currentValue}"
+						change="updatePropertyValue(event.currentTarget.selected, 'showHeader')" 
+						/>
+				</mx:FormItem>
+			</mx:HBox>
+		</mx:Form>
+			<mx:VRule height="100%" />
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.colorScheme.description}" >
+				<ns1:WysiwygComboBox styleName="pageProperties" 
+									 dataProvider="{generateArray(propertyArray.colorScheme.values)}" 
+									 selectedItem="{propertyArray.colorScheme.currentValue}" width="100%"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'colorScheme')"
+									 editable="true"/>
+			</mx:FormItem>
+		</mx:Form>
+	</mx:HBox>
+	
+	<mx:HRule width="100%" />
+		
+</panelUis:PanelUiBase>

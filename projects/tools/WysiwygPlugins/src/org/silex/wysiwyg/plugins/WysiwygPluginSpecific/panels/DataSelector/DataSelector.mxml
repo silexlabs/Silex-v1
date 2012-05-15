@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:component1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.DataSelector.*"
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:dataSelector="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.DataSelector.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(descriptorParameter,listParameter, interactionParameter,connectorParameter, pageInfo);
+			}
+		]]>
+	</fx:Script>
+	
+	<oof:PanelUiDescription id="descriptorParameter" />
+	<component1:PanelUiListParameter id="listParameter" />
+	<component1:PanelUiInteractions id="interactionParameter" />
+	<component1:PanelUiConnector id="connectorParameter" />
+	<component1:PanelUiPageInfo id="pageInfo" />
+
+	
+</panel:PanelBase>

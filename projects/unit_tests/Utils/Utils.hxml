@@ -1,0 +1,5 @@
+-cp src
+-cp ../../../framework/hx
+-lib utest
+-main Test
+-php bin

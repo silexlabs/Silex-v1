@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx"
+				 xmlns:ui1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" 
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:videoDisplay="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.VideoDisplay.*">
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(VideoDisplayMedia,visualParameter,baseParameter, videoDisplayParameter);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="VideoDisplayMedia" />
+	<oof:PanelUiVisual id="visualParameter" />
+	<videoDisplay:PanelUiBaseParameter id="baseParameter" />
+	<videoDisplay:PanelUiVDParameter id="videoDisplayParameter" />
+
+	
+</panel:PanelBase>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>Rectangle</componentName>
+	<as2Url>as2/Geometry.swf</as2Url>
+	<html5Url>html5#org.silex.ui.Geometry</html5Url>
+	<className>org.silex.ui.Rectangle</className>
+	<specificEditorUrl>editors/Geometry.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.Geometry</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/baseComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>Rectangle</name>
+			<uid>silex.AddComponent.ToolItem.AddRectangle</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Geometry</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_GEOMETRY_RECTANGLE</label>
+			<description>DESCRIPTION_GEOMETRY_RECTANGLE</description>
+			<level>1</level>
+			<action>addComponent</action>
+			<iconUrl>icons/geometry.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>											
+	</properties>
+</componentDescriptor>

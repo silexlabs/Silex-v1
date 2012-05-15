@@ -1,0 +1,95 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a><?php printf($this->localisedStrings["ARIANE_INSTALLING_ITEM_LABEL"], $this->currentItem['title'].' '.$this->currentItem['itemCurrentVersion']);?></a>
+</div>
+
+
+<?php
+if(empty($this->confInstall))
+{
+	?>
+	<div class='updater_centeredContent'>
+		<br><span class="updater_text"><?php printf($this->localisedStrings["ITEM_INSTALL_ITEM_CONF_MSG"]); ?></span><br>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( $this->filesInfo , array("action"=>"installItem", "item"=>serialize(urlencodeArray($this->currentItem)), "conf_install"=>true, 
+			"file_list_size"=>$this->fileListSize, "original_file_list_size"=>$this->originalFileListSize, "folder_list_size"=>$this->folderListSize, 
+				"delete_list_size"=>$this->deleteListSize) ), array(".update") ); ?>">
+			<?php printf($this->localisedStrings["GENERAL_CONF_YES_LABEL"]); ?>
+		</button>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"index") ); ?>">
+			<?php printf($this->localisedStrings["GENERAL_CONF_NO_LABEL"]); ?>
+		</button>
+	</div>
+	<?php
+} else { // download & install
+
+	if( $this->fileListSize > 0 )
+	{
+		?>
+		<div style="margin-top:17%;">
+			<?php
+			$progressLevel = 100 - $this->fileListSize / $this->originalFileListSize * 100;
+			$progressLabel = ($this->originalFileListSize-$this->fileListSize)." / ".$this->originalFileListSize;
+			$this->generateProgressBar( $progressLevel, $progressLabel, $this->localisedStrings["ITEM_INSTALL_DOWNLOADING_MSG"] );
+			?>
+		</div>
+		<?php
+		if(isset($this->signatureMismatch))
+		{
+			?>
+			<br><span class="updater_error"><?php printf($this->localisedStrings["ITEM_INSTALL_SIG_MISMATCH_ERR"], $this->signatureMismatch); ?></span><br>
+			<div class='updater_centeredContent'>
+				<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( $this->filesInfo , array("action"=>"installItem", "item"=>serialize(urlencodeArray($this->currentItem)), "conf_install"=>true, 
+					"file_list_size"=>$this->fileListSize, "original_file_list_size"=>$this->originalFileListSize, "folder_list_size"=>$this->folderListSize, 
+						"delete_list_size"=>$this->deleteListSize) ), array(".update") ); ?>">
+					<?php printf($this->localisedStrings["GENERAL_RETRY_LABEL"]); ?>
+				</button>
+			</div>
+			<?php
+		} else {
+			?>
+			<script type="text/javascript">
+				<?php 
+				$this->generateForwarding(  array_merge( $this->filesInfo , array("action"=>"installItem", "item"=>serialize(urlencodeArray($this->currentItem)), "conf_install"=>true, 
+				"file_list_size"=>$this->fileListSize, "original_file_list_size"=>$this->originalFileListSize, "folder_list_size"=>$this->folderListSize, 
+					"delete_list_size"=>$this->deleteListSize) ), null, false );
+				?>
+			</script>
+			<?php
+		}
+	} else {
+	
+		if( !empty( $this->updateReport ) )
+		{
+			?>
+			<br><span class="updater_error"><?php printf($this->localisedStrings["ITEM_INSTALL_FAILED_MSG"]); ?></span><br>
+			<div class='updater_reportList updater_marginTop'>
+				<?php
+				foreach($this->updateReport as $resultItem)
+					print $resultItem."<br>";
+				?>
+			</div>
+			<div class='updater_centeredContent updater_marginTop'>
+				<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( $this->filesInfo , array("action"=>"installItem", 
+					"item"=>serialize(urlencodeArray($this->currentItem)), "conf_install"=>true, "file_list_size"=>$this->fileListSize, 
+					"original_file_list_size"=>$this->originalFileListSize,	"folder_list_size"=>$this->folderListSize) ) ); ?>">
+					<?php print $this->localisedStrings['GENERAL_RETRY_LABEL']; ?>
+				</button>
+			</div>
+			<?php
+		} else {
+			?>
+			<br><span class="updater_success"><?php printf($this->localisedStrings["ITEM_INSTALL_SUCCESS_MSG"]); ?></span><br>
+			<div class='updater_centeredContent updater_marginTop'>
+				<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"index") ); ?>">
+					<?php print $this->localisedStrings['MAIN_COME_BACK_INDEX_SHORT_LABEL']; ?>
+				</button>
+			</div>
+			<?php
+		}
+	}
+}
+?>
+
+<div class='updater_centeredContent updater_marginTop'>
+	<span class="updater_informative"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_RUN_INFO_MSG"]); ?></span>
+</div>

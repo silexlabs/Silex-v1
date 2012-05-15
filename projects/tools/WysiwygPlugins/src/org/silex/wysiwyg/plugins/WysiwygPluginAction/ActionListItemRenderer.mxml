@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		 xmlns:actions="actions.*"
+		 dataChange="onDataChange()" xmlns:ui="ui.*" 
+		 xmlns:ns4="org.silex.wysiwyg.components_editor.plugins.actions.*" xmlns:ns="org.silex.wysiwyg.ui.*" xmlns:local="*" xmlns:WysiwygPluginAction="org.silex.wysiwyg.plugins.WysiwygPluginAction.*">
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.toolboxApi.interfaces.IActionArray;
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			
+			[Bindable]
+			public var editableTa:Boolean;
+			
+			
+			private function onDataChange():void
+			{
+				if (data)
+				{
+					ta.autoSize = true;
+					ta.text = (data as IActionArray).actionString;
+				}
+				
+			}
+			
+			private function onTextChange():void
+			{
+				ta.autoSize = true;
+			}	
+			
+			private function onValidate():void
+			{
+				(data as IActionArray).actionString = ta.text;
+				dispatchEvent(new PluginEvent(PluginEvent.ACTION_DATA_CHANGED, data, true));
+			}
+				
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+
+	</fx:Declarations>
+	
+	<WysiwygPluginAction:ActionTextArea editable="{editableTa}" id="ta" width="100%" change="onTextChange()"  />
+	<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CONFIRM_BUTTON_LABEL')}" enabled="{editableTa}" click="onValidate()" />
+</mx:VBox>

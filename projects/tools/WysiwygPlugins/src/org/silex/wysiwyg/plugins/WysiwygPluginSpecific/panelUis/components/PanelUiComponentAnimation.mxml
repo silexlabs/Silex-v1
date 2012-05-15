@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+	
+	<mx:Form width="100%" height="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+	
+	<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle"  >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center">
+			
+			<mx:Form  >
+				<mx:FormItem label="{propertyArray.followMouse.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.followMouse.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'followMouse')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.clickable.description}" width="100%" height="100%" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.clickable.currentValue}"
+										 change="updatePropertyValue(event.currentTarget.selected, 'clickable')"/>
+				</mx:FormItem>
+				<mx:FormItem label="{propertyArray.useHandCursor.description}" width="100%" height="100%" >		
+					<ns1:WysiwygCheckBox  selected="{propertyArray.useHandCursor.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'useHandCursor')"/>
+				</mx:FormItem>
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.easingDuration.description}" width="100%" height="100%" >
+					<ns1:WysiwygNumericStepper id="easingDurationStepper" value="{propertyArray.easingDuration.currentValue}"
+											   maximum="{propertyArray.easingDuration.maxValue}"
+											   minimum="{propertyArray.easingDuration.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'easingDuration')"/>
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.delay.description}" width="100%" height="100%">
+					<ns1:WysiwygNumericStepper id="delayStepper" value="{propertyArray.delay.currentValue}"
+											   maximum="{propertyArray.delay.maxValue}"
+											   minimum="{propertyArray.delay.minValue}"
+											   change="updatePropertyValue(event.currentTarget.value, 'delay')"/>
+				</mx:FormItem>
+				
+			</mx:Form>
+			
+		</mx:HBox>	
+		
+	</mx:HBox>	
+	
+	<mx:Form width="100%" height="100%">				
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.buttonLabel.description}" >
+				<ns1:WysiwygTextInput text="{propertyArray.buttonLabel.currentValue}"
+									  change="{updatePropertyValue(event.currentTarget.text, 'buttonLabel')}" width="100%"  />
+				<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_SWAP_BUTTON_LABEL')}" 
+								   click="{selectProperty(propertyArray.buttonLabel)}"
+								   />
+			</mx:FormItem>
+			
+			<mx:FormItem width="100%" direction="horizontal" label="{propertyArray.imageUrl.description}">
+				<ns1:WysiwygTextInput text="{propertyArray.imageUrl.currentValue}"
+									  change="{updatePropertyValue(event.currentTarget.text, 'imageUrl')}" width="100%"  />
+				<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_SWAP_BUTTON_LABEL')}" 
+								   click="{selectProperty(propertyArray.imageUrl)}"
+								   />
+			</mx:FormItem>
+	</mx:Form>	
+	
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>Video</componentName>
+	<as2Url>as2/org.silex.ui.players.Video.swf</as2Url>
+	<html5Url>html5#org.silex.ui.Video</html5Url>
+	<className>org.silex.ui.players.Video</className>
+	<specificEditorUrl>editors/Video.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.players.VideoBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+	<pluginRelativeUrl>plugins/baseComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>Video</name>
+			<uid>silex.AddComponent.ToolItem.AddVideo</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.AudioVideo</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_VIDEO</label>
+			<description>DESCRIPTION_VIDEO</description>
+			<level>3</level>
+			<action>addMediaComponent</action>
+			<initPropertyName>url</initPropertyName>
+			<iconUrl>icons/video.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<url>
+			<type>String</type>
+			<subType>Url</subType>
+			<description>PROPERTIES_LABEL_URL</description>
+			<isRegistered>true</isRegistered>
+			<extensions>flv,mp4</extensions>
+			<group>attributes</group>			
+		</url>
+	</properties>
+</componentDescriptor>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns:StdUIBody xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*"
+			  xmlns:ui="org.silex.wysiwyg.ui.*" xmlns:addComponents="org.silex.wysiwyg.toolboxes.addComponents.*"
+			  xmlns:toolbar="org.silex.wysiwyg.toolboxes.addComponents.toolbar.*"
+			  width="100%" height="100%" xmlns:skinPanel="org.silex.wysiwyg.toolboxes.addComponents.skinPanel.*"
+			 
+			  >
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			/**
+			 * override of the Flex method to resize the component icons list
+			 * properly
+			 */ 
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+			{
+				super.updateDisplayList(unscaledWidth, unscaledHeight);
+				toolItemContainer.height = this.height;
+			}
+			
+			/**
+			 * When the data are set on the toolbox body, if they are null, hide
+			 * the skin panel, used to instantiate a skinnable component, else
+			 * the sent data are the data used by the skin panel to add a skinnable component,
+			 * so we show it and update it's datas
+			 */ 
+			override public function set data(value:Object):void
+			{
+				if (value != null)
+				{
+					skinPanel.includeInLayout = true;
+					skinPanel.data = value;
+				}
+				else
+				{
+					skinPanel.includeInLayout = false;
+				}
+				
+			}
+			
+			/**
+			 * Activate/Deactivate the upload of skins
+			 * 
+			 * @param value active or inactive
+			 */ 
+			public function setSkinUpload(value:Boolean):void
+			{
+				skinPanel.skinUploadEnabled = value;
+			}
+		
+		]]>
+	</fx:Script>
+	<mx:HBox width="100%">
+		<mx:HBox id="toolItemContainer" width="100%" height="{this.height}">
+			<toolbar:AddComponentToolItemView toolUid="silex.AddComponent.Tool"  />
+		</mx:HBox>
+		<skinPanel:SkinPanel id="skinPanel" height="100%" />
+	</mx:HBox>
+</ns:StdUIBody>

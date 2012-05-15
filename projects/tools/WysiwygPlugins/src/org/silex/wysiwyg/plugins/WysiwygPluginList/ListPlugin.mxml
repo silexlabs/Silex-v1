@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+				backgroundAlpha="0"
+				creationComplete="onInit(event)">
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.AdminApiEvent;
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.Property;
+			import org.silex.wysiwyg.event.PluginEvent;
+
+			
+			public static const LIST_PLUGIN_ID:String = "listPlugin";
+			
+			private var _propertiesList:PropertiesListUIBody;
+			
+			private function onInit(event:FlexEvent):void
+			{
+				_propertiesList = new PropertiesListUIBody();
+				_propertiesList.percentHeight = 100;
+				_propertiesList.percentWidth = 100;
+				
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+				
+				addChild(_propertiesList);
+				
+			}
+			
+			private function onAddedToStage(event:Event):void
+			{
+				this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+				initListeners();
+				refreshList();
+			}
+			
+			private function onRemovedFromStage(event:Event):void
+			{
+				removeListeners();
+			}
+			
+			private function initListeners():void
+			{
+				this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage, false, 0, true);
+				SilexAdminApi.getInstance().components.addEventListener(
+					AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged, false, 0, true);
+				SilexAdminApi.getInstance().properties.addEventListener(
+					AdminApiEvent.EVENT_DATA_CHANGED, onPropertiesDataChanged, false, 0, true);
+			}
+			
+			private function onComponentSelectionChanged(event:AdminApiEvent):void
+			{
+				refreshList();
+			}
+			
+			protected function onPropertiesDataChanged(event:AdminApiEvent):void
+			{
+				if (event.data != LIST_PLUGIN_ID)
+				{
+					refreshList();
+				}
+			}
+			
+			private function removeListeners():void
+			{
+				SilexAdminApi.getInstance().properties.removeEventListener(AdminApiEvent.EVENT_DATA_CHANGED, onPropertiesDataChanged);
+				this.removeEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+				SilexAdminApi.getInstance().components.removeEventListener(AdminApiEvent.EVENT_SELECTION_CHANGED, onComponentSelectionChanged);
+				this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage, false, 0, true);
+			}
+			
+			private function refreshList():void
+			{
+				
+				var selectedComponentsUids:Array = SilexAdminApi.getInstance().components.getSelection();
+				
+				if (selectedComponentsUids.length == 0 || selectedComponentsUids.length > 1)
+				{
+					_propertiesList.enabled = false;
+					return;
+				}
+				
+				var properties:Array = SilexAdminApi.getInstance().properties.getData();
+				
+				if (properties == null)
+				{
+					return;
+				}
+				
+				properties = properties[0];
+					
+				for (var i:int = 0; i<properties.length; i++)
+				{
+					if (resourceManager.findResourceBundleWithResource('WYSIWYG', (properties[i] as Property).description))
+					{
+						(properties[i] as Property).description = resourceManager.getString('WYSIWYG', (properties[i] as Property).description);
+					}
+				}
+					
+				_propertiesList.enabled = true;
+				_propertiesList.data = (properties as Array);
+				
+					
+				
+				
+			}
+
+		]]>
+	</fx:Script>
+	
+</mx:Application>

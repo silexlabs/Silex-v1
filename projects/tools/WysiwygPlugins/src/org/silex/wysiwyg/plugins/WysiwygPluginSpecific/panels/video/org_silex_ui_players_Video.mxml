@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+			   xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+			   xmlns:components="components.*" xmlns:ns="org.silex.wysiwyg.property_plugins.components.*" xmlns:ns1="org.silex.wysiwyg.property_plugins.ui.*" 
+			   xmlns:ns2="org.silex.wysiwyg.components_editor.ui.*" xmlns:ui="ui.*" xmlns:ui1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*" 
+			   xmlns:components1="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*">
+
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(coordBar, mediaBarImageVideo, videoBar, descriptionBar, pageInfoBar);
+			}
+			
+			/**
+			 * Sets the names of the values that needs to be retrieved
+			 * from the SilexAdminApi.
+			 */ 
+			override protected function registerFilterValues():void
+			{
+				_filterValues = ["x","y","width","height", "scale", "alpha", "rotation", "playerName",
+					"url","mask", "descriptionText", "tags", 'iconIsIcon', 'iconIsDefault', 'iconPageName',
+					'iconLayoutName', 'iconDeeplinkName', 'visibleOutOfAdmin','clickable', 'useHandCursor', 'visibleFrame_bool',
+					'tooltipText', "autoPlay", "autoSize","loop", "bufferSize", "showNavigation", "volume"];
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<components1:PanelUiCoordBarScale id="coordBar"  />
+	<components1:PanelUiMediaImageVideo id="mediaBarImageVideo" />
+	<components1:PanelUiVideo id="videoBar" />
+	<components1:PanelUiDescription id="descriptionBar" />
+	<components1:PanelUiPageInfo id="pageInfoBar" />
+	
+	
+</panel:PanelBase>

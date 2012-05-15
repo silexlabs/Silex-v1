@@ -1,0 +1,1779 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+//
+//  ADOBE SYSTEMS INCORPORATED
+//  Copyright 2006-2007 Adobe Systems Incorporated
+//  All Rights Reserved.
+//
+//  NOTICE: Adobe permits you to use, modify, and distribute this file
+//  in accordance with the terms of the license agreement accompanying it.
+//
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+@namespace "library://ns.adobe.com/flex/mx";
+
+/* 
+//------------------------------
+//  global
+//------------------------------
+*/
+global
+{
+	font-family: "_sans";
+	font-size: 15;  
+	color: #5a5a5a;
+}
+ 
+/*
+//------------------------------
+//  AccordionHeader
+//------------------------------
+*/
+Accordion
+{
+	/*borderSkin: ClassReference(null);*/
+}
+
+/*
+//------------------------------
+//  AccordionHeader
+//------------------------------
+*/
+AccordionHeader
+{
+
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_overSkin");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_disabledSkin");
+	selectedDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_downSkin");
+	selectedOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_overSkin");
+	selectedUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_upSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="AccordionHeader_upSkin");
+
+}
+
+/*
+//------------------------------
+//  Application
+//------------------------------
+*/
+Application
+{
+	background-color: #000000;
+	padding-left : 0;
+	padding-right : 0;
+	padding-top : 0;
+	padding-bottom : 0;
+	
+}
+
+Application.propertyPlugin
+{
+	padding-left: 10;
+	padding-bottom: 20;
+	padding-top: 10;
+	padding-right: 30;
+	background-alpha: 0;
+}
+
+Application.propertyEditorPlugin
+{
+	padding-left: 10;
+	padding-bottom: 20;
+	padding-top: 10;
+	padding-right: 30;
+	background-alpha: 0;
+}
+
+/*
+//------------------------------
+//  Button
+//------------------------------
+*/
+Button
+{
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_overSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_upSkin");
+	selected-up-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+	color: #5a5a5a;
+	font-weight: normal;
+	
+	padding-left: 7;
+	padding-right: 7;
+	
+	height: 22;
+}
+
+
+Button.addButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_addButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_addButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_addButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_addButton_Disabled");
+	
+}
+
+Button.addLayerComponent
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='addtoolboxbackground_UP');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='addtoolboxbackground_OVER');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='addtoolboxbackground_DOWN');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="addtoolboxbackground_DISABLED");
+	color:white;
+	textRollOverColor:white;
+	textSelectedColor:white;
+	disabledColor:white;
+	height:23;
+	textAlign:left;
+	paddingLeft:25;
+}
+
+Button.warning
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='WarningBackgroundUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='WarningBackgroundOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='WarningBackgroundOver');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="WarningBackgroundDisabled");
+	upIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_icone10_Up");
+	overIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_icone10_Over");
+	downIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_icone10_Down");
+	color:white;
+	textRollOverColor:white;
+	textSelectedColor:white;
+	disabledColor:white;
+	height:30;
+	textAlign:left;
+	paddingLeft:25;
+}
+
+Button.deleteButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_deleteButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_deleteButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_deleteButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_deleteButtonDisabled");
+	
+}
+
+Button.saveButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_saveButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_saveButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_saveButton_Down');
+	disabledSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_saveButton_Disabled');
+
+}
+
+Button.closeButtonSmall
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButtonSmall_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButtonSmall_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButtonSmall_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_closeButtonSmall_Disabled");
+	
+}
+
+Button.clearButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_clearButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_clearButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_clearButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_clearButton_Disabled");
+	
+}
+
+Button.closeButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_closeButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_closeButton_Disabled");
+	
+}
+
+Button.propertiesButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_pagePropertiesButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_pagePropertiesButton_Over');
+	/*downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_pagePropertiesButton_Down');*/
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_pagePropertiesButtonDisabled");
+	
+}
+
+Button.moveUp
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_upButton_Disabled");
+}
+
+
+Button.OpenManager 
+{
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone9_Up");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone9_Down");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone9_Over");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone9_Disabled");
+	
+}
+
+Button.OpenFTP
+{
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone13_up");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone13_down");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone13_over");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone13_Disabled");
+	
+}
+
+Button.Refresh
+{
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_libraryButton6_Up");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_libraryButton6_Down");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_libraryButton6_Over");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_libraryButton6_Disabled"); 
+}
+
+Button.ToggleToolBoxVisibility {
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone2");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone2_Down");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone2_Over");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ViewMenu_icone2_Disabled");
+	
+}
+
+Button.moveTop
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upTopButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upTopButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_upTopButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_upTopButton_Disabled");
+}
+
+Button.moveDown
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_downButton_Disabled");
+}
+
+Button.moveBottom
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downBottomButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downBottomButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_downBottomButton_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_downBottomButton_Disabled");
+}
+
+Button.floatButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ViewMenu_icone3_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ViewMenu_icone3_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ViewMenu_icone3_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_icone3_Disabled");
+}
+
+Button.simpleModeButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_Down');
+	selectedUpSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_UpSelected');
+	selectedOverSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_UpSelected');
+	selectedDownSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeSimpleButton_UpSelected');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeSimpleButton_Disabled");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeSimpleButton_UpSelectedDisabled");
+}
+
+Button.libraryFlash
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton1_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton1_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton1_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton1_Disabled");
+}
+
+Button.libraryUrl
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton2_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton2_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton2_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton2_Disabled");
+}
+
+Button.listModeButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeListButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeListButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeListButton_Down');
+	selectedUpSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeListButton_UpSelected');
+	selectedOverSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeListButton_UpSelected');
+	selectedDownSkin: Embed(source='wysiwyg_toolboxes_style.swf', symbol='ToolBox_ModeListButton_UpSelected');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeListButton_Disabled");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeListButton_UpSelectedDisabled");
+}
+
+Button.radio
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='RadioButtonIcon');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='RadioButton_overIcon');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='RadioButton_downIcon');
+	selectedUpSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='RadioButtonSelected_upIcon');
+	selectedOverSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='RadioButtonSelected_overIcon');
+	selectedDownSkin: Embed(source='wysiwyg_toolboxes_style.swf', symbol='RadioButtonSelected_downIcon');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButton_disabledIcon");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonSelected_disabledIcon"); 
+}
+
+Button.actionModeButton
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeActionButton_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeActionButton_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeActionButton_Down');
+	selectedUpSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeActionButton_UpSelected');
+	selectedOverSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_ModeActionButton_UpSelected');
+	selectedDownSkin: Embed(source='wysiwyg_toolboxes_style.swf', symbol='ToolBox_ModeActionButton_UpSelected');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeActionButton_Disabled");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_ModeActionButton_UpSelectedDisabled");
+}
+
+Button.addItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_AddButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_AddButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_AddButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_AddButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_AddButtonDisabled");
+}
+
+Button.removeItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_DeleteButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_DeleteButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_DeleteButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_DeleteButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_DeleteButtonDisabled");
+}
+
+Button.copyItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_CopyButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_CopyButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_CopyButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_CopyButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_CopyButtonDisabled");
+}
+
+Button.pasteItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_PasteButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_PasteButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_PasteButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_PasteButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_PasteButtonDisabled");
+}
+
+Button.dragItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ArrayDragButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ArrayDragButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ArrayDragButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ArrayDragButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ArrayDragButtonDisabled");
+}
+
+Button.validateItem
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_OkButtonUp');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_OkButtonOver');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='Array_OkButtonDown');
+	disabledUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_OkButtonDisabledUp");
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Array_OkButtonDisabled");
+}
+
+Button.play
+{
+	upIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnPause_Up');
+	overIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnPause_Over');
+	selectedUpIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnPlay_Up');
+	selectedOverIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnPlay_Over');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_overSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_upSkin");
+	selected-up-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+	selected-over-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+	selected-down-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+}
+
+Button.mute
+{
+	upIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnSound_Up');
+	overIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnSound_Over');
+	selectedUpIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnSound_noSound');
+	selectedOverIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='player_btnSound_Over');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_overSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_upSkin");
+	selected-up-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+	selected-over-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+	selected-down-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Button_UpSelectedSkin");
+}
+
+Button.libraryHtml
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton3_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton3_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton3_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton3_Disabled");
+}
+
+Button.libraryEmbed
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton4_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton4_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton4_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton4_Disabled");
+}
+
+Button.libraryText
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton5_Disabled");
+}
+
+Button.libraryText
+{
+	upSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Up');
+	overSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Over');
+	downSkin: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_libraryButton5_Down');
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryButton5_Disabled");
+}
+
+Button.rteBold
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit1_Up');
+}
+
+
+Button.rteItalic
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit2_Up');
+}
+
+Button.rteUnderline
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit3_Up');
+}
+
+.rteLeft 
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit4_Up');
+}
+
+.rteCenter
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit5_Up');
+}
+
+.rteRight
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit6_Up');
+}
+
+.rteJustify
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit7_Up');
+}
+
+Button.rteParagraph
+{
+	icon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_textEdit8_Up');
+}
+
+/* 
+//------------------------------ 
+//  ButtonBar 
+//------------------------------ 
+*/ 
+
+ButtonBar 
+{ 
+        buttonStyleName: "buttonBarButton"; 
+        firstButtonStyleName: "firstButtonBarButton"; 
+        lastButtonStyleName: "lastButtonBarButton"; 
+}
+
+
+/* 
+//------------------------------ 
+//  ButtonBarButtons 
+//------------------------------ 
+*/ 
+
+ButtonBarButton
+{
+	skin: ClassReference(null);
+	font-weight: normal;
+}
+
+ButtonBarButton.buttonBarFirstButtonStyle
+{
+        skin: ClassReference(null);
+}
+
+ButtonBarButton.buttonBarLastButtonStyle
+{
+}
+
+.firstButtonBarButton 
+{ 
+        disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstDisabledSkin"); 
+        downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstDownSkin"); 
+        overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstOverSkin"); 
+        selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstSelectedDisabledSkin"); 
+        selectedDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstSelectedUpSkin"); 
+        selectedOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstSelectedUpSkin");
+        selectedUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstSelectedUpSkin");
+        upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_firstUpSkin"); 
+}
+.buttonBarButton 
+{ 
+        disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonDisabledSkin"); 
+        downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonDownSkin"); 
+        overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonOverSkin"); 
+        selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonSelectedDisabledSkin"); 
+        selectedDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonSelectedUpSkin"); 
+        selectedOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+        selectedUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+        upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_buttonUpSkin"); 
+}
+
+.lastButtonBarButton 
+{ 
+        disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastDisabledSkin"); 
+        downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastDownSkin"); 
+        overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastOverSkin"); 
+        selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastSelectedDisabledSkin"); 
+        selectedDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastSelectedUpSkin"); 
+        selectedOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastSelectedUpSkin");
+        selectedUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastSelectedUpSkin");
+        upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ButtonBar_lastUpSkin"); 
+}
+
+
+/*
+//------------------------------
+//  Canvas
+//------------------------------
+*/
+Canvas.viewMenuItemBackground
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="view_Menu_item_background"); 
+}
+
+Canvas.viewMenuItemOvergroundUp
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_item_overground_Up"); 
+}
+
+Canvas.viewMenuItemOvergroundOver
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_item_overground_Over");  
+}
+
+Canvas.viewMenuItemOvergroundDown
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_item_overground_Down"); 
+}
+
+
+/*
+//------------------------------
+//  CheckBox
+//------------------------------
+*/
+CheckBox
+{
+	disabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_disabledIcon");
+	downIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_downIcon");
+	overIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_overIcon");
+	selectedDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_selectedDisabledIcon");
+	selectedDownIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_selectedDownIcon");
+	selectedOverIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_selectedOverIcon");
+	selectedUpIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_selectedUpIcon");
+	upIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="CheckBox_upIcon");
+	
+	height: 22;
+	width: 22;
+}	
+
+CheckBox.showHide
+{	
+	upIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_hideButton');
+	overIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_hideButton');
+	downIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_hideButton');
+	selectedUpIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_showButton');
+	selectedOverIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_showButton');
+	selectedDownIcon: Embed(source='wysiwyg_toolboxes_style.swf',symbol='ToolBox_showButton');
+	
+	icon: ClassReference(null);
+}
+
+CheckBox.nonVisualComponent
+{
+	disabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="non_visual_components");
+	selectedDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="non_visual_components");
+}
+
+CheckBox.folder
+{	
+	upIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	overIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	downIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	selectedUpIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	selectedOverIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	selectedDownIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	
+	icon: ClassReference(null);
+}
+
+CheckBox.lockUnlock
+{	
+	upIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_lockButton");
+	overIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_lockButton");
+	downIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_lockButton");
+	selectedUpIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_unlockButton");
+	selectedOverIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_unlockButton");
+	selectedDownIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_unlockButton");
+	
+	icon: ClassReference(null);
+}
+
+/*
+//------------------------------
+//  ColorPicker
+//------------------------------
+*/
+ColorPicker
+{
+	height: 22;
+	width: 22;
+}		
+
+/*
+//------------------------------
+//  ComboBox
+//------------------------------
+*/
+ComboBox
+{
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_downSkin");
+	editableDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_editableDisabledSkin");
+	editableDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_editableDownSkin");
+	editableOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_editableOverSkin");
+	editableUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_editableUpSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_overSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ComboBoxArrow_upSkin");
+	
+	drop-down-style-name: "comboDropDown";
+	font-weight: normal;
+	
+	height: 22;
+	width: 50;
+}		
+
+.comboDropDown
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="comboBox_DropDownBG");
+	
+}
+
+ComboBox.pageProperties
+{
+	width: 180;
+}
+
+ComboBox.RichTextEditor
+{
+	width: 180;
+}
+
+ComboBox.small
+{
+	width: 50;
+}
+
+ComboBox.large
+{
+	width: 200;
+}
+
+/*
+//------------------------------
+//  ColorPicker
+//------------------------------
+*/
+ColorPicker
+{
+	disabledSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	downSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	overSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	upSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	swatchPanelStyleName: swatchPanel;
+}
+
+.swatchPanel
+{
+	backgroundColor: white;
+	swatch-border-size : 0;
+	border-thickness: 0;
+	
+	columnCount: 40;
+	horizontalGap: 0;
+	verticalGap: 0;
+	previewHeight: 50;
+	previewWidth: 50;
+	swatchHeight: 16;
+	swatchWidth: 16 ;
+
+}
+
+/*
+//------------------------------
+//  CursorManager
+//------------------------------
+*/
+CursorManager
+{
+
+	 busyCursor: Embed(source="wysiwyg_toolboxes_style.swf", symbol="BusyCursor"); 
+	 busyCursorBackground: Embed(source="wysiwyg_toolboxes_style.swf",symbol="BusyCursor"); 
+
+}
+
+/*
+//------------------------------
+//  DataGrid
+//------------------------------
+*/
+DataGrid
+{
+
+	columnDropIndicatorSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DataGrid_columnDropIndicatorSkin");
+	columnResizeSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DataGrid_columnResizeSkin");
+	headerSeparatorSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DataGrid_headerSeparatorSkin");
+	sortArrowSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DataGrid_sortArrowSkin");
+	stretchCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DataGrid_stretchCursor");
+	headerBackgroundSkin: ClassReference("mx.skins.halo.DataGridHeaderBackgroundSkin");
+}
+
+/*
+//------------------------------
+//  DateChooser
+//------------------------------
+*/
+DateChooser
+{
+	nextMonthDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextMonthDisabledSkin");
+	nextMonthDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextMonthDownSkin");
+	nextMonthOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextMonthOverSkin");
+	nextMonthUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextMonthUpSkin");
+	prevMonthDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevMonthDisabledSkin");
+	prevMonthDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevMonthDownSkin");
+	prevMonthOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevMonthOverSkin");
+	prevMonthUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevMonthUpSkin");
+	nextMonthSkin: ClassReference(null);
+	prevMonthSkin: ClassReference(null);
+	
+	nextYearDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextYearDisabledSkin");
+	nextYearDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextYearDownSkin");
+	nextYearOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextYearOverSkin");
+	nextYearUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_nextYearUpSkin");
+	prevYearDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevYearDisabledSkin");
+	prevYearDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevYearDownSkin");
+	prevYearOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevYearOverSkin");
+	prevYearUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_prevYearUpSkin");
+	nextYearSkin: ClassReference(null);
+	prevYearSkin: ClassReference(null);
+
+	todayIndicatorSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_todayIndicatorSkin");	
+	
+	rollOverIndicatorSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_rollOverIndicatorSkin");
+	selectionIndicatorSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DateChooser_selectionIndicatorSkin");
+	
+}
+
+/*
+//------------------------------
+//  DateField
+//------------------------------
+*/
+DateField
+{
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DateField_disabledSkin"); 
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DateField_downSkin"); 
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DateField_overSkin"); 
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DateField_upSkin"); 
+}
+
+/*
+//------------------------------
+//  DividedBox
+//------------------------------
+*/
+DividedBox
+{
+	dividerSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_verticalCursor");
+}
+
+/*
+//------------------------------
+//  DragManager
+//------------------------------
+*/
+DragManager
+{
+	copyCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DragManager_copyCursor");
+	defaultDragImageSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="DragManager_defaultDragImageSkin");
+	linkCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DragManager_linkCursor");
+	moveCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DragManager_moveCursor");
+	rejectCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DragManager_rejectCursor");
+}
+
+/*
+//------------------------------
+//  Form
+//------------------------------
+*/
+Form
+{
+	vertical-gap: 10;
+	padding-top: 10;
+	padding-bottom: 10;
+	padding-left: 0;
+	padding-right: 0;
+	indicator-gap: 3;
+}
+
+
+/*
+//------------------------------
+//  FormItem
+//------------------------------
+*/
+FormItem
+{
+	padding-top: 0;
+	padding-bottom: 0;
+	indicatorSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="FormItem_indicatorSkin");  
+}
+
+/*
+//------------------------------
+//  HBox
+//------------------------------
+*/
+
+HBox
+{
+	vertical-align: middle;
+	padding-top: 0;
+	padding-left:0 ;
+	padding-right: 0;
+	padding-bottom: 0;
+	
+	folderButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Tree_folderClosedIcon");
+	JPGButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeJPG");
+	PNGButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconePNG");
+	GIFButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeGIF");
+	SWFButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeSWF");
+	FLVButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeFLV");
+	OGGButton: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeOGG");
+	MP3Button: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeMP3");
+	MP4Button: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeMP4");
+	nextArrow: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_libraryNextButton_Up");
+	undefined: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_iconeFalse");
+
+}
+
+HBox.ToolBoxHeader
+{
+		border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_header"); 
+		padding-left: 3;
+		padding-right: 3;
+	
+}
+
+HBox.ToolBoxFooter
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_footer"); 
+	padding-left: 3;
+	padding-right: 3;
+	padding-top: 2;
+	horizontal-gap: 4;
+	
+}
+
+HBox.ArrayEditor
+{
+	
+	padding-left: 3;
+	padding-right: 3;
+	padding-top: 2;
+	horizontal-gap: 4;
+	
+}
+
+
+HBox.simpleLoader
+{
+	busyCursor: Embed(source="wysiwyg_toolboxes_style.swf", symbol="BusyCursor"); 
+	horizontal-align: center;
+}
+
+/*HBox.ViewMenu
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_header");
+	padding-left: 10;
+	padding-right: 10;
+	padding-bottom: 0;
+	
+}*/
+
+
+HBox.content
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_background");
+	padding-left: 10;
+	padding-right: 10;
+	padding-bottom: 0;
+	
+}
+
+HBox.topBar
+{
+	border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_topBar");
+	horizontal-gap: 5;
+	padding-left: 10;
+	padding-right: 3;
+	padding-bottom: 0;
+	padding-top: 0;
+	
+}
+
+HBox.viewMenu 
+{
+	/*border-skin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ViewMenu_background");*/
+	padding-left: 3;
+}
+
+
+/*
+//------------------------------
+//  HDividedBox
+//------------------------------
+*/
+HDividedBox
+{
+	dividerSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_verticalCursor");
+	
+}
+
+/*
+//------------------------------
+//  HRule
+//------------------------------
+*/
+HRule
+{
+	stroke-color: #ffffff;
+	shadow-color: #C6AF91; 
+	
+}
+
+/*
+//------------------------------
+//  HSlider
+//------------------------------
+*/
+HSlider
+{
+
+	thumbDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderThumb_disabledSkin");
+	thumbDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderThumb_downSkin");
+	thumbOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderThumb_overSkin");
+	thumbUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderThumb_upSkin");
+	trackHighlightSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderHighlight_Skin");
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderTrack_Skin");
+
+}
+
+/*
+//------------------------------
+//  Image
+//------------------------------
+*/
+Image
+{
+	brokenImageSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Loader_brokenImageSkin");
+}
+
+/*
+//------------------------------
+//  Image
+//------------------------------
+*/
+TreeItemRenderer
+{
+	color-layout: #323232;
+	colorLayer: #808080;
+}
+
+/*
+//------------------------------
+//  Label
+//------------------------------
+*/
+
+Label
+{
+	padding-left:0;
+	padding-right: 0;
+}
+
+Label.previewTitle
+{
+	font-weight: bold;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+Label.list
+{
+	padding-left:3;
+	padding-right: 0;
+}
+
+Label.ToolBoxName
+{
+	font-weight: bold;
+	color: #5a5a5a;
+	padding-left: 0;
+}
+
+Label.ToolBoxSubName
+{
+	font-weight: normal;
+	color: #5a5a5a;
+}
+
+Label.Layout
+{
+	padding-left: 3;
+}
+
+Label.Layer
+{
+	padding-left: 15;
+	color : #808080;
+}
+
+Label.PropertiesGroupTitle
+{
+	font-size: 18;
+	font-weight: bold;
+	color: #5a5a5a;
+	padding-left: 0;
+}
+
+
+/*
+//------------------------------
+//  ProgressBar
+//------------------------------
+*/
+ProgressBar
+{
+
+	barSkin: ClassReference("mx.skins.halo.ProgressBarSkin");
+	indeterminateSkin: ClassReference("mx.skins.halo.ProgressIndeterminateSkin");
+	maskSkin: ClassReference("mx.skins.halo.ProgressMaskSkin");
+	trackSkin: ClassReference("mx.skins.halo.ProgressTrackSkin");
+}
+
+/*
+//------------------------------
+//  Loader
+//------------------------------
+*/
+SWFLoader
+{
+
+	brokenImageSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Loader_brokenImageSkin");
+
+}
+
+/*
+//------------------------------
+//  List
+//------------------------------
+*/
+List
+{
+	roll-over-color: #CDD2D7;
+	selection-color: white;
+	padding-left: 0;
+	padding-right: 0;
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_content");
+	selectionStylePaddingLeft: 0;
+	selection-duration: 0; 
+	cellSelectedSkinAlpha: 1;
+	cellSelectedSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Toolbox_List_selected_item");
+	cell-over-skin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Toolbox_List_over_item");
+	
+}
+
+List.noCell
+{
+	background-alpha: 0;
+	cellSelectedSkinAlpha: 0;
+}
+
+List.layout
+{
+	selectionStylePaddingLeft: 24;
+}
+
+List.library
+{
+	selectionStylePaddingLeft: 33;
+}
+
+List.components
+{
+	selectionStylePaddingLeft: 46;
+}
+
+List.listEditorItem
+{
+	padding-left: 10;
+	padding-right: 10;
+}
+
+List.array
+{
+	
+}
+
+
+/*
+//------------------------------
+//  Menu
+//------------------------------
+*/
+Menu
+{
+	branchIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_branchIcon");
+	branchDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_branchDisabledIcon");
+	checkIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_checkIcon");
+	checkDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_checkDisabledIcon");
+	radioIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_radioIcon");
+	radioDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_radioDisabledIcon");
+	separatorSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Menu_separatorSkin");
+}
+
+/*
+//------------------------------
+//  MenuBar
+//------------------------------
+*/
+MenuBar
+{
+
+	backgroundSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="MenuBar_backgroundSkin");
+	itemUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="MenuBar_itemUpSkin");
+	itemOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="MenuBar_itemOverSkin");
+	itemDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="MenuBar_itemDownSkin");
+
+}
+
+/*
+//------------------------------
+//  NumericStepper
+//------------------------------
+*/
+NumericStepper
+{
+
+	
+	downArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperDownArrow_DisabledSkin");
+	downArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperDownArrow_DownSkin");
+	downArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperDownArrow_OverSkin");
+	downArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperDownArrow_UpSkin");
+	upArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperUpArrow_DisabledSkin");
+	upArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperUpArrow_DownSkin");
+	upArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperUpArrow_OverSkin");
+	upArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="NumericStepperUpArrow_UpSkin");
+	
+	focus-rounded-corners: "tl tr bl br";
+	corner-radius: 2;
+	
+	text-align: right;
+	padding-right: 3;
+	padding-left: 3;
+	baseline-shift: 3;
+
+	
+	height: 22;
+	width: 60;
+	maxChars: 3; 
+	stepSize: 0.1;
+	
+
+}
+
+NumericStepper.position
+{
+	maxChars: 6;
+	stepSize: 0.1;
+	width: 75;
+}
+
+NumericStepper.dimension
+{
+	maxChars: 6;
+	stepSize: 0.1;
+	width: 75;
+}
+
+NumericStepper.shadow
+{
+	maxChars: 6;
+	stepSize: 0.1;
+	width: 75;
+}
+
+NumericStepper.scale
+{
+	maxChars: 4;
+	width: 65;
+}
+
+NumericStepper.zoom
+{
+	stepSize: 10;
+}
+
+/*
+//------------------------------
+//  Panel
+//------------------------------
+*/
+Panel
+{
+
+	border-skin: ClassReference(null);
+	closeButtonDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PanelTitleBackground");
+	
+	padding-bottom: 0;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	header-height: 0;
+	
+}
+
+Alert
+{
+	closeButtonDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PanelTitleBackground");
+}
+
+/*
+//------------------------------
+//  PopUpButton
+//------------------------------
+*/
+PopUpButton
+{
+
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_DisabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_overSkin");	
+	popUpDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_popUpDownSkin");
+	popUpOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_popUpOverSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PopUpButton_upSkin");
+}
+
+
+/*
+//------------------------------
+//  ProgressBar
+//------------------------------
+*/
+ProgressBar
+{
+
+	barSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ProgressBarSkin");
+	indeterminateSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ProgressIndeterminateSkin");
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ProgressTrackSkin");
+	maskSkin: ClassReference("mx.skins.halo.ProgressMaskSkin");
+}
+
+/*
+//------------------------------
+//  RadioButton
+//------------------------------
+*/
+RadioButton
+{
+
+	disabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButton_disabledIcon");
+	downIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButton_downIcon");
+	overIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButton_overIcon");
+	selectedDisabledIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonSelected_disabledIcon");
+	selectedDownIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonSelected_downIcon");
+	selectedOverIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonSelected_overIcon");
+	selectedUpIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonSelected_upIcon");
+	upIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="RadioButtonIcon");
+	icon: ClassReference(null);
+}
+
+/*
+//------------------------------
+//  RichTextEditor
+//------------------------------
+*/
+RichTextEditor
+{
+	closeButtonDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PanelTitleBackground");
+}
+
+/*
+//------------------------------
+//  ScrollBar
+//------------------------------
+*/
+ScrollControlBase
+{
+}
+
+/*
+//------------------------------
+//  ScrollBar
+//------------------------------
+*/
+ScrollBar
+{
+
+	downArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_upSkin");
+	downArrowSkin: ClassReference(null);
+	thumbDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_downSkin");
+	/*thumbIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollBar_thumbIcon");*/
+	thumbOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_upSkin");
+	thumbSkin: ClassReference(null);
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_upSkin");
+	upArrowSkin: ClassReference(null);
+
+}
+/*
+//------------------------------
+//  TextArea
+//------------------------------
+*/
+
+
+TextArea
+{
+	/*borderSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_textInput_Up");*/
+	height: 66;
+	padding-left: 3;
+	padding-right: 3;
+}
+
+TextArea.RichTextEditor
+{
+
+	background-color: white;
+}
+
+TextArea.listEditor
+{
+	height: 22;
+}
+
+TextArea.small
+{
+	height: 22;
+}
+
+
+/*
+//------------------------------
+//  TileList
+//------------------------------
+*/
+TileList
+{
+	padding-left: 20;
+	padding-right: 20;
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_content"); 
+}
+
+/*
+//------------------------------
+//  HScrollBar
+//------------------------------
+*/
+HScrollBar
+{
+
+	downArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_upSkin");
+	thumbDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_downSkin");
+	/*thumbIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollBar_thumbIcon");*/
+	thumbOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_upSkin");
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_upSkin");
+
+}
+
+/*
+//------------------------------
+//  VScrollBar
+//------------------------------
+*/
+VScrollBar
+{
+
+	downArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowDown_upSkin");
+	thumbDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_downSkin");
+	/*thumbIcon: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollBar_thumbIcon");*/
+	thumbOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollThumb_upSkin");
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ScrollArrowUp_upSkin");
+
+}
+
+/*
+//------------------------------
+//  Slider
+//------------------------------
+*/
+Slider
+{
+
+}
+
+/*
+//------------------------------
+//  HSlider
+//------------------------------
+*/
+HSlider.hiddenTrack
+{
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_hiddenTrackSlider");
+}
+
+/*
+//------------------------------
+//  Tab
+//------------------------------
+*/
+Tab
+{
+
+	disabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Tab_disabledSkin");
+	downSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Tab_downSkin");
+	overSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Tab_overSkin");
+	selectedDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="TabSelected_disabledSkin");
+	selectedDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="TabSelected_upSkin");
+	selectedOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="TabSelected_upSkin");
+	selectedUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="TabSelected_upSkin");
+	upSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="Tab_upSkin");
+	padding-bottom: 0;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+
+	
+}
+
+/*
+//------------------------------
+//  TabBar
+//------------------------------
+*/
+TabBar
+{
+	font-weight: bold;
+	color: #AAAAAA;
+	horizontal-gap: 10;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 0;
+	padding-bottom: 0;
+	tab-height: 20;
+}
+
+/*
+//------------------------------
+//  Text
+//------------------------------
+*/
+Text.addComponentLabel
+{
+	font-size: 11;
+	text-align:left;
+}
+
+
+/*
+//------------------------------
+//  TextArea
+//------------------------------
+*/
+TextArea.rteHTMLText
+{
+	font-size: 11;
+}
+
+/*
+//------------------------------
+//  TextInput
+//------------------------------
+*/
+TextInput
+{
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolBox_textInput_Up");
+	height: 22;
+	padding-left: 3;
+	padding-right: 3;
+	
+	corner-radius: 2;
+
+}
+
+TextInput.pageProperties
+{
+	height: 22;
+	width: 180;
+}
+
+
+
+/*
+//------------------------------
+//  TileList
+//------------------------------
+*/
+TileList.AddComponentList
+{
+	border-skin: ClassReference(null);
+	selection-indicator-skin: ClassReference(null);
+	selected-over-skin: ClassReference(null);
+}
+
+/*
+//------------------------------
+//  TitleWindow
+//------------------------------
+*/
+TitleWindow
+{
+	closeButtonDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="PanelTitleBackground");
+}
+
+/*
+//------------------------------
+//  ToolTip
+//------------------------------
+*/
+ToolTip
+{
+
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="ToolTip_borderSkin");
+	color: #5A5A5A;
+	font-size: 12;
+	padding-top: 0;
+	padding-bottom: 0;
+
+}
+
+/*
+//------------------------------
+//  Tree
+//------------------------------
+*/
+Tree
+{
+	defaultLeafIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_defaultLeafIcon");
+	disclosureClosedIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_disclosureClosedIcon");
+	disclosureOpenIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_disclosureOpenIcon");
+	folderClosedIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderClosedIcon");
+	folderOpenIcon: Embed(source="wysiwyg_toolboxes_style.swf",symbol="Tree_folderOpenIcon");
+}
+
+/*
+//------------------------------
+//  VBox
+//------------------------------
+*/
+
+
+VBox.ToolBoxBody
+{
+	vertical-gap:0;
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_content");
+
+}
+
+VBox.AlertToolBoxBody
+{
+	padding-left: 10;
+	padding-bottom: 10;
+	padding-top: 10;
+	padding-right: 10;
+	vertical-gap: 0;
+	vertical-align: middle;
+	horizontal-align: center;
+	borderSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="ToolBox_content");
+}
+
+VBox.previewBox
+{
+	padding-left: 10;
+	padding-bottom: 10;
+	padding-top: 10;
+	padding-right: 10;
+	vertical-gap: 0;
+}
+
+
+
+
+VBox.pageProperties
+{
+	padding-left: 10;
+	padding-right: 10;
+	padding-top: 10;
+}
+
+
+
+/*
+//------------------------------
+//  VDividedBox
+//------------------------------
+*/
+VDividedBox
+{
+	dividerSkin: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="wysiwyg_toolboxes_style.swf",symbol="DividedBox_verticalCursor");
+}
+
+/*
+//------------------------------
+//  VideoDisplay
+//------------------------------
+*/
+VideoDisplay
+{
+	borderSkin: ClassReference('mx.skins.halo.HaloBorder');
+
+}
+
+/*
+//------------------------------
+//  ViewStack
+//------------------------------
+*/
+ViewStack
+{
+	padding-bottom: 0;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/*
+//------------------------------
+//  VRule
+//------------------------------
+*/
+VRule
+{
+	stroke-color: #ffffff;
+	shadow-color: #C6AF91;
+}
+
+
+/*
+//------------------------------
+//  VSlider
+//------------------------------
+*/
+VSlider
+{
+
+	thumbDisabledSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="VSliderThumb_disabledSkin");
+	thumbDownSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="VSliderThumb_downSkin");
+	thumbOverSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="VSliderThumb_overSkin");
+	thumbUpSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="VSliderThumb_upSkin");
+	trackHighlightSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderHighlight_Skin");
+	trackSkin: Embed(source="wysiwyg_toolboxes_style.swf", symbol="HSliderTrack_Skin");
+
+}

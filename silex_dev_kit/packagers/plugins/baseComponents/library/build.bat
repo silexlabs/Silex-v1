@@ -1,0 +1,2 @@
+C:\mtasc\mtasc.exe baseComponentsClasses.swf -swf ../../../../libraries/baseComponentsClasses.swf BaseComponentsClasses.as -cp ../ -cp ../../../../../framework/as2 -exclude baseComponentsClassesExcludes.txt
+PAUSE

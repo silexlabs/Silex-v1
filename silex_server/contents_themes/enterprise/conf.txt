@@ -1,0 +1,41 @@
+﻿htmlTitle=My Enterprise&
+htmlIcon=media/enterprise/logo.ico&
+htmlKeywords=Free CSS Template Flash CMS template and HTML template with free WYSIWYG editor&
+flashPlayerVersion=8&
+scaleMode=scroll&
+bgColor=dddddd&
+mainRssFeed=&
+layoutStageWidth=940&
+layoutStageHeight=600&
+layoutFolderPath=layouts/&
+initialLayoutFile=minimal_plus.swf&
+layerSkinUrl=ui/layer_skin1.swf&
+CONFIG_START_SECTION=index.html&
+AVAILABLE_CONTEXT_LIST=*,fr,en&
+globalContext=*,fr,en&
+DEFAULT_LANGUAGE=en&
+AVAILABLE_LANGUAGE_LIST=fr,en&
+ALLOW_LOGIN=true&
+mouse=true&
+PRELOAD_FILES_LIST=&
+FONTS_LIST=&
+ENABLE_DEEPLINKING=true&
+USE_AMF_FILES=false&
+PLUGINS_LIST=ultralign@htmlGenerator&
+centerVertically=true&
+
+
+
+
+
+
+
+
+
+
+defaultFormat=html&
+
+
+
+htmlDescription=Silex example free theme&
+

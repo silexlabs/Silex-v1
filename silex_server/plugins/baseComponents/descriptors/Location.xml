@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>Location</componentName>
+	<as2Url>as2/org.silex.ui.players.AsFrame.swf</as2Url>
+	<html5Url>html5#org.silex.ui.AsFrame</html5Url>
+	<className>org.silex.ui.players.AsFramePlayerLocation</className>
+	<specificEditorUrl>editors/AsFrame.swf</specificEditorUrl>
+	<parentDescriptorClassName>org.silex.ui.players.AsFramePlayerBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/baseComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>Location</name>
+			<uid>silex.AddComponent.ToolItem.AddFrameLocation</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Frames</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_LOCATION</label>
+			<description>DESCRIPTION_LOCATION</description>
+			<level>2</level>
+			<action>addComponent</action>
+			<iconUrl>icons/frame.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>
+		<asFrameType>
+			<type>String</type>
+			<subType>Enum</subType>
+			<values>location,htmlText,embeddedObject</values>
+			<defaultValue>location</defaultValue>
+			<description>PROPERTIES_DESCRIPTION_ASFRAME_TYPE</description>
+		</asFrameType>
+	</properties>
+</componentDescriptor>

@@ -1,0 +1,495 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE
+
+; ALL PAGES
+errorMessage=在保存您的数据过程中出现错误-请重试&
+errorMessageLoading=加载数据过程中有错误发生. 请刷新页面，如果问题仍然存在, 向社区论坛寻求帮助.&
+successMessage=您的修改已经成功保存&
+
+; PAGE LOGIN.FLAG ( start/login.flag )
+text:loginFlag:title:1=登录&
+text:loginFlag:id=用户名&
+text:loginFlag:pass=密码&
+text:loginFlag:remember=在此计算机上保存用户信息&
+
+; NAVIGATION
+
+btn:nav:manager=管理界面&
+btn:nav:home=主页&
+btn:nav:manage=管理&
+btn:nav:settings=个性设置&
+btn:nav:id=您的账户&
+btn:nav:accountSettings=账户设置&
+btn:nav:translation=翻译&
+
+; MENU Haut de page
+text:menu:title=Silex管理界面&
+btn:menu:home=主页&
+btn:menu:create=创建&
+btn:menu:manage=管理&
+btn:menu:settings=个性设置&
+btn:menu:logout=退出&
+
+; MENU Bas de page
+txt:menu:links=外部链接&
+btn:menu:links:website=网站&
+btn:menu:links:forum=论坛&
+btn:menu:links:blog=博客&
+btn:menu:links:help=在线帮助&
+btn:menu:links:themes=在线模版&
+
+txt:menu:community=社区&
+btn:menu:community:mailingList=邮件列表&
+btn:menu:community:translation=Silex语言翻译&
+btn:menu:community:satisfaction=满意调查表&
+btn:menu:community:download=下载&
+url:btn:menu:links:website=http://projects.silexlabs.org/?/silex/&
+url:btn:menu:links:forum=http://community.silexlabs.org/silex/forum_en/&
+url:btn:menu:links:blog=http://www.silexlabs.org/category/the-blog/blog-silex/&
+url:btn:menu:links:help=http://www.silexlabs.org/silex/docs-silex/user-guide-silex/&
+url:btn:menu:links:themes=http://www.silexlabs.org/category/exchange/exchange-silex/themes/&
+url:btn:menu:links:translation=https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE&
+url:btn:menu:links:exchange=http://www.silexlabs.org/category/exchange/exchange-silex/&
+
+; HOME
+
+btn:home:newWebsite:1=创建&
+btn:home:newWebsite:2=创建新的发布网站&
+btn:home:newWebsite:3=使用空白页面&
+btn:home:newWebsite:4=使用模版&
+btn:home:settings:1=管理&
+btn:home:settings:4=预览&
+btn:home:manage:1=管理&
+btn:home:manage:2=您的ID&
+btn:home:settings:3=个性设置&
+btn:home:last:1=属性&
+btn:home:last:2=打开&
+
+url:btn:home:links:update=http://sourceforge.net/projects/silex/files/&
+url:btn:home:links:upload=http://wp-manager.silex-ria.org/&
+
+; PAGE start/menu/home
+text:home:title=欢迎来到<<silex.authentication.currentLogin>>&
+text:home:tips=每日提示&
+text:home:last=最后发布的修改&
+text:home:last1=Flash播放器&
+text:home:last2=版本&
+text:home:last3=默认语言&
+text:home:last5=第一页&
+
+text:home:administration=管理&
+text:home:system=系统&
+
+btn:home:community=成为合作伙伴&
+
+btn:home:mail:address=community@silexlabs.org&
+btn:home:mail:title=成为合作伙伴&
+btn:home:mail:body=我的个人信息 - 名字, 邮箱,个人爱好&
+
+; SETTINGS
+
+; PAGE start/menu/settings/
+text:settings:list:title=设置&
+text:settings:list:loginPass=用户名-密码&
+text:settings:list:languages=语言&
+text:settings:list:server:info=服务器信息&
+text:settings:title=您已经安装了((<<silex.config.version>>))版本&
+settings:home:1=管理&
+settings:home:2=您的账户&
+settings:home:3=下载&
+settings:home:4=最后版本&
+settings:home:5=您的Silex服务器信息&
+settings:home:6=选择软件显示语言 - 添加语言&
+settings:home:7=设置您的Silex服务器插件&
+
+; SETTINGS LOGINS
+
+; PAGE start/menu/settings/loginPass
+text:logins:list:sureDelete=您确认想要删除这些账户?&
+text:logins:list:title=您的账户&
+text:logins:newCompte:title=新账户&
+
+; PAGE start/menu/settings/loginpass/loginPass1
+text:logins:help:1=To modify an account, select it in the list&
+text:logins:help:2=To create a new account, click on the bottom button below the list&
+text:logins:help:3=To reset the admin password, delete the conf/pass.php file on the server using a FTP client&
+
+texte:logins:tile_user=用户账号&
+text:logins:id=登录名&
+text:logins:new_pass=您的新密码&
+text:logins:pass=密码&
+
+; SETTINGS LANG
+btn:settings:manage:1=管理&
+btn:settings:manage:2=您的账户&
+btn:settings:version:1=当前&
+btn:settings:version:2=版本&
+btn:settings:downlad:1=下载&
+btn:settings:downlad:2=最后版本&
+btn:settings:help=更多关于设置&
+btn:logins:add=添加账户&
+btn:logins:delete=删除&
+btn:logins:rename=重命名&
+btn:logins:save=保存&
+btn:logins:change=修改&
+btn:logins:cancel=取消&
+btn:logins:create=创建&
+btn:lang:change=修改&
+btn:lang:add=添加语言&
+btn:lang:valid=接受&
+btn:lang:download=下载&
+btn:lang:translate:tool=界面翻译&
+btn:lang:save=保存&
+btn:param:server:save=保存&
+
+; PAGE menu/settings/languages
+text:settings:lang:title=选择您的语言&
+text:settings:lang:1=您网站接口的有效语言:&
+text:settings:lang:3=您网站的默认语言:&
+text:settings:lang:4=((<<silex.config.language>>))&
+
+; PAGE menu/settings/languages/languages1
+text:settings:lang:5=Silex有多语言接口.&
+text:settings:lang:6=要修改您网站的默认语言，请点击这里&
+text:settings:lang:67=查看可用的语言&
+text:settings:lang:7=如果您想使用暂不可用的语言作为界面语言，请点击这里&
+
+; PAGE menu/settings/languages/lang.change
+text:settings:lang:title:2=默认语言&
+text:settings:lang:8=选择界面语言&
+
+; PAGE menu/settings/languages/lang.add
+text:settings:lang:title:3=添加语言&
+text:settings=您可以给出一个您自己的语言翻譯版本并使用提供的工具与社区共享
+link:settings:lang:1=http://silex-ria.org/interface.de.traduction&
+link:settings:lang:2=http://silex-ria.org/download.languages.files&
+
+; SETTINGS PARAM.SERVER
+
+; SETTINGS INFOS.SERVER
+
+; PAGE menu/settings/infos.server
+infos:server:title=信息参数&
+infos:server:1=当前版本&
+infos:server:2=最新版本&
+infos:server:3=下载最新版本&
+infos:server:4=下载&
+infos:server:5=文件大小&
+infos:server:6=根目录&
+infos:server:7=文件内容&
+infos:server:8=字体&
+infos:server:9=布局&
+infos:server:10=多媒体&
+infos:server:loading=Loading...&
+
+
+; SETTINGS PLUGINS
+; Zabojad - add entire SETTINGS.PLUGINS section - 07-05-2010
+
+text:settings:list:plugins=插件&
+
+settings:plugins:missing=此插件还未安装在您的Silex服务器上.&
+settings:plugins:home=配制或禁用插件，从此列表中选择插件。如要在整个Silex服务器上使用插件,请选择"添加插件"。&
+settings:plugins:installed=已安装的插件&
+settings:plugins:add=在Silex服务器上，您是否想要激活<<DataSelector_plugins.selectedItem.title>>?&
+settings:plugins:deactivate=在Silex服务器上，您是否想要禁用<<RichTextList_01_installed_plugins.selectedItem.label>>?&
+settings:plugins:param=在左侧列表选择您想要编辑的参数&
+
+btn:settings:plugins:deactivate=禁用一个插件&
+btn:settings:plugins:activate=激活插件&
+btn:settings:cancel=取消&
+btn:settings:confirm=确认&
+btn:settings:save=保存&
+
+
+; CREATE
+
+btn:create:cancel=取消&
+btn:create:save=保存&
+btn:create:see=预览&
+btn:create:duplicate=复制&
+btn:create:download=下载&
+btn:create:more=更多&
+btn:create:info=信息&
+btn:create:edit=编辑&
+
+; PAGE menu/create
+create:title:1=创建一个新网站， 使用&
+create:list:1=空白页面&
+create:list:2=模版&
+create:list:3=下载模版&
+
+; PAGE menu/create/create1
+create:text:1=在下面的文本中输入您网站的名称&
+create:text:2=名称&
+
+; PAGE menu/create/create2
+create:title:2=模版&
+
+; PAGE menu/create/create2/create2.1
+create:text:3=请在列表中选择您想要使用的模版&
+
+; PAGE menu/create/create2/create2.edit
+create:title:3=已选择的网站&
+
+; PAGE menu/create/create2/create.edit/create.dupplicate
+create:text:4=在下面的文本中输入您网站的名称&
+
+; PAGE menu/create/create3/create3.edit
+create:text:5=在列表中选择您要下载的模版&
+
+; MANAGE
+
+btn:manage:properties=属性&
+btn:manage:edition=编辑&
+btn:manage:plugins=插件&
+btn:manage:fonts=字体&
+btn:manage:advanced=高级选项&
+btn:manage:see=预览&
+btn:manage:save=保存&
+btn:manage:duplicate=复制&
+btn:manage:create_theme=Create Theme&
+btn:manage:rename=重命名&
+btn:manage:delete=删除&
+btn:manage:valid=验证&
+btn:manage:confirm=确认&
+btn:manage:cancel=取消&
+btn:manage:ok=Ok&
+btn:manage:indexation=指数化&
+btn:manage:export=输出&
+btn:manage:screensaver=屏保&
+btn:manage:layout=布局&
+btn:manage:context=环境&
+btn:manage:indexe=索引&
+btn:manage:add:tool=添加工具&
+btn:manage:add:layout=添加布局&
+btn:manage:add:loader=添加Loader&
+btn:manage:yes=设置为默认站点&
+btn:manage:start=重命名&
+btn:manage:clipboard=拷贝代码&
+btn:manage:manage:activate=激活插件&
+
+btn:manage:fonts:activate=启用字体&
+btn:manage:fonts:deactivate=禁用字体&
+btn:manage:fonts:download=下载字体&
+url:btn:manage:fonts:download=http://www.silexlabs.org/category/exchange/exchange-silex/fonts/&
+
+
+; PAGE menu/manage/
+manage:title:1=管理您的网站&
+
+; PAGE menu/manage/manage1
+manage:text:1=在列表中选择你想要管理的网站&
+manage:folder:1=Sites&
+manage:folder:2=Themes&
+manage:folder:3=Utilities&
+
+; PAGE start/menu/manage/manage.edit/properties.manage/
+manage:text:4=首页名称&
+manage:text:5=标题&
+manage:text:55=Description&
+manage:text:6=图标&
+manage:text:7=关键词&
+manage:text:8=宽度&
+manage:text:9=高度&
+manage:text:10=背景颜色&
+
+manage:text:12=缩放模式&
+manage:text:15=默认站点&
+manage:text:13=无缩放&
+manage:text:14=全部显示&
+btn:manage:manage:deactivate=禁用插件&
+manage:text:42=滚动&
+manage:text:43=像素&
+
+manage:text:16=是&
+manage:text:17=否&
+
+; PAGE start/menu/manage/manage.edit/properties.manage/bgcolor
+manage:text:18=背景颜色&
+manage:text:19=当前颜色&
+manage:text:20=所选择的颜色&
+
+; PAGE menu/manage/manage.edit/edition.manage/e.m.1
+manage:text:em1=[manage_text:em1]&
+
+; PAGE menu/manage/manage.edit/edition.manage/e.m.dupli
+manage:text:2=在下面区域给你的网站命名&
+manage:text:201=Name your theme in the field below&
+manage:text:3=名字&
+manage:suredelete=您确认要删除这个网站&
+
+; PAGE start/menu/manage/manage.edit/plugins
+manage:text:21=插件&
+manage:text:22=已经安装的插件&
+manage:text:23=PhpMyVisites Url&
+manage:text:24=在下面的列表中选择插件，激活或禁用&
+manage:text:25=添加一个插件&
+
+manage:text:29=在列表中选择要禁用的字体。然后点击禁用字体按钮.&
+
+manage:text:44=激活字体&
+manage:text:45=已安装的字体&
+manage:text:46=在左边列表中选择字体并安装.&
+
+manage:text:50=选择你想要编辑的参数&
+manage:text:51=您想禁用这个插件？&
+manage:text:52=确定禁用这个字体?&
+manage:text:53=你想要激活这个插件？&
+manage:text:54=确定启用这个字体?&
+
+; PAGE start/menu/manage/manage.edit/advanced/index
+manage:text:26=您确定想要索引这个网站?&
+
+; PAGE start/menu/manage/manage.edit/advanced/parameters
+text:settings:list:parameters=参数&
+
+; Zabojad - no more used label
+;manage:text:USE_AMF_FILES
+
+; Zabojad - no more used label
+;manage:text:preloadFiles
+
+; Zabojad - no more used label
+;manage:text:deeplink
+
+; Zabojad - no more used label
+;param:server:1
+
+; Zabojad - no more used label
+;param:server:2
+
+
+param:server:add=添加&
+param:server:delete=删除&
+param:server:label=<<RichTextList_01_adv_params.selectedItem.label>>的默认值&
+param:server:delete:confirm=为发布<<DataSelector_site.selectedItem.title>>，请确认删除<<RichTextList_01_adv_params.selectedItem.label>>&
+param:server:newlabel=给新参数设置标签&
+
+param:server:3=是&
+param:server:4=否&
+
+; PAGE start/menu/manage/manage.edit/advanced/export
+manage:text:27=你确认想要输出这个网站?&
+manage:text:28=粘贴／复制这段嵌入代码，在论坛，博客，myspace加入你的网站 ...点击 "帮助" 获取更多信息 !&
+manage:text:28bis=这些代码已经被复制，你可以控制它粘贴+ C的输入&
+
+; PAGE start/menu/manage/manage.edit/advanced/screensaver
+manage:text:30=屏保延迟&
+manage:text:31=屏保动作&
+manage:text:32=禁用屏保&
+
+; PAGE start/menu/manage/manage.edit/advanced/layout
+manage:text:33=Loader&
+manage:text:34=默认布局&
+manage:text:35=表层皮肤&
+manage:text:36=工具文件夹路径&
+
+; PAGE start/menu/manage/manage.edit/advanced/context
+manage:text:38=上下文列表&
+manage:text:39=初始上下文&
+manage:text:40=默认语言&
+manage:text:41=语言列表&
+
+; PAGE start/menu/translation
+translation:title=SILEX翻译界面&
+translation:text=小帮助&
+
+; PAGE start/menu/mailing.list
+btn:mailing:fr=法语相关链接&
+btn:mailing:en=英语相关链接&
+btn:mailing:trad=翻译人员邮件列表&
+btn:mailing:dev=开发人员邮件列表&
+mailing:text:title=邮件列表&
+mailing:text:1=注册成功 ! 您会收到一封来自SourceForge的确认邮件.&
+mailing:text:2=错误.请重新尝试&
+mailing:text:3=在下面表格中输入您的邮箱地址.&
+mailing:text:4=选择喜欢的相关链接&
+btn:newsletter:send=发送&
+
+
+; NAVIGATION
+nav:create=创建一个网站&
+nav:gerer:2=属性&
+nav:gerer:3=复制&
+nav:gerer:4=重命名&
+nav:gerer:5=删除&
+nav:gerer:6=高级选项&
+nav:settings:lang=语言&
+nav:settings:info=信息语言&
+nav:settings:plugins=插件&
+nav:download=下载&
+nav:mailing=邮箱列表&
+
+; LANGUAGES PAGE
+texte:lang:translate=使用这个翻译工具来翻译您的Silex界面和您的管理界面.&
+texte:lang:download=下载&
+
+; LOGIN PAGE
+text:login:login=如果您忘记了密码，必须在Silex服务器根目录下删除pass.php文件&
+login:choose:lang=Silex管理界面支持多种语言. 点击语言缩写来选择语言&
+login:choose:lang:2=(fr代表法语, en代表英语, de代表德语...)&
+login:choose:lang:3=当前语言是:&
+pass:loose=丢失密码&
+text:login:connection=连接&
+
+; DOWNLOAD PAGE
+d:text:1=欢迎来到下载界面.<br>此界面链接到Silex Labs exchange平台, [[http://wp-manager.silex-ria.org]]&
+d:text:2=<p align="center">请从下面列表选择一项来访问您选择的部分. </p> <p align="center"> <br>你必须下载最新版本的Silex, 动画模版, 主题, 部件, 工具和允许您翻译Silex界面的语言文件. </p>&
+d:latest:silex:version=Silex&
+d:layouts=布局&
+d:themes=模版&
+d:tools=工具&
+d:lang=语言&
+d:components=部件&
+d:loaders=Loaders&
+d:plugins=插件&
+d:fonts=字体&
+
+txt:list:layouts=布局&
+txt:list:themes=模版&
+txt:list:components=部件&
+txt:list:tools=工作&
+txt:list:lang=语言&
+txt:list:loaders=Loaders&
+txt:list:plugins=插件&
+txt:list:fonts=字体&
+
+
+; PAGE SYSTEM
+btn:system:admin=返回&
+
+txt:aide:layout=在列表中选择要下载的布局&
+txt:aide:layout:1=在列表中选择要下载的工具&
+txt:aide:layout:2=在列表中选择要下载的部件&
+txt:aide:layout:3=1 - 在列表中选择程序&
+txt:aide:layout:4=2 - 在列表中选择语言.&
+txt:aide:layout:5=在列表中选择要下载的loader&
+txt:aide:layout:6=在列表中选择要下载的插件&
+txt:aide:layout:7=在列表中选择下载字体&
+
+l:installer=安装界面&
+l:ui=Silex核心&
+l:man=管理界面&
+
+
+; HELP PAGE
+
+;help:maquetter:1
+;help:login:1
+;help:create:1
+;help:create:2
+;help:create:3
+;help:manage:0
+;help:manage:1
+;help:edition:1
+;help:plug:1
+;help:index:1
+;help:params:1
+;help:screen:1
+;help:layout:1
+;help:layer
+;help:loader
+;help:tools
+;help:context:1
+;help:export:1
+;help:setting:11

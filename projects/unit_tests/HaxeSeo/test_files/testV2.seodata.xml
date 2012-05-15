@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="my_media">
+		<title>my_media</title>
+		<pubDate>Mon Jul 11 16:52:43 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>background-01-01.png2</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<htmlEquivalent><![CDATA[<img name="background-01-01.png2" src="../../media/my_media/page_menu/background-01-01.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>DataSelectorStructure</playerName>
+				<className>org.oof.dataUsers.DataSelector</className>
+				<iconIsIcon>true</iconIsIcon>
+				<iconPageName><![CDATA[<<name>>]]></iconPageName>
+				<deeplinkFormat><![CDATA[<<name>>]]></deeplinkFormat>
+				<connectorName>XmlConnectorStructure</connectorName>
+				<formName><![CDATA[<<silex.config.initialContentFolderPath>><<silex.config.id_site>>/structure.published.xml]]></formName>
+				<cellFormat><![CDATA[<font color="#FFFFFF" size="12"><i><<name>>]]></cellFormat>
+				<links>
+					<link>
+						<title>page0</title>
+						<deeplink>page0</deeplink>
+					</link>
+					<link>
+						<title>page2</title>
+						<deeplink>page2</deeplink>
+					</link>
+					<link>
+						<title>page4</title>
+						<deeplink>page4</deeplink>
+					</link>
+					<link>
+						<title>page6</title>
+						<deeplink>page6</deeplink>
+					</link>
+					<link>
+						<title>page8</title>
+						<deeplink>page8</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>RichTextListStructure</playerName>
+				<className>org.oof.lists.RichTextList</className>
+			</component>
+			<component>
+				<playerName>XmlConnectorStructure</playerName>
+				<className>org.oof.dataConnectors.XmlConnector</className>
+			</component>
+			<component>
+				<playerName>site_logo.png</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<tags><![CDATA[site_logo seo tags]]></tags>
+				<description><![CDATA[site_logo seo description]]></description>
+				<htmlEquivalent><![CDATA[<img name="site_logo.png" src="../../media/my_media/page_menu/site_logo.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>credit</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="8" COLOR="#0B333C" LETTERSPACING="0" KERNING="0"><B><I>Credit : SILEX 2010 // Design by Léo Francia</I></B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[credit : silex 2010 // design by léo francia ]]></text>
+			</component>
+			<component>
+				<playerName>back_menu.swf</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="448" height="20.1" ><param name="movie" value="../../media/my_media/page_menu/back_menu.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/back_menu.swf" quality = "best" bgcolor = "#000000" width = "448" height = "20.1" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>bande-02</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="729" height="32" ><param name="movie" value="../../media/my_media/page_menu/bande-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/bande-01.swf" quality = "best" bgcolor = "#000000" width = "729" height = "32" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<tags><![CDATA[bande-02 seo tags]]></tags>
+				<description><![CDATA[bande-02 seo description]]></description>
+			</component>
+			<component>
+				<playerName>bande-01</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="728.772905486803" height="93.7509674582234" ><param name="movie" value="../../media/my_media/page_menu/bande-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/bande-01.swf" quality = "best" bgcolor = "#000000" width = "728.772905486803" height = "93.7509674582234" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>quick</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="232.7" height="40.1" ><param name="movie" value="../../media/my_media/page_menu/quick_links-01-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/quick_links-01-01.swf" quality = "best" bgcolor = "#000000" width = "232.7" height = "40.1" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+		</components>
+	</layerSeo>
+	<layerSeo deeplink="">
+		<title><![CDATA[emptyDeeplinkTitle]]></title>
+		<pubDate><![CDATA[Wed Jul 13 20:41:10 GMT+0200 2011]]></pubDate>
+		<components>
+			<component>
+				<playerName><![CDATA[background-01-01.png2]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<img name="background-01-01.png2" src="../../media/my_media/page_menu/background-01-01.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName><![CDATA[DataSelectorStructure]]></playerName>
+				<className><![CDATA[org.oof.dataUsers.DataSelector]]></className>
+				<iconIsIcon><![CDATA[true]]></iconIsIcon>
+				<iconPageName><![CDATA[<<name>>]]></iconPageName>
+				<deeplinkFormat><![CDATA[<<name>>]]></deeplinkFormat>
+				<connectorName><![CDATA[XmlConnectorStructure]]></connectorName>
+				<formName><![CDATA[<<silex.config.initialContentFolderPath>><<silex.config.id_site>>/structure.published.xml]]></formName>
+				<cellFormat><![CDATA[<font color="#FFFFFF" size="12"><i><<name>>]]></cellFormat>
+				<links>
+					<link>
+						<title><![CDATA[<font color="#FFFFFF" size="12"><i>page0]]></title>
+						<deeplink><![CDATA[page0]]></deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<font color="#FFFFFF" size="12"><i>page2]]></title>
+						<deeplink><![CDATA[page2]]></deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<font color="#FFFFFF" size="12"><i>page4]]></title>
+						<deeplink><![CDATA[page4]]></deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<font color="#FFFFFF" size="12"><i>page6]]></title>
+						<deeplink><![CDATA[page6]]></deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<font color="#FFFFFF" size="12"><i>page8]]></title>
+						<deeplink><![CDATA[page8]]></deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName><![CDATA[RichTextListStructure]]></playerName>
+				<className><![CDATA[org.oof.lists.RichTextList]]></className>
+			</component>
+			<component>
+				<playerName><![CDATA[XmlConnectorStructure]]></playerName>
+				<className><![CDATA[org.oof.dataConnectors.XmlConnector]]></className>
+			</component>
+			<component>
+				<playerName><![CDATA[site_logo.png]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<img name="site_logo.png" src="../../media/my_media/page_menu/site_logo.png">]]></htmlEquivalent>
+				<tags><![CDATA[site_logo seo tags]]></tags>
+				<description><![CDATA[site_logo seo description]]></description>
+			</component>
+			<component>
+				<playerName><![CDATA[credit]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Text]]></className>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="8" COLOR="#0B333C" LETTERSPACING="0" KERNING="0"><B><I>Credit : SILEX 2010 // Design by Léo Francia</I></B></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text><![CDATA[credit : silex 2010 // design by léo francia ]]></text>
+			</component>
+			<component>
+				<playerName><![CDATA[back_menu.swf]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="448" height="20.1" ><param name="movie" value="../../media/my_media/page_menu/back_menu.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/back_menu.swf" quality = "best" bgcolor = "#000000" width = "448" height = "20.1" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName><![CDATA[bande-02]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="729" height="32" ><param name="movie" value="../../media/my_media/page_menu/bande-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/bande-01.swf" quality = "best" bgcolor = "#000000" width = "729" height = "32" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<tags><![CDATA[bande-02 seo tags]]></tags>
+				<description><![CDATA[bande-02 seo description]]></description>
+			</component>
+			<component>
+				<playerName><![CDATA[bande-01]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="728.772905486803" height="93.7509674582234" ><param name="movie" value="../../media/my_media/page_menu/bande-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/bande-01.swf" quality = "best" bgcolor = "#000000" width = "728.772905486803" height = "93.7509674582234" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName><![CDATA[quick]]></playerName>
+				<className><![CDATA[org.silex.ui.players.Image]]></className>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="232.7" height="40.1" ><param name="movie" value="../../media/my_media/page_menu/quick_links-01-01.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#000000" /><embed src = "../../media/my_media/page_menu/quick_links-01-01.swf" quality = "best" bgcolor = "#000000" width = "232.7" height = "40.1" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

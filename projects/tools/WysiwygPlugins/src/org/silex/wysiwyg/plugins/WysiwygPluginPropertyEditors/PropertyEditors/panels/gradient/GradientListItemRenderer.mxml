@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="30" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 creationComplete="onCreationComplete()"
+		 styleName="ArrayEditor">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import flash.events.TextEvent;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.ColorPickerEvent;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.NumericStepperEvent;
+			import mx.events.SliderEvent;
+			import mx.managers.DragManager;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+	
+			public var newValue:Object;
+			
+			
+			private function onCreationComplete():void
+			{
+				
+				newValue = {value:data.value,selected:data.selected, gradientColor:data.gradientColor, gradientAlpha:data.gradientAlpha, gradientposition:data.gradientposition, index:data.index};
+				dataText.text = data.value;
+				selectBox.selected = data.selected;
+				gradientColorPicker.selectedColor=uint('0x'+data.gradientColor);
+				gradientAlphaStepper.value=data.gradientAlpha;
+				gradientPositionStepper.value=data.gradientposition;
+				this.addEventListener(FlexEvent.DATA_CHANGE, onDataChange);	
+				checkSelectedInput();
+			
+
+			}
+			
+			private function onDataChange(event:FlexEvent):void
+			{ 
+				dataText.text = data.value;
+				selectBox.selected = data.selected;
+				gradientColorPicker.selectedColor = uint('0x'+data.gradientColor);
+				gradientAlphaStepper.value = data.gradientAlpha;
+				gradientPositionStepper.value = data.gradientposition;
+				newValue = {value:dataText.text, selected:selectBox.selected, gradientColor:gradientColorPicker.selectedColor.toString(16), gradientAlpha:gradientAlphaStepper.value, gradientposition:gradientPositionStepper.value, index:data.index};
+				checkSelectedInput();
+				
+			}
+			
+			private function checkSelectedInput():void
+			{
+				if (data.selectedTextInput != null && data.selectedTextInput == data.index)
+				{
+					dataText.setSelection(data.selectedCharIndex, data.selectedCharIndex);
+					
+					dataText.setFocus();
+				}
+			}
+						
+			/**
+			 * event function when checkbox has changed state
+			 */ 
+			private function onCheckboxChange(event:Event):void
+			{
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+			}
+			/**
+			 * event function when change change gradient color  
+			 */ 			
+			private function onColorEdit(event:Event):void
+			{
+				dataText.text = getColorText();
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+			}
+			
+			/**
+			 * event function when change change gradient numericstepper alpha 
+			 */ 
+			private function onAlphaEdit(event:Event):void
+			{
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+			}
+			/**
+			 * event function when change change gradient numericstepper position 
+			 */ 
+			private function onPositionNumericEditEnd(event:NumericStepperEvent):void
+			{
+				gradientSlide.value=event.currentTarget.value;
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientPositionStepper.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue,true));
+				
+				
+			}
+			/**
+			 * event function when change change gradient slide position 
+			 */ 			
+			private function onPositionSlideEdit(event:SliderEvent):void
+			{
+				gradientPositionStepper.value=event.currentTarget.value;
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientSlide.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue, true));
+				
+			}
+			private function activateDrag(event:MouseEvent):void
+			{
+				if (owner)
+				{
+					if (event.type == MouseEvent.MOUSE_OVER)
+					{	
+						(owner as WysiwygList).dragEnabled = true;
+					}
+						
+					else
+					{
+						(owner as WysiwygList).dragEnabled = false;
+					}
+				}
+			}
+			/**
+			 * change color value to hexvalue
+			 */
+			private function getColorText():String
+			{
+				var colorStr:String = new String;	
+				var hexString:* = gradientColorPicker.selectedColor.toString(16).toUpperCase();
+				var zeroNum:int = 6 - hexString.length;
+				var zeroStr:String = "";
+						
+				for (var i:int = 0; i < zeroNum; i++) 
+				{
+					zeroStr += "0";
+				}
+						
+				colorStr =  "0x" + zeroStr + hexString;	
+				return colorStr;
+			}
+			/**
+			 * event function when change change colorText 
+			 */ 
+			private function onColorTextEdit(event:Event)
+			{
+				gradientColorPicker.selectedColor = uint(dataText.text);
+				newValue.value = dataText.text;
+				newValue.selected=selectBox.selected;
+				newValue.gradientColor = gradientColorPicker.selectedColor.toString(16);
+				newValue.selectedTextInput = data.index;
+				newValue.selectedCharIndex = dataText.selectionActivePosition;
+				newValue.gradientAlpha = gradientAlphaStepper.value;
+				newValue.gradientposition=gradientSlide.value;
+				newValue.index = data.index;	
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue, true));
+			}
+			
+		]]>
+	</fx:Script>
+		<ns:WysiwygCheckBox id="selectBox" change="onCheckboxChange(event)" />
+		<ns:WysiwygButton styleName="dragItem" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_DRAG_ITEM_BUTTON_LABEL')}" 
+					  mouseOver="activateDrag(event)" mouseOut="activateDrag(event)" />
+		<ns:WysiwygTextInput id="dataText" editable="true"  width="100%" change="onColorTextEdit(event)"/>	
+		<mx:Form height="100%">
+			<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+				<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_GRADIENT_COLOR_TITRE_LABEL')}">
+					<ns:WysiwygColorPicker id="gradientColorPicker" width="100%" height="100%"
+											change="onColorEdit(event)"/>
+				</mx:FormItem>
+				<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_GRADIENT_ALPHA_TITRE_LABEL')}">
+					<ns:WysiwygNumericStepper id="gradientAlphaStepper" styleName="position" 										    
+											   maximum="100"
+											   minimum="0" stepSize="1"
+											    change="onAlphaEdit(event)"/>
+				</mx:FormItem>
+				<mx:FormItem label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_GRADIENT_POSITION_TITRE_LABEL')}">
+					<ns:WysiwygNumericStepper id="gradientPositionStepper" styleName="position" 
+											   maximum="255"
+											   minimum="0" stepSize="1" 
+											   change="onPositionNumericEditEnd(event)"
+											  />
+				</mx:FormItem>
+				<mx:FormItem >
+					<mx:HSlider id="gradientSlide"
+								value="{gradientPositionStepper.value}"
+								minimum="0"
+								maximum="255"
+								snapInterval="1"
+								liveDragging="true"
+								showDataTip="false"
+								height="100%"
+								change="onPositionSlideEdit(event)"/>
+				</mx:FormItem>		
+			</mx:HBox>
+		</mx:Form>	
+</mx:HBox>

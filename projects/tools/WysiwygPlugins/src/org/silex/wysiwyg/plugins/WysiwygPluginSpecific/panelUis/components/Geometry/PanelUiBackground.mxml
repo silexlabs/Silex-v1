@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%" 
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" 
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+			/**
+			 * function to take the radiobutton selected value
+			 */
+			public function selectedMode(targetMode:String, propertyMode:String):Boolean
+			{
+				if(targetMode == propertyMode) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_BACKGROUND')}" styleName="PropertiesGroupTitle" />
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>	
+			<mx:FormItem width="100%" height="100%" label="Solid color">
+				<ns1:WysiwygRadioButton id="solidCheckBox" selected="{selectedMode('solid',propertyArray.fill.currentValue)}" change="updatePropertyValue('solid','fill')" />
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+			
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Label text="Solid color" />
+		<mx:Form>
+			<mx:FormItem width="50%" height="100%" id="linearItem" label="linear">
+				<ns1:WysiwygRadioButton id="linearCheckBox" selected="{selectedMode('linear',propertyArray.fill.currentValue)}" change="updatePropertyValue('linear','fill')" />
+			</mx:FormItem>
+
+			<mx:FormItem width="50%" height="100%"  id="radialItem" label="radial">
+				<ns1:WysiwygRadioButton id="radialCheckBox" selected="{selectedMode('radial',propertyArray.fill.currentValue)}" change="updatePropertyValue('radial','fill')" />
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+							
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="50%" height="100%" label="bitmap">
+				<ns1:WysiwygRadioButton id="bitmapCheckbox" selected="{selectedMode('bitmap',propertyArray.fill.currentValue)}" change="updatePropertyValue('bitmap','fill')" />
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+	
+	</mx:HBox>
+	
+
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.bgColor.description}" >
+					<ns1:WysiwygColorPicker width="100%" height="100%"
+											selectedColor="{propertyArray.bgColor.currentValue}"
+											change="updatePropertyValue(event.currentTarget.selectedColor, 'bgColor')" />
+				</mx:FormItem>	
+
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.bgAlpha.description}" >
+				<ns1:WysiwygNumericStepper id="bgAlphaStepper" styleName="position" 
+										   value="{propertyArray.bgAlpha.currentValue}" 
+										   maximum="{propertyArray.bgAlpha.maxValue}"
+										   minimum="{propertyArray.bgAlpha.minValue}"
+										   change="updatePropertyValue(event.currentTarget.value, 'bgAlpha')"/>
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" label="Parameters">
+				<ns1:WysiwygButton label="edit"  click="{selectProperty(propertyArray.gradientRatio)}" />
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%" label="Rotation" >
+				<ns1:WysiwygNumericStepper id="gradientRotationStepper" styleName="position" 
+										   minimum="0" maximum="359"
+										   value="{propertyArray.gradientRotation.currentValue}" 
+										   change="updatePropertyValue(event.currentTarget.value, 'gradientRotation')"/>							
+			</mx:FormItem>	
+		</mx:Form>
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.bitmapFillUrl.description}" >
+				<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.bitmapFillUrl)}" />						
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.bitmapFillRepeat.description}">
+				<ns1:WysiwygCheckBox  selected="{propertyArray.bitmapFillRepeat.currentValue}"
+									  change="updatePropertyValue(event.currentTarget.selected, 'bitmapFillRepeat')"/>			
+			</mx:FormItem>	
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.bitmapFillSmooth.description}" >
+				<ns1:WysiwygCheckBox  selected="{propertyArray.bitmapFillSmooth.currentValue}"
+									  change="updatePropertyValue(event.currentTarget.selected, 'bitmapFillSmooth')"/>				
+			</mx:FormItem>	
+		</mx:Form>
+		</mx:HBox>
+		
+	</mx:HBox>
+	
+</panelUis:PanelUiBase>

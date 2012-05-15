@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+The ComponentsUI's Footer. Contains the add, delete and swap components buttons
+
+@author Yannick
+-->
+<ns:StdUIFooter xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:ns="org.silex.wysiwyg.toolboxes.toolboxes_base.*"
+				 xmlns:ui="org.silex.wysiwyg.ui.*" verticalScrollPolicy="off"
+				>
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.ToolsEvent;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!--
+			the boolean used to enable/disable the footer's buttons
+		-->
+		<fx:Boolean id="isDeleteButtonEnabled" />
+		<fx:Boolean id="areUpButtonsEnabled" />
+		<fx:Boolean id="areDownButtonsEnabled" />
+		<fx:Boolean id="isLibraryButtonEnabled" />
+		<fx:Boolean id="isCopyButtonEnabled" />
+		<fx:Boolean id="isPasteButtonEnabled" />
+		
+	</fx:Declarations>
+	<mx:VBox height="100%" width="100%" verticalGap="0">
+		<ui:WysiwygButton styleName="addLayerComponent" 
+						  label="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_ADD_BUTTON_TOOLTIP' )}" width="100%"
+						  click="{dispatchEvent(new ToolsEvent(ToolsEvent.ADD_ITEM))}"
+						  toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_ADD_BUTTON_TOOLTIP' )}"
+						  enabled="{isLibraryButtonEnabled}"/>
+		
+		<!---
+		The container for the add and delete buttons
+		-->
+		<mx:HBox  width="100%" height="100%" styleName="ToolBoxFooter" horizontalAlign="right" verticalAlign="middle" horizontalGap="5" >
+			<mx:Button styleName="moveTop"	enabled="{areUpButtonsEnabled}" width="15" height="15"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.SWAP_ITEM_TO_TOP))}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SWAP_TOP_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button styleName="moveBottom" enabled="{areDownButtonsEnabled}" width="15" height="15"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.SWAP_ITEM_TO_BOTTOM))}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SWAP_BOTTOM_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button styleName="moveUp" enabled="{areUpButtonsEnabled}" width="15" height="15"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.SWAP_ITEM_UP))}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SWAP_UP_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button styleName="moveDown" enabled="{areDownButtonsEnabled}" width="15" height="15"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.SWAP_ITEM_DOWN))}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_SWAP_DOWN_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button width="15" height="15" styleName="copyItem" 
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.COPY_ITEM))}"
+					   enabled="{isCopyButtonEnabled}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_COPY_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button width="15" height="15" styleName="pasteItem" 
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.PASTE_ITEM))}"
+					   enabled="{isPasteButtonEnabled}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_PASTE_BUTTON_TOOLTIP' )}"/>
+			
+			<mx:Button width="15" height="15" styleName="deleteButton" enabled="{isDeleteButtonEnabled}"
+					   click="{dispatchEvent(new ToolsEvent(ToolsEvent.DELETE_ITEM))}"
+					   buttonMode="true" 
+					   toolTip="{resourceManager.getString('WYSIWYG', 'COMPONENTS_TOOLBOX_REMOVE_BUTTON_TOOLTIP' )}"/>
+			
+			
+	
+
+	</mx:HBox>	
+	</mx:VBox>
+</ns:StdUIFooter>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 horizontalAlign="center" verticalAlign="middle"
+		 creationComplete="onCreationComplete()"
+		 width="100%" height="100%"  xmlns:ns1="org.silex.wysiwyg.ui.*"  >
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.utils.ObjectProxy;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.ToolBarGroup;
+			import org.silex.adminApi.listedObjects.ToolBarItem;
+			/**
+			 * the uid of the target toolUid
+			 */ 
+			public var toolUid:String;
+			
+			[Bindable]
+			private var _groupsData:ArrayCollection;
+			
+			
+			private function onCreationComplete():void
+			{
+				_groupsData = new ArrayCollection();
+				
+				
+				var toolbarGroups:Array = SilexAdminApi.getInstance().toolBarGroups.getData([toolUid])[0];
+				
+				for (var i:int = 0; i<toolbarGroups.length; i++)
+				{
+					var currentGroup:ObjectProxy = new ObjectProxy();
+					currentGroup.group = toolbarGroups[i];
+					currentGroup.itemGroup = SilexAdminApi.getInstance().toolBarItems.getData([currentGroup.group.uid])[0];
+					_groupsData.addItem(currentGroup);
+				}
+				
+				rp.dataProvider = _groupsData;
+				
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<mx:VRule height="100%" />
+	<mx:Repeater id="rp" height="100%" width="100%" >
+		<mx:HBox height="100%" verticalAlign="middle" >
+
+			<mx:Label text="{(rp.currentItem.group as ToolBarGroup).label}" toolTip="{(rp.currentItem.group as ToolBarGroup).description}" />
+			<mx:Repeater id="rp2"  dataProvider="{rp.currentItem.itemGroup}" height="100%"  >
+				
+				<ns1:ToolItemViewItemRenderer height="100%" 
+										   SWFSource='{(rp2.currentItem as ToolBarItem).url}' 
+										   SWFToolTip='{(rp2.currentItem as ToolBarItem).description}'
+										   hasBackground='{(rp2.currentItem as ToolBarItem).hasBackground}'/>	
+				
+			</mx:Repeater>
+			<mx:VRule height="100%" />
+		</mx:HBox>
+	</mx:Repeater>
+	
+</mx:HBox>

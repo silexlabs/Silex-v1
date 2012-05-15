@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" xmlns:ui="ui.*" 
+		 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+		 xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.autoPlay.description}" width="100%">
+				<ns1:WysiwygCheckBox selected="{propertyArray.autoPlay.currentValue}"
+							 change="updatePropertyValue(event.currentTarget.selected, 'autoPlay')"  />
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.loop.description}" width="100%">
+					<ns1:WysiwygCheckBox selected="{propertyArray.loop.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selected, 'loop')" />
+				</mx:FormItem>
+				
+				<mx:FormItem label="{propertyArray.autoSize.description}" width="100%">
+					<ns1:WysiwygCheckBox selected="{propertyArray.autoSize.currentValue}"
+										 change="updatePropertyValue(event.currentTarget.selected, 'autoSize')" />
+				</mx:FormItem>
+				
+			</mx:Form>
+			
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.visibleOutOfAdmin.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox selected="{propertyArray.visibleOutOfAdmin.currentValue}"
+										change="updatePropertyValue(event.currentTarget.selected, 'visibleOutOfAdmin')"  />
+				</mx:FormItem>
+				<mx:FormItem label="{propertyArray.useHandCursor.description}" width="100%" height="100%">
+					<ns1:WysiwygCheckBox selected="{propertyArray.useHandCursor.currentValue}"
+										change="updatePropertyValue(event.currentTarget.selected, 'useHandCursor')" />
+				</mx:FormItem>
+			</mx:Form>
+			
+		</mx:HBox>
+		
+		<mx:VRule height="100%" />
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Form>
+				<mx:FormItem label="{propertyArray.showNavigation.description}" width="100%">
+					<ns1:WysiwygCheckBox  selected="{propertyArray.showNavigation.currentValue}"
+								  change="updatePropertyValue(event.currentTarget.selected, 'showNavigation')"/>
+				</mx:FormItem>	
+				<mx:FormItem label="{propertyArray.tooltipText.description}" width="100%" height="100%">
+					<ns1:WysiwygTextArea text="{propertyArray.tooltipText.currentValue}" width="100%" styleName="small"
+										change="updatePropertyValue(event.currentTarget.text, 'tooltipText')"  />
+				</mx:FormItem>	
+				
+			</mx:Form>
+			
+		</mx:HBox>
+		
+	
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Form>
+		
+				<mx:FormItem label="{propertyArray.bufferSize.description}" width="100%">
+					<ns1:WysiwygNumericStepper value="{propertyArray.bufferSize.currentValue}"
+											  maximum="{propertyArray.bufferSize.params.maxValue}"
+											  minimum="{propertyArray.bufferSize.params.minValue}"
+								 change="updatePropertyValue(event.currentTarget.value, 'bufferSize')" />
+				</mx:FormItem>	
+				
+				<mx:FormItem label="{propertyArray.volume.description}" width="100%">
+					<ns1:WysiwygNumericStepper value="{propertyArray.volume.currentValue}"
+											  maximum="{propertyArray.volume.maxValue}"
+											  minimum="{propertyArray.volume.minValue}"
+								  change="updatePropertyValue(event.currentTarget.value, 'volume')" />
+				</mx:FormItem>	
+			</mx:Form>
+			
+		</mx:HBox>
+
+	</mx:HBox>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 >
+	<fx:Script>
+		<![CDATA[
+			import org.silex.wysiwyg.event.PluginEvent;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<ns:WysiwygButton  label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_CONFIRM_BUTTON_LABEL')}" click="dispatchEvent(new PluginEvent(PluginEvent.VALIDATE_ITEM, null))" />
+	<ns:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PAGE_PROPERTIES_CANCEL_BUTTON_LABEL')}" click="dispatchEvent(new PluginEvent(PluginEvent.CANCEL_ITEM, null))" />
+</mx:HBox>

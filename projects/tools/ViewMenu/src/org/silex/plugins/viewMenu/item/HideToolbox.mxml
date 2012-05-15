@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Button xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx"
+		   click="button1_clickHandler(event)"
+		   styleName="closeButtonSmall">
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.WysiwygModel;
+			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				SilexAdminApi.getInstance().wysiwygModel.setToolBoxVisibility(false);
+			}
+			
+		]]>
+	</fx:Script>
+</mx:Button>

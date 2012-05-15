@@ -1,0 +1,141 @@
+<html>
+
+<head>
+
+<title>HaXe Bundle automatic AutoDoc</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #7D7E86;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 10px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #F6FAFD;
+}
+
+.title {
+	font-size: 35;
+	font-weight: bold;
+	text-align: center;
+	background-color : #FF4D1F;
+	color : white;
+	padding : 5 10 5 10;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 30px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #FF4D1F;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #FF4D1F;
+	text-decoration : underline;
+}
+
+a.package {
+	color : black;
+}
+
+.index {
+	margin : 20px 0 5px 10px;
+}
+
+.kwd {
+	color : #330033;
+}
+
+.classname {
+	font-size : 30;
+	font-weight : bold;
+	margin-left : 10px;
+	margin-bottom : 20px;
+}
+
+.classdoc {
+	border : 1px  #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	background-color : #DDD;
+	-moz-border-radius : 10px;
+	border-radius: 10px;
+	padding : 5 5 5 10;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0 20 20 40;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 11pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title"><img alt="Logo" src="http://code.google.com/p/sugar-hx/logo?logo_id=1265779922" align="ABSBOTTOM"></img>HaXe Bundle AutoDoc</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.silex.core.XmlUtils</div><div class="classdoc"><p>This class gathers XML utilities</p>
+<p>@author Raphael Harmel
+  @version 1.0
+  @date   2011-01-19</p>
+<p></p></div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>Xml2Dynamic(xml : <a href="../../../Xml.html" class="type">Xml</a>, ?oofLegacyWorkaround : <a href="../../../Bool.html" class="type">Bool</a>) : <a href="../../../Dynamic.html" class="type">Dynamic</a></dt><dd><p>This method takes an XML object and returns the equivalent Dynamic.</p>
+<p>input:	a Xml
+	 output:	a dynamic</p>
+<p></p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>cleanUp(xml : <a href="../../../Xml.html" class="type">Xml</a>) : <a href="../../../Xml.html" class="type">Xml</a></dt><dd>
+	  This method takes an XML, removes white spaces, indent & comments, and then return the XML.
+	  For now it just calling the equivalent recursive method.
+	  It is better to have two methods for recursive algorithms, one to initialise recursion, the other for recursion
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>stringIndent2Xml(xmlString : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Xml.html" class="type">Xml</a></dt><dd>
+	  This method takes an XML String (indented or not), and returns the cleaned XML.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>xml2StringIndent(xml : <a href="../../../Xml.html" class="type">Xml</a>) : <a href="../../../String.html" class="type">String</a></dt><dd>
+	  This method takes an XML object and returns the indented string equivalent.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

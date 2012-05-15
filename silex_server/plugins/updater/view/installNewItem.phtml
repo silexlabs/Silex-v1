@@ -1,0 +1,56 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItem", "item"=>serialize(urlencodeArray($this->currentItem))));?>" ><?php printf($this->localisedStrings["ARIANE_INSTALL_ITEM_LABEL"], $this->currentItem['title']);?></a>
+</div>
+
+
+<?php
+if(!empty($this->tempDirReport))
+{
+	?>
+	<br><span class="updater_error"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_TEMP_DIR_PERM_ERR"], TEMP_DIR_PATH ); ?></span><br>
+	<div class='updater_reportList'>
+		<?php
+		foreach($this->tempDirReport as $resultItem)
+			print $resultItem."<br>";
+		?>
+	</div>
+	<div class='updater_centeredContent updater_marginTop'>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"installNewItem", "item"=>serialize(urlencodeArray($this->currentItem))) ); ?>">
+			<?php print $this->localisedStrings["GENERAL_RETRY_LABEL"]; ?>
+		</button>
+	</div>
+	<?php
+}
+else
+{
+	if(isset($this->itemSilexElements))	// Download initialization
+	{
+		$fileCount = 0; $folderCount = 0;
+		
+		?>
+		<div class='updater_list'>
+			<div class='updater_listLine'>
+				<div class='updater_listPath'><img src='plugins/updater/img/path_01.png' alt='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["UPDT_SILEX_SRV_PATH_LIST_LABEL"]); ?>' /></div>
+				<div class='updater_listCheckbox'></div>
+				<div class='updater_clearBoth'></div>
+			</div>
+			<?php
+			foreach($this->itemSilexElements as $itemSilexElement)
+				$this->displayFolderToUpdate($folderCount, $fileCount, $itemSilexElement->rootFolder, null, array( "item_id" => $itemSilexElement->id ), false);
+			?>
+		</div>
+		<div class='updater_centeredContent updater_marginTop'>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"installItem", "item"=>serialize(urlencodeArray($this->currentItem)),
+				"file_list_size"=>$fileCount, "original_file_list_size"=>$fileCount, "folder_list_size"=>$folderCount), array(".update") ); ?>">
+				<?php print $this->localisedStrings["ITEM_INSTALL_START_INSTALLATION"]; ?>
+			</button>
+		</div>
+		<?php
+	}
+}
+?>
+
+<div class='updater_centeredContent updater_marginTop'>
+	<span class="updater_informative"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_RUN_INFO_MSG"]); ?></span>
+</div>

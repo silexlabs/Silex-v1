@@ -1,0 +1,2 @@
+C:\mtasc\mtasc.exe silexComponentsClasses.swf -swf ../../../../libraries/silexComponentsClasses.swf SilexComponentsClasses.as -cp ../ -cp ../../../../../framework/as2 -exclude silexComponentsClassesExcludes.txt
+PAUSE

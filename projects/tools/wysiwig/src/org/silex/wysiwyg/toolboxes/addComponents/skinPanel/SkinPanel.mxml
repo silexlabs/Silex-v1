@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="280" maxHeight="280" height="100%" paddingTop="10" 
+		 paddingLeft="20" paddingRight="20" paddingBottom="10" verticalAlign="middle" horizontalAlign="center"  creationComplete="onCreationComplete()" xmlns:ui="org.silex.wysiwyg.ui.*">
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.CommunicationEvent;
+			import org.silex.wysiwyg.event.ToolsEvent;
+			import org.silex.wysiwyg.io.ToolConfig;
+			
+			[Bindable]
+			public var skinUploadEnabled:Boolean;
+			
+			
+			private function onCreationComplete():void
+			{
+				this.addEventListener(FlexEvent.DATA_CHANGE, onDataChange);
+				skinUploadEnabled = true;
+			}
+			
+			/**
+			 * Refresh the displayed data when the skinned data changes
+			 */ 
+			private function onDataChange(event:FlexEvent):void
+			{
+				skinCombo.dataProvider = data.skins;
+				//skinDescription.text = (data.skins as Array)[0].description;
+				var skinUrl:String = ToolConfig.getInstance().rootUrl+(data.skins as Array)[skinCombo.selectedIndex].url;
+				skinPreview.load(skinUrl);
+			}
+			
+			/**
+			 * when the user clicks the plus button, dispatched an event that will prompt the toolbox
+			 * to allow the user to upload a skin
+			 */ 
+			private function onSkinButtonClick():void
+			{
+				dispatchEvent(new ToolsEvent(ToolsEvent.UPLOAD_SKIN, data, true));
+			}
+			
+			/**
+			 * refresh the text description when the user browses through skins
+			 */ 
+			private function onComboChange():void
+			{
+				//skinDescription.text = (data.skins as Array)[skinCombo.selectedIndex].description;
+				var skinUrl:String = ToolConfig.getInstance().rootUrl+(data.skins as Array)[skinCombo.selectedIndex].url;
+				skinPreview.load(skinUrl);
+			}
+			
+			/**
+			 * When the user choose a skin, dispatch an event that will add a new component in Silex
+			 */ 
+			private function onImportClick():void
+			{
+				dispatchEvent(new CommunicationEvent(CommunicationEvent.CHOOSE_MEDIA, ((data.skins) as Array)[skinCombo.selectedIndex], true));
+			}
+			
+			private function onPreviewLoaded(event:Event):void
+			{
+				
+			}
+			
+		]]>
+	</fx:Script>
+		<mx:SWFLoader source="{data.iconUrl}" init="onPreviewLoaded(event)" id="skinPreview" width="90" height="57" scaleContent="false" />
+		<!---<mx:Text id="skinDescription" selectable="false" styleName="addComponentLabel" width="100%" textAlign="center"  />-->
+		<mx:HRule width="100%" />
+		<mx:Spacer height="2" />
+		<mx:HBox width="100%">
+			<ui:WysiwygComboBox id="skinCombo" change="onComboChange()" labelField="label" width="100%"  />
+
+			<mx:HBox  horizontalAlign="center">
+				<mx:Button enabled="{skinUploadEnabled}" toolTip="{resourceManager.getString('WYSIWYG', 'ADD_COMPONENT_TOOLBOX_UPLOAD_SKIN_BUTTON_TOOLTIP')}" styleName="addButton" click="onSkinButtonClick()" width="15" height="15" />
+			</mx:HBox>
+			
+		</mx:HBox>
+
+		<ui:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'LIBRARY_TOOLBOX_IMPORT_COMPONENT_BUTTON_LABEL')}"
+						  click="onImportClick()"/>
+
+</mx:VBox>

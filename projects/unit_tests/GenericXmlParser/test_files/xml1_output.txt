@@ -1,0 +1,61 @@
+Generated xml:
+stdClass Object
+(
+    [user] => _hx_array Object
+        (
+            [»a] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [name] => john
+                                )
+
+                            [phone] => stdClass Object
+                                (
+                                    [number] => _hx_array Object
+                                        (
+                                            [»a] => Array
+                                                (
+                                                    [0] => 0000
+                                                    [1] => 111
+                                                )
+
+                                            [length] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [attributes] => stdClass Object
+                                (
+                                    [name] => raph
+                                )
+
+                            [phone] => stdClass Object
+                                (
+                                    [number] => _hx_array Object
+                                        (
+                                            [»a] => Array
+                                                (
+                                                    [0] => 0000
+                                                    [1] => 111
+                                                )
+
+                                            [length] => 2
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [length] => 2
+        )
+
+)

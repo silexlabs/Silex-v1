@@ -1,0 +1,110 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItems"));?>" ><?php print $this->localisedStrings["ARIANE_INSTALL_NEW_ITEMS_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category"=>serialize(urlencodeArray($this->currentCategory))));?>" ><?php print $this->currentCategory['nicename']; ?></a>
+</div>
+
+
+<?php
+if(!$this->browseCatSucceed)
+{
+	?>
+	<br><span class="updater_error"><?php print $this->localisedStrings["ITEM_INSTALL_CAT_BROWSE_LIST_ERR"];?></span><br>
+	<?php
+	
+} else {
+
+	if(!empty($this->categories))
+	{
+		?>
+		<span class="updater_title"><?php print $this->localisedStrings["ITEM_INSTALL_CAT_BROWSE_LIST_LABEL"];?></span><br>
+		<?php
+		foreach($this->categories as $category)
+		{
+			?>
+			<div class="updater_category_menu_item">
+				<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category" =>serialize(urlencodeArray($category))));?>">
+					<?php print $category["nicename"]; ?>
+				</button>
+			</div>
+			<?php
+		}
+		?>
+		<div class="updater_clearBoth"></div>
+		<?php
+	}
+}
+?>
+
+<?php
+if(!$this->browseItemsSucceed)
+{
+	?>
+	<br><span class="updater_error"><?php print $this->localisedStrings["ITEM_INSTALL_ITEMS_BROWSE_LIST_ERR"];?></span><br>
+	<?php
+	
+} else {
+	
+	if(!empty($this->items))
+	{
+		?>
+		<br><span class="updater_title"><?php print $this->localisedStrings["ITEM_INSTALL_ITEM_BROWSE_LIST_LABEL"];?></span><br>
+		<?php
+		foreach($this->items as $item)
+		{
+			?>
+			<div style="float:left;	text-align:center; margin-left:55px; margin-bottom:90px; width:auto; height:auto;" class="updater_element_menu_item">
+				<button style="width:310px; height:310px; padding:5px; background-color:#FFFFFF; border:1px solid #000000; border-radius: 1em; -moz-border-radius: 1em;	-webkit-border-radius: 1em;" class="updater_element_menu_item_button" onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseItem", "category" =>serialize(urlencodeArray($this->currentCategory)), "item_id"=>$item["id"]));?>">
+					<img style="max-width:300px; max-height:300px;" src="<?php print($item["thumb"]); ?>" alt=""/>
+				</button>
+				<span style="font-size:0.8em; color:grey; font-style:italic; font-family:'arial'; display: block;" class="updater_element_menu_item_span"><?php print $item["title"]; ?></span>
+			</div>
+			<?php
+		}
+		?>
+		<div class="updater_clearBoth"></div>
+		<?php
+		// items navigation
+		if( $this->nbItems > $this->postsPerPage )
+		{
+			?>
+			<div width="100%">
+				<hr />
+				<?php
+				if($this->itemsPage > 0)
+				{
+					?>
+					<div style="float:left;">
+						<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category"=>serialize(urlencodeArray($this->currentCategory)), "items_page"=>($this->itemsPage-1))); ?>">
+							<?php print $this->localisedStrings["GENERAL_PREVIOUS_LABEL"]; ?>
+						</button>
+					</div>
+					<?php
+				}
+				if( ($this->itemsPage + 1 ) < ($this->nbItems / $this->postsPerPage ) )
+				{
+					?>
+					<div style="float:right; margin-right:30px;">
+						<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category"=>serialize(urlencodeArray($this->currentCategory)), "items_page"=>($this->itemsPage+1))); ?>">
+							<?php print $this->localisedStrings["GENERAL_NEXT_LABEL"]; ?>
+						</button>
+					</div>
+					<?php
+				}
+				?>
+				<br /><br />
+			</div>
+			<?php
+		}
+	}
+}
+?>
+
+<?php
+if(empty($this->categories) && empty($this->items))
+{
+	?>
+	<span class="updater_text"><?php print $this->localisedStrings["ITEM_INSTALL_EMPTY_BROWSE_LIST_LABEL"];?></span>
+	<?php
+}
+?>

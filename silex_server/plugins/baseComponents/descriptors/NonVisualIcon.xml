@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>NonVisualIcon</componentName>
+	<className>org.silex.NonVisualIcon</className>
+	<html5Url>html5#org.silex.ui.UiBase</html5Url>
+	<parentDescriptorClassName>org.silex.Base</parentDescriptorClassName>
+	<properties>
+		<iconPageName>
+			<type>String</type>
+			<description>PROPERTIES_LABEL_ICON_NAME_OF_TARGETED_PAGE</description>
+			<defaultValue>new page name</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>navigation</group>
+		</iconPageName>		
+		<iconDeeplinkName>
+			<type>String</type>
+			<description>PROPERTIES_LABEL_ICON_DEEPLINK_OF_TARGETED_PAGE</description>
+			<isRegistered>true</isRegistered>
+			<group>navigation</group>
+		</iconDeeplinkName>		
+		<iconLayoutName>
+			<type>String</type>
+			<description>PROPERTIES_LABEL_ICON_NAME_OF_LAYOUT</description>
+			<defaultValue>minimal.swf</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>navigation</group>
+		</iconLayoutName>		
+		<iconIsIcon>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_ICON_IS_ICON</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>navigation</group>
+		</iconIsIcon>		
+		<iconIsDefault>
+			<type>Boolean</type>
+			<description>PROPERTIES_LABEL_ICON_IS_DEFAULT_ICON</description>
+			<defaultValue>false</defaultValue>
+			<isRegistered>true</isRegistered>
+			<group>navigation</group>
+		</iconIsDefault>		
+	</properties>
+</componentDescriptor>

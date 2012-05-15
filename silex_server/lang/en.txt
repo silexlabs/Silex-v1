@@ -1,0 +1,80 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://spreadsheets.google.com/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE&hl=en&authkey=CL7S-_EG
+
+; Dates
+; months
+DATE_JANUARY=January&
+DATE_FEBRUARY=February&
+DATE_MARCH=March&
+DATE_APRIL=April&
+DATE_MAY=May&
+DATE_JUNE=June&
+DATE_JULY=July&
+DATE_AUGUST=August&
+DATE_SEPTEMBER=September&
+DATE_OCTOBER=October&
+DATE_NOVEMBER=November&
+DATE_DECEMBER=December&
+; days
+DATE_SUNDAY=Sunday&
+DATE_MONDAY=Monday&
+DATE_TUESDAY=Tuesday&
+DATE_WEDNESDAY=Wednesday&
+DATE_THURSDAY=Thursday&
+DATE_FRIDAY=Friday&
+DATE_SATURDAY=Saturday&
+
+; context menu
+CONTEXT_MENU_ABOUT_CAPTION=About SILEX ((<<silex.config.version>>))&
+CONTEXT_MENU_ABOUT_COMMAND=http://projects.silexlabs.org/?/silex&
+CONTEXT_MENU_REFRESH_COMMAND=refresh (F5)&
+CONTEXT_MENU_REFRESH_NO_CACHE_COMMAND=refresh(no cache) (CTRL+F5)&
+CONTEXT_MENU_LOGIN_CAPTION=login / SILEX editor (CTRL + L)&
+CONTEXT_MENU_LOGOUT_CAPTION=logout (CTRL + L)&
+CONTEXT_MENU_FLUSH_LOGINS_CAPTION=flush logins&
+
+; authentication
+MESSAGE_AUTH_FAILD=Wrong login or password.&
+MESSAGE_AUTH_SUCCESS=Welcome to you(( <<silex.authentication.currentLogin>>))&
+MESSAGE_PLEASE_WAIT_WHILE_CHECKING_LOGIN_PASS=Please wait...&
+PROMPT_LOGIN_PASS=please enter your login and password&
+
+; com
+ERROR_WEBSERVICE_ERROR=Server error : ((<<fault.fault.faultstring>>))&
+
+; Gabarit
+MESSAGE_SECTION_DOES_NOT_EXIST=<i>((<<sectionName>>))</i> does not exist yet. <b>RIGHT CLICK THEN "LOGIN" TO ENTRER ADMIN.</b>&
+
+; application
+MESSAGE_WEBSITE_DOES_NOT_EXIST=The website '<i>((<<id_site>>))</i>' does not exist. If you want to create it, please login and use the website tool.&
+ERROR_LOADING_LAYOUT=Error: layout file not found '((<<layoutFileName>>))': ((<<error>>))&
+
+; HELP LINKS
+HELP_URL_DOCUMENTATION_ROOT=http://community.silexlabs.org/silex/help/&
+HELP_URL_WYSIWYG_LIBRARY=editing/library.toolbox.and.ftp.client&
+HELP_URL_WYSIWYG_PLAYERS=editing/media.toolbox&
+HELP_URL_WYSIWYG_LAYERS=editing/layer-page.toolbox&
+HELP_URL_WYSIWYG_PROPERTIES=editing/properties.toolbox&
+HELP_URL_WYSIWYG_WEBSITE=editing/website.toolbox&
+HELP_URL_WYSIWYG_ACTIONS=editing/actions.toolbox&
+HELP_URL_WYSIWYG_KEYBOARD_SHORTCUTS=editing/keyboard.shortcuts&
+HELP_URL_WYSIWYG_VIEW_MENU=editing/view.menu&
+HELP_URL_WYSIWYG_SELECTION=editing/editing.home&
+
+
+; Gabarit
+WARNING_MULTIPLE_DEFAULT_ICON=there are several default icons on the page ((<<layout.sectionName>>)): ((<<layout.defaultIcon.playerName>>)) and ((<<player.playerName>>))&
+
+; application 
+MESSAGE_SCREEN_SAVER_LOGGED_IN=if you were not logged in, screen saver would activate&
+ERROR_PAGE_SAVE_ERROR=An error occured while saving, data is not saved: ((<<error>>))&
+
+; com
+MESSAGE_SAVE_PAGE_DONE=<i>((<<sectionName>>))</i> successfully saved.&
+MESSAGE_REGENERATE_INDEX_DONE=Index successfully regenerated for <i>((<<id_site>>))</i> - <b>((<<indexedPages>>)) pages indexed</b>&
+
+; UIBase
+QUIT_DIRTY_PAGE_WARNING=You are about to leave an unsaved page, do you want to continue? ((page name: <<sectionName>>))&
+
+; tools manager
+MESSAGE_ADMIN_WELCOME_SUCCESS=Welcome, <b>((<<authentication.currentLogin>>))</b>.<br><u>Tip</u>: place your mouse at the top of the screen to see the menu.&
+WARNING_OLD_VERSION_OF_SILEX=<br><u>Info</u>: a new version of SILEX is available, you can upgrade your server from the manager&

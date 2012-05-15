@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="30" xmlns:ns="org.silex.wysiwyg.ui.*"
+		 creationComplete="onCreationComplete()"
+		 styleName="ArrayEditor">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.controls.TextInput;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.managers.DragManager;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+	
+			public var newValue:Object;
+			
+			
+			private function onCreationComplete():void
+			{
+				newValue = {value:data.value, selected:data.selected, index:data.index};
+				dataText.text = data.value;
+				selectBox.selected = data.selected;
+				this.addEventListener(FlexEvent.DATA_CHANGE, onDataChange);
+				checkSelectedInput();
+			}
+			
+
+			
+			private function onDataChange(event:FlexEvent):void
+			{ 
+				dataText.text = data.value;
+				selectBox.selected = data.selected;
+				newValue = {value:dataText.text, selected:selectBox.selected, index:data.index};
+				checkSelectedInput();
+				
+				
+			}
+			
+			private function checkSelectedInput():void
+			{
+				if (data.selectedTextInput != null && data.selectedTextInput == data.index)
+				{
+					dataText.setSelection(data.selectedCharIndex, data.selectedCharIndex);
+					
+					dataText.setFocus();
+				}
+			}
+			
+			private function onTextEdit(event:Event):void
+			{
+				newValue.value = dataText.text;
+				newValue.selected = selectBox.selected;
+				newValue.index = data.index;
+				newValue.selectedTextInput = data.index;
+				newValue.selectedCharIndex = dataText.selectionActivePosition;
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue, true));
+				
+			}
+		
+			
+			private function activateDrag(event:MouseEvent):void
+			{
+				if (owner)
+				{
+					if (event.type == MouseEvent.MOUSE_OVER)
+					{	
+						(owner as WysiwygList).dragEnabled = true;
+					}
+						
+					else
+					{
+						(owner as WysiwygList).dragEnabled = false;
+					}
+				}
+			}
+			
+			private function onCheckboxChange(event:Event):void
+			{
+				newValue.selected= selectBox.selected;
+				newValue.value = dataText.text;
+				newValue.index = data.index;
+				dispatchEvent(new PluginEvent(PluginEvent.DATA_CHANGED, newValue, true));
+			}
+			
+			
+		]]> 
+	</fx:Script>
+		<ns:WysiwygCheckBox id="selectBox"  change="onCheckboxChange(event)" />
+		<ns:WysiwygButton styleName="dragItem" toolTip="{resourceManager.getString('WYSIWYG', 'PROPERTIES_EDITOR_TOOLBOX_DRAG_ITEM_BUTTON_LABEL')}" 
+						  mouseOver="activateDrag(event)" mouseOut="activateDrag(event)" />
+		<ns:WysiwygTextInput  editable="true" id="dataText"  width="100%" change="onTextEdit(event)"   />
+
+		
+</mx:HBox>

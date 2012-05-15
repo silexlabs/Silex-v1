@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>coming.soon</title>
+		<pubDate>Mon Oct 24 14:55:07 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>demosticker</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="123.9" height="124.1" ><param name="movie" value="../../../media/coming.soon/design/demo-sticker.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#323232" /><embed src = "../../../media/coming.soon/design/demo-sticker.swf" quality = "best" bgcolor = "#323232" width = "123.9" height = "124.1" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>typo_thissitewillonlineagainsoon</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="784.15" height="72" ><param name="movie" value="../../../media/coming.soon/design/typo_this-site-will-online-again-soon.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#323232" /><embed src = "../../../media/coming.soon/design/typo_this-site-will-online-again-soon.swf" quality = "best" bgcolor = "#323232" width = "784.15" height = "72" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>typo_workinprogress</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="178.8" height="32" ><param name="movie" value="../../../media/coming.soon/design/typo_work-in-progress.swf" /><param name="quality" value="best" /><param name="bgcolor" value="#323232" /><embed src = "../../../media/coming.soon/design/typo_work-in-progress.swf" quality = "best" bgcolor = "#323232" width = "178.8" height = "32" type = "application/x-shockwave-flash" pluginspage = "http://www.macromedia.com/go/getflashplayer" /></object>]]></htmlEquivalent>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>default_icon</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="default_icon" src="../../../media/logosilex.jpg">]]></htmlEquivalent>
+				<iconPageName>home</iconPageName>
+				<context>*</context>
+				<links>
+					<link>
+						<title>home</title>
+						<link>home</link>
+						<deeplink>home</deeplink>
+					</link>
+				</links>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>start</title>
+		<pubDate>Fri Mar 9 19:03:26 GMT+0100 2012</pubDate>
+		<components>
+			<component>
+				<playerName>Text_your_idea</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="13" COLOR="#FF3300" LETTERSPACING="0" KERNING="0"><U>[[onRelease mailto:isabelle [at] silexlabs.org Your idea]]</U></FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>[[onRelease mailto:isabelle [at] silexlabs.org Your idea]] </text>
+			</component>
+			<component>
+				<playerName>youridea_stroke</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="youridea_stroke" src="../../media/silex-business-card/your-idea.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>linkedin</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="linkedin" src="../../media/silex-business-card/linkedin.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>edit_btn</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="edit_btn" src="../../media/silex-business-card/edit.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>pdf_icon</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="pdf_icon" src="../../media/silex-business-card/pdf_icon.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>flash_btn</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="flash_btn" src="../../media/visicard/flash.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>html5_btn</playerName>
+				<className>org.silex.ui.players.Image</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<img name="html5_btn" src="../../media/visicard/html-5.png">]]></htmlEquivalent>
+			</component>
+			<component>
+				<playerName>homepage_button</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="arial" SIZE="13" COLOR="#FF3300" LETTERSPACING="0" KERNING="0">Homepage</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<iconPageName>home</iconPageName>
+				<text>Homepage </text>
+				<links>
+					<link>
+						<title>home</title>
+						<link>home</link>
+						<deeplink>home</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Text_title</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="arial" SIZE="35" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="0">My Silex business card</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>My Silex business card </text>
+			</component>
+			<component>
+				<playerName>homepage_stroke_background</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+			</component>
+			<component>
+				<playerName>Text_switch</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="_sans" SIZE="15" COLOR="#FF6600" LETTERSPACING="0" KERNING="0">Switch between business card versions</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<text>Switch between business card versions </text>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

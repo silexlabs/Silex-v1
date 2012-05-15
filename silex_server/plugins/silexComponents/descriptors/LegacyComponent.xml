@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>legacyComponent</componentName>
+	<as2Url>as2/legacyComponent.swf</as2Url>
+	<className>org.silex.ui.LegacyComponent</className>
+	<parentDescriptorClassName>org.silex.ui.UiBase</parentDescriptorClassName>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/silexComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>AddLegacyComponent</name>
+			<uid>silex.AddComponent.ToolItem.AddLegacyComponent</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Legacy</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_LEGACY_COMPONENT</label>
+			<description>DESCRIPTION_ADD_BUTTON_LEGACY_COMPONENT</description>
+			<level>2</level>
+			<action>addLegacyComponent</action>
+			<iconUrl>icons/button.swf</iconUrl>
+		</addComponentParams>
+	</metaData>
+	<properties>	
+	
+	</properties>
+</componentDescriptor>

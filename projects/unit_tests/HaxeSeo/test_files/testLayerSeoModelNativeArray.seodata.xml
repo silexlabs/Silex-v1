@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="start/deeplink">
+		<title>titletest1</title>
+		<description>description1</description>
+		<pubDate>pubDate1</pubDate>
+		<components>
+			<component>
+				<playerName>Selector</playerName>
+				<className>org...S</className>
+				<iconIsIcon>true</iconIsIcon>
+				<urlBase>media/toto.xml</urlBase>
+				<xmlRootNodePath><![CDATA[<<rootNode>>]]></xmlRootNodePath>
+				<links>
+					<link>
+						<title>t1</title>
+						<link>link1</link>
+						<deeplink>deep1</deeplink>
+						<description>desc1</description>
+					</link>
+					<link>
+						<title>t2</title>
+						<link>link2</link>
+						<deeplink>deep2</deeplink>
+						<description>desc2</description>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>Connector</playerName>
+				<className>org...C</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent>equiv</htmlEquivalent>
+				<links>
+					<link>
+						<title>t3</title>
+						<link>link3</link>
+						<deeplink>deep3</deeplink>
+						<description>desc3</description>
+					</link>
+				</links>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

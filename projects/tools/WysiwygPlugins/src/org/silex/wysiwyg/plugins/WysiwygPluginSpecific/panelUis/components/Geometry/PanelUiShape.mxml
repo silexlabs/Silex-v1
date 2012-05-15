@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%"
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*"
+					  xmlns:Geometry="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.Geometry.*" >
+
+	<fx:Script>
+		<![CDATA[
+			/**
+			 * function to take the radiobutton selected value
+			 */
+			public function shapeMode(targetMode:String, propertyMode:String):Boolean
+			{
+				if(targetMode == propertyMode){
+					return true;
+				}else{
+					return false;
+				}}
+		]]>
+	</fx:Script>
+			
+	<mx:Label text="Shape" styleName="PropertiesGroupTitle"/>
+	
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" >
+				<ns1:WysiwygRadioButton id="rectangularRadioBtn" selected="{shapeMode('Rectangle',propertyArray.shape.currentValue)}" label="Rectangular" change="updatePropertyValue('Rectangle', 'shape')"/>				
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+			
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" >
+					<ns1:WysiwygRadioButton id="ellipseRadioBtn" selected="{shapeMode('Ellipse',propertyArray.shape.currentValue)}" label="Ellipse" change="updatePropertyValue('Ellipse', 'shape')" />				
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+			
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" >
+				<ns1:WysiwygRadioButton id="starRadioBtn" selected="{shapeMode('Star',propertyArray.shape.currentValue)}" label="Star" change="updatePropertyValue('Star', 'shape')" />				
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+			
+		<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Form>
+			<mx:FormItem width="100%" height="100%" >
+				<ns1:WysiwygRadioButton id="polygoneRadioBtn" selected="{shapeMode('Polygone',propertyArray.shape.currentValue)}" label="Polygone" change="updatePropertyValue('Polygone', 'shape')" />				
+			</mx:FormItem>
+		</mx:Form>
+		</mx:HBox>
+			
+	</mx:HBox>
+	
+
+	<mx:HRule width="100%" />
+	
+	<Geometry:PanelUiVisual propertyArray="{propertyArray}" />
+	
+	<mx:HRule width="100%" />
+		
+	<Geometry:PanelUiBorder propertyArray="{propertyArray}" />
+		
+	<mx:HRule width="100%" />	
+		
+	<Geometry:PanelUiBackground propertyArray="{propertyArray}" />
+	
+	<mx:HRule width="100%" />
+	
+	<Geometry:PanelUiRadius id="RadiusRectangular" enabled="{rectangularRadioBtn.selected}" propertyArray="{propertyArray}" />
+		
+	<mx:HRule width="100%" />
+	
+	<Geometry:PanelUiStar id="StarShape" enabled="{starRadioBtn.selected}" propertyArray="{propertyArray}" />
+	
+	<mx:HRule width="100%" />
+	
+	<Geometry:PanelUiPolygone id="PolygoneShape" enabled="{polygoneRadioBtn.selected}" propertyArray="{propertyArray}" />
+	
+	<mx:HRule width="100%" />
+	
+</panelUis:PanelUiBase>

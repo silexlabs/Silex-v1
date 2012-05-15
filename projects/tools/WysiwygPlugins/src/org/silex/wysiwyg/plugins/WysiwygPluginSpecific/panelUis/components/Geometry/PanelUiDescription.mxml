@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  width="100%"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	
+	<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_DESCRIPTION')}" styleName="PropertiesGroupTitle" />
+
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+				
+			<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>	
+				<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.playerName.description}" >
+					<ns1:WysiwygTextInput text="{propertyArray.playerName.currentValue}" restrict="[a-zA-Z0-9]_éàèâî"
+											  change="{updatePropertyValue(event.currentTarget.text, 'playerName')}"/>
+				</mx:FormItem>
+			</mx:Form>
+			</mx:HBox>
+				
+			<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.visibleOutOfAdmin.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.visibleOutOfAdmin.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'visibleOutOfAdmin')"/>
+				</mx:FormItem>
+			</mx:Form>
+			</mx:HBox>
+		
+			<mx:HBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Form>	
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.useHandCursor.description}" >
+					<ns1:WysiwygCheckBox  selected="{propertyArray.useHandCursor.currentValue}"
+										  change="updatePropertyValue(event.currentTarget.selected, 'useHandCursor')"/>
+				</mx:FormItem>
+			</mx:Form>
+			</mx:HBox>
+		
+	</mx:HBox>
+	
+		<mx:HRule width="100%" />
+	
+</panelUis:PanelUiBase>

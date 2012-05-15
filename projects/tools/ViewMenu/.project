@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ViewMenu</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.flexnature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] WysiwygPlugins-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/projects/tools/WysiwygPlugins/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] as3</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/framework/as3</locationURI>
+		</link>
+		<link>
+			<name>[source path] toolboxes_design-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/projects/tools/toolboxes_design/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] wysiwig-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/projects/tools/wysiwig/src</locationURI>
+		</link>
+		<link>
+			<name>bin-debug</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/silex_server/plugins/viewMenu</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

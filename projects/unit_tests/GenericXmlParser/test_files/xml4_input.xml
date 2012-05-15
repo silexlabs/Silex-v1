@@ -1,0 +1,68 @@
+<!DOCTYPE root PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<root>
+  <entry id="25">
+			<title handle="page01">page01</title>
+			<group>
+				<item handle="structure">structure</item>
+			</group>
+			<page-name handle="page01">page01</page-name>
+
+			<page-number handle="1">1</page-number>
+			<order>1</order>
+		</entry>
+  <entry id="70">
+			<title handle="page02">page02</title>
+			<group>
+				<item handle="structure">structure</item>
+
+			</group>
+			<page-name handle="page02">page02</page-name>
+			<page-number handle="2-3">2-3</page-number>
+			<order>2</order>
+		</entry>
+  <entry id="71">
+			<title handle="page04">page04</title>
+
+			<group>
+				<item handle="structure">structure</item>
+			</group>
+			<page-name handle="page04">page04</page-name>
+			<page-number handle="4-5">4-5</page-number>
+			<content>
+				<item id="30" handle="" section-handle="" section-name=""></item>
+
+			</content>
+			<order>3</order>
+		</entry>
+  <entry id="72">
+			<title handle="page06">page06</title>
+			<group>
+				<item handle="structure">structure</item>
+
+			</group>
+			<page-name handle="page06">page06</page-name>
+			<page-number handle="6-7">6-7</page-number>
+			<order>4</order>
+		</entry>
+  <entry id="73">
+			<title handle="page08">page08</title>
+
+			<group>
+				<item handle="structure">structure</item>
+			</group>
+			<page-name handle="page08">page08</page-name>
+			<page-number handle="8-9">8-9</page-number>
+			<order>5</order>
+		</entry>
+
+  <entry id="74">
+			<title handle="page10">page10</title>
+			<group>
+				<item handle="structure">structure</item>
+			</group>
+			<page-name handle="page10">page10</page-name>
+			<page-number handle="10">10</page-number>
+
+			<order>6</order>
+		</entry>
+</root>

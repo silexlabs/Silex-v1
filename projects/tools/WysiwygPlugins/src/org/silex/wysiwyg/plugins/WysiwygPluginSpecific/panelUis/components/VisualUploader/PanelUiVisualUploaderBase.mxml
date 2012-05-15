@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	<mx:Form width="100%">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" textAlign="left"/>
+		</mx:FormItem>
+	</mx:Form>	
+	<mx:Form width="100%" height="100%" paddingLeft="30">
+		<mx:FormItem width="100%" height="100%" label="{propertyArray.scrambleFileName.description}">
+			<ns1:WysiwygCheckBox selected="{propertyArray.scrambleFileName.currentValue}"
+								 change="updatePropertyValue(event.currentTarget.selected, 'scrambleFileName')"  />
+		</mx:FormItem>	
+		<mx:FormItem width="100%" height="100%" direction="horizontal" label="{propertyArray.typeList.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.typeList.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'typeList')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.typeList)}" />				
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.serverUrl.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.serverUrl.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'serverUrl')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.subDirectory)}" />	
+		</mx:FormItem>		
+		<mx:FormItem width="100%" height="100%" direction="horizontal" label="{propertyArray.subDirectory.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.subDirectory.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'subDirectory')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.subDirectory)}" />				
+		</mx:FormItem>	
+	</mx:Form>
+
+</panelUis:PanelUiBase>

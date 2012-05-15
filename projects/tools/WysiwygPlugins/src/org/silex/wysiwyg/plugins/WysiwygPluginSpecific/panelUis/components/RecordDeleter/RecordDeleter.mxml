@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+					  xmlns:ns1="org.silex.wysiwyg.ui.*"
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	
+	<fx:Script>
+		<![CDATA[
+			import org.silex.adminApi.SilexAdminApi;
+		]]>
+	</fx:Script>	
+	<mx:Form width="100%">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" textAlign="left"/>
+		</mx:FormItem>
+	</mx:Form>	
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.formName.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.formName.currentValue}" width="100%" styleName="small"
+								 change="updatePropertyValue(event.currentTarget.text, 'formName')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.formName)}" />					
+		</mx:FormItem>
+		<mx:FormItem direction="horizontal" width="100%" height="100%" label="{propertyArray.idRecordString.description}">
+			<ns1:WysiwygTextArea text="{propertyArray.idRecordString.currentValue}" width="100%" styleName="small"
+									 change="updatePropertyValue(event.currentTarget.text, 'idRecordString')"  />
+			<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.idRecordString)}" />				
+		</mx:FormItem>		
+		<mx:HBox width="100%" height="100%">
+			<mx:FormItem label="{propertyArray.connectorPath.description}" width="100%" height="100%">
+				<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+									 propertyArray.connectorPath.baseClass)}"
+									 styleName="large"
+									 editable="true"
+									 selectedItem="{propertyArray.connectorPath.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'connectorPath')"  />
+			</mx:FormItem>
+			<mx:FormItem label="{propertyArray.resultContainerPath.description}" width="100%" height="100%">
+				<ns1:WysiwygComboBox dataProvider="{org.silex.adminApi.SilexAdminApi.getInstance().helper.getAllComponents(
+									 propertyArray.resultContainerPath.baseClass)}"
+									 styleName="large"
+									 editable="true"
+									 selectedItem="{propertyArray.resultContainerPath.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selectedItem, 'resultContainerPath')"  />
+			</mx:FormItem>				
+		</mx:HBox>
+	</mx:Form>
+	
+	<mx:HRule width="100%" />
+</panelUis:PanelUiBase>

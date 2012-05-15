@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  horizontalAlign="center" xmlns:ui="ui.*"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" 
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" >
+	<fx:Script>
+		<![CDATA[
+			public function generateArray(fusionString:String):Array
+			{
+				var fusoinArray:Array = fusionString.split(",");
+				return fusoinArray;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" paddingLeft="50">
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="product name" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%" height="100%">
+				
+				<mx:HBox width="50%" height="100%">
+					
+					<mx:FormItem width="100%" height="100%" label="show" >
+						<ns1:WysiwygCheckBox  selected="{propertyArray.showProductNameInitialState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selected, 'showProductNameInitialState')"/>
+					</mx:FormItem>	
+					
+					<mx:FormItem width="100%" height="100%" label="label" >
+						<ns1:WysiwygButton label="edit" click="{selectProperty(propertyArray.productName)}"/>	
+					</mx:FormItem>	
+				</mx:HBox>
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="horizontal alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.hAlignProductNameInitialState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.hAlignProductNameInitialState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'hAlignProductNameInitialState')"  />					
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="vertical alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.vAlignProductNameInitialState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.vAlignProductNameInitialState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'vAlignProductNameInitialState')"  />	
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXProductNameInitialStateStepper" styleName="dimension" width="100%"
+												   value="{propertyArray.offsetXProductNameInitialState.currentValue}"
+												   maximum="{propertyArray.offsetXProductNameInitialState.maxValue}"
+												   minimum="{propertyArray.offsetXProductNameInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXProductNameInitialState')"/>					
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y">
+						<ns1:WysiwygNumericStepper id="offsetYBackgroundInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetYBackgroundInitialState.currentValue}"
+												   maximum="{propertyArray.offsetYBackgroundInitialState.maxValue}"
+												   minimum="{propertyArray.offsetYBackgroundInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYBackgroundInitialState')"/>				
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>
+		</mx:HBox>
+		
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="background" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%" height="100%">
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXBackgroundInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetXBackgroundInitialState.currentValue}" width="100%"
+												   maximum="{propertyArray.offsetXBackgroundInitialState.maxValue}"
+												   minimum="{propertyArray.offsetXBackgroundInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXBackgroundInitialState')"/>
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y" >
+						<ns1:WysiwygNumericStepper id="offsetYProductNameInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetYProductNameInitialState.currentValue}"
+												   maximum="{propertyArray.offsetYProductNameInitialState.maxValue}"
+												   minimum="{propertyArray.offsetYProductNameInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYProductNameInitialState')"/>	
+					</mx:FormItem>	
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="50%" height="100%" label="margin width">
+						<ns1:WysiwygNumericStepper id="marginWidthBackg1roundInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.marginWidthBackgroundInitialState.currentValue}" width="100%"
+												   maximum="{propertyArray.marginWidthBackgroundInitialState.maxValue}"
+												   minimum="{propertyArray.marginWidthBackgroundInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'marginWidthBackgroundInitialState')"/>
+					</mx:FormItem>
+					<mx:FormItem width="50%" height="100%" label="margin height">
+						<ns1:WysiwygNumericStepper id="marginHeigthBackgroundInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.marginHeightBackgroundInitialState.currentValue}"
+												   maximum="{propertyArray.marginHeightBackgroundInitialState.maxValue}"
+												   minimum="{propertyArray.marginHeightBackgroundInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'marginHeightBackgroundInitialState')"/>
+					</mx:FormItem>
+				</mx:HBox>			
+			</mx:Form>			
+		</mx:HBox>
+	
+		<mx:HRule width="95%" />
+		<mx:HBox width="100%" height="100%">
+			<mx:Label text="cart button" width="150"/>
+			<mx:Spacer width="10"/>
+			<mx:Form width="100%">
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="show">
+						<ns1:WysiwygCheckBox  selected="{propertyArray.showProductNameInitialState.currentValue}"
+											  change="updatePropertyValue(event.currentTarget.selected, 'showProductNameInitialState')"/>
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="100%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="horizontal alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.hAlignCartButtonInitialState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.hAlignCartButtonInitialState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'hAlignCartButtonInitialState')"  />						
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="vertical alignment">
+						<ns1:WysiwygComboBox dataProvider="{generateArray(propertyArray.vAlignCartButtonInitialState.values)}"
+											 styleName="large"
+											 editable="true" 
+											 selectedItem="{propertyArray.vAlignCartButtonInitialState.currentValue}"
+											 change="updatePropertyValue(event.currentTarget.selectedItem, 'vAlignCartButtonInitialState')"  />						
+					</mx:FormItem>
+				</mx:HBox>
+				<mx:HBox width="50%" height="100%">
+					<mx:FormItem width="100%" height="100%" label="offset x">
+						<ns1:WysiwygNumericStepper id="offsetXCartButtonInitialStateStepper" styleName="dimension"
+												   value="{propertyArray.offsetXCartButtonInitialState.currentValue}"
+												   maximum="{propertyArray.offsetXCartButtonInitialState.maxValue}"
+												   minimum="{propertyArray.offsetXCartButtonInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetXCartButtonInitialState')"/>				
+					</mx:FormItem>
+					<mx:FormItem width="100%" height="100%" label="offset y">
+						<ns1:WysiwygNumericStepper id="offsetYCartButtonInitialStatestepper" styleName="dimension"
+												   value="{propertyArray.offsetYCartButtonInitialState.currentValue}"
+												   maximum="{propertyArray.offsetYCartButtonInitialState.maxValue}"
+												   minimum="{propertyArray.offsetYCartButtonInitialState.minValue}"
+												   change="updatePropertyValue(event.currentTarget.value, 'offsetYCartButtonInitialState')"/>				
+					</mx:FormItem>
+				</mx:HBox>
+			</mx:Form>				
+		</mx:HBox>	
+	</mx:VBox>
+	
+</panelUis:PanelUiBase>

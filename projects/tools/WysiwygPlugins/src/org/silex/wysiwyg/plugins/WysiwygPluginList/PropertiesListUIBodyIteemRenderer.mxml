@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" dataChange="onDataChange()"
+		 verticalScrollPolicy="off" horizontalScrollPolicy="off" height="100%"
+		 >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import flash.net.navigateToURL;
+			
+			import flashx.textLayout.container.ScrollPolicy;
+			
+			import mx.controls.Button;
+			import mx.controls.CheckBox;
+			import mx.controls.ColorPicker;
+			import mx.controls.ComboBox;
+			import mx.controls.Label;
+			import mx.controls.NumericStepper;
+			import mx.controls.RadioButton;
+			import mx.controls.TextArea;
+			import mx.controls.TextInput;
+			import mx.core.FlexGlobals;
+			import mx.core.UIComponent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.adminApi.listedObjects.Component;
+			import org.silex.adminApi.listedObjects.Layer;
+			import org.silex.adminApi.listedObjects.Layout;
+			import org.silex.adminApi.listedObjects.Property;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.PanelUiBase;
+			import org.silex.wysiwyg.toolboxApi.ToolBoxAPIController;
+			import org.silex.wysiwyg.ui.WysiwygButton;
+			import org.silex.wysiwyg.ui.WysiwygCheckBox;
+			import org.silex.wysiwyg.ui.WysiwygComboBox;
+			import org.silex.wysiwyg.ui.WysiwygNumericStepper;
+			import org.silex.wysiwyg.ui.WysiwygTextArea;
+			import org.silex.wysiwyg.ui.WysiwygTextInput;
+			
+			private var _specificInput:UIComponent;
+			
+			private function onDataChange():void
+			{
+				if (inputContainer)
+					{
+						inputContainer.removeAllChildren();
+					}
+				if (buttonContainer)
+				{
+					buttonContainer.removeAllChildren();
+				}
+				if (data)
+				{
+					
+						switch ((data as Property).type)
+						{
+						case "boolean" : 
+						case "Boolean" :
+							
+							
+							
+							_specificInput = new WysiwygCheckBox();
+							(_specificInput as CheckBox).selected = (data as Property).currentValue;
+							
+						break;
+						
+						case "number" :
+						case "Float" :
+							if ((data as Property).subType != null)
+							{
+								_specificInput = checkSubType();
+							}
+							else
+							{
+								_specificInput = new WysiwygNumericStepper();
+								_specificInput.styleName = "position";
+								(_specificInput as NumericStepper).value = (data as Property).currentValue;
+								(_specificInput as NumericStepper).maximum = (data as Property).maxValue;
+								(_specificInput as NumericStepper).minimum = (data as Property).minValue;
+								(_specificInput as NumericStepper).stepSize = (data as Property).stepSize;
+								
+							}
+							
+							
+							
+						break;
+						
+						case "Integer":
+							
+							if ((data as Property).subType != null)
+							{
+								_specificInput = checkSubType();
+							}
+							else
+							{
+								_specificInput = new WysiwygNumericStepper();
+								_specificInput.styleName = "position";
+								(_specificInput as NumericStepper).value = (data as Property).currentValue;
+								(_specificInput as NumericStepper).maximum = (data as Property).maxValue;
+								(_specificInput as NumericStepper).minimum = (data as Property).minValue;
+								(_specificInput as NumericStepper).stepSize = 1;
+								(_specificInput as NumericStepper).stepSize = (data as Property).stepSize;
+							}
+							
+							
+						break;	
+
+						
+						case "string" :
+						case "String" :
+							
+							if ((data as Property).subType != null)
+							{
+								_specificInput = checkSubType();
+							}
+							
+							else
+							{
+								_specificInput = new WysiwygTextInput();
+								_specificInput.percentWidth = 100;
+								(_specificInput as TextInput).text = (data as Property).currentValue;	
+								
+								if ((data as Property).name == "playerName")
+								{
+									(_specificInput as TextInput).restrict = "[a-zA-Z0-9]_éàèâî"; 
+								}
+							}
+							
+						break;	
+						
+					
+						
+			
+						
+						case "array" : 
+						case "Array" :
+							
+							
+							_specificInput = new WysiwygTextInput();
+							_specificInput.percentWidth = 100;
+							(_specificInput as TextInput).text = (data as Property).currentValue;
+							(_specificInput as TextInput).enabled = false;
+						break;	
+						
+						
+					
+						
+						
+						default : 
+							if (_specificInput)
+							{
+								_specificInput.removeEventListener(Event.CHANGE, onInputChange);
+							}
+							
+							_specificInput = null;
+						break;
+						}
+						
+						if (_specificInput)
+						{
+							if (! inputContainer.getChildByName(_specificInput.name))
+							{
+								inputContainer.addChild(_specificInput);
+								_specificInput.addEventListener(Event.CHANGE, onInputChange);
+								//_specificInput.addEventListener(FocusEvent.FOCUS_IN, onKeyfocusChange);
+							}
+						
+						}
+						checkSpecificEditor();
+						checkNavigateToUrl();
+					
+					
+				}
+			}
+			
+			private function checkSubType():UIComponent
+			{
+				var _specificInput:UIComponent;
+				
+				switch ((data as Property).subType)
+				{
+					case "enum" : 
+					case "Enum" :	
+						_specificInput = new WysiwygComboBox();
+						(_specificInput as ComboBox).editable = true;
+						(_specificInput as ComboBox).dataProvider = ((data as Property).values as String).split(",");
+						(_specificInput as ComboBox).selectedItem = (data as Property).currentValue;
+						if ((_specificInput as ComboBox).text == "")
+						{
+							(_specificInput as ComboBox).text = (data as Property).currentValue;
+						}
+						
+						_specificInput.percentWidth = 100;
+						
+					break;	
+					
+					
+					case "reference" : 
+					case "Reference" :
+						_specificInput = new WysiwygComboBox();
+						(_specificInput as ComboBox).editable = true;
+						(_specificInput as ComboBox).dataProvider = SilexAdminApi.getInstance().helper.getAllComponents((data as Property).baseClass) as Array;
+						(_specificInput as ComboBox).selectedItem = (data as Property).currentValue;
+						if ((_specificInput as ComboBox).text == "")
+						{
+							(_specificInput as ComboBox).text = (data as Property).currentValue;
+						}
+						_specificInput.percentWidth = 100;
+						break;	
+					
+					case "uri" :
+						_specificInput = new WysiwygTextInput();
+						_specificInput.percentWidth = 100;
+						(_specificInput as TextInput).text = (data as Property).currentValue;	
+						
+					break;	
+					
+					case "color" :
+					case "Color" :
+						_specificInput = new ColorPicker();
+						(_specificInput as ColorPicker).selectedColor = (data as Property).currentValue;
+					break;
+					
+					case "url" :
+					case "Url" :
+						
+						_specificInput = new WysiwygTextInput();
+						_specificInput.percentWidth = 100;
+						(_specificInput as TextInput).text = (data as Property).currentValue;	
+							
+						if ((data as Property).name == "playerName")
+						{
+							(_specificInput as TextInput).restrict = "[a-zA-Z0-9]_éàèâî"; 
+						}
+					
+					break;	
+					
+					
+					case "rich text" :
+					case "RichText":
+						_specificInput = new WysiwygTextArea();
+						_specificInput.percentWidth = 100;
+						_specificInput.styleName = "listEditor";
+						(_specificInput as TextArea).text = (data as Property).currentValue;
+						break;
+					
+					case "text" :
+					case "Text" :
+						_specificInput = new WysiwygTextArea();
+						_specificInput.percentWidth = 100;
+						_specificInput.styleName = "listEditor";
+						(_specificInput as TextArea).text = (data as Property).currentValue;
+						break;	
+					
+					default :
+						_specificInput = new WysiwygTextInput();
+						_specificInput.percentWidth = 100;
+						(_specificInput as TextInput).text = (data as Property).currentValue;	
+						
+						
+				}
+				
+				return _specificInput;
+			}
+			
+			
+			private function checkNavigateToUrl():void
+			{
+				if ((data as Property).subType == null)
+				{
+					return;
+				}
+				
+				if ((data as Property).subType == "Uri" || (data as Property).subType == "Url" && (data as Property).currentValue != "")
+				{
+					var urlButton:WysiwygButton = new WysiwygButton();
+					urlButton.addEventListener(MouseEvent.CLICK, goToUrl);
+					urlButton.label = resourceManager.getString("WYSIWYG", "PROPERTIES_TOOLBOX_SEE_URL_BUTTON_LABEL");
+					buttonContainer.addChild(urlButton);
+				}
+			}
+			
+			private function goToUrl(event:MouseEvent):void
+			{
+				navigateToURL(new URLRequest((data as Property).currentValue), "_blank");
+			}
+			
+			private function checkSpecificEditor():void
+			{
+				var propertyEditorFlag:Boolean = false;
+				
+				var propertyEditors:Object = new Object();
+				
+				var tempPropertyArray:Array = FlexGlobals.topLevelApplication.parameters.propertyEditorPlugins.split("&");
+				
+				for (var i:int = 0; i<tempPropertyArray.length; i++)
+				{
+					var temp:Array = tempPropertyArray[i].split("=");
+					if (temp[0] != "")
+					{
+						propertyEditors[temp[0]] = temp[1];
+					}
+				}
+				
+				
+				//check if there is a property editor with the same name as the property
+				if (propertyEditors[data.name] != null)
+				{
+					propertyEditorFlag = true;
+				}
+				
+				//if the property has a subType
+				if (data.subType != null)
+				{
+					if (propertyEditors[data.subType] != null)
+					{
+						propertyEditorFlag = true;
+					}
+				}
+				
+				//at last, check if there is a property editor whose name matches the type of the property
+				if (propertyEditors[data.type] != null)
+				{
+					propertyEditorFlag = true;
+				}
+				
+				
+				if (propertyEditorFlag)
+				{
+					var newButton:Button = new WysiwygButton();
+					newButton.label = resourceManager.getString("WYSIWYG", "PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL");
+					newButton.addEventListener(MouseEvent.MOUSE_DOWN, onOpenSpecificEditor);
+					
+					buttonContainer.addChild(newButton);
+				}
+			
+			}
+			
+			
+			private function replace(org:String, fnd:String, rpl:String):String
+			{
+				return org.split(fnd).join(rpl);
+			}
+			
+			private function onOpenSpecificEditor(event:MouseEvent):void
+			{
+				SilexAdminApi.getInstance().properties.select([(data as Property).uid]);
+			}
+			
+			private function onInputChange(event:Event):void
+			{
+				
+				var newValue:Object = new Object();
+				
+				if (event.target is CheckBox)
+				{
+					newValue = (event.target as CheckBox).selected;
+				}
+				
+				else if (event.target is NumericStepper)
+				{
+					newValue = (event.target as NumericStepper).value;
+				}
+				
+				else if (event.target is TextInput)
+				{
+					newValue = (event.target as TextInput).text;
+				}
+				
+				else if (event.target is TextArea)
+				{
+					newValue = (event.target as TextArea).text;
+				}
+				
+				else if (event.target is ColorPicker)
+				{
+					newValue = (event.target as ColorPicker).selectedColor;
+				}
+				
+				else if (event.target is ComboBox)
+				{
+					newValue = (event.target as ComboBox).text;
+				}
+				
+				
+				(data as Property).updateCurrentValue(newValue, ListPlugin.LIST_PLUGIN_ID);
+				
+				if ((data as Property).name == PanelUiBase.PLAYER_NAME_PROPERTY_NAME)
+				{
+					ToolBoxAPIController.getInstance().refreshComponentDisplayedName(SilexAdminApi.getInstance().components.getSelection()[0], newValue as String);
+				}
+				
+			}
+			
+			
+		]]>
+	</fx:Script>
+		<mx:Label text="{(data as Property).description}" toolTip="{(data as Property).description}" width="150" textAlign="left"   
+					  truncateToFit="true" />
+		<mx:HBox width="100%" height="100%">
+			<mx:HBox id="inputContainer" width="100%" height="100%" horizontalAlign="left" />
+			<mx:HBox  height="30" horizontalAlign="right" id="buttonContainer"  />
+		</mx:HBox>
+		
+
+		
+		
+		
+	<mx:HRule width="100%" visible="true" />
+	
+	
+	
+</mx:VBox>

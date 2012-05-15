@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This file is part of Silex: RIA developement tool - see http://silex-ria.org/
+
+Silex is (c) 2007-2012 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html-->
+
+<!-- asdoc\ComponentsUIFooter.mxml -->
+<!---
+The Library Finder preview
+
+@author Yannick
+-->
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" maxWidth="280" minWidth="280" height="100%"
+		 verticalScrollPolicy="on"
+		 horizontalScrollPolicy="off"
+		 creationPolicy="{ContainerCreationPolicy.ALL}"  xmlns:ns="org.silex.wysiwyg.ui.*"
+		 creationComplete="onCreationComplete(event)">
+
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Image;
+			import mx.controls.VideoDisplay;
+			import mx.core.ContainerCreationPolicy;
+			import mx.core.UIComponent;
+			import mx.core.mx_internal;
+			import mx.events.FlexEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.io.ToolConfig;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.ImageMediaPlayer;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.MediaPlayer;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.SWFMediaPlayer;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.SoundMediaPlayer;
+			import org.silex.wysiwyg.ui.library.Preview.mediaPlayer.VideoMediaPlayer;
+
+
+			
+			/**
+			 * a reference to the object displaying the preview
+			 */ 
+			private var _previewPlayer:MediaPlayer;
+			
+			[Bindable] 
+			private var _itemNameNoExtension:String;
+			
+			[Bindable]
+			private var _itemExt:String;
+			
+			[Bindable]
+			private var _itemSize:String;
+			
+
+			
+			private function onCreationComplete(event:FlexEvent):void
+			{
+					this.addEventListener(FlexEvent.DATA_CHANGE, onDataChange);
+					setPreview();
+			}
+			
+			private function onDataChange(event:FlexEvent):void
+			{
+				importButton.enabled = true;
+				_previewPlayer.removeEventListener(SWFMediaPlayer.AVM1_MOVIE, onImportableSWFMovie);
+				_previewPlayer.removeEventListener(SWFMediaPlayer.AVM2_MOVIE, onImportableSWFMovie);
+				importButton.removeEventListener(MouseEvent.CLICK, onClickImportButton);
+				importButton.removeEventListener(MouseEvent.CLICK, onClickImportAS3Button);
+				setPreview();
+			}
+			
+			
+			
+			/**
+			 * Instantiate the preview object based on the type of the media
+			 */ 
+			private function setPreview():void
+			{
+					_itemNameNoExtension = data[0]['item name no extension'];
+					_itemExt = data[0]['ext'];
+					_itemSize = data[0]['item readable size'];
+					
+					if (_previewPlayer && this.previewBox.getChildByName(_previewPlayer.name))
+					{
+						this.previewBox.removeChild(_previewPlayer);
+					}
+					
+					var flagImportButton:Boolean = true;
+					
+					switch (data[0]['ext'])
+					{
+						case 'jpg' :
+							_previewPlayer = new ImageMediaPlayer();
+						break;
+						
+						case 'gif' : 
+							_previewPlayer = new ImageMediaPlayer();
+						break;	
+						
+						case 'swf' :
+							//if it is an swf, we need to check if it is
+							//AS2 or AS3
+							_previewPlayer = new SWFMediaPlayer();
+							importButton.enabled = false;
+							_previewPlayer.addEventListener(SWFMediaPlayer.AVM1_MOVIE, onImportableSWFMovie);
+							_previewPlayer.addEventListener(SWFMediaPlayer.AVM2_MOVIE, onImportableSWFMovie);
+						break;
+						
+						case 'png' : 
+							_previewPlayer = new ImageMediaPlayer();
+						break;	
+						
+						case 'flv' : 
+						case 'mp4' :
+							_previewPlayer = new VideoMediaPlayer();
+						break;
+						
+						case 'mp3' : 
+							_previewPlayer = new SoundMediaPlayer();
+						break;	
+						
+						default :
+							flagImportButton = false;
+							_previewPlayer = new ImageMediaPlayer();
+						break;	
+				}
+				
+				//if no custom preview is available, use the default preview picture	
+				if (! flagImportButton)
+				{
+					_previewPlayer.playMedia(ToolConfig.getInstance().libraryDefaultPicturePath);
+				}
+				
+				else
+				{
+					
+					_previewPlayer.playMedia(ToolConfig.getInstance().rootUrl + data.path);
+				}
+				
+				importButton.addEventListener(MouseEvent.CLICK, onClickImportButton);
+				this.previewBox.addChild(_previewPlayer);
+				
+				
+
+			}
+			
+			/**
+			 * we check if the loaded swf is an AS2 or AS3 swf as if it is an
+			 * as3 swf, we need a frame to import it, so we send a different event
+			 */ 
+			private function onImportableSWFMovie(event:Event):void
+			{
+				_previewPlayer.removeEventListener(SWFMediaPlayer.AVM1_MOVIE, onImportableSWFMovie);
+				_previewPlayer.removeEventListener(SWFMediaPlayer.AVM2_MOVIE, onImportableSWFMovie);
+				
+				if (event.type == SWFMediaPlayer.AVM1_MOVIE)
+				{
+					importButton.enabled = true;
+				}
+				
+				else if (event.type == SWFMediaPlayer.AVM2_MOVIE)
+				{
+					importButton.enabled = true;
+					importButton.removeEventListener(MouseEvent.CLICK, onClickImportButton);
+					importButton.addEventListener(MouseEvent.CLICK, onClickImportAS3Button);
+				}
+			}
+			
+			/**
+			 * sends an event to the ToolController when the user selects an item
+			 * 
+			 * @param	event the trigerred mouse event
+			 */
+			private function onClickImportButton(event:MouseEvent):void
+			{
+				_previewPlayer.stopMedia();
+				dispatchEvent(new PluginEvent(PluginEvent.SELECT_LIBRARY_ITEM, data.path))
+			}
+			
+			/**
+			 * we dispatch a diferent event if the imported media is an AS3 swf, as we need
+			 * to include it in a frame
+			 */ 
+			private function onClickImportAS3Button(event:MouseEvent):void
+			{
+				_previewPlayer.stopMedia();
+				dispatchEvent(new PluginEvent(PluginEvent.SELECT_AS3_LIBRARY_ITEM, data.path, true));
+			}
+		]]>
+	</fx:Script>
+	<mx:VBox width="100%" height="100%" styleName="previewBox" horizontalAlign="center" >
+		<mx:Label text="{_itemNameNoExtension}" styleName="previewTitle" height="22"  />
+		<mx:HRule width="100%" />
+		<mx:HBox id="previewBox" width="100%" height="100%" paddingTop="5" paddingBottom="5" clipContent="true"  />
+		
+		<mx:HRule width="100%" />
+			
+			<mx:HBox width="100%" height="22" horizontalAlign="center">
+				<mx:Label text="{resourceManager.getString('WYSIWYG', 'LIBRARY_TOOLBOX_PREVIEW_TYPE_LABEL') + _itemExt}" />
+				<mx:Label text="{resourceManager.getString('WYSIWYG', 'LIBRARY_TOOLBOX_PREVIEW_SIZE_LABEL') + _itemSize}" />
+			</mx:HBox>
+		
+		<mx:HRule width="100%" />
+		
+		<mx:Spacer height="10" width="100%" />
+			<ns:WysiwygButton id="importButton" 
+							  label="{resourceManager.getString('WYSIWYG', 'LIBRARY_TOOLBOX_IMPORT_COMPONENT_BUTTON_LABEL')}" 
+							  />
+
+		
+		
+	</mx:VBox>
+		
+	
+</mx:VBox>

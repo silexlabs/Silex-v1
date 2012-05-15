@@ -1,0 +1,40 @@
+# This file is part of Silex - see http://projects.silexlabs.org/?/silex
+# Silex is © 2010-2011 Silex Labs and is released under the GPL License:
+# This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# To read the license please visit http://www.gnu.org/copyleft/gpl.html
+# 
+# silex url rewrite begin
+RewriteEngine  on
+
+RewriteBase %rewritebase%
+####################
+# redirect to sitemap.php
+
+RewriteCond %{REQUEST_FILENAME} ^.*/sitemap_index.xml$
+RewriteRule ^(.*)$ sitemap_index.php?scriptUrl=%{SERVER_NAME}%{REQUEST_URI} [QSA]
+
+####################
+# redirect to redirect.php (with desired id_site)
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !^.*/media/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/contents/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/components/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/layouts/.*$
+
+RewriteCond %{REQUEST_FILENAME} !^.*/cgi/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/conf/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/logs/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/tools/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/trash/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/ui/.*$
+
+RewriteRule ^(.*)$ redirect.php?path=$1 [QSA]
+
+# silex url rewrite end
+
+# hack > allow loading of amf files
+#AddType application/x-httpd-php .amf

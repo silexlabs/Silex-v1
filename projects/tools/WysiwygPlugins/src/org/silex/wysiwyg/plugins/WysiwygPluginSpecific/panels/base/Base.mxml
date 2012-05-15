@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"
+				xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" xmlns:base="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.base.*"
+				>
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(panelUiBaseName);
+			}
+		]]>
+	</fx:Script>
+	
+	<base:PanelUiBaseName id="panelUiBaseName" />
+	
+</panel:PanelBase>

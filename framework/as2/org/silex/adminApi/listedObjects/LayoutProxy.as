@@ -1,0 +1,12 @@
+/*This file is part of Silex - see http://projects.silexlabs.org/?/silex
+
+Silex is © 2010-2011 Silex Labs and is released under the GPL License:
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+To read the license please visit http://www.gnu.org/copyleft/gpl.html
+*/
+/** * the layout proxy. A proxy for accessing and manipulating a layout remotely * */import org.silex.adminApi.listedObjects.ListedObjectBase;import org.silex.adminApi.util.ClipFind;import org.silex.core.Layout;import org.silex.adminApi.util.T;class org.silex.adminApi.listedObjects.LayoutProxy extends ListedObjectBase{	public function LayoutProxy()	{	}		public function save():Void{		var layout:Layout = getLayout(uid);		_silexPtr.application.saveLayout(layout);	}		/**	 * return wether a layout is dirty (has been updated but 	 * not saved)	 */	public function getDirty():Boolean {		var layout:Layout = getLayout(uid);		return layout.isDirty;	}		/**	 * close the layout	 */	public function close():Void {		var layout:Layout = getLayout(uid);		layout.close();	}		/**	 * get a layout matching a uid	 * */	public static function getLayout(uid:String):Layout{		var layoutContainer:MovieClip = ClipFind.findClip(uid.split("/"));		if(layoutContainer){			// see org.silex.core.Layout. Layout is a child of a Relative move clip			return layoutContainer.silexLayout;		}else{			return null;		}				}		/**	 * generate a uid for a layout, that can be used to find the layout again	 * */	public static function getLayoutUid(layout:Layout):String{		//T.y("getLayoutUid : ", layout._parent._target); 
+		return layout._parent._target;			}		/**	 * static constructor	 * */	public static function createFromLayout(layout:Layout):LayoutProxy{		var layoutProxy:LayoutProxy = new LayoutProxy();		layoutProxy.name = layout.sectionName;		layoutProxy.uid = getLayoutUid(layout);		return layoutProxy;	}				/**	 * static constructor	 * */	public static function createFromUid(uid:String):LayoutProxy{		var layout:Layout = getLayout(uid);		return createFromLayout(layout);	}						}

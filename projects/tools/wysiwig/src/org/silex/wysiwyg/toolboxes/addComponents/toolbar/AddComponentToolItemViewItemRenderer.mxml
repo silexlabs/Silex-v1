@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   mouseChildren="true" 
+		   paddingLeft="0"
+		   paddingTop="3"
+		   creationComplete="onCreationComplete()" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import org.silex.wysiwyg.toolboxes.addComponents.componentsButtons.AddComponentButtonBase;
+			
+			/**
+			 * When the item creation is complete, sets it's visual data and load the component icon
+			 * in the swfLoader
+			 */ 
+			private function onCreationComplete():void
+			{
+				swfLoader.addEventListener(Event.COMPLETE, onLoadComplete);
+				swfLoader.source = data.url;
+				componentLabel.text = data.label;
+				this.toolTip = data.description;
+			}
+			
+			
+			/**
+			 * When the icon loading is complete, set it on the button
+			 */ 
+			private function onLoadComplete(event:Event):void
+			{
+				if (swfLoader.content is AddComponentButtonBase)
+				{
+					var button:AddComponentButtonBase = AddComponentButtonBase(swfLoader.content);
+					button.initButtonAction(data);
+				}
+			}
+			
+			
+		]]>
+	</fx:Script>
+	
+	<mx:SWFLoader  
+				id="swfLoader" 
+				verticalAlign="middle"  height="38" useHandCursor="true" buttonMode="true"
+				
+				/>
+		<mx:Text  id="componentLabel"  styleName="addComponentLabel" 
+				 selectable="false" width="100%" maxHeight="38"    />
+	
+	
+</mx:HBox>

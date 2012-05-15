@@ -1,0 +1,6 @@
+-cp ../../framework/hx
+-cp ../../../apps/third-party/plugins/html5generator/src/
+-cp src
+-php bin
+-main org.silex.ui.Main
+-cmd cp -R bin/lib/ ../../silex_server/plugins/baseComponents/html5

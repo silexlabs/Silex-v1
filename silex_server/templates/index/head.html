@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="overflow:none; height:100%;margin:0px;padding:0px;">
+	<head>
+		$$callHooks(index-head)
+		<title>::htmlTitle:: - ::subLayersTitle::</title>
+		<meta http-equiv="cache-control" content="must-revalidate, pre-check=0, post-check=0, max-age=0">
+		<meta http-equiv="Last-Modified" content="$$nowDate()">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="description" content="::htmlDescription::">
+		<meta http-equiv="keywords" content="::htmlHeaderKeywords::, ::htmlTags::">
+		<meta http-equiv="content-language" content="::defaultLanguage::">
+		<meta http-equiv="Generator" content="Silex, live web creation - ::version::">
+		<meta name="robots" content="INDEX/FOLLOW">
+		
+		::if websiteConfig.htmlIcon::<link rel="icon" href="::websiteConfig.htmlIcon::">::end::
+
+		<script type="text/javascript" src="::silexApiJsScriptFolderUrl::hook.min.js"></script>
+		<script type="text/javascript" src="::silexApiJsScriptFolderUrl::silex_api.min.js"></script>
+		<script type="text/javascript">
+			// default value for root URL is the one we may have set before this line. If it is not defined yet we take the value of root URL of php
+			var $rootUrl;
+			if(!$rootUrl) $rootUrl='::rootUrl::';
+			// If it is not defined yet we initialize it with the default value
+			var $id_site;
+			if(!$id_site) $id_site='::idSite::';
+			// If it is not defined yet we initialize it with the default value
+			var javascriptFolderUrl;
+			if(!javascriptFolderUrl) javascriptFolderUrl= '::silexApiJsScriptFolderUrl::';
+			
+			// pass post and get data to js
+			eval("::js_str::");
+
+			::if doRedirect::
+			//redirect
+				::if isDefaultWebsite::
+					window.location = "::rootUrl::#/::deeplink::";
+				::else::
+				    ::if shouldDisplayRenderer::
+				    window.location = "::rootUrl::?/::idSite::&format=::renderer::/#/::deeplink::";
+				    ::else::
+				    window.location = "::rootUrl::?/::idSite::/#/::deeplink::";
+				    ::end::
+				::end::
+			::else::
+			//do not redirect
+			::end::
+		</script>
+		$$callHooks(index-head-end)
+	</head>
+	<body style="overflow:none; padding:0px; margin-top:0; margin-left:0; margin-bottom:0; margin-right:0;background-color:#::websiteConfig.bgColor::;">

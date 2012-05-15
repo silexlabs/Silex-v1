@@ -1,0 +1,157 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="2" id="fade">
+			<components>
+				<component>
+					<as2Url>plugins/silexComponents/as2/labelButton/labelButton.swf</as2Url>
+					<className>org.silex.ui.components.buttons.LabelButtonBase</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">199.95</y>
+						<x type="Float">606.6</x>
+						<alpha type="Integer">100</alpha>
+						<playerName>BoutonLabel</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<scale type="Integer">100</scale>
+						<height type="Integer">26</height>
+						<width type="Integer">76</width>
+						<label>save to cookie</label>
+						<imageUrl></imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<wordWrap type="Boolean">false</wordWrap>
+						<autoSize type="Boolean">true</autoSize>
+						<buttonLabelPress>&lt;b&gt;save to cookie&lt;/b&gt;</buttonLabelPress>
+						<buttonLabelOver>&lt;u&gt;save to cookie&lt;/u&gt;</buttonLabelOver>
+						<buttonLabelSelect>&lt;b&gt;save to cookie&lt;/b&gt;</buttonLabelSelect>
+						<buttonLabelNormal>save to cookie</buttonLabelNormal>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+					</properties>
+					<actions>
+						<action>
+							<functionName>CookieComponent_test.userdata.valueTest=&lt;&lt;Text.tf.text&gt;&gt;</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>CookieComponent_test.userdata.state=true</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>CookieComponent_test.save</functionName>
+							<modifier>onRelease</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>((&lt;&lt;Text.tf.text&gt;&gt;)) saved to cookie</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Float">203.5</y>
+						<x type="Float">264.5</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Float">65.3693056169836</height>
+						<width type="Float">224.358974358974</width>
+						<playerName>Text</playerName>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">true</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<textFormat type="Array">
+							<item>font=Arial</item>
+							<item>color=4D4D4D</item>
+							<item>size=17</item>
+						</textFormat>
+						<wordWrap type="Boolean">false</wordWrap>
+						<type>input</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">false</multiline>
+						<selectable type="Boolean">true</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<scrollbar type="Boolean">true</scrollbar>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;TEXTFORMAT LEADING=&quot;2&quot;&gt;&lt;P ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;_sans&quot; SIZE=&quot;15&quot; COLOR=&quot;#5A5A5A&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Nothing found in the cookie&lt;/FONT&gt;&lt;/P&gt;&lt;/TEXTFORMAT&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions>
+						<action>
+							<functionName>Text.tf.htmlText=&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;17&quot; COLOR=&quot;#4D4D4D&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;</functionName>
+							<modifier>onSetFocus</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/CookieComponent.swf</as2Url>
+					<html5Url>plugins/oofComponents/ </html5Url>
+					<className>org.oof.util.CookieComponent</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">-9999</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">100</height>
+						<width type="Integer">100</width>
+						<playerName>CookieComponent_test</playerName>
+						<validityPeriod type="Integer">604800</validityPeriod>
+						<autoSave type="Boolean">true</autoSave>
+						<dataNames type="Array">
+							<item>userdata</item>
+						</dataNames>
+						<cookieName>test_cookie</cookieName>
+					</properties>
+					<actions>
+						<action>
+							<functionName>CookieComponent_test.userdata.state=true</functionName>
+							<modifier>onLoad</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>Text.tf.htmlText=&lt;&lt;CookieComponent_test.userdata.valueTest&gt;&gt;</functionName>
+							<modifier>onLoadExistuserdata</modifier>
+							<parameters></parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onLoadExistuserdata</modifier>
+							<parameters>
+								<parameter>valeur trouvée</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"				 
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*"
+				 xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:SimpleGallery="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.SimpleGallery.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(SimpleGalleryBasicParameters, SimpleGalleryParameters);
+			}
+		]]>
+	</fx:Script>
+	
+	<SimpleGallery:PanelUiSimpleGalleryBasicParameters id="SimpleGalleryBasicParameters" />
+	<SimpleGallery:PanelUiSimpleGalleryParameters id="SimpleGalleryParameters" />
+	
+</panel:PanelBase>

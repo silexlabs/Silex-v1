@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seoData version="2">
+	<layerSeo deeplink="">
+		<title>manage</title>
+		<pubDate>Wed Oct 26 19:05:28 GMT+0200 2011</pubDate>
+		<components>
+			<component>
+				<playerName>RichTextList_01_site</playerName>
+				<className>org.oof.lists.RichTextList</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>button_help.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>RichTextListContentFolder</playerName>
+				<className>org.oof.lists.RichTextList</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>Text</playerName>
+				<className>org.silex.ui.players.Text</className>
+				<iconIsIcon>false</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><TEXTFORMAT LEADING="2"><P ALIGN="CENTER"><FONT FACE="ARIAL" SIZE="20" COLOR="#333333" LETTERSPACING="0" KERNING="0">((<<silex.paramsFile.manage:title:1>>))</FONT></P></TEXTFORMAT></p>]]></htmlEquivalent>
+				<context>*</context>
+				<text><![CDATA[((>)) ]]></text>
+			</component>
+			<component>
+				<playerName>BackgroundListManage</playerName>
+				<className>org.silex.ui.Geometry</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>DataSelector_site</playerName>
+				<className>org.oof.dataUsers.DataSelector</className>
+				<iconIsIcon>true</iconIsIcon>
+				<context>*</context>
+				<iconPageName>manage.edit</iconPageName>
+				<iconDeeplinkName><![CDATA[manage.edit.<<DataSelector_site.selectedItem.title>>]]></iconDeeplinkName>
+				<deeplinkFormat><![CDATA[manage.edit.<<DataSelector_site.selectedItem.title>>]]></deeplinkFormat>
+				<connectorName>RssConnector_site</connectorName>
+				<formName><![CDATA[<<silex.config.dataSelectorSource>>]]></formName>
+				<cellFormat><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">((<<title>>))</FONT></P>]]></cellFormat>
+				<links>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">bbbfgbf</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">coming.lex</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">qqqq15616541</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">test.frame</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">test.thumb.list.menu</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">test.xml.154.nodes</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testaction</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testalert</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testallcomponents</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testasframe</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testaudio</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testempty</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testgallery</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testicone</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testimage</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testqqqq</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testreaddb</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testrsslist</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testscalemodes</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testscalemodes2</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testtext</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testtransform</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testtween</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testtypo</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">testvideo</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">test_cookie</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+					<link>
+						<title><![CDATA[<P ALIGN="left"><FONT FACE="Arial" SIZE="12" COLOR="#63594D">test_customlist</FONT></P>]]></title>
+						<link>manage.edit</link>
+						<deeplink>manage.edit.bbbfgbf</deeplink>
+					</link>
+				</links>
+			</component>
+			<component>
+				<playerName>RssConnector_site</playerName>
+				<className>org.oof.dataConnectors.RssConnector</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+				<urlBase><![CDATA[<<silex.rootUrl>>cgi/scripts/]]></urlBase>
+			</component>
+			<component>
+				<playerName>listUi_manager_haut.cmp.swf</playerName>
+				<className>org.oof.ui.ListUi</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>listUi_manager_bas.cmp.swf</playerName>
+				<className>org.oof.ui.ListUi</className>
+				<iconIsIcon>false</iconIsIcon>
+				<context>*</context>
+			</component>
+			<component>
+				<playerName>label_btn_plus_03.cmp.swf</playerName>
+				<className>org.silex.ui.UiBase</className>
+				<iconIsIcon>true</iconIsIcon>
+				<htmlEquivalent><![CDATA[<p><FONT FACE="Arial" SIZE="12" COLOR="#474037"><<silex.paramsFile.btn:nav:manage>></FONT></p>]]></htmlEquivalent>
+				<iconPageName>manage1</iconPageName>
+				<context>*</context>
+				<text><![CDATA[> ]]></text>
+				<links>
+					<link>
+						<title>manage1</title>
+						<link>manage1</link>
+						<deeplink>manage1</deeplink>
+					</link>
+				</links>
+			</component>
+		</components>
+	</layerSeo>
+</seoData>

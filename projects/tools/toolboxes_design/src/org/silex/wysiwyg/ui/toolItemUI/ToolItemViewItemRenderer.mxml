@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   width="100%" height="100%"
+		   mouseChildren="true" 
+		   creationComplete="onCreationComplete()" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var SWFSource:String;
+			[Bindable]
+			public var SWFToolTip:String;
+			[Bindable]
+			public var hasBackground:Boolean;
+			[Bindable]
+			public var iconHeight:int;
+			[Bindable]
+			public var iconWidth:int;			
+			[Bindable]
+			public var iconSize:int;			
+			
+			private function onCreationComplete():void
+			{
+				iconSize = Math.min(iconWidth,iconHeight);
+				
+				if (hasBackground)
+				{
+					swfCanvas.mask = maskCanvas;
+					swfBox.height = iconHeight;
+					swfBox.width =  iconWidth;
+					/*swfBox.height = 30;
+					swfBox.width =  19;*/ 
+				}
+				else
+				{
+					swfBox.height = iconHeight;
+					//swfBox.height = 30;
+					viewMenuIcon.addEventListener(Event.COMPLETE, onLoadComplete);
+					//overlay.visible = false;
+					viewMenuBackground.visible = false;
+				} 
+			}
+			
+			private function onLoadComplete(event:Event):void
+			{
+				this.width = viewMenuIcon.contentWidth;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<!--swfCanvas is used as a mask and to place the tollbars icons-->
+	<mx:Canvas height="100%" width="100%" id="swfCanvas"  >
+		<mx:Canvas id="viewMenuBackground" height="{iconSize}" width="{iconSize}" styleName="viewMenuItemBackground"/>
+		<mx:HBox id="swfBox"  horizontalAlign="center" verticalAlign="middle"  >
+			<mx:SWFLoader  
+				id="viewMenuIcon" 
+				verticalAlign="middle" 
+				horizontalAlign="center" source="{SWFSource}" toolTip="{SWFToolTip}"
+				/>
+		</mx:HBox>
+		
+	</mx:Canvas>
+	
+<!--	<mx:HBox height="100%" width="100%" horizontalAlign="center" verticalAlign="middle" mouseEnabled="false">
+		<mx:Canvas id="overlay" styleName="viewMenuItemOvergroundUp" height='{iconSize}' width='{iconSize}' mouseEnabled="false" />
+	</mx:HBox>
+-->	
+	<mx:HBox height="100%" width="100%" visible="false" horizontalAlign="center" verticalAlign="middle" mouseEnabled="false">
+		<mx:Canvas id="maskCanvas"  styleName="viewMenuItemBackground" height="{iconSize}" width="{iconSize}" />
+	</mx:HBox>
+	
+</mx:Canvas>

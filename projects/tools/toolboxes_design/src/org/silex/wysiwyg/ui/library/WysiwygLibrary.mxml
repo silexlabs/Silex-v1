@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		   creationComplete="onCreationComplete()">
+
+	<fx:Metadata>
+		[Event(name="selectLibraryItem", type="org.silex.wysiwyg.event.PluginEvent")]
+	</fx:Metadata>
+
+	<fx:Script>
+		<![CDATA[
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.io.RemotingConnection;
+			import org.silex.wysiwyg.io.ToolConfig;
+			
+
+			private var _wysiwygLibraryModel:WysiwygLibraryModel;
+			
+			private var _wysiwygLibraryView:WysiwygLibraryView;
+			
+			/**
+			 * Instantiate the library finder, sets listener on it and adds it to the display list
+			 */ 
+			public function onCreationComplete():void
+			{
+				libraryFilters = new Array();
+				
+				
+				_wysiwygLibraryModel = new WysiwygLibraryModel();
+				_wysiwygLibraryView = new WysiwygLibraryView();
+				addChild(_wysiwygLibraryView);
+				
+				_wysiwygLibraryView.addEventListener(PluginEvent.UPDATE_LIBRARY_PATH, onUpdateLibraryPath);
+				_wysiwygLibraryView.addEventListener(PluginEvent.SELECT_LIBRARY_ITEM, onSelectLibraryItem);
+				_wysiwygLibraryModel.addEventListener(PluginEvent.DATA_CHANGED, onModelDataChanged);
+		
+			}
+			
+			
+			/**
+			 * When the user selects an item in the library, update 
+			 * the url property value
+			 * 
+			 * @param event the triggered PluginEvent
+			 */ 
+			private function onSelectLibraryItem(event:PluginEvent):void
+			{
+				dispatchEvent(new PluginEvent(PluginEvent.SELECT_LIBRARY_ITEM, event.data));
+			}
+			
+			private function onUpdateLibraryPath(event:PluginEvent):void
+			{
+				_wysiwygLibraryModel.targetPath = event.data as String;
+			}
+			
+			private function onModelDataChanged(event:PluginEvent):void
+			{
+				_wysiwygLibraryView.data = event.data;
+			}
+			
+			/**
+			 * compare the currentPath with the targetPath and may launch service calls if different
+			 * 
+			 * @param value the string data to be set
+			 */ 
+			public function set targetPath(value:String):void
+			{
+				if (_wysiwygLibraryView == null)
+				{
+					return;
+				}
+				_wysiwygLibraryModel.targetPath = SilexAdminApi.getInstance().publicationModel.revealAccessors(value);
+			}
+			
+			/**
+			 * refresh the library panels
+			 */ 
+			public function refreshLibrary():void
+			{
+				_wysiwygLibraryModel.refreshLibrary();
+			}
+			
+			
+			public function set libraryFilters(value:Array):void
+			{
+				if (_wysiwygLibraryView == null)
+				{
+					return;
+				}
+				_wysiwygLibraryModel.libraryFilters = value;
+			}
+			
+		]]>
+	</fx:Script>
+</mx:Canvas>

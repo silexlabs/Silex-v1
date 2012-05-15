@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Button xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  styleName="ToggleToolBoxVisibility"
+		  click="button1_clickHandler(event)"
+		  >
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import org.silex.adminApi.WysiwygModel;
+			import org.silex.adminApi.SilexAdminApi;
+
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				var wysiwygModel:WysiwygModel = SilexAdminApi.getInstance().wysiwygModel;
+				//hiding should mobve to the toolbox itself
+//				wysiwygModel.setToolBoxVisibility(!wysiwygModel.getToolBoxVisibility());
+				
+				wysiwygModel.setToolBoxVisibility(true);
+			}
+
+		]]>
+	</fx:Script>
+</mx:Button>

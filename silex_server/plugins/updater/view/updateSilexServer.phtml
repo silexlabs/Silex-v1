@@ -1,0 +1,58 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"checkRightsSilexServerTree"));?>" ><?php print $this->localisedStrings["ARIANE_UPDATE_SILEX_SRV_LABEL"];?></a>
+</div>
+
+<br><span class="updater_success"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_DOWNLOAD_SUCCESS_MSG"]); ?></span>
+
+<?php
+if( !empty( $this->updateReport ) )
+{
+	?>
+	<br><span class="updater_error"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_FAILED_MSG"]); ?></span>
+	<div class='updater_reportList'>
+		<?php
+		foreach($this->updateReport as $resultItem)
+			print $resultItem."<br>";
+		?>
+	</div>
+	
+	<div class='updater_centeredContent updater_marginTop'>
+		<button class="" onclick="javascript:<?php $this->generateForwarding( array_merge( array("action"=>"updateSilexServer") , $forwardParams ) ); ?>">
+			<?php print $this->localisedStrings["UPDT_SILEX_SRV_RETRY_UPDATE_LABEL"]; ?>
+		</button>
+	</div>
+	<?php
+} else {
+	?>
+	<br><span class="updater_success"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_PERM_MSG"]); ?></span>
+	<?php
+}
+
+if(!empty($this->deleteReport))
+{
+	?>
+	<br><span class="updater_success"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_SUCCESS_MSG"]); ?></span><br>
+	<span class="updater_error"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_DELETE_FAILED_MSG"]); ?></span>
+	<div class='updater_reportList'>
+		<?php
+		foreach($this->deleteReport as $resultItem)
+			print $resultItem."<br>";
+		?>
+	</div>
+	<?php
+}
+else
+{
+	?>
+	<br><span class="updater_success"><?php printf($this->localisedStrings["UPDT_SILEX_SRV_UPDATE_PERFORMED_MSG"]); ?></span>
+	<?php
+}
+
+?>
+
+<div class='updater_centeredContent updater_marginTop'>
+	<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"index") ); ?>">
+		<?php printf($this->localisedStrings["MAIN_COME_BACK_INDEX_SHORT_LABEL"]); ?>
+	</button>
+</div>

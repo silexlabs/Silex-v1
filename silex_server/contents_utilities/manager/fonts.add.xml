@@ -1,0 +1,267 @@
+﻿<layer>
+	<subLayers>
+		<subLayer zIndex="0" id="">
+			<components></components>
+		</subLayer>
+		<subLayer zIndex="5" id="over">
+			<components>
+				<component>
+					<as2Url>media/manager/components/label_btn_plus_cadre_06.cmp.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">560</y>
+						<x type="Integer">525</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<playerName>label_btn_plus_cadre_06</playerName>
+						<height type="Integer">30</height>
+						<width type="Integer">200</width>
+						<label>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;Télécharger une police&lt;/b&gt;&lt;/FONT&gt;</label>
+						<imageUrl>media/</imageUrl>
+						<delay type="Integer">0</delay>
+						<useHandCursor type="Boolean">true</useHandCursor>
+						<clickable type="Boolean">true</clickable>
+						<easingDuration type="Integer">3</easingDuration>
+						<followMouse type="Boolean">false</followMouse>
+						<centeredHoriz type="Boolean">true</centeredHoriz>
+						<buttonLabelNormal>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:fonts:download&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelNormal>
+						<buttonLabelSelect>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:fonts:download&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelSelect>
+						<buttonLabelOver>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:fonts:download&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelOver>
+						<buttonLabelPress>&lt;FONT FACE=&quot;Arial&quot; SIZE=&quot;14&quot; COLOR=&quot;#FFFFFF&quot;&gt;&lt;b&gt;((&lt;&lt;silex.paramsFile.btn:manage:fonts:download&gt;&gt;))&lt;/b&gt;&lt;/FONT&gt;</buttonLabelPress>
+					</properties>
+					<actions>
+						<action>
+							<functionName>openUrl</functionName>
+							<modifier>onRelease</modifier>
+							<parameters>
+								<parameter>((&lt;&lt;silex.paramsFile.url:btn:manage:fonts:download&gt;&gt;))</parameter>
+							</parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/org.silex.ui.players.Text.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Text</html5Url>
+					<className>org.silex.ui.players.Text</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName>Text_icon_fonts_add_home</playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">155</y>
+						<x type="Integer">505</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">30</height>
+						<width type="Integer">240</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">true</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>fonts.add.home</iconPageName>
+						<wordWrap type="Boolean">true</wordWrap>
+						<type>dynamic</type>
+						<password type="Boolean">false</password>
+						<mouseWheelEnabled type="Boolean">true</mouseWheelEnabled>
+						<backgroundColor type="Integer">16777215</backgroundColor>
+						<background type="Boolean">false</background>
+						<borderColor type="Integer">0</borderColor>
+						<border type="Boolean">false</border>
+						<multiline type="Boolean">false</multiline>
+						<selectable type="Boolean">false</selectable>
+						<scrollBarWidth type="Integer">16</scrollBarWidth>
+						<embedFonts type="Boolean">false</embedFonts>
+						<htmlText>&lt;p align=&quot;center&quot;&gt;&lt;font face=&quot;arial&quot; size=&quot;16&quot; color=&quot;#3B3024&quot;&gt;((&lt;&lt;silex.paramsFile.manage:text:45&gt;&gt;))&lt;/font&gt;&lt;/p&gt;</htmlText>
+						<html type="Boolean">true</html>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_bas.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">532</y>
+						<x type="Integer">527</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<height type="Float">5.95</height>
+						<width type="Integer">12</width>
+						<playerName>main</playerName>
+						<listPath>RichTextList_01_installed_fonts</listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">5</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/PlayListUi/listUi_manager_haut.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">200</y>
+						<x type="Integer">527</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<height type="Float">5.95</height>
+						<width type="Integer">12</width>
+						<playerName>main</playerName>
+						<listPath>RichTextList_01_installed_fonts</listPath>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<loopList type="Boolean">false</loopList>
+						<scrollStep type="Integer">5</scrollStep>
+						<visible type="Boolean">true</visible>
+					</properties>
+					<actions></actions>
+				</component>
+				<component>
+					<as2Url>plugins/oofComponents/as2/RichTextList/RichTextList_01.swf</as2Url>
+					<properties>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">190</y>
+						<x type="Integer">547</x>
+						<alpha type="Integer">100</alpha>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">true</iconIsIcon>
+						<iconLayoutName>manager_volet.swf</iconLayoutName>
+						<iconDeeplinkName>font.&lt;&lt;RichTextList_01_installed_fonts.selectedItem.label&gt;&gt;.add.confirm</iconDeeplinkName>
+						<iconPageName>font.add.confirm</iconPageName>
+						<height type="Integer">360</height>
+						<width type="Integer">185</width>
+						<playerName>RichTextList_01_installed_fonts</playerName>
+						<autoSize>center</autoSize>
+						<embedFonts type="Boolean">false</embedFonts>
+						<html type="Boolean">true</html>
+						<_useHandCursor type="Boolean">false</_useHandCursor>
+						<wordWrap type="Boolean">true</wordWrap>
+						<cellMarginX type="Integer">2</cellMarginX>
+						<cellMarginY type="Integer">5</cellMarginY>
+						<cellRenderer>RichTextCellRenderer</cellRenderer>
+						<easingDuration type="Float">0.5</easingDuration>
+						<rowHeight type="Integer">30</rowHeight>
+						<itemsPerRow type="Integer">1</itemsPerRow>
+						<isHorizontal type="Boolean">false</isHorizontal>
+						<multipleSelection type="Boolean">false</multipleSelection>
+						<useVariableRowHeight type="Boolean">false</useVariableRowHeight>
+						<enabled type="Boolean">true</enabled>
+						<visible type="Boolean">true</visible>
+						<minHeight type="Integer">0</minHeight>
+						<minWidth type="Integer">0</minWidth>
+					</properties>
+					<actions>
+						<action>
+							<functionName>serviceCall</functionName>
+							<modifier>onLoad</modifier>
+							<parameters>
+								<parameter>getFonts</parameter>
+								<parameter>onGetFontsListSuccess</parameter>
+								<parameter>onGetFontsListFailed</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>alert</functionName>
+							<modifier>onGetFontsListFailed</modifier>
+							<parameters>
+								<parameter>&lt;&lt;silex.paramsFile.errorMessageLoading&gt;&gt;</parameter>
+							</parameters>
+						</action>
+						<action>
+							<functionName>RichTextList_01_installed_fonts.dataProvider=&lt;&lt;silex.lastResult&gt;&gt;</functionName>
+							<modifier>onGetFontsListSuccess</modifier>
+							<parameters></parameters>
+						</action>
+					</actions>
+				</component>
+				<component>
+					<as2Url>plugins/baseComponents/as2/Geometry.swf</as2Url>
+					<html5Url>plugins/baseComponents/html5#org.silex.ui.Geometry</html5Url>
+					<className>org.silex.ui.Rectangle</className>
+					<componentRoot>main</componentRoot>
+					<properties>
+						<playerName>BackgroundList</playerName>
+						<rotation type="Integer">0</rotation>
+						<y type="Integer">190</y>
+						<x type="Integer">517</x>
+						<alpha type="Integer">100</alpha>
+						<height type="Integer">360</height>
+						<width type="Integer">215</width>
+						<tabIndex type="Integer">1</tabIndex>
+						<tabEnabled type="Boolean">false</tabEnabled>
+						<visibleOutOfAdmin type="Boolean">true</visibleOutOfAdmin>
+						<iconIsDefault type="Boolean">false</iconIsDefault>
+						<iconIsIcon type="Boolean">false</iconIsIcon>
+						<iconLayoutName>minimal.swf</iconLayoutName>
+						<iconPageName>new page name</iconPageName>
+						<miterLimit type="Integer">3</miterLimit>
+						<jointStyle>round</jointStyle>
+						<capsStyle>none</capsStyle>
+						<noScale>normal</noScale>
+						<pixelHinting type="Boolean">true</pixelHinting>
+						<shape>Rectangle</shape>
+						<useHandCursor type="Boolean">false</useHandCursor>
+						<fusionMode>normal</fusionMode>
+						<dropShadowBlurY type="Integer">0</dropShadowBlurY>
+						<dropShadowBlurX type="Integer">0</dropShadowBlurX>
+						<dropShadowAngle type="Integer">0</dropShadowAngle>
+						<dropShadowDistance type="Integer">5</dropShadowDistance>
+						<dropShadowColor type="Integer">0</dropShadowColor>
+						<dropShadowAlpha type="Integer">1</dropShadowAlpha>
+						<dropShadow type="Boolean">false</dropShadow>
+						<gradientRotation type="Integer">0</gradientRotation>
+						<gradientRatio type="Array">
+							<item type="Integer">34</item>
+							<item type="Integer">35</item>
+							<item type="Integer">36</item>
+						</gradientRatio>
+						<gradientAlpha type="Array">
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+							<item type="Integer">100</item>
+						</gradientAlpha>
+						<gradientColors type="Array">
+							<item type="Integer">15790320</item>
+							<item type="Integer">12239819</item>
+							<item type="Integer">15790320</item>
+						</gradientColors>
+						<bitmapFillSmooth type="Boolean">false</bitmapFillSmooth>
+						<bitmapFillRepeat type="Boolean">true</bitmapFillRepeat>
+						<bitmapFillUrl>media/logosilex.jpg</bitmapFillUrl>
+						<fill>linear</fill>
+						<bgColor type="Integer">15790320</bgColor>
+						<bgAlpha type="Integer">100</bgAlpha>
+						<borderAlpha type="Integer">100</borderAlpha>
+						<lineThickness type="Integer">1</lineThickness>
+						<borderColor type="Integer">7636380</borderColor>
+						<border type="Boolean">true</border>
+						<BLcornerRadius type="Integer">0</BLcornerRadius>
+						<BRcornerRadius type="Integer">0</BRcornerRadius>
+						<TRcornerRadius type="Integer">0</TRcornerRadius>
+						<TLcornerRadius type="Integer">0</TLcornerRadius>
+					</properties>
+					<actions></actions>
+				</component>
+			</components>
+		</subLayer>
+	</subLayers>
+</layer>

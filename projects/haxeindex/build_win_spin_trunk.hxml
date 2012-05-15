@@ -1,0 +1,34 @@
+#build file
+-cp src
+-cp ../../framework/hx
+-main org.silex.html.SilexIndex
+-php bin/SilexIndex.phpdir
+--php-lib framework/hx
+org.silex.serverApi.externs.ServerConfigExtern
+org.silex.serverApi.ServerConfig
+org.silex.serverApi.externs.SiteEditorExtern
+org.silex.serverApi.SiteEditor
+org.silex.serverApi.externs.ServerContentExtern
+org.silex.serverApi.ServerContent
+org.silex.serverApi.externs.LoggerExtern
+org.silex.serverApi.Logger
+org.silex.serverApi.externs.ComponentManagerExtern
+org.silex.serverApi.ComponentManager
+org.silex.serverApi.HookManager
+org.silex.serverApi.externs.HookManagerExtern
+org.silex.serverApi.externs.PluginManagerExtern
+org.silex.serverApi.PluginManager
+org.silex.serverApi.externs.ConfigEditorExtern
+org.silex.serverApi.ConfigEditor
+org.silex.serverApi.externs.ComponentDescriptorExtern
+org.silex.serverApi.ComponentDescriptor
+org.silex.serverApi.externs.FileSystemToolsExtern
+org.silex.serverApi.FileSystemTools
+org.silex.serverApi.FileSystemItem
+org.silex.serverApi.ComponentManager
+#-cmd copy bin\SilexIndex.phpdir\index.php ..\..\..\spin_trunk\spin_server\index.php
+-cmd copy src\index-template.php ..\..\..\spin_trunk\spin_server\index.php
+-cmd xcopy bin\SilexIndex.phpdir\framework ..\..\..\spin_trunk\spin_server\framework\ /e /y
+#-cmd xcopy bin\SilexIndex.phpdir\lib ..\..\..\spin_trunk\spin_server\lib\ /e /y
+#-cmd xcopy bin\SilexIndex.phpdir\res ..\..\..\spin_trunk\spin_server\res\ /e /y
+--no-traces

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009"  
+					  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" 
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" 
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+	
+	<mx:Form width="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>	
+		
+			<mx:Form width="100%" height="100%">
+				<mx:FormItem width="100%" height="100%" label="{propertyArray.componentNames.description}" direction="horizontal">
+					<ns1:WysiwygTextInput text="{propertyArray.componentNames.currentValue}" width="100%"
+										  change="{updatePropertyValue(event.currentTarget.text, 'componentNames')}"/>
+					<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.componentNames)}" />					
+					
+				</mx:FormItem>	
+			</mx:Form>
+	
+	<mx:HRule width="100%" />		
+</panelUis:PanelUiBase>

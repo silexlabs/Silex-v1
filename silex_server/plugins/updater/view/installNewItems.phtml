@@ -1,0 +1,19 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"installNewItems"));?>" ><?php print $this->localisedStrings["ARIANE_INSTALL_NEW_ITEMS_LABEL"];?></a>
+</div>
+
+
+<span class="updater_title"><?php print $this->localisedStrings["ITEM_INSTALL_CAT_BROWSE_LIST_LABEL"];?></span><br>
+<?php
+foreach($this->categories as $category)
+{
+	?>
+	<div class="updater_category_menu_item">
+		<button class="" onclick="javascript:<?php $this->generateForwarding(array("action"=>"browseCategory", "category" =>serialize(urlencodeArray($category)) ));?>">
+			<?php print $category["name"]; ?>
+		</button>
+	</div>
+	<?php
+}
+?>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   preinitialize="onPreInitialize()"
+			   preloader="org.silex.wysiwyg.ui.WysiwygPreLoader"
+			   xmlns:viewMenu="org.silex.plugins.viewMenu.*"
+			   horizontalScrollPolicy="off">
+
+	<fx:Metadata>
+		[ResourceBundle("components")]
+		[ResourceBundle("layout")]
+	</fx:Metadata>
+
+	
+	<viewMenu:ViewMenuUi id="_view" width="100%" height="100%" backgroundColor="0xD6D6D6"/>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.events.StyleEvent;
+			
+			import org.silex.adminApi.SilexAdminApi;
+			import org.silex.plugins.viewMenu.ViewMenuController;
+			import org.silex.plugins.viewMenu.ViewMenuModel;
+			import org.silex.plugins.viewMenu.ViewMenuUi;
+			import org.silex.wysiwyg.ui.WysiwygPreLoader; 
+			
+			private var _model:ViewMenuModel;
+			private var _controller:ViewMenuController;
+			
+			private function onInit():void{ 
+				_model = new ViewMenuModel();
+				_view.model = _model;
+				_controller = new ViewMenuController(_model, _view);
+				
+				this.addEventListener(KeyboardEvent.KEY_DOWN, SilexAdminApi.getInstance().shortcut.onKeyDown);
+
+			}
+			
+			private function onPreInitialize():void
+			{
+				var loader:IEventDispatcher = styleManager.loadStyleDeclarations(FlexGlobals.topLevelApplication.parameters.baseUrlWysiwygStyle);
+				loader.addEventListener(StyleEvent.COMPLETE, onStyleLoaded);
+				loader.addEventListener(StyleEvent.ERROR, onStyleLoaded);
+			}
+			
+			private function onStyleLoaded(event:StyleEvent):void
+			{
+				event.target.removeEventListener(StyleEvent.COMPLETE, onStyleLoaded);
+				event.target.removeEventListener(StyleEvent.ERROR, onStyleLoaded);
+				createComponentsFromDescriptors();
+				onInit();
+			}
+		]]>
+	</fx:Script> 
+</mx:Application>

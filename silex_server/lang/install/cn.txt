@@ -1,0 +1,46 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE
+
+;general
+TITLE=安装silex&
+STEP1=初始安装&
+STEP2=创建账户&
+STEP3=启动SILEX&
+
+;step1
+WELCOME_INTRO_1=现在开始进行安装&
+WELCOME_INTRO_2=安装&
+WELCOME_RUN_TESTS=首先我们运行一些测试&
+WELCOME_LABEL_BUTTON=出发&
+WELCOME_CHOOSE_LANGUAGE_DESCRIPTION=选择语言&
+WELCOME_CHOOSE_LANGUAGE_BUTTON=修改&
+
+;step2
+ACCOUNT_SERVER_ALREADY_INSTALLED=您的silex服务器已经安装&
+ACCOUNT_ASK_LOGIN=请登陆&
+ACCOUNT_LOGIN=用户名:&
+ACCOUNT_PASSWORD=密码:&
+ACCOUNT_NEXT=下一步&
+ACCOUNT_SERVER_ABLE=您的服务器可以运行silex.&
+ACCOUNT_CHOOSE_LOGIN_AND_PASSWORD=请为您的管理级别账号设置用户名和密码:&
+
+;step3
+ACCOUNT_CREATED=管理员账户已经创建&
+SERVER_INSTALLED=服务器已经成功安装。&
+LAST_STEP=下一步是重新设置URL&
+URL_REWRITING_SUCCESS=URL-Rewriting已经重新安装&
+THATS_IT=现在您已经准备好了。让我们&
+GOTO_MANAGER=开始&
+URL_REWRITING_OK=URL-Rewriting已经成功安装&
+URL_REWRITING_NOK=您的主机不支持重置URL(URL-Rewriting).&
+URL_REWRITING_NOK_SO_WHAT=没有它您的网站将不会被搜索引擎收录&
+
+;tests
+TEST_RIGHTS_HAS_RIGHTS=读 写 执行 权限成功设定&
+TEST_RIGHTS_HAS_NO_RIGHTS=写 执行权限成功设定&
+TEST_RIGHTS_CHMOD_OK=访问权限已经被修改为755&
+TEST_RIGHTS_CHMOD_NOK=错误，访问权限不能被修改为755&
+TEST_RIGHTS_HELP=[TEST_RIGHTS_HELP]&
+
+TEST_SESSION_HELP=您的主机不允许sessions，silex需要sessions来支持运行&
+TEST_PHP_VERSION_HELP=[TEST_PHP_VERSION_HELP]&
+TEST_SET_INCLUDE_PATH_HELP=您的主机不允许set_include_path，silex需要set_include_path来支持运行&

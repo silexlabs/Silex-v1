@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentDescriptor version="1.0">
+	<componentName>FuturistButton</componentName>
+	<className>FuturistButton</className>
+	<parentDescriptorClassName>org.silex.ui.components.buttons.ButtonBase</parentDescriptorClassName>
+	<specificEditorUrl>editors/FuturistButton.swf</specificEditorUrl>
+	<componentRoot>main</componentRoot>
+	<metaData>
+		<pluginRelativeUrl>plugins/silexComponents/</pluginRelativeUrl>
+		<addComponentParams>
+			<name>Addfuturistbutton</name>
+			<uid>silex.AddComponent.ToolItem.Addfuturistbutton</uid>
+			<groupUid>silex.AddComponent.ToolItemGroup.Buttons</groupUid>
+			<toolUid>silex.AddComponent.Tool</toolUid>
+			<label>LABEL_ADD_BUTTON_FUTURISTIC</label>
+			<description>DESCRIPTION_ADD_BUTTON_FUTURISTIC_BUTTON</description>
+			<level>2</level>
+			<action>addSkinnableComponent</action>
+			<iconUrl>icons/button.swf</iconUrl>
+			<skins>
+				<skin>
+					<label>LABEL_ADD_SKIN_FUTURISTIC_BUTTON</label>
+					<description>DESCRIPTION_ADD_SKIN_FUTURISTIC_BUTTON</description>
+					<url>as2/futuristButton/futuristButton.swf</url>
+				</skin>
+			</skins>	
+		</addComponentParams>
+	</metaData>
+	<properties>	
+		<buttonLabel>
+			<type>String</type>
+			<subType>Text</subType>
+			<description>PROPERTIES_DESCRIPTION_BUTTON_LABEL</description>
+		</buttonLabel>
+	</properties>
+</componentDescriptor>

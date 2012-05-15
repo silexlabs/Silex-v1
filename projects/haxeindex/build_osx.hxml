@@ -1,0 +1,35 @@
+#build file
+-cp src
+-cp ../../framework/hx
+-main org.silex.html.SilexIndex
+-php bin/SilexIndex.phpdir
+--php-lib framework/hx
+org.silex.serverApi.externs.ServerConfigExtern
+org.silex.serverApi.ServerConfig
+org.silex.serverApi.externs.SiteEditorExtern
+org.silex.serverApi.SiteEditor
+org.silex.serverApi.externs.ServerContentExtern
+org.silex.serverApi.ServerContent
+org.silex.serverApi.externs.LoggerExtern
+org.silex.serverApi.Logger
+org.silex.serverApi.externs.ComponentManagerExtern
+org.silex.serverApi.ComponentManager
+org.silex.serverApi.HookManager
+org.silex.serverApi.externs.HookManagerExtern
+org.silex.serverApi.externs.PluginManagerExtern
+org.silex.serverApi.PluginManager
+org.silex.serverApi.externs.ConfigEditorExtern
+org.silex.serverApi.ConfigEditor
+org.silex.serverApi.externs.ComponentDescriptorExtern
+org.silex.serverApi.ComponentDescriptor
+org.silex.serverApi.externs.FileSystemToolsExtern
+org.silex.serverApi.FileSystemTools
+org.silex.serverApi.FileSystemItem
+org.silex.serverApi.ComponentManager
+-cmd svn export bin bin_export
+#-cmd cp bin_export/SilexIndex.phpdir/index.php ../../silex_server/index.php
+-cmd cp src/index-template.php ../../silex_server/index.php
+-cmd cp -Rf bin_export/SilexIndex.phpdir/framework ../../silex_server/
+-cmd rm -rf bin_export
+--no-traces
+#-debug

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element type_str="object" name_str="root">
+  <element type_str="string" name_str="title">
+    <![CDATA[start]]>
+</element>
+  <element type_str="string" name_str="deeplink">
+    <![CDATA[start]]>
+</element>
+  <element type_str="string" name_str="pubDate">
+    <![CDATA[Tue Dec 7 15:16:37 GMT+0100 2010]]>
+</element>
+  <element type_str="string" name_str="urlBase">
+    <![CDATA[http://localhost:8888/workspace/SilexTrunk/silex_server/testreaddb/]]>
+</element>
+  <element type_str="object" name_str="content"></element>
+</element>

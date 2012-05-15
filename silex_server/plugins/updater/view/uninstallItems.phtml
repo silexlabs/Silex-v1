@@ -1,0 +1,105 @@
+﻿<div class="updater_ariane">
+	<a onclick="javascript:<?php $this->generateForwarding(array("action"=>"index"));?>" ><?php print $this->localisedStrings["ARIANE_INDEX_LABEL"];?></a> > 
+	<a onclick="javascript:<?php $this->generateForwarding(array( "action"=>"uninstallItems" , "installed_items"=>serialize(urlencodeArray($this->installedItems))));?>" ><?php print $this->localisedStrings["ARIANE_UNINSTALL_ITEMS_LABEL"];?></a>
+</div>
+
+
+<?php
+if(empty($this->uninstallConf))
+{
+	if(empty($this->itemsChosen))
+	{
+		if(!empty($this->installedItems))
+		{
+			?>
+			<span class="updater_text"><?php print $this->localisedStrings["ITEM_UNINSTALL_CHOOSE_MSG"];?></span><br>
+			<?php
+			$itemCount = 0;
+			foreach($this->installedItems as $installedItem)
+			{
+				$itemCount++;
+				?>
+				<input class='uninstall' name='<?php echo $itemCount; ?>_to_uninstall' type='checkbox' value='<?php echo $installedItem['id']; ?>' title='<?php print $this->localisedStrings["ITEM_UNINSTALL_CHECK_LABEL"];?>' />
+				<?php
+				echo " ".$installedItem['title']."<br>";
+			}
+			?>
+			<div class='updater_centeredContent updater_marginTop'>
+				<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"uninstallItems", "items_chosen"=>true,
+					"installed_items"=>serialize(urlencodeArray($this->installedItems))) , array(".uninstall") ); ?>">
+					<?php print $this->localisedStrings["ITEM_UNINSTALL_START_LABEL"]; ?>
+				</button>
+			</div>
+			<?php
+		} else { // in case we clicked on the ariane link after having uninstalled all items left.
+			?>
+			<script type="text/javascript">
+				<?php $this->generateForwarding( array("action"=>"index"), null ); ?>
+			</script>
+			<?php
+		}
+	} else {
+	
+		$deleteCount=0;
+		?>
+		<span class="updater_text"><?php printf($this->localisedStrings["ITEM_FILES_AND_FOLDERS_LIST_START_MSG"]); ?></span>
+		<div class='updater_list updater_marginTop'>
+			<div class='updater_listLine'>
+				<div class='updater_listPath'><img src='plugins/updater/img/path_03.png' alt='<?php printf($this->localisedStrings["ITEM_UNINSTALL_PATH_LIST_LABEL"]); ?>' title='<?php printf($this->localisedStrings["ITEM_UNINSTALL_PATH_LIST_LABEL"]); ?>' /></div>
+				<div class='updater_clearBoth'></div>
+			</div>
+			<?php
+			foreach($this->itemsToDelete as $itemToDelete)
+			{	
+				if($itemToDelete instanceof FileModel)
+					$this->displayFileToDelete($deleteCount, $itemToDelete, false);
+				else
+					$this->displayFolderToDelete($deleteCount, $itemToDelete, false);
+			}
+			?>
+		</div>
+		
+		<div class='updater_centeredContent updater_marginTop'>
+			<span class="updater_text"><?php printf($this->localisedStrings["ITEM_UNINSTALL_CONF_MSG"]); ?></span>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"uninstallItems", "installed_items"=>serialize(urlencodeArray($this->installedItems)),
+				"uninstall_conf"=>true, "items_to_delete"=>serialize(urlencodeArray($this->itemsToDelete)), "chosen_items"=>serialize(urlencodeArray($this->chosenItems))) ); ?>">
+				<?php printf($this->localisedStrings["GENERAL_CONF_YES_LABEL"]); ?>
+			</button>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"index") ); ?>">
+				<?php printf($this->localisedStrings["GENERAL_CONF_NO_LABEL"]); ?>
+			</button>
+		</div>
+		<?php
+	}
+	
+} else { // uninstallation result
+	
+	if(empty($this->deleteReport))
+	{
+		?>
+		<br><span class="updater_success"><?php printf($this->localisedStrings["ITEM_UNINSTALL_SUCCESS_MSG"]); ?></span>
+		<br><div class='updater_centeredContent updater_marginTop'>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"index") ); ?>">
+				<?php printf($this->localisedStrings['MAIN_COME_BACK_INDEX_SHORT_LABEL']); ?>
+			</button>
+		</div>
+		<?php
+	} else {
+		?>
+		<br><span class="updater_error"><?php printf($this->localisedStrings["ITEM_UNINSTALL_DEL_ERR"]); ?></span>
+		<div class='updater_reportList updater_marginTop'>
+			<?php
+			foreach($this->deleteReport as $resultItem)
+				print $resultItem."<br>";
+			?>
+		</div>
+		<div class='updater_centeredContent updater_marginTop'>
+			<button class="" onclick="javascript:<?php $this->generateForwarding( array("action"=>"uninstallItems", "installed_items"=>serialize(urlencodeArray($this->installedItems)),
+				"uninstall_conf"=>true, "items_to_delete"=>serialize(urlencodeArray($this->itemsToDelete))) ); ?>">
+				<?php printf($this->localisedStrings["ITEM_UNINSTALL_RETRY_LABEL"]); ?>
+			</button>
+		</div>
+		<?php
+	}
+}
+?>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*" xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:cookieComponent="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.CookieComponent.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(cookieMedia, cookieInfo);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="cookieMedia" />		
+	<cookieComponent:PanelUiCookieInfo id="cookieInfo" />
+	
+</panel:PanelBase>

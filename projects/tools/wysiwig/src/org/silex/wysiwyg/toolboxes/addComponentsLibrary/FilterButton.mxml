@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" >
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var isSelected:Boolean;
+			
+			[Bindable]
+			public var extension:String;
+			
+			[Bindable]
+			public var toggle:Boolean;
+		]]>
+	</fx:Script>
+	
+	<mx:Button styleName="radio" toggle="{toggle}" selected="{isSelected}" click="{isSelected = event.target.selected}" />
+	<mx:Label text="{extension}" />
+</mx:HBox>

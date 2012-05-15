@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panelUis:PanelUiBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  horizontalAlign="left" xmlns:ui="ui.*" width="100%"
+					  xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*"  
+					  xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*" 
+					  xmlns:panelUis="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.*" 
+					  >
+	
+	<mx:Form width="100%" paddingLeft="0">
+		<mx:FormItem width="100%" >
+			<mx:Label text="{resourceManager.getString('WYSIWYG', 'PROPERTIES_GROUP_ADVANCED_PARAMETER')}" fontSize="16" color="0x686765" paddingLeft="0"/>
+		</mx:FormItem>	
+	</mx:Form>			
+	<mx:Form width="100%" height="100%" paddingLeft="50">
+		<mx:HBox>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.forceDownload.description}">
+				<ns1:WysiwygCheckBox selected="{propertyArray.forceDownload.currentValue}"
+									 change="updatePropertyValue(event.currentTarget.selected, 'forceDownload')"  />
+			</mx:FormItem>
+			<mx:FormItem width="100%" height="100%" label="{propertyArray.fileURL.description}" direction="horizontal">
+				<ns1:WysiwygTextInput text="{propertyArray.fileURL.currentValue}"
+									  change="{updatePropertyValue(event.currentTarget.text, 'fileURL')}"/>
+				<ns1:WysiwygButton label="{resourceManager.getString('WYSIWYG', 'PROPERTIES_TOOLBOX_EDIT_PROPERTY_BUTTON_LABEL')}" click="{selectProperty(propertyArray.fileURL)}" />
+			</mx:FormItem>				
+		</mx:HBox>
+	</mx:Form>
+	<mx:HRule width="100%" />		
+</panelUis:PanelUiBase>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panels:PropertyEditorsBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+				creationComplete="onCreationComplete()"
+				xmlns:ns1="org.silex.wysiwyg.ui.*" xmlns:array1="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.array.*" 
+				xmlns:panels="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.*" >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:Boolean id="isListItemSelected" />
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.operations.CopyOperation;
+			
+			import mx.collections.ArrayCollection;
+			import mx.core.ContainerCreationPolicy;
+			import mx.events.CollectionEvent;
+			import mx.events.DragEvent;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			import nl.demonsters.debugger.MonsterDebugger;
+			
+			import org.silex.wysiwyg.event.PluginEvent;
+			import org.silex.wysiwyg.ui.WysiwygList;
+
+			
+			/**
+			 * the array containing the new data
+			 */ 
+			[Bindable]
+			private var _arrayData:ArrayCollection;
+			
+			/**
+			 * add listener to the array control bar and to the array list
+			 */ 
+			private function onCreationComplete():void
+			{
+				
+				arrayControlBar.addEventListener(PluginEvent.ADD_ITEM, onAddItem);
+				arrayControlBar.addEventListener(PluginEvent.VALIDATE_ITEM, onValidateItem);
+				arrayControlBar.addEventListener(PluginEvent.REMOVE_ITEM, onDeleteItem);
+				arrayControlBar.addEventListener(PluginEvent.COPY_ITEM, onCopyItem);
+				arrayControlBar.addEventListener(PluginEvent.CANCEL_ITEM, onCancelItem);
+				
+				arrayList.addEventListener(PluginEvent.DATA_CHANGED, onDataChanged);
+				
+				arrayConfirmBar.addEventListener(PluginEvent.VALIDATE_ITEM, onCopyValidateItem);
+				arrayConfirmBar.addEventListener(PluginEvent.CANCEL_ITEM, onCancelItem);
+				
+			}
+			
+			
+			override protected function refreshProperty():void
+			{
+				super.refreshProperty();
+				setProperty();
+			}
+			
+			/**
+			 * when the property is set, wrap the property data in an array collection
+			 * used by the list, then check the list state
+			 * 
+			 * @param propertyArray the array sent by the main application
+			 */ 
+			public function setProperty():void
+			{
+				currentState = "default";
+				var tempArray:Array = new Array();
+				
+				if ((_selectedProperty.currentValue as Array))
+				{
+					for (var i:int=0; i<(_selectedProperty.currentValue as Array).length; i++)
+					{
+						tempArray.push({value:(_selectedProperty.currentValue as Array)[i],
+							selected:false, index:i,
+						selectedTextInput:0});
+					}
+				}
+				
+				
+				_arrayData = new ArrayCollection(tempArray);
+				checkList();
+			}		
+			
+
+			/**
+			 * when a change of data occurs, sends the new value to the main application
+			 */ 
+			private function onPropertyChange():void
+			{
+
+				var retArray:Array = new Array();
+				
+				for (var i:int = 0; i<_arrayData.length; i++)
+				{
+					retArray.push(_arrayData.getItemAt(i).value);
+				}
+				
+				updateSelectedProperties(retArray);
+				
+			}
+			
+			/**
+			 * method called when the user clicks the 'ok' button
+			 * 
+			 * @param event the triggerred plugin event
+			 */ 
+			private function onValidateItem(event:PluginEvent):void
+			{
+				onPropertyChange();
+				closeEditor();
+			}
+			
+			/**
+			 * Called when the user uses drag'n'drop to re-order the list
+			 * 
+			 * @param event the trigerred dragEvent
+			 */ 
+			private function onDragComplete(event:DragEvent):void
+			{
+				refreshIndexes();
+			}
+			
+			/**
+			 * add an item with a random value when the user clicks on the add button
+			 * 
+			 * @param event the trigerred plugin event
+			 */ 
+			private function onAddItem(event:PluginEvent):void
+			{
+				
+				_arrayData.addItem({value:"", selected:false, index:_arrayData.length} );
+				refreshSelectedInput(_arrayData.length, 0);
+				onPropertyChange();
+				refreshIndexes();
+				checkList();
+			}
+			
+			/**
+			 * When the user clicks the copy button, changes the current state
+			 * to display a text area allowing the user to copy or paste the data
+			 * 
+			 * @param event the triggered PluginEvent
+			 */ 
+			private function onCopyItem(event:PluginEvent):void
+			{
+				currentState = "copy";
+				
+				copyTextArea.text = "";
+				
+				for (var i:int=0; i<_arrayData.length; i++)
+				{
+					copyTextArea.text += _arrayData.getItemAt(i).value + "\r";
+				}
+			}
+			
+			/**
+			 * When the user clicks the delete button, delete all the selected items
+			 * 
+			 * @param event the trigerred PluginEvent
+			 */ 
+			private function onDeleteItem(event:PluginEvent):void
+			{
+				for (var i:int =_arrayData.length - 1; i>=0; i--)
+				{
+					if (_arrayData.getItemAt(i).selected == true)
+					{
+						_arrayData.removeItemAt(i);
+					}
+				}
+				
+				onPropertyChange();
+				refreshIndexes();
+				checkList();
+				
+			}
+			
+			
+			/**
+			 * checks the length of the list and activate
+			 * buttons accordingly. Also checks if items are selected to
+			 * activate the delete button
+			 */ 
+			private function checkList():void
+			{
+				if ( _arrayData.length == 0)
+				{
+					arrayControlBar.deactivate();
+				}
+					
+				else
+				{
+					arrayControlBar.activate();
+				}
+				
+				var flagSelected:Boolean = false;
+				for (var i:int =0 ; i< _arrayData.length; i++)
+				{
+					if (_arrayData.getItemAt(i).selected == true)
+					{
+						flagSelected = true;
+					}
+				}
+				
+				if (flagSelected)
+				{
+					arrayControlBar.removeButton.enabled = true;
+				}
+				else
+				{
+					arrayControlBar.removeButton.enabled = false;
+				}
+			}
+			
+			private function onListDataChange(event:FlexEvent):void
+			{
+				refreshIndexes();
+				checkList();
+				
+			}
+			
+			private function refreshIndexes():void
+			{
+				for (var i:int =0; i<_arrayData.length; i++)
+				{
+					var data:Object = _arrayData.getItemAt(i);
+					data.index = i;
+					_arrayData.setItemAt(data, i);
+				}
+			}
+			
+			private function refreshSelectedInput(index:int, charIndex:int):void
+			{
+				for (var i:int = 0; i<_arrayData.length; i++)
+				{
+					var data:Object = _arrayData.getItemAt(i);
+					data.selectedTextInput = index;
+					data.selectedCharIndex = charIndex;
+					_arrayData.setItemAt(data, i);
+				}
+			}
+			
+			private function onDataChanged(event:PluginEvent):void
+			{
+				_arrayData.setItemAt(event.data, event.data.index);
+				
+				refreshSelectedInput(event.data.index, event.data.selectedCharIndex);
+				
+				checkList();
+				
+			}
+			
+
+			
+			
+			private function onCancelItem(event:PluginEvent):void
+			{
+				if (currentState == "copy")
+				{
+					currentState = "default";
+				}
+				
+				else
+				{
+					closeEditor();
+				}
+				
+			}
+			
+			private function onCopyValidateItem(event:PluginEvent):void
+			{
+				
+				var tempArray:Array = copyTextArea.text.split("\r");
+				var newArray:Array = new Array();
+				
+				for (var i:int = 0; i<tempArray.length; i++)
+				{
+					if (i == tempArray.length - 1 )
+					{
+						if (tempArray[i] != "")
+						{
+							newArray.push({value:tempArray[i], selected:false, index:i});
+						}
+					}
+					
+					else
+					{
+						newArray.push({value:tempArray[i], selected:false, index:i});
+					}
+					
+				}
+				
+				_arrayData = new ArrayCollection(newArray);
+				onPropertyChange();
+				currentState = "default";
+			}
+
+		]]>
+	</fx:Script>
+	
+	<panels:states >
+		<mx:State name="default"  />
+		<mx:State name="copy" />
+	</panels:states> 
+	
+	<mx:VBox id="listContainer" width="100%" height="100%"  >
+		
+		<ns1:WysiwygList 
+			id="arrayList"
+			styleName="noCell"
+			visible.copy="false"
+			visible.default="true"
+			includeInLayout.copy="false"
+			includeInLayout.default="true"
+			itemRenderer="org.silex.wysiwyg.plugins.WysiwygPluginPropertyEditors.PropertyEditors.panels.array.ArrayListItemRenderer"
+			dataChange="onListDataChange(event)"
+			dragEnabled="false"
+			dropEnabled="true"
+			dragMoveEnabled="true"
+			dragComplete="onDragComplete(event)"
+			dataProvider="{_arrayData}"
+			width="100%" height="100%"
+			/>
+		
+		<mx:TextArea  id="copyTextArea" width="100%" height="100%"
+							  visible.copy="true"
+							  visible.default="false"
+							  includeInLayout.copy="true"
+							  includeInLayout.default="false"/>
+			
+		<mx:HRule width="100%" />
+		<array1:ArrayControlBar id="arrayControlBar" width="100%" height="25"
+							visible.copy="false"
+							visible.default="true"
+							includeInLayout.copy="false"
+							includeInLayout.default="true"/>
+		<array1:ArrayConfirmBar id="arrayConfirmBar" width="100%" height="25"
+							visible.copy="true"
+							visible.default="false"
+							includeInLayout.copy="true"
+							includeInLayout.default="false"/>
+	</mx:VBox>
+	
+</panels:PropertyEditorsBase>

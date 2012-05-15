@@ -1,0 +1,495 @@
+;File generated via Silex_translations official file – Please use this file for any modification or addition: https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE
+
+; ALL PAGES
+errorMessage=une erreur est survenue lors de l'enregistrement de vos modifications - veuillez recommencer votre opération&
+errorMessageLoading=une erreur est survenue lors du chargement des données. Rechargez la page et si le problème persiste, contactez la communauté.&
+successMessage=votre modification est enregistrée&
+
+; PAGE LOGIN.FLAG ( start/login.flag )
+text:loginFlag:title:1=Identifiez-vous&
+text:loginFlag:id=Votre login&
+text:loginFlag:pass=Votre mot de passe&
+text:loginFlag:remember=Se souvenir de moi&
+
+; NAVIGATION
+
+btn:nav:manager=Manager&
+btn:nav:home=Accueil&
+btn:nav:manage=Gérer&
+btn:nav:settings=Réglages&
+btn:nav:id=Vos  comptess&
+btn:nav:accountSettings=Paramètres de comptes&
+btn:nav:translation=Traduction&
+
+; MENU Haut de page
+text:menu:title=silex manager&
+btn:menu:home=Accueil&
+btn:menu:create=Créer&
+btn:menu:manage=Gérer&
+btn:menu:settings=Réglages&
+btn:menu:logout=Logout&
+
+; MENU Bas de page
+txt:menu:links=Liens externes&
+btn:menu:links:website=Site&
+btn:menu:links:forum=Forum&
+btn:menu:links:blog=Blog&
+btn:menu:links:help=Aide en ligne&
+btn:menu:links:themes=Thèmes en ligne&
+
+txt:menu:community=Communauté&
+btn:menu:community:mailingList=Mailing list&
+btn:menu:community:translation=Traduction&
+btn:menu:community:satisfaction=Enquête Satisfaction&
+btn:menu:community:download=Téléchargement&
+url:btn:menu:links:website=http://projects.silexlabs.org/?/silex/&
+url:btn:menu:links:forum=http://community.silexlabs.org/silex/forum_en/&
+url:btn:menu:links:blog=http://www.silexlabs.org/category/the-blog/blog-silex/&
+url:btn:menu:links:help=http://www.silexlabs.org/silex/docs-silex/user-guide-silex/&
+url:btn:menu:links:themes=http://www.silexlabs.org/category/exchange/exchange-silex/themes/&
+url:btn:menu:links:translation=https://docs.google.com/spreadsheet/ccc?key=0AqIDt8zHEO6ddEZqdnJsYkJzMXZaRXFhY281elZmUUE&
+url:btn:menu:links:exchange=http://www.silexlabs.org/category/exchange/exchange-silex/&
+
+; HOME
+
+btn:home:newWebsite:1=Créer&
+btn:home:newWebsite:2=une nouvelle publication&
+btn:home:newWebsite:3=Depuis une page vide&
+btn:home:newWebsite:4=Depuis une sélection de thèmes&
+btn:home:settings:1=Gérer&
+btn:home:settings:4=Visualiser&
+btn:home:manage:1=Gérer&
+btn:home:manage:2=vos identifiants&
+btn:home:settings:3=Réglages&
+btn:home:last:1=Propriétés&
+btn:home:last:2=Maquetter&
+
+url:btn:home:links:update=http://sourceforge.net/projects/silex/files/&
+url:btn:home:links:upload=http://wp-manager.silex-ria.org/&
+
+; PAGE start/menu/home
+text:home:title=Bienvenue <<silex.authentication.currentLogin>>&
+text:home:tips=Astuce du jour&
+text:home:last=Dernière publication sauvegardée&
+text:home:last1=Flash Player&
+text:home:last2=Versions&
+text:home:last3=langue par défaut&
+text:home:last5=première page&
+
+text:home:administration=Administration&
+text:home:system=Système&
+
+btn:home:community=Vous référencer auprès de la communauté&
+
+btn:home:mail:address=community@silexlabs.org&
+btn:home:mail:title=me referencer aupres de la communaute silex&
+btn:home:mail:body=mes coordonnees (nom, mail, localisation), mon activite, mes realisations&
+
+; SETTINGS
+
+; PAGE start/menu/settings/
+text:settings:list:title=Réglages&
+text:settings:list:loginPass=Identifiant - Mot de passe&
+text:settings:list:languages=Langues&
+text:settings:list:server:info=Infos serveur&
+text:settings:title=Vous avez installé la version ((<<silex.config.version>>)) de Silex&
+settings:home:1=Gérer&
+settings:home:2=vos identifiants&
+settings:home:3=Télécharger&
+settings:home:4=la dernière version&
+settings:home:5=Informations à propos de votre serveur Silex&
+settings:home:6=Choisir la langue de l'interface - Ajouter une langue&
+settings:home:7=Configurer les plugins de votre serveur Silex&
+
+; SETTINGS LOGINS
+
+; PAGE start/menu/settings/loginPass
+text:logins:list:sureDelete=Etes vous sure de vouloir effacer ce compte ?&
+text:logins:list:title=Vos identifiants&
+text:logins:newCompte:title=Nouveau compte&
+
+; PAGE start/menu/settings/loginpass/loginPass1
+text:logins:help:1=Pour modifier un compte, selectionnez le dans la liste ci-contre.&
+text:logins:help:2=Pour ajouter un compte, cliquez sur le bouton en bas de la liste ci-contre.&
+text:logins:help:3=Pour réinitialiser les mots de passe admin, utilisez le ftp pour effacer le fichier conf / pass.php&
+
+texte:logins:tile_user=Compte utilisateur&
+text:logins:id=Identifiant&
+text:logins:new_pass=Votre nouveau mot de passe&
+text:logins:pass=Mot de passe&
+
+; SETTINGS LANG
+btn:settings:manage:1=Gérer&
+btn:settings:manage:2=vos identifiants&
+btn:settings:version:1=Version&
+btn:settings:version:2=utilisée&
+btn:settings:downlad:1=Télécharger&
+btn:settings:downlad:2=la dernière version&
+btn:settings:help=En savoir plus sur les réglages&
+btn:logins:add=Ajouter un compte&
+btn:logins:delete=Effacer&
+btn:logins:rename=Renommer&
+btn:logins:save=Enregistrer&
+btn:logins:change=Modifier&
+btn:logins:cancel=Annuler&
+btn:logins:create=Créer&
+btn:lang:change=Modifier&
+btn:lang:add=Ajouter une langue&
+btn:lang:valid=Valider&
+btn:lang:download=Télécharger&
+btn:lang:translate:tool=Traduire l'interface&
+btn:lang:save=Enregistrer&
+btn:param:server:save=Enregistrer&
+
+; PAGE menu/settings/languages
+text:settings:lang:title=Choix de la langue&
+text:settings:lang:1=Langues disponibles pour l'interface de votre publication&
+text:settings:lang:3=Langues par défaut de votre publication&
+text:settings:lang:4=((<<silex.config.language>>))&
+
+; PAGE menu/settings/languages/languages1
+text:settings:lang:5=Silex supporte plusieurs langues.&
+text:settings:lang:6=Pour changer la langue des interfaces de votre publication, cliquez sur&
+text:settings:lang:67=pour accèder à la liste des langues disponibles&
+text:settings:lang:7=Si vous souhaitez traduire l'interface dans une langue non disponible dans la liste, cliquez sur&
+
+; PAGE menu/settings/languages/lang.change
+text:settings:lang:title:2=Langue par défaut de votre publication&
+text:settings:lang:8=Choisissez dans la liste ci-dessous la langue d'interface pour l'admin WYSIWYG et le MANAGER de votre publication&
+
+; PAGE menu/settings/languages/lang.add
+text:settings:lang:title:3=Ajouter une langue&
+text:settings=Vous pouvez traduire votre interface avec l'outil proposé et partager votre traduction avec la communauté&
+link:settings:lang:1=http://silex-ria.org/interface.de.traduction&
+link:settings:lang:2=http://silex-ria.org/download.languages.files&
+
+; SETTINGS PARAM.SERVER
+
+; SETTINGS INFOS.SERVER
+
+; PAGE menu/settings/infos.server
+infos:server:title=Informations serveur&
+infos:server:1=Version utilisée&
+infos:server:2=Dernière version&
+infos:server:3=Télécharger la dernière version&
+infos:server:4=Télécharger&
+infos:server:5=Taille des dossiers&
+infos:server:6=Racine&
+infos:server:7=Contents&
+infos:server:8=Polices&
+infos:server:9=Layouts&
+infos:server:10=Media&
+infos:server:loading=Chargement...&
+
+
+; SETTINGS PLUGINS
+; Zabojad - add entire SETTINGS.PLUGINS section - 07-05-2010
+
+text:settings:list:plugins=Plugins&
+
+settings:plugins:missing=Ce plugin n'est pas installé sur votre serveur Silex.&
+settings:plugins:home=Pour configurer ou désactiver un plugin, sélectionnez le dans la liste ci-contre gauche. Pour activer un plugin pour l'ensemble du serveur Silex, choisissez "Ajouter un plugin".&
+settings:plugins:installed=Liste des plugins activés&
+settings:plugins:add=Confirmer l'activation de <<DataSelector_plugins.selectedItem.title>> pour votre serveur Silex ?&
+settings:plugins:deactivate=Confirmer la désactivation de <<RichTextList_01_installed_plugins.selectedItem.label>> pour votre serveur Silex ?&
+settings:plugins:param=Pour configurer un paramètre, sélectionnez le dans la liste ci-contre gauche&
+
+btn:settings:plugins:deactivate=Désactiver un plugin&
+btn:settings:plugins:activate=Activer un plugin&
+btn:settings:cancel=Annuler&
+btn:settings:confirm=Confirmer&
+btn:settings:save=Enregistrer&
+
+
+; CREATE
+
+btn:create:cancel=Annuler&
+btn:create:save=Enregistrer&
+btn:create:see=Voir&
+btn:create:duplicate=Dupliquer&
+btn:create:download=Télécharger&
+btn:create:more=En savoir plus&
+btn:create:info=Descriptions&
+btn:create:edit=Maquetter&
+
+; PAGE menu/create
+create:title:1=Créer une publication&
+create:list:1=à partir d'une page vierge&
+create:list:2=à partir d'un thème Silex&
+create:list:3=Télécharger 1 thème&
+
+; PAGE menu/create/create1
+create:text:1=Nommez votre publication dans le champ texte ci-dessous&
+create:text:2=Nom&
+
+; PAGE menu/create/create2
+create:title:2=à partir d'un thème Silex&
+
+; PAGE menu/create/create2/create2.1
+create:text:3=Pour créer une publication depuis un thème, selectionnez-le dans la liste ci-contre.&
+
+; PAGE menu/create/create2/create2.edit
+create:title:3=Site sélectionné&
+
+; PAGE menu/create/create2/create.edit/create.dupplicate
+create:text:4=Nommez votre site dans le champ de texte ci-dessous&
+
+; PAGE menu/create/create3/create3.edit
+create:text:5=Pour télécharger un thème, sélectionnez-le dans la liste ci-contre.&
+
+; MANAGE
+
+btn:manage:properties=Propriétés&
+btn:manage:edition=Edition&
+btn:manage:plugins=Plugins&
+btn:manage:fonts=Polices&
+btn:manage:advanced=Avancé&
+btn:manage:see=Voir&
+btn:manage:save=Enregistrer&
+btn:manage:duplicate=Dupliquer&
+btn:manage:create_theme=Créer un thème&
+btn:manage:rename=Renommer&
+btn:manage:delete=Effacer&
+btn:manage:valid=Valider&
+btn:manage:confirm=Confirmer&
+btn:manage:cancel=Annuler&
+btn:manage:ok=Ok&
+btn:manage:indexation=Indexation&
+btn:manage:export=Exporter&
+btn:manage:screensaver=Economiseur&
+btn:manage:layout=Gabarits&
+btn:manage:context=Contexte&
+btn:manage:indexe=Indexer&
+btn:manage:add:tool=Ajouter un outil&
+btn:manage:add:layout=Ajouter un layout&
+btn:manage:add:loader=Ajouter un Loader&
+btn:manage:yes=Définir comme site par défaut&
+btn:manage:start=Renommer&
+btn:manage:clipboard=Copier ce code dans le presse papier&
+btn:manage:manage:activate=Activer un plugin&
+
+btn:manage:fonts:activate=Activer une police&
+btn:manage:fonts:deactivate=Désactiver cette police&
+btn:manage:fonts:download=Télécharger une police&
+url:btn:manage:fonts:download=http://www.silexlabs.org/category/exchange/exchange-silex/fonts/&
+
+
+; PAGE menu/manage/
+manage:title:1=Gérer vos publications&
+
+; PAGE menu/manage/manage1
+manage:text:1=Pour gérer 1 site sélectionnez-le dans la liste ci-contre.&
+manage:folder:1=Sites&
+manage:folder:2=Thèmes&
+manage:folder:3=Utilitaires&
+
+; PAGE start/menu/manage/manage.edit/properties.manage/
+manage:text:4=Nom de la 1ère page&
+manage:text:5=Titre html&
+manage:text:55=Description&
+manage:text:6=Icône&
+manage:text:7=Mots clefs&
+manage:text:8=Largeur&
+manage:text:9=Hauteur&
+manage:text:10=Couleur arrière-plan&
+
+manage:text:12=Redimensionnement&
+manage:text:15=Site par défaut&
+manage:text:13=noScale&
+manage:text:14=showAll&
+btn:manage:manage:deactivate=Désactiver ce plugin&
+manage:text:42=scroll&
+manage:text:43=pixel&
+
+manage:text:16=oui&
+manage:text:17=non&
+
+; PAGE start/menu/manage/manage.edit/properties.manage/bgcolor
+manage:text:18=Couleur d'arrière-plan de votre publication&
+manage:text:19=Couleur survolée&
+manage:text:20=Couleur actuelle&
+
+; PAGE menu/manage/manage.edit/edition.manage/e.m.1
+manage:text:em1=Un peu d'aide pour la création de vos sites&
+
+; PAGE menu/manage/manage.edit/edition.manage/e.m.dupli
+manage:text:2=Nommez votre publication dans le champ de texte ci-dessous&
+manage:text:201=Donnez un nom à votre thème&
+manage:text:3=Renommez votre publication dans le champ de texte ci-dessous&
+manage:suredelete=Etes-vous certains de vouloir effacer le site ?&
+
+; PAGE start/menu/manage/manage.edit/plugins
+manage:text:21=Plugins&
+manage:text:22=Liste des plugins installés&
+manage:text:23=PhpMyVisites Url&
+manage:text:24=Sélectionnez un plugin dans la liste ci-contre gauche pour le paramétrer ou le désactiver&
+manage:text:25=Ajouter un plugin&
+
+manage:text:29=Pour désactiver une police d'écriture, sélectionnez la dans la liste ci-contre gauche et cliquez sur "Désactiver cette police".&
+
+manage:text:44=Liste des polices activées&
+manage:text:45=Liste des polices installées&
+manage:text:46=Sélectionnez une police dans la liste ci-contre gauche pour l'activer.&
+
+manage:text:50=Sélectionnez un paramètre de ce plugin dans la liste ci-contre gauche pour l'éditer&
+manage:text:51=Confirmez vous la désactivation de ce plugin ?&
+manage:text:52=Confirmez vous la désactivation de cette police ?&
+manage:text:53=Confirmez vous l'activation de ce plugin ?&
+manage:text:54=Confirmez vous l'activation de cette police ?&
+
+; PAGE start/menu/manage/manage.edit/advanced/index
+manage:text:26=Etes vous certains de vouloir indexer le site sélectionné ?&
+
+; PAGE start/menu/manage/manage.edit/advanced/parameters
+text:settings:list:parameters=Paramètres&
+
+; Zabojad - no more used label
+;manage:text:USE_AMF_FILES
+
+; Zabojad - no more used label
+;manage:text:preloadFiles
+
+; Zabojad - no more used label
+;manage:text:deeplink
+
+; Zabojad - no more used label
+;param:server:1
+
+; Zabojad - no more used label
+;param:server:2
+
+
+param:server:add=Ajouter&
+param:server:delete=Supprimer&
+param:server:label=Valeur pour le paramètre <<RichTextList_01_adv_params.selectedItem.label>>&
+param:server:delete:confirm=Confirmer la suppression du paramètre <<RichTextList_01_adv_params.selectedItem.label>> pour le site <<DataSelector_site.selectedItem.title>>&
+param:server:newlabel=Entrez le label de ce nouveau paramètre puis validez&
+
+param:server:3=oui&
+param:server:4=non&
+
+; PAGE start/menu/manage/manage.edit/advanced/export
+manage:text:27=Etes-vous certains de vouloir exporter le site ?&
+manage:text:28=Exporter votre publication sous forme de widget sur un forum, blog, myspace&
+manage:text:28bis=Le code a été copié, vous pouvez le coller en faisant control + V&
+
+; PAGE start/menu/manage/manage.edit/advanced/screensaver
+manage:text:30=Délai économiseur d'écran&
+manage:text:31=Action de l'économiseur d'écran&
+manage:text:32=Désactiver l'économiseur d'écran&
+
+; PAGE start/menu/manage/manage.edit/advanced/layout
+manage:text:33=Loader&
+manage:text:34=Gabarit de page par défaut&
+manage:text:35=Gabarit de calque&
+manage:text:36=Répertoire des outils&
+
+; PAGE start/menu/manage/manage.edit/advanced/context
+manage:text:38=Liste des contextes disponibles&
+manage:text:39=Contexte initial&
+manage:text:40=Langue par défaut&
+manage:text:41=Liste des langues disponibles&
+
+; PAGE start/menu/translation
+translation:title=Silex traduction&
+translation:text=Un peu d'aide.&
+
+; PAGE start/menu/mailing.list
+btn:mailing:fr=Newsletter en français&
+btn:mailing:en=Newsletter en anglais&
+btn:mailing:trad=Mailing list des traducteurs&
+btn:mailing:dev=Mailing list des développeurs&
+mailing:text:title=Mailing lists&
+mailing:text:1=Votre inscription a bien été prise en compte. Vous allez recevoir un mail de SourceForge afin de confirmer.&
+mailing:text:2=Une erreur est survenue. Veuillez recommencer&
+mailing:text:3=Entrez votre e-mail dans le formulaire ci-dessous.&
+mailing:text:4=Sélectionner la liste de diffusion qui vous interesse.&
+btn:newsletter:send=Envoyer&
+
+
+; NAVIGATION
+nav:create=Créer&
+nav:gerer:2=PROPRIETES&
+nav:gerer:3=DUPLIQUER&
+nav:gerer:4=RENOMMER&
+nav:gerer:5=SUPPRIMER&
+nav:gerer:6=OPTIONS AVANCEES&
+nav:settings:lang=Langues&
+nav:settings:info=INFOS LANGUES&
+nav:settings:plugins=Plugins&
+nav:download=Télécharger&
+nav:mailing=Mailing lists&
+
+; LANGUAGES PAGE
+texte:lang:translate=Traduisez l'interface de l'admin WYSIWYG et du MANAGER en utilisant l'outil de traduction.&
+texte:lang:download=Télécharger&
+
+; LOGIN PAGE
+text:login:login=Si vous avez perdu votre mot de passe, effacez le fichier pass.php contenu dans le dossier <conf> à la racine de votre serveur Silex.&
+login:choose:lang=Le Silex manager est disponible en plusieurs langues. Selectionnez la langue de votre choix en cliquant sur l'intitulé texte.&
+login:choose:lang:2=(exemple : fr pour français / de pour allemand / en pour anglais...).&
+login:choose:lang:3=La langue actuelle est :&
+pass:loose=Problèmes de connexion ?&
+text:login:connection=Connexion&
+
+; DOWNLOAD PAGE
+d:text:1=Bienvenue dans la section de download.<br>Cette section est liée à la plateforme d'echange de Silex Labs, [[http://exchange.silexlabs.org/]]&
+d:text:2=<p align="center">Veuillez sélectionner un élément dans la liste ci-contre afin d’accéder à la rubrique de votre choix.</p><br><p align="center">Vous pouvez télécharger la dernière version de Silex, des gabarits d’animation, des thèmes, des composants, des outils et des fichiers de langues vous permettant de traduire les différentes interfaces de Silex.</p>&
+d:latest:silex:version=Silex&
+d:layouts=Gabarits&
+d:themes=Thèmes&
+d:tools=Outils&
+d:lang=Langues&
+d:components=Composants&
+d:loaders=Loaders&
+d:plugins=Plugins&
+d:fonts=Polices&
+
+txt:list:layouts=Gabarits&
+txt:list:themes=Thèmes&
+txt:list:components=Composants&
+txt:list:tools=Outils&
+txt:list:lang=Langues&
+txt:list:loaders=Loaders&
+txt:list:plugins=Plugins&
+txt:list:fonts=Polices&
+
+
+; PAGE SYSTEM
+btn:system:admin=Retour&
+
+txt:aide:layout=Pour télécharger un gabarit, sélectionnez-le dans la liste ci-contre.&
+txt:aide:layout:1=Pour télécharger un outil, sélectionnez-le dans la liste ci-contre.&
+txt:aide:layout:2=Pour télécharger un composant, sélectionnez-le dans la liste ci-contre.&
+txt:aide:layout:3=1 - Sélectionner l'application dans la liste ci-contre.&
+txt:aide:layout:4=2 - selectionnez la langue dans la liste ci-contre.&
+txt:aide:layout:5=Pour télécharger un loader, sélectionnez-le dans la liste ci-contre.&
+txt:aide:layout:6=Pour télécharger un plugin, sélectionnez-le dans la liste ci-contre.&
+txt:aide:layout:7=Pour télécharger une police, sélectionnez-la dans la liste ci-contre.&
+
+l:installer=Installeur&
+l:ui=Silex Core&
+l:man=Manager&
+
+
+; HELP PAGE
+
+;help:maquetter:1
+;help:login:1
+;help:create:1
+;help:create:2
+;help:create:3
+;help:manage:0
+;help:manage:1
+;help:edition:1
+;help:plug:1
+;help:index:1
+;help:params:1
+;help:screen:1
+;help:layout:1
+;help:layer
+;help:loader
+;help:tools
+;help:context:1
+;help:export:1
+;help:setting:11

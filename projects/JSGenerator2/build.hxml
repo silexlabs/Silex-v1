@@ -1,0 +1,6 @@
+#build file
+-cp src
+-cp ../HooksFilters/src
+-main org.silex.Silex
+-js plugins/JSGenerator/JSGenerator.js
+-debug

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx" 
+				 xmlns:panel = "org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panels.*" 
+				 xmlns:components="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.*"
+				 xmlns:ui="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.ui.*" xmlns:oof="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.oof.*"
+				 xmlns:imagedisplay="org.silex.wysiwyg.plugins.WysiwygPluginSpecific.panelUis.components.ImageDisplay.*">
+	
+	
+	<fx:Script> 
+		<![CDATA[
+			override protected function registerPanelsUi():void
+			{
+				_panelUis.push(imageDisplayMedia,visualParameter, proportiesSlide, pageInfo);
+			}
+		]]>
+	</fx:Script>
+	<oof:PanelUiDescription id="imageDisplayMedia" />
+	<oof:PanelUiVisual id="visualParameter" />
+	<imagedisplay:PanelUiProportiesSlide id="proportiesSlide" />
+	<components:PanelUiPageInfo id="pageInfo" />
+	
+</panel:PanelBase>
