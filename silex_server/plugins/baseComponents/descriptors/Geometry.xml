@@ -97,7 +97,7 @@
 			<type>String</type>
 			<subType>Url</subType>
 			<description>PROPERTIES_BITMAP_FILL_URL</description>
-			<defaultValue>plugins/baseComponents/geometry_tile.swf</defaultValue>
+			<defaultValue>plugins/baseComponents/geometry_tile.jpg</defaultValue>
 			<isRegistered>true</isRegistered>
 			<extensions>jpg,jpeg,gif,png,swf</extensions>
 			<group>attributes</group>
