@@ -2,7 +2,7 @@
 <componentDescriptor version="1.0">
 	<componentName>LabelButton</componentName>
 	<className>org.silex.ui.components.buttons.LabelButtonBase</className>
-	<parentDescriptorClassName>org.silex.ui.components.buttons.ButtonBase</parentDescriptorClassName>
+	<parentDescriptorClassName>org.silex.ui.components.ComponentAnimated</parentDescriptorClassName>
 	<html5Url>html5#org.silex.ui.components.buttons.LabelButtonBase</html5Url>
 	<specificEditorUrl>editors/LabelButton.swf</specificEditorUrl>
 	<componentRoot>main</componentRoot>

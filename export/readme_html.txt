@@ -32,5 +32,12 @@ Software to install:
 
 Label button, supported in html5, uses Flash button as parent class, which is not supported in html5...
  => as a result we have to load it which makes it visible in the Wysiwyg, even if it is not html5 compliant.
+ => solved on May 20th 2012
+ 
+OofComponents plugins can be activated by the user in the manager
+ => attemp was done to solve the issue by removing /plugins/OofComponents from the server
+    => as a result the manager (which uses OofComponents) did not work anymore
+    => not a good solution
+ 
 
 
