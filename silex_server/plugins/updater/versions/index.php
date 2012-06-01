@@ -1,0 +1,1 @@
+This file is needed so that git does not delete this directory
