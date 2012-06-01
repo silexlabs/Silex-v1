@@ -187,7 +187,7 @@ class haxe_io_Input {
 		if($i > 2147483647) {
 			$i -= 0x100000000;
 		}
-		return $i;
+		return $i | 0;
 	}
 	public function readString($len) {
 		$b = haxe_io_Bytes::alloc($len);
@@ -204,6 +204,7 @@ class haxe_io_Input {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static $__properties__ = array("set_bigEndian" => "setEndian");
 	function __toString() { return 'haxe.io.Input'; }
 }
 function haxe_io_Input_0(&$»this) {

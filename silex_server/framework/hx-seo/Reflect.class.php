@@ -11,6 +11,31 @@ class Reflect {
 	static function setField($o, $field, $value) {
 		$o->{$field} = $value;
 	}
+	static function getProperty($o, $field) {
+		if(null === $o) {
+			return null;
+		}
+		$cls = ((Std::is($o, _hx_qtype("Class"))) ? $o->__tname__ : get_class($o));
+		if($cls::$__properties__ && isset($cls::$__properties__['get_'.$field]) && ($field = $cls::$__properties__['get_'.$field])) {
+			return $o->$field();
+		} else {
+			return $o->$field;
+		}
+	}
+	static function setProperty($o, $field, $value) {
+		if(null === $o) {
+			null;
+			return;
+		}
+		$cls = ((Std::is($o, _hx_qtype("Class"))) ? $o->__tname__ : get_class($o));
+		if($cls::$__properties__ && isset($cls::$__properties__['set_'.$field]) && ($field = $cls::$__properties__['set_'.$field])) {
+			$o->$field($value);
+			return;
+		} else {
+			$o->$field = $value;
+			return;
+		}
+	}
 	static function callMethod($o, $func, $args) {
 		if(is_string($o) && !is_array($func)) {
 			return call_user_func_array(Reflect::field($o, $func), $args->»a);
@@ -27,7 +52,7 @@ class Reflect {
 		return (is_array($f) && is_callable($f)) || _hx_is_lambda($f) || is_array($f) && _hx_has_field($f[0], $f[1]) && $f[1] !== "length";
 	}
 	static function compare($a, $b) {
-		return (($a === $b) ? 0 : (($a > $b) ? 1 : -1));
+		return (($a == $b) ? 0 : (($a > $b) ? 1 : -1));
 	}
 	static function compareMethods($f1, $f2) {
 		if(is_array($f1) && is_array($f1)) {
@@ -51,7 +76,7 @@ class Reflect {
 		if(!_hx_has_field($o, $f)) {
 			return false;
 		}
-		if(isset($o->»dynamics[$f])) unset($o->»dynamics[$f]); else unset($o->$f);
+		if(isset($o->»dynamics[$f])) unset($o->»dynamics[$f]); else if($o instanceof _hx_anonymous) unset($o->$f); else $o->$f = null;
 		return true;
 	}
 	static function copy($o) {

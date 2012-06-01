@@ -241,7 +241,13 @@ class Xml {
 	static function __character_data_handler($parser, $data) {
 		$d = Xml::__decodeent($data);
 		if(strlen($data) === 1 && $d !== $data || $d === $data) {
-			Xml::$build->addChild(Xml::createPCData($d));
+			$last = Xml::$build->_children[Xml::$build->_children->length - 1];
+			if(null !== $last && $last->nodeType == Xml::$PCData) {
+				$_g = $last;
+				$_g->setNodeValue($_g->getNodeValue() . $d);
+			} else {
+				Xml::$build->addChild(Xml::createPCData($d));
+			}
 		} else {
 			Xml::$build->addChild(Xml::createCData($data));
 		}
@@ -332,6 +338,7 @@ class Xml {
 		$r->_children = new _hx_array(array());
 		return $r;
 	}
+	static $__properties__ = array("get_parent" => "getParent","set_nodeValue" => "setNodeValue","get_nodeValue" => "getNodeValue","set_nodeName" => "setNodeName","get_nodeName" => "getNodeName");
 	function __toString() { return $this->toString(); }
 }
 {

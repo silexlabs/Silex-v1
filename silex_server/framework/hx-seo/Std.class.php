@@ -14,7 +14,7 @@ class Std {
 	static function parseInt($x) {
 		if(!is_numeric($x)) {
 			$matches = null;
-			preg_match("/\\d+/", $x, $matches);
+			preg_match("/^-?\\d+/", $x, $matches);
 			return ((count($matches) === 0) ? null : intval($matches[0]));
 		} else {
 			return ((strtolower(_hx_substr($x, 0, 2)) === "0x") ? (int) hexdec(substr($x, 2)) : intval($x));

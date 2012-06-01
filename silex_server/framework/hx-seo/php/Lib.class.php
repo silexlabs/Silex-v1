@@ -35,11 +35,31 @@ class php_Lib {
 	}
 	static function hashOfAssociativeArray($arr) {
 		$h = new Hash();
-		reset($arr); while(list($k, $v) = each($arr)) $h->set($k, $v);
+		$h->h = $arr;
 		return $h;
 	}
 	static function associativeArrayOfHash($hash) {
 		return $hash->h;
+	}
+	static function objectOfAssociativeArray($arr) {
+		foreach($arr as $key => $value){
+			if(is_array($value)) $arr[$key] = php_Lib::objectOfAssociativeArray($value);
+		}
+		return _hx_anonymous($arr);
+	}
+	static function associativeArrayOfObject($ob) {
+		return (array) $ob;
+	}
+	static function mail($to, $subject, $message, $additionalHeaders, $additionalParameters) {
+		if(null !== $additionalParameters) {
+			return mail($to, $subject, $message, $additionalHeaders, $additionalParameters);
+		} else {
+			if(null !== $additionalHeaders) {
+				return mail($to, $subject, $message, $additionalHeaders);
+			} else {
+				return mail($to, $subject, $message);
+			}
+		}
 	}
 	static function rethrow($e) {
 		if(Std::is($e, _hx_qtype("php.Exception"))) {
@@ -75,7 +95,7 @@ class php_Lib {
  		$_hx_cache_content = '';
  		//Calling this function will put all types present in the specified types in the $_hx_types_array
  		_hx_build_paths($pathToLib, $_hx_types_array, array(), $prefix);
- 
+
  		for($i=0;$i<count($_hx_types_array);$i++) {
  			//For every type that has been found, create its description
  			$t = null;

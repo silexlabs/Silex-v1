@@ -632,7 +632,7 @@ class LayerSeo
 		stringContent = '<?xml version="1.0" encoding="UTF-8"?>' + stringContent;
 		
 		// write stringContent to file
-		File.putContent(fileName, stringContent);
+		File.saveContent(fileName, stringContent);
 
 	}
 	
