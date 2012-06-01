@@ -29,8 +29,6 @@ class org_silex_core_XmlUtils {
 				$cleanedXml->set($attrib, $xml->get($attrib));
 			}
 		}break;
-		default:{
-		}break;
 		}
 		if(null == $xml) throw new HException('null iterable');
 		$»it = $xml->iterator();
@@ -48,6 +46,7 @@ class org_silex_core_XmlUtils {
 				if(_hx_substr($nodeValue, 0, 4) === "<!--" && _hx_substr($nodeValue, -3, null) === "-->") {
 					$nodeValue = "";
 				}
+				$nodeValue = ltrim($nodeValue);
 				{
 					$_g = 0;
 					while($_g < $whiteSpaceValues->length) {
@@ -57,16 +56,15 @@ class org_silex_core_XmlUtils {
 						unset($whiteSpace);
 					}
 				}
-				$nodeValue = ltrim($nodeValue);
 				if($nodeValue !== "") {
 					$duplicatedXml = null;
 					$duplicatedXml = null;
 					switch($child1->nodeType) {
 					case Xml::$PCData:{
-						$duplicatedXml = Xml::createPCData($child1->getNodeValue());
+						$duplicatedXml = Xml::createPCData($nodeValue);
 					}break;
 					case Xml::$CData:{
-						$duplicatedXml = Xml::createCData($child1->getNodeValue());
+						$duplicatedXml = Xml::createCData($nodeValue);
 					}break;
 					}
 					$cleanedXml->addChild($duplicatedXml);

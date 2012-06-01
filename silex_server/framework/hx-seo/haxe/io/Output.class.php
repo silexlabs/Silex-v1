@@ -188,6 +188,7 @@ class haxe_io_Output {
 		else
 			throw new HException('Unable to call �'.$m.'�');
 	}
+	static $__properties__ = array("set_bigEndian" => "setEndian");
 	function __toString() { return 'haxe.io.Output'; }
 }
 function haxe_io_Output_0(&$퍁his, &$x) {
@@ -219,7 +220,7 @@ function haxe_io_Output_2(&$퍁his, &$x) {
 }
 function haxe_io_Output_3(&$퍁his, &$x) {
 	{
-		$x1 = $x & 255;
+		$x1 = $x & (255 | 0);
 		if(($x1 >> 30 & 1) !== _hx_shift_right($x1, 31)) {
 			throw new HException("Overflow " . $x1);
 		}
@@ -228,7 +229,7 @@ function haxe_io_Output_3(&$퍁his, &$x) {
 }
 function haxe_io_Output_4(&$퍁his, &$x) {
 	{
-		$x1 = $x & 255;
+		$x1 = $x & (255 | 0);
 		if(($x1 >> 30 & 1) !== _hx_shift_right($x1, 31)) {
 			throw new HException("Overflow " . $x1);
 		}

@@ -8,26 +8,6 @@ class org_silex_core_seo_Constants {
 	static $COMPONENT_LINK_PROPERTIES;
 	static $LAYER_SEO_AGGREGATED_PROPERTIES;
 	static $CHILD_LAYERS_NODE_NAME = "subLayers";
-	static function getCharacter2EntityNameList() {
-		$list = new Hash();
-		$list->set("&", "&amp;");
-		$list->set("\"", "&quot;");
-		$list->set("'", "&apos;");
-		$list->set("<", "&lt;");
-		$list->set(">", "&gt;");
-		return $list;
-	}
-	static function getEntityName2CharacterList() {
-		$originalList = org_silex_core_seo_Constants::getCharacter2EntityNameList();
-		$convertedList = new Hash();
-		if(null == $originalList) throw new HException('null iterable');
-		$»it = $originalList->keys();
-		while($»it->hasNext()) {
-			$character = $»it->next();
-			$convertedList->set($originalList->get($character), $character);
-		}
-		return $convertedList;
-	}
 	function __toString() { return 'org.silex.core.seo.Constants'; }
 }
 org_silex_core_seo_Constants::$LAYER_SEO_PROPERTIES = new _hx_array(array("title", "description", "pubDate"));

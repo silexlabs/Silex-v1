@@ -4,67 +4,39 @@
 <second>
   <entry id="25">
 			<title handle="page01">page01</title>
-			<group>
-				<item handle="structure">structure</item>
-			</group>
-			<page-name handle="page01">page01</page-name>
-
-			<page-number handle="1">1</page-number>
+			<pagename handle="page01">page01</pagename>
+			<pagenumber handle="1">1</pagenumber>
 			<order>1</order>
 		</entry>
   <entry id="70">
 			<title handle="page02">page02</title>
-			<group>
-				<item handle="structure">structure</item>
-
-			</group>
-			<page-name handle="page02">page02</page-name>
-			<page-number handle="2-3">2-3</page-number>
+			<pagename handle="page02">page02</pagename>
+			<pagenumber handle="2-3">2-3</pagenumber>
 			<order>2</order>
 		</entry>
   <entry id="71">
 			<title handle="page04">page04</title>
-
-			<group>
-				<item handle="structure">structure</item>
-			</group>
-			<page-name handle="page04">page04</page-name>
-			<page-number handle="4-5">4-5</page-number>
-			<content>
-				<item id="30" handle="" section-handle="" section-name=""></item>
-
-			</content>
+			<pagename handle="page04">page04</pagename>
+			<pagenumber handle="4-5">4-5</pagenumber>
 			<order>3</order>
 		</entry>
   <entry id="72">
 			<title handle="page06">page06</title>
-			<group>
-				<item handle="structure">structure</item>
-
-			</group>
-			<page-name handle="page06">page06</page-name>
-			<page-number handle="6-7">6-7</page-number>
+			<pagename handle="page06">page06</pagename>
+			<pagenumber handle="6-7">6-7</pagenumber>
 			<order>4</order>
 		</entry>
   <entry id="73">
 			<title handle="page08">page08</title>
-
-			<group>
-				<item handle="structure">structure</item>
-			</group>
-			<page-name handle="page08">page08</page-name>
-			<page-number handle="8-9">8-9</page-number>
+			<pagename handle="page08">page08</pagename>
+			<pagenumber handle="8-9">8-9</pagenumber>
 			<order>5</order>
 		</entry>
 
   <entry id="74">
 			<title handle="page10">page10</title>
-			<group>
-				<item handle="structure">structure</item>
-			</group>
-			<page-name handle="page10">page10</page-name>
-			<page-number handle="10">10</page-number>
-
+			<pagename handle="page10">page10</pagename>
+			<pagenumber handle="10">10</pagenumber>
 			<order>6</order>
 		</entry>
 </second>

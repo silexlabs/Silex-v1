@@ -39,7 +39,7 @@ class org_silex_core_seo_LayerSeo {
 		if(file_exists($fileName)) {
 			$layerSeoXml = Xml::createElement("root");
 			$layerSeoString = null;
-			$layerSeoString = php_io_File::getContent($fileName);
+			$layerSeoString = sys_io_File::getContent($fileName);
 			if(_hx_index_of(strtolower($layerSeoString), "<element", null) === -1) {
 				if($layerSeoString !== "" && $layerSeoString !== "<>" && $layerSeoString !== "</>") {
 					$layerSeoXml = Xml::parse($layerSeoString);
@@ -381,7 +381,7 @@ class org_silex_core_seo_LayerSeo {
 		$layerSeoXmlOriginal = null;
 		$stringContent = null;
 		if(file_exists($fileName)) {
-			$fileContent = php_io_File::getContent($fileName);
+			$fileContent = sys_io_File::getContent($fileName);
 			try {
 				$layerSeoXmlOriginal = org_silex_core_XmlUtils::stringIndent2Xml($fileContent);
 			}catch(Exception $»e) {
@@ -405,11 +405,9 @@ class org_silex_core_seo_LayerSeo {
 						$layerSeoXmlTemp->addChild($xmlContent);
 					}
 				} else {
-					haxe_Log::trace("Publication layer seo file is not in the v2 format for deeplink: " . $deeplink . ". Please save it manually via the Wysiwyg", _hx_anonymous(array("fileName" => "LayerSeo.hx", "lineNumber" => 608, "className" => "org.silex.core.seo.LayerSeo", "methodName" => "writeXml")));
+					haxe_Log::trace("Publication layer seo file is not in the v2 format for deeplink: " . $deeplink . ". Please save it manually via the Wysiwyg", _hx_anonymous(array("fileName" => "LayerSeo.hx", "lineNumber" => 607, "className" => "org.silex.core.seo.LayerSeo", "methodName" => "writeXml")));
 				}
 			}
-		} else {
-			haxe_Log::trace("Seo file does not exists", _hx_anonymous(array("fileName" => "LayerSeo.hx", "lineNumber" => 614, "className" => "org.silex.core.seo.LayerSeo", "methodName" => "writeXml")));
 		}
 		$layerSeoXmlFinal->addChild($layerSeoXmlTemp);
 		if($indent) {
@@ -418,7 +416,7 @@ class org_silex_core_seo_LayerSeo {
 			$stringContent = $layerSeoXmlFinal->toString();
 		}
 		$stringContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . $stringContent;
-		php_io_File::putContent($fileName, $stringContent);
+		sys_io_File::saveContent($fileName, $stringContent);
 	}
 	function __toString() { return 'org.silex.core.seo.LayerSeo'; }
 }

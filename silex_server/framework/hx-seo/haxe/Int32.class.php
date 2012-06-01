@@ -6,10 +6,10 @@ class haxe_Int32 {
 		return $a << 16 | $b;
 	}
 	static function ofInt($x) {
-		return $x;
+		return $x | 0;
 	}
 	static function clamp($x) {
-		return $x;
+		return $x | 0;
 	}
 	static function toInt($x) {
 		if(($x >> 30 & 1) !== _hx_shift_right($x, 31)) {
@@ -21,13 +21,13 @@ class haxe_Int32 {
 		return $x;
 	}
 	static function add($a, $b) {
-		return $a + $b;
+		return $a + $b | 0;
 	}
 	static function sub($a, $b) {
-		return $a - $b;
+		return $a - $b | 0;
 	}
 	static function mul($a, $b) {
-		return $a * $b;
+		return $a * $b | 0;
 	}
 	static function div($a, $b) {
 		return intval($a / $b);
