@@ -233,7 +233,7 @@ class Type {
 		return ValueType::$TUnknown;
 	}
 	static function enumEq($a, $b) {
-		if($a === $b) {
+		if($a == $b) {
 			return true;
 		}
 		try {

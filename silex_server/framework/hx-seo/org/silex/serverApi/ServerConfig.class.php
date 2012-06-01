@@ -48,5 +48,6 @@ class org_silex_serverApi_ServerConfig {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static $__properties__ = array("get_sepCharForDeeplinks" => "getSepCharForDeeplinks","get_userReadOk" => "getUserReadOk","get_userWriteOk" => "getUserWriteOk","get_adminReadOk" => "getAdminReadOk","get_adminWriteOk" => "getAdminWriteOk","get_silexClientIni" => "getSilexClientIni","get_silexServerIni" => "getSilexServerIni");
 	function __toString() { return 'org.silex.serverApi.ServerConfig'; }
 }

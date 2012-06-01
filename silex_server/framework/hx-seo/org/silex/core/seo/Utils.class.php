@@ -176,27 +176,12 @@ class org_silex_core_seo_Utils {
 		$obj = _hx_anonymous(array("title" => "", "deeplink" => "", "description" => "", "tags" => "", "htmlEquivalent" => "", "links" => "", "subLayers" => new _hx_array(array())));
 		return $obj;
 	}
-	static function htmlEntitiesEncode($inputString) {
-		$convertedString = $inputString;
-		$list = org_silex_core_seo_Constants::getCharacter2EntityNameList();
-		if(null == $list) throw new HException('null iterable');
-		$»it = $list->keys();
-		while($»it->hasNext()) {
-			$key = $»it->next();
-			$convertedString = str_replace($key, $list->get($key), $convertedString);
-		}
-		return $convertedString;
-	}
-	static function htmlEntitiesDecode($inputString) {
-		$convertedString = $inputString;
-		$list = org_silex_core_seo_Constants::getCharacter2EntityNameList();
-		if(null == $list) throw new HException('null iterable');
-		$»it = $list->keys();
-		while($»it->hasNext()) {
-			$key = $»it->next();
-			$convertedString = str_replace($key, $list->get($key), $convertedString);
-		}
-		return $convertedString;
+	static function html2Text($html) {
+		$htmlRegExpr = new EReg("<([/A-Z0-9\\s=\"#-]*>)", "ig");
+		$spaceRegExpr = new EReg("( )+", "g");
+		$text = $htmlRegExpr->replace($html, " ");
+		$text = rtrim(ltrim($spaceRegExpr->replace($text, " ")));
+		return $text;
 	}
 	function __toString() { return 'org.silex.core.seo.Utils'; }
 }

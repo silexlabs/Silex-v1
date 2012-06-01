@@ -10,7 +10,7 @@ class EReg {
 			$opt = $a->join("");
 		}
 		$this->options = $opt;
-		$this->re = "/" . (str_replace("/", "\\/", $r) . "/" . $opt);
+		$this->re = '"' . str_replace('"','\\"',$r) . '"' . $opt;
 	}}
 	public $r;
 	public $last;
