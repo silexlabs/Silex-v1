@@ -688,6 +688,9 @@ class org.silex.core.Application extends EventDispatcherBase{
 		//look in the cookie set by the manager
 		if (info == undefined)
 			info = getManagerLoginInfoFromCookie();
+		//look in the flashvars or config
+		if (info == undefined && silex_ptr.config.login_str != undefined && silex_ptr.config.pass_str != undefined)
+			info = silex_ptr.config;
 		// use the object with pasword and login properties, or prompt for login and password
 		if (info == undefined)
 		{
