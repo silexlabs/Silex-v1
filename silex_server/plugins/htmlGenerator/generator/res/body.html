@@ -1,0 +1,58 @@
+::htmlCode::
+<!-- The following script is used to detect browser's capacities -->
+<script type="text/javascript" charset="utf-8">
+    $$callHooks(index-all-js-scripts-loaded)
+
+    //We use canvas to dermine if the browser supports HTML5.
+    var elem = document.createElement('canvas');
+    var html5 = !!(elem.getContext && elem.getContext('2d'));
+
+    //If browser doesn't support HTML5 we look at if it supports Flash.
+    if(!html5)
+    {
+        //Dynamically load SWFObject
+		//Create a 'script' element	
+		var scrptE = document.createElement("script");
+
+		// Set its 'type' attribute	
+		scrptE.setAttribute("type", "text/javascript");
+
+		// Set its 'language' attribute
+		scrptE.setAttribute("language", "JavaScript");
+
+		// Set its 'src' attribute
+		scrptE.setAttribute("src", "js/compressed.min.js");
+
+		// Set its onLoad callback
+		scrptE.onload = onSWFObjectLoaded;
+
+		// for IE :
+		scrptE.onreadystatechange= function () {
+			if (this.readyState == 'loaded' || this.readyState == 'complete') onSWFObjectLoaded();
+		}
+
+		// Now add this new element to the head tag
+		document.getElementsByTagName("head")[0].appendChild(scrptE);
+    }
+    
+    function onSWFObjectLoaded()
+    {
+        var swfobject = new SWFObject();
+        if(swfobject.installedVer.major >= ::websiteConfig.flashPlayerVersion::)
+        {
+           //Redirect to Flash renderer
+           window.location = "?/::idSite::/&format=flash";
+        } else
+        {
+            //Insert a message at the top of the page.
+            var messageDiv = document.createElement("div");
+            messageDiv.innerHTML = "Your browser does not seem to support HTML5 and hasn't the required minimal version of Flash.";
+            document.body.insertBefore(messageDiv, document.body.firstChild);
+        }
+    }
+</script>
+<script type="text/javascript" charset="utf-8">
+	::jsCode::
+	setTimeout(function() {window.scrollTo(0, 1)}, 100)
+</script>
+$$callHooks(index-script)
