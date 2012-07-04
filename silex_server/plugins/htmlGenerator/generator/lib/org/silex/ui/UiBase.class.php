@@ -37,9 +37,9 @@ class org_silex_ui_UiBase extends org_silex_ui_MovieClip {
 			if($this->iconIsIcon) {
 				$res .= "<a href='?/" . $this->__silex__publicationName__ . "/" . $this->__silex__layerPath__->join("/") . "/" . $this->iconDeeplinkName;
 				if(org_silex_htmlGenerator_Utils::$siteEditor->getWebsiteConfig($this->__silex__publicationName__, null)->get("defaultFormat") !== "html") {
-					$res .= "&amp;format=html'";
+					$res .= "&amp;format=html";
 				}
-				$res .= ">";
+				$res .= "'>";
 			} else {
 				if($this->__silex__actionshref__ !== null) {
 					$res .= "<a href='" . $this->__silex__actionshref__ . "'>";
