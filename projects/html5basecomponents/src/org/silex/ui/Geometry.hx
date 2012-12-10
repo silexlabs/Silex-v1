@@ -54,8 +54,8 @@ class Geometry extends UiBase
 	{
 		
 		
-		var aleaCanvasName:String = "geomCanvas" + Std.string(Math.round(Math.random() * 1000));
-		var res:String = "<canvas id='" + aleaCanvasName + "' width='" + this.width + "' height='" + this.height + "'>";
+		var aleaCanvasName:String = "geomCanvas" + Std.string(Math.round(Math.random() * 10000));
+		var res:String = "<canvas style='vertical-align:top;' id='" + aleaCanvasName + "' width='" + this.width + "' height='" + this.height + "'>";
 		res += "</canvas>";
 		res += "<script type='text/javascript'>";
 		res += "drawShape('";

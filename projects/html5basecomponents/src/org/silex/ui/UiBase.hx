@@ -64,8 +64,8 @@ class UiBase extends MovieClip
 			//res += "<a href='?/" + __silex__publicationName__ + "/" + __silex__layerPath__.join("/") + "/" + this.iconDeeplinkName + "&amp;format=html&amp;selectedIcon=" + StringTools.urlEncode(this.__silex__layerPath__.join(".") + "." + this.playerName) + "'>";
 			res += "<a href='?/" + __silex__publicationName__ + "/" + __silex__layerPath__.join("/") + "/" + this.iconDeeplinkName;
 			if (org.silex.htmlGenerator.Utils.siteEditor.getWebsiteConfig(__silex__publicationName__).get("defaultFormat") != "html")
-				res += "&amp;format=html'";
-			res += ">";
+				res += "&amp;format=html";
+			res += "'>";
 		} else if(__silex__actionshref__ != null)
 		{
 			res += "<a href='" + this.__silex__actionshref__ + "'>";

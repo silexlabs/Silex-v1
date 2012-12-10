@@ -163,31 +163,37 @@ function indexAction()
 			// get and merge with online information
 			// To do: handle the performance issue here
 			$onlineItemsDoc = new DOMDocument();
-			$onlineItemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&p=".$itemSilexElement->id );
+			$onlineItemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&_p=".$itemSilexElement->id );
 			
 			$node = $onlineItemsDoc->getElementsByTagName('item')->item(0);
 			
-			$installedItems[$itemSilexElement->id]['id'] = $node->getElementsByTagName('ID')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['title'] = $node->getElementsByTagName('post_title')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['postContent'] = $node->getElementsByTagName('post_content')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['postDate'] = $node->getElementsByTagName('post_date')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['authorName'] = $node->getElementsByTagName('user_nicename')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['authorUrl'] = $node->getElementsByTagName('user_url')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['authorMail'] = $node->getElementsByTagName('user_email')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['selectedVersions'] = $node->getElementsByTagName('_selectedVersionsArray')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
-			$installedItems[$itemSilexElement->id]['itemCurrentVersion'] = $node->getElementsByTagName('_itemCurrentVersion')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
-			
-			// determine which image could be use as a thumb/logo for the item
-			if( !empty($node->getElementsByTagName('post_thumbnail')->item(0)->nodeValue) )
-				$installedItems[$itemSilexElement->id]['thumb'] = $node->getElementsByTagName('post_thumbnail')->item(0)->nodeValue;
-			else if( $node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->length > 0 && !empty($node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->item(0)->nodeValue) )
-				$installedItems[$itemSilexElement->id]['thumb'] = $node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
+			if ($node)
+			{
+				$installedItems[$itemSilexElement->id]['id'] = $node->getElementsByTagName('ID')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['title'] = $node->getElementsByTagName('post_title')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['postContent'] = $node->getElementsByTagName('post_content')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['postDate'] = $node->getElementsByTagName('post_date')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['authorName'] = $node->getElementsByTagName('user_nicename')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['authorUrl'] = $node->getElementsByTagName('user_url')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['authorMail'] = $node->getElementsByTagName('user_email')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['selectedVersions'] = $node->getElementsByTagName('_selectedVersionsArray')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
+				$installedItems[$itemSilexElement->id]['itemCurrentVersion'] = $node->getElementsByTagName('_itemCurrentVersion')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
+				
+				// determine which image could be use as a thumb/logo for the item
+				if( !empty($node->getElementsByTagName('post_thumbnail')->item(0)->nodeValue) )
+					$installedItems[$itemSilexElement->id]['thumb'] = $node->getElementsByTagName('post_thumbnail')->item(0)->nodeValue;
+				else if( $node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->length > 0 && !empty($node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->item(0)->nodeValue) )
+					$installedItems[$itemSilexElement->id]['thumb'] = $node->getElementsByTagName('post_images')->item(0)->getElementsByTagName('element')->item(0)->nodeValue;
+				else
+					$installedItems[$itemSilexElement->id]['thumb'] = "plugins/updater/img/update_item.png";
+				
+				if($installedItems[$itemSilexElement->id]['version'] != $installedItems[$itemSilexElement->id]['itemCurrentVersion'] )
+					$itemsToUpdate[] = $installedItems[$itemSilexElement->id];
+			}
 			else
-				$installedItems[$itemSilexElement->id]['thumb'] = "plugins/updater/img/update_item.png";
-			
-			if($installedItems[$itemSilexElement->id]['version'] != $installedItems[$itemSilexElement->id]['itemCurrentVersion'] )
-				$itemsToUpdate[] = $installedItems[$itemSilexElement->id];
-			
+			{
+				if ($logger) $logger->warning('[WARNING] Could not check if newer version available for any element installed on the Silex server');
+			}
 		}
 		closedir($dh);
 	}
@@ -361,7 +367,7 @@ function downloadSilexServerUpdateAction()
 		$view->originalFileListSize = $originalFileListSize;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In downloadSilexServerUpdateAction : $fileListSize not set ');
+		if ($logger) $logger->error('[CRITICAL ERROR] In downloadSilexServerUpdateAction : $fileListSize not set ');
 		// TODO redirect to errorAction ?
 	}
 }
@@ -508,7 +514,7 @@ function installNewItemsAction()
 		$view->categories=$categories;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In installNewItemsAction : cannot load xml data from '.$exchangePlatform.'/feed/ep_child_categories/?format=rss2&cat=5314');
+		if ($logger) $logger->error('[CRITICAL ERROR] In installNewItemsAction : cannot load xml data from '.$exchangePlatform.'/feed/ep_child_categories/?format=rss2&cat=5314');
 		// TODO manage fatal case
 	}
 }
@@ -591,12 +597,12 @@ function browseCategoryAction()
 		
 		if(!$view->browseCatSucceed && !$view->browseItemsSucceed)
 		{
-			if ($logger) $logger->alert('[CRITICAL ERROR] In browseCategoryAction : item or category browsing failed');
+			if ($logger) $logger->error('[CRITICAL ERROR] In browseCategoryAction : item or category browsing failed');
 			// TODO manage this fatal case
 		}
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In browseCategoryAction : $currentCategory is empty');
+		if ($logger) $logger->error('[CRITICAL ERROR] In browseCategoryAction : $currentCategory is empty');
 		// TODO something
 	}
 }
@@ -617,7 +623,7 @@ function browseItemAction()
 		$exchangePlatform = urldecode($_POST['exchange_platform_address']);
 		
 		$itemsDoc = new DOMDocument();
-		if($itemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&p=" . $itemId ))
+		if($itemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&_p=" . $itemId ))
 		{
 			$itemRSS = null;
 			$node = $itemsDoc->getElementsByTagName('item')->item(0);
@@ -650,7 +656,7 @@ function browseItemAction()
 			}
 			
 			$isInstallable = false;
-			$itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&p=' . $itemId );
+			$itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $itemId );
 
 			if ( !empty($itemVersionData) ) 
 				$isInstallable = true;
@@ -659,7 +665,7 @@ function browseItemAction()
 			$view->item = $itemRSS;
 		
 		} else {
-			if ($logger) $logger->alert('[CRITICAL ERROR] In browseItemAction : cannot load xml data from '.$exchangePlatform.'?feed=ep_get_item_info&format=rss2&p='.$itemId);
+			if ($logger) $logger->error('[CRITICAL ERROR] In browseItemAction : cannot load xml data from '.$exchangePlatform.'?feed=ep_get_item_info&format=rss2&_p='.$itemId);
 			// TODO manage this error case
 		}
 		
@@ -667,7 +673,7 @@ function browseItemAction()
 		$view->itemId = $itemId;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In browseItemAction : $currentCategory or $itemId is empty');
+		if ($logger) $logger->error('[CRITICAL ERROR] In browseItemAction : $currentCategory or $itemId is empty');
 		// TODO something
 	}
 }
@@ -702,7 +708,7 @@ function installNewItemAction()
 		$view->currentItem = $currentItem;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In installNewItemAction : $currentItem is empty');
+		if ($logger) $logger->error('[CRITICAL ERROR] In installNewItemAction : $currentItem is empty');
 		// TODO manage this fatal error
 	}
 }
@@ -714,7 +720,7 @@ function extractItemAndDependenciesElements($itemId, &$silexElements=array(), &$
 {
 	$exchangePlatform = urldecode($_POST['exchange_platform_address']);
 	
-	if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&p=' . $itemId ) )
+	if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $itemId ) )
 	{
 		$itemVersionDoc = new DOMDocument();
 		$itemVersionDoc->loadXML($itemVersionData);
@@ -746,7 +752,7 @@ function extractItemAndDependenciesElements($itemId, &$silexElements=array(), &$
 			$versionFileName , "phparray");
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In extractItemAndDependenciesElements : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&p='.$itemId.' ) failed');
+		if ($logger) $logger->error('[CRITICAL ERROR] In extractItemAndDependenciesElements : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&_p='.$itemId.' ) failed');
 		// TODO ERROR : can't download item, return to error action, we shouldn't continue here
 	}
 }
@@ -774,7 +780,7 @@ function updateItemAction()
 		$view->tempDirReport = $tempDirReport;
 			
 		if(empty($tempDirReport))
-			if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&p=' . $currentItem['id'] ) )
+			if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $currentItem['id'] ) )
 			{
 				$silexConfig = new silex_config();
 				$res = $silexConfig->parseConfig(ROOTPATH . VERSIONS_DIR_PATH . DIRECTORY_SEPARATOR . $currentItem['file'] , 'phparray');        
@@ -809,12 +815,12 @@ function updateItemAction()
 				$view->foldersAndFilesToDelete = $foldersAndFilesToDelete;
 		
 			} else {
-				if ($logger) $logger->alert('[CRITICAL ERROR] In updateItemAction : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&p='.$currentItem['id'].' ) failed');
+				if ($logger) $logger->error('[CRITICAL ERROR] In updateItemAction : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&_p='.$currentItem['id'].' ) failed');
 				// TODO manage fatal error
 			}
 	
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In updateItemAction : $currentItem is empty');
+		if ($logger) $logger->error('[CRITICAL ERROR] In updateItemAction : $currentItem is empty');
 		// TODO manage fatal error
 	}
 	
@@ -855,7 +861,7 @@ function installItemAction()
 					if(!isset($itemId))
 						$itemId = $currentItem['id'];
 
-					$request = $exchangePlatform . "?feed=ep_download&p=".$itemId."&file=".urlencode(str_replace( DIRECTORY_SEPARATOR, "/", $nextFile));
+					$request = $exchangePlatform . "?feed=ep_download&_p=".$itemId."&file=".urlencode(str_replace( DIRECTORY_SEPARATOR, "/", $nextFile));
 					
 					if( !downloadFile($request, getParameter($fileListSize."_file_path"), getParameter($fileListSize."_file_signature")) )
 						$view->signatureMismatch = getParameter($fileListSize."_file_path");
@@ -934,7 +940,7 @@ function installItemAction()
 		$view->currentItem = $currentItem;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In installItemAction : initial tests failed ');
+		if ($logger) $logger->error('[CRITICAL ERROR] In installItemAction : initial tests failed ');
 		// TODO something
 	}
 }
@@ -1023,13 +1029,13 @@ function uninstallItemsAction()
 					$view->deleteReport = $deleteReport;
 					
 				} else {
-					if ($logger) $logger->alert('[CRITICAL ERROR] In uninstallItemsAction : $itemsToDelete not set or cannot unserialize $itemsToDelete');
+					if ($logger) $logger->error('[CRITICAL ERROR] In uninstallItemsAction : $itemsToDelete not set or cannot unserialize $itemsToDelete');
 					// TODO manage this problematic case
 				}
 			}
 			
 		} else {
-			if ($logger) $logger->alert('[CRITICAL ERROR] In uninstallItemsAction : cannot unserialize $installedItems');
+			if ($logger) $logger->error('[CRITICAL ERROR] In uninstallItemsAction : cannot unserialize $installedItems');
 			//TODO manage unserialization errors
 		}
 		
@@ -1038,7 +1044,7 @@ function uninstallItemsAction()
 		$view->itemsChosen = $itemsChosen;
 		
 	} else {
-		if ($logger) $logger->alert('[CRITICAL ERROR] In uninstallItemsAction : $installedItems not set ');
+		if ($logger) $logger->error('[CRITICAL ERROR] In uninstallItemsAction : $installedItems not set ');
 		//TODO manage critical error
 	}
 }
