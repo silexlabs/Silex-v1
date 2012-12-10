@@ -497,7 +497,7 @@ dynamic class org.silex.core.Constants extends org.silex.core.TranslatableConsta
 	 * URL of the script used to retrieve SILEX latest stable version.
 	 * @see	silex.core.Com::getLatestSilexVersion
 	 */
-	var SCRIPT_LATEST_SILEX_VERSION:String="http://www.silexlabs.org/downloads/silex/latest_version/latest_silex_version.php";
+	var SCRIPT_LATEST_SILEX_VERSION:String="http://downloads.silexlabs.org/silex/latest_version/latest_silex_version.php";
 	
 	///////////////////////////////////////////
 	// Group: accessors constants

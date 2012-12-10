@@ -33,6 +33,6 @@ PLUGINS_LIST=&
 loaderPath=loaders/default_manager.swf&
 centerVertically=true&
 
-update_server_address=http://www.silexlabs.org/downloads/silex/latest_version/&
+update_server_address=http://downloads.silexlabs.org/silex/latest_version/&
 
 version_tag=v1.7.0RC1&

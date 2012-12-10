@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>::websiteConfig.htmlTitle::</title>
+
+	<meta http-equiv="cache-control" content="must-revalidate, pre-check=0, post-check=0, max-age=0">
+	<meta http-equiv="Last-Modified" content="$$nowDate()">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="description" content="::htmlDescription::">
+	<meta http-equiv="keywords" content="::htmlHeaderKeywords::, ::htmlTags::">
+	<meta http-equiv="content-language" content="::defaultLanguage::">
+	<meta http-equiv="Generator" content="Silex, live web creation - ::version::">
+	<meta name="robots" content="INDEX/FOLLOW">
+	
+	::if websiteConfig.htmlIcon::<link rel="icon" href="::websiteConfig.htmlIcon::">::end::
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	::if isIPad::::else::<meta name = "viewport" content = "height = ::websiteConfig.layoutStageHeight::, width = ::websiteConfig.layoutStageWidth::, initial-scale=1, user-scalable = yes" >::end::
+	<style type="text/css" media="screen">
+		::cssCode::
+	</style>
+	<!-- for IE border around image which have a link -->
+	<style type="text/css">
+		a img {border: none; }
+	</style>
+	$$callHooks(index-head-end)
+</head>
+<body style='background-color:#::websiteConfig.bgColor::;margin:0;padding:0;'>
