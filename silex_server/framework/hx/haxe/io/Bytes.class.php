@@ -6,28 +6,35 @@ class haxe_io_Bytes {
 		$this->length = $length;
 		$this->b = $b;
 	}}
-	public $length;
-	public $b;
-	public function get($pos) {
-		return ord($this->b[$pos]);
+	public function getData() {
+		return $this->b;
 	}
-	public function set($pos, $v) {
-		$this->b[$pos] = chr($v);
-	}
-	public function blit($pos, $src, $srcpos, $len) {
-		if($pos < 0 || $srcpos < 0 || $len < 0 || $pos + $len > $this->length || $srcpos + $len > $src->length) {
-			throw new HException(haxe_io_Error::$OutsideBounds);
+	public function toHex() {
+		$s = new StringBuf();
+		$chars = new _hx_array(array());
+		$str = "0123456789abcdef";
+		{
+			$_g1 = 0; $_g = strlen($str);
+			while($_g1 < $_g) {
+				$i = $_g1++;
+				$chars->push(_hx_char_code_at($str, $i));
+				unset($i);
+			}
 		}
-		$this->b = substr($this->b, 0, $pos) . substr($src->b, $srcpos, $len) . substr($this->b, $pos+$len);
-	}
-	public function sub($pos, $len) {
-		if($pos < 0 || $len < 0 || $pos + $len > $this->length) {
-			throw new HException(haxe_io_Error::$OutsideBounds);
+		{
+			$_g1 = 0; $_g = $this->length;
+			while($_g1 < $_g) {
+				$i = $_g1++;
+				$c = ord($this->b[$i]);
+				$s->b .= chr($chars[$c >> 4]);
+				$s->b .= chr($chars[$c & 15]);
+				unset($i,$c);
+			}
 		}
-		return new haxe_io_Bytes($len, substr($this->b, $pos, $len));
+		return $s->b;
 	}
-	public function compare($other) {
-		return $this->b < $other->b ? -1 : ($this->b == $other->b ? 0 : 1);
+	public function toString() {
+		return $this->b;
 	}
 	public function readString($pos, $len) {
 		if($pos < 0 || $len < 0 || $pos + $len > $this->length) {
@@ -35,12 +42,29 @@ class haxe_io_Bytes {
 		}
 		return substr($this->b, $pos, $len);
 	}
-	public function toString() {
-		return $this->b;
+	public function compare($other) {
+		return $this->b < $other->b ? -1 : ($this->b == $other->b ? 0 : 1);
 	}
-	public function getData() {
-		return $this->b;
+	public function sub($pos, $len) {
+		if($pos < 0 || $len < 0 || $pos + $len > $this->length) {
+			throw new HException(haxe_io_Error::$OutsideBounds);
+		}
+		return new haxe_io_Bytes($len, substr($this->b, $pos, $len));
 	}
+	public function blit($pos, $src, $srcpos, $len) {
+		if($pos < 0 || $srcpos < 0 || $len < 0 || $pos + $len > $this->length || $srcpos + $len > $src->length) {
+			throw new HException(haxe_io_Error::$OutsideBounds);
+		}
+		$this->b = substr($this->b, 0, $pos) . substr($src->b, $srcpos, $len) . substr($this->b, $pos+$len);
+	}
+	public function set($pos, $v) {
+		$this->b[$pos] = chr($v);
+	}
+	public function get($pos) {
+		return ord($this->b[$pos]);
+	}
+	public $b;
+	public $length;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

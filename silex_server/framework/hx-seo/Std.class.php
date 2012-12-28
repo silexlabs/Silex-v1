@@ -21,7 +21,15 @@ class Std {
 		}
 	}
 	static function parseFloat($x) {
-		return is_numeric($x) ? floatval($x) : acos(1.01);
+		$v = floatval($x);
+		if($v === 0.0) {
+			$x = rtrim($x);
+			$v = floatval($x);
+			if($v === 0.0 && !is_numeric($x)) {
+				$v = acos(1.01);
+			}
+		}
+		return $v;
 	}
 	static function random($x) {
 		return mt_rand(0, $x - 1);

@@ -5,33 +5,8 @@ class Hash implements IteratorAggregate{
 		if(!php_Boot::$skip_constructor) {
 		$this->h = array();
 	}}
-	public $h;
-	public function set($key, $value) {
-		$this->h[$key] = $value;
-	}
-	public function get($key) {
-		if(array_key_exists($key, $this->h)) {
-			return $this->h[$key];
-		} else {
-			return null;
-		}
-	}
-	public function exists($key) {
-		return array_key_exists($key, $this->h);
-	}
-	public function remove($key) {
-		if(array_key_exists($key, $this->h)) {
-			unset($this->h[$key]);
-			return true;
-		} else {
-			return false;
-		}
-	}
-	public function keys() {
-		return new _hx_array_iterator(array_keys($this->h));
-	}
-	public function iterator() {
-		return new _hx_array_iterator(array_values($this->h));
+	public function getIterator() {
+		return $this->iterator();
 	}
 	public function toString() {
 		$s = "{";
@@ -48,9 +23,34 @@ class Hash implements IteratorAggregate{
 		}
 		return $s . "}";
 	}
-	public function getIterator() {
-		return $this->iterator();
+	public function iterator() {
+		return new _hx_array_iterator(array_values($this->h));
 	}
+	public function keys() {
+		return new _hx_array_iterator(array_keys($this->h));
+	}
+	public function remove($key) {
+		if(array_key_exists($key, $this->h)) {
+			unset($this->h[$key]);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public function exists($key) {
+		return array_key_exists($key, $this->h);
+	}
+	public function get($key) {
+		if(array_key_exists($key, $this->h)) {
+			return $this->h[$key];
+		} else {
+			return null;
+		}
+	}
+	public function set($key, $value) {
+		$this->h[$key] = $value;
+	}
+	public $h;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

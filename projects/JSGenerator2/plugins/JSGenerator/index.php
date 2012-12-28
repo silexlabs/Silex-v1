@@ -16,7 +16,7 @@ require_once ROOTPATH.'cgi/includes/plugin_base.php';
 class JSGenerator extends plugin_base
 {
 	
-	public function initHooks($hookManager)
+	public function initHooks(HookManager $hookManager)
 	{
 		
 		$hookManager->addHook('index-script', array($this, 'addJS'));

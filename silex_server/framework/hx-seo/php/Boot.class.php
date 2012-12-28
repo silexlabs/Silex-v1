@@ -124,7 +124,7 @@ class _hx_array implements ArrayAccess, IteratorAggregate {
 	}
 
 	function toString() {
-		return '['.implode(', ', $this->»a).']';
+		return '['.implode(',', array_map('_hx_string_rec',$this->»a,array())).']';
 	}
 
 	function __toString() {
@@ -237,6 +237,17 @@ function _hx_equal($x, $y) {
 			}
 		}
 	}
+}
+
+function _hx_mod($x, $y) {
+	if (is_int($x) && is_int($y)) {
+		if ($y == 0) return 0;
+		return $x % $y;
+	}
+	if (!is_nan($x) && !is_nan($y) && !is_finite($y) && is_finite($x)) {
+		return $x;
+	} 
+	return fmod($x, $y);
 }
 
 function _hx_error_handler($errno, $errmsg, $filename, $linenum, $vars) {
@@ -518,7 +529,7 @@ function _hx_string_rec($o, $s) {
 				$b .= '(';
 				for($i = 0; $i < count($o->params); $i++) {
 					if($i > 0)
-						$b .= ', ' . _hx_string_rec($o->params[$i], $s);
+						$b .= ',' . _hx_string_rec($o->params[$i], $s);
 					else
 						$b .= _hx_string_rec($o->params[$i], $s);
 				}
@@ -566,7 +577,7 @@ function _hx_string_rec($o, $s) {
 	}
 	if(is_string($o)) {
 		if(_hx_is_lambda($o)) return '«function»';
-		if(strlen($s) > 0)    return '"' . str_replace('"', '\"', $o) . '"';
+//		if(strlen($s) > 0)    return '"' . str_replace('"', '\"', $o) . '"';
 		else                  return $o;
 	}
 	if(is_array($o)) {
@@ -579,7 +590,7 @@ function _hx_string_rec($o, $s) {
 		{
 			if ($first && $k === 0)
 				$assoc = false;
-			$str .= ($first ? '' : ', ') . ($assoc
+			$str .= ($first ? '' : ',') . ($assoc
 				? _hx_string_rec($k, $s) . '=>' . _hx_string_rec($o[$k], $s)
 				: _hx_string_rec($o[$k], $s)
 			);

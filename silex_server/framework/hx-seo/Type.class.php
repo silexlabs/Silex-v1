@@ -54,7 +54,7 @@ class Type {
 	}
 	static function resolveClass($name) {
 		$c = _hx_qtype($name);
-		if($c instanceof _hx_class) {
+		if($c instanceof _hx_class || $c instanceof _hx_interface) {
 			return $c;
 		} else {
 			return null;
@@ -115,7 +115,7 @@ class Type {
 		}
 		return null;
 	}
-	static function createEnum($e, $constr, $params) {
+	static function createEnum($e, $constr, $params = null) {
 		$f = Reflect::field($e, $constr);
 		if($f === null) {
 			throw new HException("No such constructor " . $constr);
@@ -131,10 +131,10 @@ class Type {
 		}
 		return $f;
 	}
-	static function createEnumIndex($e, $index, $params) {
+	static function createEnumIndex($e, $index, $params = null) {
 		$c = _hx_array_get(Type::getEnumConstructs($e), $index);
 		if($c === null) {
-			throw new HException($index . " is not a valid enum constructor index");
+			throw new HException(_hx_string_rec($index, "") . " is not a valid enum constructor index");
 		}
 		return Type::createEnum($e, $c, $params);
 	}

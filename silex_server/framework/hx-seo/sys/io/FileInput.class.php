@@ -5,34 +5,22 @@ class sys_io_FileInput extends haxe_io_Input {
 		if(!php_Boot::$skip_constructor) {
 		$this->__f = $f;
 	}}
-	public $__f;
-	public function readByte() {
-		if(feof($this->__f)) {
-			sys_io_FileInput_0($this);
+	public function readLine() {
+		$r = fgets($this->__f);
+		if((false === $r)) {
+			throw new HException(new haxe_io_Eof());
 		}
-		$r = fread($this->__f, 1);
-		if(($r === false)) {
-			sys_io_FileInput_1($this, $r);
-		}
-		return ord($r);
+		return rtrim($r, "\x0D\x0A");
 	}
-	public function readBytes($s, $p, $l) {
-		if(feof($this->__f)) {
-			sys_io_FileInput_2($this, $l, $p, $s);
-		}
-		$r = fread($this->__f, $l);
-		if(($r === false)) {
-			sys_io_FileInput_3($this, $l, $p, $r, $s);
-		}
-		$b = haxe_io_Bytes::ofString($r);
-		$s->blit($p, $b, 0, strlen($r));
-		return strlen($r);
+	public function eof() {
+		return feof($this->__f);
 	}
-	public function close() {
-		parent::close();
-		if($this->__f !== null) {
-			fclose($this->__f);
+	public function tell() {
+		$r = ftell($this->__f);
+		if(($r === false)) {
+			sys_io_FileInput_0($this, $r);
 		}
+		return $r;
 	}
 	public function seek($p, $pos) {
 		$w = null;
@@ -56,23 +44,35 @@ class sys_io_FileInput extends haxe_io_Input {
 			throw new HException(haxe_io_Error::Custom("An error occurred"));
 		}
 	}
-	public function tell() {
-		$r = ftell($this->__f);
+	public function close() {
+		parent::close();
+		if($this->__f !== null) {
+			fclose($this->__f);
+		}
+	}
+	public function readBytes($s, $p, $l) {
+		if(feof($this->__f)) {
+			sys_io_FileInput_1($this, $l, $p, $s);
+		}
+		$r = fread($this->__f, $l);
+		if(($r === false)) {
+			sys_io_FileInput_2($this, $l, $p, $r, $s);
+		}
+		$b = haxe_io_Bytes::ofString($r);
+		$s->blit($p, $b, 0, strlen($r));
+		return strlen($r);
+	}
+	public function readByte() {
+		if(feof($this->__f)) {
+			sys_io_FileInput_3($this);
+		}
+		$r = fread($this->__f, 1);
 		if(($r === false)) {
 			sys_io_FileInput_4($this, $r);
 		}
-		return $r;
+		return ord($r);
 	}
-	public function eof() {
-		return feof($this->__f);
-	}
-	public function readLine() {
-		$r = fgets($this->__f);
-		if((false === $r)) {
-			throw new HException(new haxe_io_Eof());
-		}
-		return rtrim($r, "\x0D\x0A");
-	}
+	public $__f;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);
@@ -86,17 +86,17 @@ class sys_io_FileInput extends haxe_io_Input {
 	static $__properties__ = array("set_bigEndian" => "setEndian");
 	function __toString() { return 'sys.io.FileInput'; }
 }
-function sys_io_FileInput_0(&$퍁his) {
-	throw new HException(new haxe_io_Eof());
-}
-function sys_io_FileInput_1(&$퍁his, &$r) {
+function sys_io_FileInput_0(&$퍁his, &$r) {
 	throw new HException(haxe_io_Error::Custom("An error occurred"));
 }
-function sys_io_FileInput_2(&$퍁his, &$l, &$p, &$s) {
+function sys_io_FileInput_1(&$퍁his, &$l, &$p, &$s) {
 	throw new HException(new haxe_io_Eof());
 }
-function sys_io_FileInput_3(&$퍁his, &$l, &$p, &$r, &$s) {
+function sys_io_FileInput_2(&$퍁his, &$l, &$p, &$r, &$s) {
 	throw new HException(haxe_io_Error::Custom("An error occurred"));
+}
+function sys_io_FileInput_3(&$퍁his) {
+	throw new HException(new haxe_io_Eof());
 }
 function sys_io_FileInput_4(&$퍁his, &$r) {
 	throw new HException(haxe_io_Error::Custom("An error occurred"));

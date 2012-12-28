@@ -8,96 +8,13 @@ class haxe_Unserializer {
 		$this->pos = 0;
 		$this->scache = new _hx_array(array());
 		$this->cache = new _hx_array(array());
-		$this->setResolver(haxe_Unserializer::$DEFAULT_RESOLVER);
-	}}
-	public $buf;
-	public $pos;
-	public $length;
-	public $cache;
-	public $scache;
-	public $resolver;
-	public function setResolver($r) {
+		$r = haxe_Unserializer::$DEFAULT_RESOLVER;
 		if($r === null) {
-			$this->resolver = _hx_anonymous(array("resolveClass" => array(new _hx_lambda(array(&$r), "haxe_Unserializer_0"), 'execute'), "resolveEnum" => array(new _hx_lambda(array(&$r), "haxe_Unserializer_1"), 'execute')));
-		} else {
-			$this->resolver = $r;
+			$r = _hx_qtype("Type");
+			haxe_Unserializer::$DEFAULT_RESOLVER = $r;
 		}
-	}
-	public function getResolver() {
-		return $this->resolver;
-	}
-	public function get($p) {
-		return ord(substr($this->buf,$p,1));
-	}
-	public function readDigits() {
-		$k = 0;
-		$s = false;
-		$fpos = $this->pos;
-		while(true) {
-			$c = ord(substr($this->buf,$this->pos,1));
-			if($c === 0) {
-				break;
-			}
-			if($c === 45) {
-				if($this->pos !== $fpos) {
-					break;
-				}
-				$s = true;
-				$this->pos++;
-				continue;
-			}
-			if($c < 48 || $c > 57) {
-				break;
-			}
-			$k = $k * 10 + ($c - 48);
-			$this->pos++;
-			unset($c);
-		}
-		if($s) {
-			$k *= -1;
-		}
-		return $k;
-	}
-	public function unserializeObject($o) {
-		while(true) {
-			if($this->pos >= $this->length) {
-				throw new HException("Invalid object");
-			}
-			if(ord(substr($this->buf,$this->pos,1)) === 103) {
-				break;
-			}
-			$k = $this->unserialize();
-			if(!Std::is($k, _hx_qtype("String"))) {
-				throw new HException("Invalid object key");
-			}
-			$v = $this->unserialize();
-			$o->{$k} = $v;
-			unset($v,$k);
-		}
-		$this->pos++;
-	}
-	public function unserializeEnum($edecl, $tag) {
-		$constr = Reflect::field($edecl, $tag);
-		if($constr === null) {
-			throw new HException("Unknown enum tag " . Type::getEnumName($edecl) . "." . $tag);
-		}
-		if(ord(substr($this->buf,$this->pos++,1)) !== 58) {
-			throw new HException("Invalid enum format");
-		}
-		$nargs = $this->readDigits();
-		if($nargs === 0) {
-			$this->cache->push($constr);
-			return $constr;
-		}
-		$args = new _hx_array(array());
-		while($nargs > 0) {
-			$args->push($this->unserialize());
-			$nargs -= 1;
-		}
-		$e = Reflect::callMethod($edecl, $constr, $args);
-		$this->cache->push($e);
-		return $e;
-	}
+		$this->setResolver($r);
+	}}
 	public function unserialize() {
 		switch(ord(substr($this->buf,$this->pos++,1))) {
 		case 110:{
@@ -210,7 +127,9 @@ class haxe_Unserializer {
 			if($edecl === null) {
 				throw new HException("Enum not found " . $name);
 			}
-			return $this->unserializeEnum($edecl, $this->unserialize());
+			$e = $this->unserializeEnum($edecl, $this->unserialize());
+			$this->cache->push($e);
+			return $e;
 		}break;
 		case 106:{
 			$name = $this->unserialize();
@@ -222,9 +141,11 @@ class haxe_Unserializer {
 			$index = $this->readDigits();
 			$tag = _hx_array_get(Type::getEnumConstructs($edecl), $index);
 			if($tag === null) {
-				throw new HException("Unknown enum index " . $name . "@" . $index);
+				throw new HException("Unknown enum index " . $name . "@" . _hx_string_rec($index, ""));
 			}
-			return $this->unserializeEnum($edecl, $tag);
+			$e = $this->unserializeEnum($edecl, $tag);
+			$this->cache->push($e);
+			return $e;
 		}break;
 		case 108:{
 			$l = new HList();
@@ -283,7 +204,7 @@ class haxe_Unserializer {
 			}
 			$i = $this->pos;
 			$rest = $len & 3;
-			$size = ($len >> 2) * 3 + (haxe_Unserializer_2($this, $buf, $codes, $i, $len, $rest));
+			$size = ($len >> 2) * 3 + (haxe_Unserializer_0($this, $buf, $codes, $i, $len, $rest));
 			$max = $i + ($len - $rest);
 			$bytes = haxe_io_Bytes::alloc($size);
 			$bpos = 0;
@@ -328,8 +249,88 @@ class haxe_Unserializer {
 		}break;
 		}
 		$this->pos--;
-		throw new HException("Invalid char " . _hx_char_at($this->buf, $this->pos) . " at position " . $this->pos);
+		throw new HException("Invalid char " . _hx_char_at($this->buf, $this->pos) . " at position " . _hx_string_rec($this->pos, ""));
 	}
+	public function unserializeEnum($edecl, $tag) {
+		if(ord(substr($this->buf,$this->pos++,1)) !== 58) {
+			throw new HException("Invalid enum format");
+		}
+		$nargs = $this->readDigits();
+		if($nargs === 0) {
+			return Type::createEnum($edecl, $tag, null);
+		}
+		$args = new _hx_array(array());
+		while($nargs-- > 0) {
+			$args->push($this->unserialize());
+		}
+		return Type::createEnum($edecl, $tag, $args);
+	}
+	public function unserializeObject($o) {
+		while(true) {
+			if($this->pos >= $this->length) {
+				throw new HException("Invalid object");
+			}
+			if(ord(substr($this->buf,$this->pos,1)) === 103) {
+				break;
+			}
+			$k = $this->unserialize();
+			if(!Std::is($k, _hx_qtype("String"))) {
+				throw new HException("Invalid object key");
+			}
+			$v = $this->unserialize();
+			$o->{$k} = $v;
+			unset($v,$k);
+		}
+		$this->pos++;
+	}
+	public function readDigits() {
+		$k = 0;
+		$s = false;
+		$fpos = $this->pos;
+		while(true) {
+			$c = ord(substr($this->buf,$this->pos,1));
+			if(($c === 0)) {
+				break;
+			}
+			if($c === 45) {
+				if($this->pos !== $fpos) {
+					break;
+				}
+				$s = true;
+				$this->pos++;
+				continue;
+			}
+			if($c < 48 || $c > 57) {
+				break;
+			}
+			$k = $k * 10 + ($c - 48);
+			$this->pos++;
+			unset($c);
+		}
+		if($s) {
+			$k *= -1;
+		}
+		return $k;
+	}
+	public function get($p) {
+		return ord(substr($this->buf,$p,1));
+	}
+	public function getResolver() {
+		return $this->resolver;
+	}
+	public function setResolver($r) {
+		if($r === null) {
+			$this->resolver = _hx_anonymous(array("resolveClass" => array(new _hx_lambda(array(&$r), "haxe_Unserializer_1"), 'execute'), "resolveEnum" => array(new _hx_lambda(array(&$r), "haxe_Unserializer_2"), 'execute')));
+		} else {
+			$this->resolver = $r;
+		}
+	}
+	public $resolver;
+	public $scache;
+	public $cache;
+	public $length;
+	public $pos;
+	public $buf;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);
@@ -361,9 +362,11 @@ class haxe_Unserializer {
 	function __toString() { return 'haxe.Unserializer'; }
 }
 haxe_Unserializer::$DEFAULT_RESOLVER = _hx_qtype("Type");
-function haxe_Unserializer_0(&$r, $_) {
-	{
-		return null;
+function haxe_Unserializer_0(&$»this, &$buf, &$codes, &$i, &$len, &$rest) {
+	if($rest >= 2) {
+		return $rest - 1;
+	} else {
+		return 0;
 	}
 }
 function haxe_Unserializer_1(&$r, $_) {
@@ -371,10 +374,8 @@ function haxe_Unserializer_1(&$r, $_) {
 		return null;
 	}
 }
-function haxe_Unserializer_2(&$»this, &$buf, &$codes, &$i, &$len, &$rest) {
-	if($rest >= 2) {
-		return $rest - 1;
-	} else {
-		return 0;
+function haxe_Unserializer_2(&$r, $_) {
+	{
+		return null;
 	}
 }

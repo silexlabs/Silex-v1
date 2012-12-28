@@ -4,17 +4,17 @@ class org_silex_serverApi_FileSystemItem {
 	public function __construct() {
 		;
 	}
-	public $itemName;
-	public $itemNameNoExtension;
-	public $itemLastModificationDate;
-	public $itemSize;
-	public $itemReadableSize;
-	public $itemType;
-	public $itemWidth;
-	public $itemHeight;
-	public $imageType;
-	public $ext;
 	public $itemContent;
+	public $ext;
+	public $imageType;
+	public $itemHeight;
+	public $itemWidth;
+	public $itemType;
+	public $itemReadableSize;
+	public $itemSize;
+	public $itemLastModificationDate;
+	public $itemNameNoExtension;
+	public $itemName;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);
@@ -29,8 +29,8 @@ class org_silex_serverApi_FileSystemItem {
 		$res = new org_silex_serverApi_FileSystemItem();
 		$file = php_Lib::hashOfAssociativeArray($fileNative);
 		$res->itemName = $file->get("item name");
-		$res->itemType = org_silex_serverApi_FileSystemItem_0($file, $fileNative, $res);
-		$»t = $res->itemType;
+		$res->itemType = ((_hx_equal($file->get("item type"), "folder")) ? org_silex_serverApi_FileSystemItemType::$folder : org_silex_serverApi_FileSystemItemType::$file);
+		$»t = ($res->itemType);
 		switch($»t->index) {
 		case 0:
 		{
@@ -66,11 +66,4 @@ class org_silex_serverApi_FileSystemItem {
 		return $res;
 	}
 	function __toString() { return 'org.silex.serverApi.FileSystemItem'; }
-}
-function org_silex_serverApi_FileSystemItem_0(&$file, &$fileNative, &$res) {
-	if(_hx_equal($file->get("item type"), "folder")) {
-		return org_silex_serverApi_FileSystemItemType::$folder;
-	} else {
-		return org_silex_serverApi_FileSystemItemType::$file;
-	}
 }

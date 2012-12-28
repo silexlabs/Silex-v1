@@ -6,14 +6,14 @@ class IntIter {
 		$this->min = $min;
 		$this->max = $max;
 	}}
-	public $min;
-	public $max;
-	public function hasNext() {
-		return $this->min < $this->max;
-	}
 	public function next() {
 		return $this->min++;
 	}
+	public function hasNext() {
+		return $this->min < $this->max;
+	}
+	public $max;
+	public $min;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

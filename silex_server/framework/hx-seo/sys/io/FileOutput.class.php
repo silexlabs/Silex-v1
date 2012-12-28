@@ -5,35 +5,12 @@ class sys_io_FileOutput extends haxe_io_Output {
 		if(!php_Boot::$skip_constructor) {
 		$this->__f = $f;
 	}}
-	public $__f;
-	public function writeByte($c) {
-		$r = fwrite($this->__f, chr($c));
+	public function tell() {
+		$r = ftell($this->__f);
 		if(($r === false)) {
-			throw new HException(haxe_io_Error::Custom("An error occurred"));
-		}
-	}
-	public function writeBytes($b, $p, $l) {
-		$s = $b->readString($p, $l);
-		if(feof($this->__f)) {
-			sys_io_FileOutput_0($this, $b, $l, $p, $s);
-		}
-		$r = fwrite($this->__f, $s, $l);
-		if(($r === false)) {
-			sys_io_FileOutput_1($this, $b, $l, $p, $r, $s);
+			sys_io_FileOutput_0($this, $r);
 		}
 		return $r;
-	}
-	public function flush() {
-		$r = fflush($this->__f);
-		if(($r === false)) {
-			throw new HException(haxe_io_Error::Custom("An error occurred"));
-		}
-	}
-	public function close() {
-		parent::close();
-		if($this->__f !== null) {
-			fclose($this->__f);
-		}
 	}
 	public function seek($p, $pos) {
 		$w = null;
@@ -57,13 +34,36 @@ class sys_io_FileOutput extends haxe_io_Output {
 			throw new HException(haxe_io_Error::Custom("An error occurred"));
 		}
 	}
-	public function tell() {
-		$r = ftell($this->__f);
+	public function close() {
+		parent::close();
+		if($this->__f !== null) {
+			fclose($this->__f);
+		}
+	}
+	public function flush() {
+		$r = fflush($this->__f);
 		if(($r === false)) {
-			sys_io_FileOutput_2($this, $r);
+			throw new HException(haxe_io_Error::Custom("An error occurred"));
+		}
+	}
+	public function writeBytes($b, $p, $l) {
+		$s = $b->readString($p, $l);
+		if(feof($this->__f)) {
+			sys_io_FileOutput_1($this, $b, $l, $p, $s);
+		}
+		$r = fwrite($this->__f, $s, $l);
+		if(($r === false)) {
+			sys_io_FileOutput_2($this, $b, $l, $p, $r, $s);
 		}
 		return $r;
 	}
+	public function writeByte($c) {
+		$r = fwrite($this->__f, chr($c));
+		if(($r === false)) {
+			throw new HException(haxe_io_Error::Custom("An error occurred"));
+		}
+	}
+	public $__f;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);
@@ -77,12 +77,12 @@ class sys_io_FileOutput extends haxe_io_Output {
 	static $__properties__ = array("set_bigEndian" => "setEndian");
 	function __toString() { return 'sys.io.FileOutput'; }
 }
-function sys_io_FileOutput_0(&$퍁his, &$b, &$l, &$p, &$s) {
-	throw new HException(new haxe_io_Eof());
-}
-function sys_io_FileOutput_1(&$퍁his, &$b, &$l, &$p, &$r, &$s) {
+function sys_io_FileOutput_0(&$퍁his, &$r) {
 	throw new HException(haxe_io_Error::Custom("An error occurred"));
 }
-function sys_io_FileOutput_2(&$퍁his, &$r) {
+function sys_io_FileOutput_1(&$퍁his, &$b, &$l, &$p, &$s) {
+	throw new HException(new haxe_io_Eof());
+}
+function sys_io_FileOutput_2(&$퍁his, &$b, &$l, &$p, &$r, &$s) {
 	throw new HException(haxe_io_Error::Custom("An error occurred"));
 }

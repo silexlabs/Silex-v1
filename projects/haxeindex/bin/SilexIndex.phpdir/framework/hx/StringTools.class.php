@@ -44,7 +44,7 @@ class StringTools {
 	static function replace($s, $sub, $by) {
 		return str_replace($sub, $by, $s);
 	}
-	static function hex($n, $digits) {
+	static function hex($n, $digits = null) {
 		$s = dechex($n);
 		if($digits !== null) {
 			$s = str_pad($s, $digits, "0", STR_PAD_LEFT);
@@ -55,7 +55,7 @@ class StringTools {
 		return ord(substr($s,$index,1));
 	}
 	static function isEOF($c) {
-		return $c === 0;
+		return ($c === 0);
 	}
 	function __toString() { return 'StringTools'; }
 }

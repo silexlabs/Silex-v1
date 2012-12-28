@@ -6,16 +6,16 @@ class org_silex_serverApi_PluginManager {
 		if(!php_Boot::$skip_constructor) {
 		$this->pluginManagerExtern = new plugin_manager();
 	}}
-	public $pluginManagerExtern;
-	public function createActivePlugins($conf, $hookManager) {
-		$this->pluginManagerExtern->createActivePlugins(php_Lib::associativeArrayOfHash($conf), Reflect::field(Type::getClass($hookManager), "externInstance"));
+	public function listActivatedPlugins($conf) {
+		return new _hx_array($this->pluginManagerExtern->listActivatedPlugins(php_Lib::associativeArrayOfHash($conf)));
 	}
 	public function createPlugin($pluginName, $conf) {
 		return $this->pluginManagerExtern->createPlugin($pluginName, php_Lib::associativeArrayOfHash($conf));
 	}
-	public function listActivatedPlugins($conf) {
-		return new _hx_array($this->pluginManagerExtern->listActivatedPlugins(php_Lib::associativeArrayOfHash($conf)));
+	public function createActivePlugins($conf, $hookManager) {
+		$this->pluginManagerExtern->createActivePlugins(php_Lib::associativeArrayOfHash($conf), Reflect::field(Type::getClass($hookManager), "externInstance"));
 	}
+	public $pluginManagerExtern;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

@@ -6,7 +6,7 @@ class org_silex_core_seo_Utils {
 	static $DESCRIPTION_SEPARATOR = ". ";
 	static $TAGS_SEPARATOR = ",";
 	static $HTML_EQUIVALENT_SEPARATOR = "";
-	static function getPageSeoData($idSite, $deeplink, $urlBase) {
+	static function getPageSeoData($idSite, $deeplink, $urlBase = null) {
 		$serverConfig = new org_silex_serverApi_ServerConfig();
 		$layerSeoFilePath = null;
 		$pageSeoData = org_silex_core_seo_Utils::createLayerSeoAggregatedModel();
@@ -63,11 +63,11 @@ class org_silex_core_seo_Utils {
 		$pageSeoData->htmlEquivalent = $htmlEquivalentArray->join(org_silex_core_seo_Utils::$HTML_EQUIVALENT_SEPARATOR);
 		return $pageSeoData;
 	}
-	static function getPageSeoDataAsPhpArray($idSite, $deeplink, $urlBase) {
+	static function getPageSeoDataAsPhpArray($idSite, $deeplink, $urlBase = null) {
 		$pageSeoData = org_silex_core_seo_Utils::getPageSeoData($idSite, $deeplink, $urlBase);
 		return org_silex_core_seo_Utils::layerSeoAggregatedModel2PhpArray($pageSeoData);
 	}
-	static function aggregateLayerSeoData($layerSeo, $deeplink, $urlBase) {
+	static function aggregateLayerSeoData($layerSeo, $deeplink, $urlBase = null) {
 		$layerSeoAggregatedData = org_silex_core_seo_Utils::createLayerSeoAggregatedModel();
 		$descriptionArray = new _hx_array(array());
 		$tagsArray = new _hx_array(array());
