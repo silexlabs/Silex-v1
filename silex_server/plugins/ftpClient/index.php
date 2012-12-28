@@ -30,7 +30,7 @@ class ftpClient extends plugin_base
 			)
 		);
 	}
-	public function initHooks($hookManager)
+	public function initHooks(HookManager $hookManager)
 	{
 		$hookManager->addHook('admin-body-end', array($this, 'ftpClientAdminBodyEnd'));
 	}

@@ -153,7 +153,7 @@ class LayerSeo
 		var layerSeoModel:LayerSeoModel = Utils.createLayerSeoModel();
 		//layerSeoModel.components = new Array<ComponentSeoModel>();
 		var componentSeoModel:ComponentSeoModel;
-		var componentSeoLinkModel:ComponentSeoLinkModel = null;
+		//var componentSeoLinkModel:ComponentSeoLinkModel;
 		
 		if(xml != null)
 		{
@@ -181,7 +181,16 @@ class LayerSeo
 						// for all components, fill componentSeoModel with component's parameters
 						for (component in layerSeoProp.elements())
 						{
-							componentSeoModel = null;
+							componentSeoModel = {
+								playerName : null,
+								className : null,
+								iconIsIcon : null,
+								htmlEquivalent : null,
+								tags : null,
+								description : null,
+								specificProperties : null,
+								links : null,
+							};
 							componentSeoModel.specificProperties = new Hash<String>();
 							componentSeoModel.links = new Array<ComponentSeoLinkModel>();
 							// for all component properties
@@ -219,8 +228,12 @@ class LayerSeo
 									// for all links
 									for (link in componentProp.elements())
 									{
-										//componentSeoLinkModel = new ComponentSeoLinkModel();
-										componentSeoLinkModel = null;
+										var componentSeoLinkModel:ComponentSeoLinkModel = {
+											title : null,
+											link : null,
+											deeplink : null,
+											description : null,
+										};
 										// for all link properties
 										for (componentSeoLinkProp in link.elements())
 										{
@@ -423,7 +436,12 @@ class LayerSeo
 			// for all links
 			for (link in linksArray)
 			{
-				var componentSeoLinkModel:ComponentSeoLinkModel = null;
+				var componentSeoLinkModel:ComponentSeoLinkModel = {
+					title : null,
+					link : null,
+					deeplink : null,
+					description : null,
+				};
 				// fill componentSeoLinkModel with component's link
 				for (index in Constants.COMPONENT_LINK_PROPERTIES.iterator())
 				{

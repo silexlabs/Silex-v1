@@ -16,19 +16,19 @@ class sys_io_File {
 		$f->write($bytes);
 		$f->close();
 	}
-	static function read($path, $binary) {
+	static function read($path, $binary = null) {
 		if($binary === null) {
 			$binary = true;
 		}
 		return new sys_io_FileInput(fopen($path, (($binary) ? "rb" : "r")));
 	}
-	static function write($path, $binary) {
+	static function write($path, $binary = null) {
 		if($binary === null) {
 			$binary = true;
 		}
 		return new sys_io_FileOutput(fopen($path, (($binary) ? "wb" : "w")));
 	}
-	static function append($path, $binary) {
+	static function append($path, $binary = null) {
 		if($binary === null) {
 			$binary = true;
 		}

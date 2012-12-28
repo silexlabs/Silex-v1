@@ -26,10 +26,8 @@ org.silex.serverApi.externs.FileSystemToolsExtern
 org.silex.serverApi.FileSystemTools
 org.silex.serverApi.FileSystemItem
 org.silex.serverApi.ComponentManager
--cmd svn export bin bin_export
-#-cmd cp bin_export/SilexIndex.phpdir/index.php ../../silex_server/index.php
+-cmd cp bin/SilexIndex.phpdir/index.php ../../silex_server/index.php
 -cmd cp src/index-template.php ../../silex_server/index.php
--cmd cp -Rf bin_export/SilexIndex.phpdir/framework ../../silex_server/
--cmd rm -rf bin_export
+-cmd cp -Rf bin/SilexIndex.phpdir/framework ../../silex_server/
 --no-traces
 #-debug

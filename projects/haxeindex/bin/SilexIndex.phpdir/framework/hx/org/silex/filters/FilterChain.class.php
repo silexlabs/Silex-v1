@@ -5,18 +5,16 @@ class org_silex_filters_FilterChain {
 		if(!php_Boot::$skip_constructor) {
 		$this->filters = new _hx_array(array());
 	}}
-	public $filters;
-	public function applyFilters($value, $context) {
-		{
-			$_g = 0; $_g1 = $this->filters;
-			while($_g < $_g1->length) {
-				$filterRecord = $_g1[$_g];
-				++$_g;
-				$value = $filterRecord->filter($value, $context);
-				unset($filterRecord);
+	public function removeFilter($filter) {
+		$_g = 0; $_g1 = $this->filters;
+		while($_g < $_g1->length) {
+			$filterRecord = $_g1[$_g];
+			++$_g;
+			if($filterRecord->filter == $filter || Reflect::compareMethods((isset($filterRecord->filter) ? $filterRecord->filter: array($filterRecord, "filter")), $filter)) {
+				$this->filters->remove($filterRecord);
 			}
+			unset($filterRecord);
 		}
-		return $value;
 	}
 	public function addFilter($filter, $priority) {
 		{
@@ -32,17 +30,19 @@ class org_silex_filters_FilterChain {
 		}
 		$this->filters->push(_hx_anonymous(array("priority" => $priority, "filter" => $filter)));
 	}
-	public function removeFilter($filter) {
-		$_g = 0; $_g1 = $this->filters;
-		while($_g < $_g1->length) {
-			$filterRecord = $_g1[$_g];
-			++$_g;
-			if($filterRecord->filter === $filter || Reflect::compareMethods((isset($filterRecord->filter) ? $filterRecord->filter: array($filterRecord, "filter")), $filter)) {
-				$this->filters->remove($filterRecord);
+	public function applyFilters($value, $context) {
+		{
+			$_g = 0; $_g1 = $this->filters;
+			while($_g < $_g1->length) {
+				$filterRecord = $_g1[$_g];
+				++$_g;
+				$value = $filterRecord->filter($value, $context);
+				unset($filterRecord);
 			}
-			unset($filterRecord);
 		}
+		return $value;
 	}
+	public $filters;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

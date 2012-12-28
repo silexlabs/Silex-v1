@@ -6,18 +6,44 @@ class org_silex_serverApi_FileSystemTools {
 		if(!php_Boot::$skip_constructor) {
 		$this->fileSystemToolsExtern = new file_system_tools();
 	}}
-	public $fileSystemToolsExtern;
-	public function sanitize($filePath, $allowNotExistingFiles) {
-		return $this->fileSystemToolsExtern->sanitize($filePath, $allowNotExistingFiles);
+	public function checkRights($filepath, $usertype, $action) {
+		return $this->fileSystemToolsExtern->checkRights($filepath, $usertype, $action);
 	}
-	public function isInFolder($filePath, $folderName) {
-		return $this->fileSystemToolsExtern->isInFolder($filePath, $folderName);
+	public function isAllowed($folder, $action, $allowNotExistingFiles = null) {
+		return $this->fileSystemToolsExtern->isAllowed($folder, $action, $allowNotExistingFiles);
 	}
-	public function writeToFile($xmlFileName, $xmlData) {
-		return $this->fileSystemToolsExtern->writeToFile($xmlFileName, $xmlData);
+	public function getAbsolutePath($path) {
+		return $this->fileSystemToolsExtern->getAbsolutePath($path);
 	}
-	public function readableFormatFileSize($size, $round) {
-		return $this->fileSystemToolsExtern->readableFormatFileSize($size, $round);
+	public function listFolderContent($folder, $isRecursive = null, $filter = null, $orderBy = null, $reverseOrder = null) {
+		$nFilter = null;
+		if($filter !== null) {
+			$nFilter = php_Lib::toPhpArray($filter);
+		} else {
+			$nFilter = $filter;
+		}
+		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->fileSystemToolsExtern->listFolderContent($folder, $isRecursive, $nFilter, $orderBy, $reverseOrder));
+	}
+	public function uploadItem($folder, $name, $session_id = null) {
+		return $this->fileSystemToolsExtern->uploadItem($folder, $name, $session_id);
+	}
+	public function uploadFtpItem($folder, $name, $session_id = null) {
+		return $this->fileSystemToolsExtern->uploadFtpItem($folder, $name, $session_id);
+	}
+	public function deleteFtpItem($folder, $name) {
+		return $this->fileSystemToolsExtern->deleteFtpItem($folder, $name);
+	}
+	public function renameFtpItem($folder, $oldItemName, $newItemName) {
+		return $this->fileSystemToolsExtern->renameFtpItem($folder, $oldItemName, $newItemName);
+	}
+	public function createFtpFolder($folder, $name) {
+		return $this->fileSystemToolsExtern->createFtpFolder($folder, $name);
+	}
+	public function getFtpPath($folder) {
+		return $this->fileSystemToolsExtern->getFtpPath($folder);
+	}
+	public function getFolderSize($folder) {
+		return $this->fileSystemToolsExtern->getFolderSize($folder);
 	}
 	public function get_dir_size_info($path) {
 		$res = new Hash();
@@ -27,45 +53,19 @@ class org_silex_serverApi_FileSystemTools {
 		$res->set("dircount", Std::parseInt($tmp->get("dircount")));
 		return $res;
 	}
-	public function getFolderSize($folder) {
-		return $this->fileSystemToolsExtern->getFolderSize($folder);
+	public function readableFormatFileSize($size, $round = null) {
+		return $this->fileSystemToolsExtern->readableFormatFileSize($size, $round);
 	}
-	public function getFtpPath($folder) {
-		return $this->fileSystemToolsExtern->getFtpPath($folder);
+	public function writeToFile($xmlFileName, $xmlData) {
+		return $this->fileSystemToolsExtern->writeToFile($xmlFileName, $xmlData);
 	}
-	public function createFtpFolder($folder, $name) {
-		return $this->fileSystemToolsExtern->createFtpFolder($folder, $name);
+	public function isInFolder($filePath, $folderName) {
+		return $this->fileSystemToolsExtern->isInFolder($filePath, $folderName);
 	}
-	public function renameFtpItem($folder, $oldItemName, $newItemName) {
-		return $this->fileSystemToolsExtern->renameFtpItem($folder, $oldItemName, $newItemName);
+	public function sanitize($filePath, $allowNotExistingFiles = null) {
+		return $this->fileSystemToolsExtern->sanitize($filePath, $allowNotExistingFiles);
 	}
-	public function deleteFtpItem($folder, $name) {
-		return $this->fileSystemToolsExtern->deleteFtpItem($folder, $name);
-	}
-	public function uploadFtpItem($folder, $name, $session_id) {
-		return $this->fileSystemToolsExtern->uploadFtpItem($folder, $name, $session_id);
-	}
-	public function uploadItem($folder, $name, $session_id) {
-		return $this->fileSystemToolsExtern->uploadItem($folder, $name, $session_id);
-	}
-	public function listFolderContent($folder, $isRecursive, $filter, $orderBy, $reverseOrder) {
-		$nFilter = null;
-		if($filter !== null) {
-			$nFilter = php_Lib::toPhpArray($filter);
-		} else {
-			$nFilter = $filter;
-		}
-		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->fileSystemToolsExtern->listFolderContent($folder, $isRecursive, $nFilter, $orderBy, $reverseOrder));
-	}
-	public function getAbsolutePath($path) {
-		return $this->fileSystemToolsExtern->getAbsolutePath($path);
-	}
-	public function isAllowed($folder, $action, $allowNotExistingFiles) {
-		return $this->fileSystemToolsExtern->isAllowed($folder, $action, $allowNotExistingFiles);
-	}
-	public function checkRights($filepath, $usertype, $action) {
-		return $this->fileSystemToolsExtern->checkRights($filepath, $usertype, $action);
-	}
+	public $fileSystemToolsExtern;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);
@@ -92,5 +92,6 @@ class org_silex_serverApi_FileSystemTools {
 	static function getUserRole() {
 		return file_system_tools::USER_ROLE;
 	}
+	static $__properties__ = array("get_userRole" => "getUserRole","get_adminRole" => "getAdminRole","get_readAction" => "getReadAction","get_writeAction" => "getWriteAction");
 	function __toString() { return 'org.silex.serverApi.FileSystemTools'; }
 }

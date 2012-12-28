@@ -56,9 +56,6 @@ class org_silex_html_SilexIndex {
 		}
 		org_silex_html_SilexIndex::$idSite = $idSite;
 		org_silex_html_SilexIndex::$deeplink = $deeplink;
-		null;
-		null;
-		null;
 		if(!file_exists("conf/pass.php")) {
 			org_silex_html_SilexIndex::redirectToInstaller();
 			return;
@@ -71,8 +68,6 @@ class org_silex_html_SilexIndex {
 		$pluginManager = new org_silex_serverApi_PluginManager();
 		$configEditor = new org_silex_serverApi_ConfigEditor();
 		org_silex_html_SilexIndex::$silexApiJsScriptFolderUrl = org_silex_serverApi_RootDir::getRootUrl() . $serverConfig->getSilexServerIni()->get("JAVASCRIPT_FOLDER");
-		null;
-		null;
 		if($isDefaultWebsite) {
 			$idSite = $serverConfig->getSilexServerIni()->get("DEFAULT_WEBSITE");
 		} else {
@@ -167,24 +162,19 @@ class org_silex_html_SilexIndex {
 			$mainRssFeed = "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"" . $websiteConfig->get("mainRssFeed") . "\">";
 		}
 		$websiteKeywords = $websiteConfig->get("htmlKeywords");
-		null;
 		$defaultLanguage = $websiteConfig->get("DEFAULT_LANGUAGE");
 		$linksUrlBase = org_silex_html_SilexIndex_0($configEditor, $deeplink, $defaultLanguage, $doRedirect, $favicon, $fontList, $fonts, $fst, $fv_js_object, $fv_object, $hookManager, $idSite, $isDefaultWebsite, $js_str, $mainRssFeed, $pluginManager, $preloadFileListConf, $preloadFiles, $remotingContext, $renderer, $serverConfig, $serverContent, $silexPluginsConf, $siteEditor, $url, $websiteConfig, $websiteConfigPlugins, $websiteKeywords, $websiteTitle);
 		$seoDataHomePage = $siteEditor->getSectionSeoData($idSite, $websiteConfig->get("CONFIG_START_SECTION"), $linksUrlBase);
 		$seoData = null;
-		null;
 		if($deeplink !== null && $deeplink !== "") {
-			null;
 			$seoData = $siteEditor->getSectionSeoData($idSite, $deeplink, $linksUrlBase);
 		} else {
-			null;
 			$seoData = $seoDataHomePage;
 			$deeplink = "";
 		}
 		$subLayersTitle = null;
 		$subLayersTitle = "";
 		$subLayersTitle = $seoData->get("title");
-		null;
 		$htmlTitle = $websiteConfig->get("htmlTitle");
 		$htmlDescription = $seoData->get("description");
 		if($websiteConfig->exists("htmlDescription")) {
@@ -193,13 +183,13 @@ class org_silex_html_SilexIndex {
 			$htmlDescription = "";
 		}
 		$htmlTags = urldecode($seoData->get("tags"));
-		$htmlEquivalent = "<H4>This page content</H4><br/>" . $seoData->get("htmlEquivalent");
-		$htmlHeaderKeywords = $websiteKeywords . $seoDataHomePage->get("description");
-		$htmlKeywords = "<H4>Website keywords</H4><br/>" . $websiteKeywords . "<H4>This page keywords</H4><br/>" . $seoDataHomePage->get("description");
-		$htmlLinks = "<h1>navigation</h1>" . $idSite . " > " . $deeplink . "<h4><a href=\"" . $linksUrlBase . $websiteConfig->get("CONFIG_START_SECTION") . "/\">Home page: " . $seoDataHomePage->get("title") . "</a></h4>";
-		$htmlLinks .= "<H4>Links of this page (" . $seoData->get("title") . ")</H4>";
+		$htmlEquivalent = "<H4>This page content</H4><br/>" . Std::string($seoData->get("htmlEquivalent"));
+		$htmlHeaderKeywords = $websiteKeywords . Std::string($seoDataHomePage->get("description"));
+		$htmlKeywords = "<H4>Website keywords</H4><br/>" . $websiteKeywords . "<H4>This page keywords</H4><br/>" . Std::string($seoDataHomePage->get("description"));
+		$htmlLinks = "<h1>navigation</h1>" . $idSite . " > " . $deeplink . "<h4><a href=\"" . $linksUrlBase . $websiteConfig->get("CONFIG_START_SECTION") . "/\">Home page: " . Std::string($seoDataHomePage->get("title")) . "</a></h4>";
+		$htmlLinks .= "<H4>Links of this page (" . Std::string($seoData->get("title")) . ")</H4>";
 		if($seoData->get("links") !== null) {
-			$htmlLinks .= $seoData->get("links");
+			$htmlLinks .= Std::string($seoData->get("links"));
 		}
 		$loaderPath = null;
 		if(($loaderPath = $websiteConfig->get("loaderPath")) === null) {
@@ -208,21 +198,21 @@ class org_silex_html_SilexIndex {
 		if(Std::parseInt($websiteConfig->get("flashPlayerVersion")) < 8) {
 			$websiteConfig->set("flashPlayerVersion", "8");
 		}
-		$templateContext = _hx_anonymous(array("rootPath" => org_silex_serverApi_RootDir::getRootPath(), "rootUrl" => org_silex_serverApi_RootDir::getRootUrl(), "websiteConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($websiteConfig), "serverConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($serverConfig->getSilexServerIni()), "clientConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($serverConfig->getSilexClientIni()), "seoData" => org_silex_html_SilexIndex::fromHashToAnonymous($seoData), "idSite" => $idSite, "silexApiJsScriptFolderUrl" => org_silex_html_SilexIndex::$silexApiJsScriptFolderUrl, "js_str" => $js_str, "deeplink" => $deeplink, "loaderPath" => $loaderPath, "contentFolderForPublication" => $serverConfig->getContentFolderForPublication($idSite), "languagesList" => $serverContent->getLanguagesList(), "doRedirect" => $doRedirect, "defaultLanguage" => $defaultLanguage, "fv_js_object" => $fv_js_object, "version" => php_io_File::getContent("version.txt"), "htmlTitle" => $htmlTitle, "htmlDescription" => $htmlDescription, "htmlTags" => $htmlTags, "htmlEquivalent" => $htmlEquivalent, "htmlHeaderKeywords" => $htmlHeaderKeywords, "htmlKeywords" => $htmlKeywords, "isDefaultWebsite" => $isDefaultWebsite, "websiteFonts" => org_silex_html_SilexIndex::$websiteFonts, "websitePreloadFileList" => org_silex_html_SilexIndex::$websitePreloadFileList, "websiteConfigPlugins" => $websiteConfigPlugins, "subLayersTitle" => $subLayersTitle, "renderer" => $renderer, "shouldDisplayRenderer" => $renderer !== "flash"));
+		$templateContext = _hx_anonymous(array("rootPath" => org_silex_serverApi_RootDir::getRootPath(), "rootUrl" => org_silex_serverApi_RootDir::getRootUrl(), "websiteConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($websiteConfig), "serverConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($serverConfig->getSilexServerIni()), "clientConfig" => org_silex_html_SilexIndex::fromHashToAnonymous($serverConfig->getSilexClientIni()), "seoData" => org_silex_html_SilexIndex::fromHashToAnonymous($seoData), "idSite" => $idSite, "silexApiJsScriptFolderUrl" => org_silex_html_SilexIndex::$silexApiJsScriptFolderUrl, "js_str" => $js_str, "deeplink" => $deeplink, "loaderPath" => $loaderPath, "contentFolderForPublication" => $serverConfig->getContentFolderForPublication($idSite), "languagesList" => $serverContent->getLanguagesList(), "doRedirect" => $doRedirect, "defaultLanguage" => $defaultLanguage, "fv_js_object" => $fv_js_object, "version" => sys_io_File::getContent("version.txt"), "htmlTitle" => $htmlTitle, "htmlDescription" => $htmlDescription, "htmlTags" => $htmlTags, "htmlEquivalent" => $htmlEquivalent, "htmlHeaderKeywords" => $htmlHeaderKeywords, "htmlKeywords" => $htmlKeywords, "isDefaultWebsite" => $isDefaultWebsite, "websiteFonts" => org_silex_html_SilexIndex::$websiteFonts, "websitePreloadFileList" => org_silex_html_SilexIndex::$websitePreloadFileList, "websiteConfigPlugins" => $websiteConfigPlugins, "subLayersTitle" => $subLayersTitle, "renderer" => $renderer, "shouldDisplayRenderer" => $renderer !== "flash"));
 		$templateContext = org_silex_filters_FilterManager::applyFilters($templateContext, _hx_anonymous(array()), "template-context");
 		$templateMacros = _hx_anonymous(array("nowDate" => (isset(org_silex_html_SilexIndex::$formatNowDate) ? org_silex_html_SilexIndex::$formatNowDate: array("org_silex_html_SilexIndex", "formatNowDate")), "addToFlashVars" => (isset(org_silex_html_SilexIndex::$addToFlashVars) ? org_silex_html_SilexIndex::$addToFlashVars: array("org_silex_html_SilexIndex", "addToFlashVars")), "addToFlashParam" => (isset(org_silex_html_SilexIndex::$addToFlashParam) ? org_silex_html_SilexIndex::$addToFlashParam: array("org_silex_html_SilexIndex", "addToFlashParam")), "printFlashParam" => (isset(org_silex_html_SilexIndex::$printFlashParam) ? org_silex_html_SilexIndex::$printFlashParam: array("org_silex_html_SilexIndex", "printFlashParam")), "flashVarsAsParamString" => (isset(org_silex_html_SilexIndex::$flashVarsAsParamString) ? org_silex_html_SilexIndex::$flashVarsAsParamString: array("org_silex_html_SilexIndex", "flashVarsAsParamString")), "flashParamAsParamString" => (isset(org_silex_html_SilexIndex::$flashParamAsParamString) ? org_silex_html_SilexIndex::$flashParamAsParamString: array("org_silex_html_SilexIndex", "flashParamAsParamString")), "fromHashToArrayOfPair" => (isset(org_silex_html_SilexIndex::$fromHashToArrayOfPair) ? org_silex_html_SilexIndex::$fromHashToArrayOfPair: array("org_silex_html_SilexIndex", "fromHashToArrayOfPair")), "getFlashParam" => (isset(org_silex_html_SilexIndex::$getFlashParam) ? org_silex_html_SilexIndex::$getFlashParam: array("org_silex_html_SilexIndex", "getFlashParam")), "getFlashParamAsArrayOfPair" => (isset(org_silex_html_SilexIndex::$getFlashParamAsArrayOfPair) ? org_silex_html_SilexIndex::$getFlashParamAsArrayOfPair: array("org_silex_html_SilexIndex", "getFlashParamAsArrayOfPair")), "getFlashParamAsHTML" => (isset(org_silex_html_SilexIndex::$getFlashParamAsHTML) ? org_silex_html_SilexIndex::$getFlashParamAsHTML: array("org_silex_html_SilexIndex", "getFlashParamAsHTML")), "callHooks" => (isset(org_silex_html_SilexIndex::$callHooks) ? org_silex_html_SilexIndex::$callHooks: array("org_silex_html_SilexIndex", "callHooks")), "printFlashVars" => (isset(org_silex_html_SilexIndex::$printFlashVars) ? org_silex_html_SilexIndex::$printFlashVars: array("org_silex_html_SilexIndex", "printFlashVars")), "encodeUrl" => (isset(org_silex_html_SilexIndex::$encodeUrl) ? org_silex_html_SilexIndex::$encodeUrl: array("org_silex_html_SilexIndex", "encodeUrl"))));
 		$hookManager->callHooks("pre-index-head", new _hx_array(array($templateContext)));
 		org_silex_html_SilexIndex::populateFlashVars($templateContext, $fv_object);
-		$templateHead = new haxe_Template(php_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateHead, $templateContext, "template-index-head")));
+		$templateHead = new haxe_Template(sys_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateHead, $templateContext, "template-index-head")));
 		php_Lib::hprint($templateHead->execute($templateContext, $templateMacros));
-		$templateBody = new haxe_Template(php_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateBody, $templateContext, "template-index-body")));
+		$templateBody = new haxe_Template(sys_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateBody, $templateContext, "template-index-body")));
 		php_Lib::hprint($templateBody->execute($templateContext, $templateMacros));
-		$templateFooter = new haxe_Template(php_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateFooter, $templateContext, "template-index-footer")));
+		$templateFooter = new haxe_Template(sys_io_File::getContent(org_silex_filters_FilterManager::applyFilters(org_silex_html_SilexIndex::$pathToTemplateFooter, $templateContext, "template-index-footer")));
 		php_Lib::hprint($templateFooter->execute($templateContext, $templateMacros));
 	}
 	static function populateFlashVars($params, $fv_object) {
-		org_silex_html_SilexIndex::addToFlashParam(null, "movie", _hx_add($params->rootUrl, $params->loaderPath) . "?flashId=silex");
-		org_silex_html_SilexIndex::addToFlashParam(null, "src", _hx_add($params->rootUrl, $params->loaderPath) . "?flashId=silex");
+		org_silex_html_SilexIndex::addToFlashParam(null, "movie", Std::string(_hx_add($params->rootUrl, $params->loaderPath)) . "?flashId=silex");
+		org_silex_html_SilexIndex::addToFlashParam(null, "src", Std::string(_hx_add($params->rootUrl, $params->loaderPath)) . "?flashId=silex");
 		org_silex_html_SilexIndex::addToFlashParam(null, "type", "application/x-shockwave-flash");
 		org_silex_html_SilexIndex::addToFlashParam(null, "bgColor", $params->websiteConfig->bgColor);
 		org_silex_html_SilexIndex::addToFlashParam(null, "bgcolor", $params->websiteConfig->bgColor);
@@ -237,8 +227,8 @@ class org_silex_html_SilexIndex {
 		org_silex_html_SilexIndex::addToFlashVars(null, "DEFAULT_WEBSITE", $params->serverConfig->DEFAULT_WEBSITE);
 		org_silex_html_SilexIndex::addToFlashVars(null, "id_site", $params->idSite);
 		org_silex_html_SilexIndex::addToFlashVars(null, "rootUrl", $params->rootUrl);
-		org_silex_html_SilexIndex::addToFlashVars(null, "php_website_config_file", _hx_add($params->contentFolderForPublication, $params->idSite) . "/" . $params->serverConfig->WEBSITE_CONF_FILE);
-		org_silex_html_SilexIndex::addToFlashVars(null, "config_files_list", _hx_add($params->contentFolderForPublication, $params->idSite) . "/" . $params->serverConfig->WEBSITE_CONF_FILE . "," . $params->serverConfig->SILEX_CLIENT_CONF_FILES_LIST);
+		org_silex_html_SilexIndex::addToFlashVars(null, "php_website_config_file", Std::string(_hx_add($params->contentFolderForPublication, $params->idSite)) . "/" . Std::string($params->serverConfig->WEBSITE_CONF_FILE));
+		org_silex_html_SilexIndex::addToFlashVars(null, "config_files_list", Std::string(_hx_add($params->contentFolderForPublication, $params->idSite)) . "/" . Std::string($params->serverConfig->WEBSITE_CONF_FILE) . "," . Std::string($params->serverConfig->SILEX_CLIENT_CONF_FILES_LIST));
 		org_silex_html_SilexIndex::addToFlashVars(null, "flashPlayerVersion", org_silex_html_SilexIndex_1($fv_object, $params));
 		org_silex_html_SilexIndex::addToFlashVars(null, "CONFIG_START_SECTION", org_silex_html_SilexIndex_2($fv_object, $params));
 		org_silex_html_SilexIndex::addToFlashVars(null, "SILEX_ADMIN_AVAILABLE_LANGUAGES", $params->languagesList);
@@ -374,7 +364,7 @@ class org_silex_html_SilexIndex {
 		return $res;
 	}
 	static function redirectToInstaller() {
-		$temp = new haxe_Template(php_io_File::getContent(org_silex_html_SilexIndex::$pathToRedirectToInstaller));
+		$temp = new haxe_Template(sys_io_File::getContent(org_silex_html_SilexIndex::$pathToRedirectToInstaller));
 		$root = org_silex_serverApi_RootDir::getRootUrl();
 		if($root === null) {
 			$root = "";
@@ -382,7 +372,7 @@ class org_silex_html_SilexIndex {
 		php_Lib::hprint($temp->execute(_hx_anonymous(array("ROOTURL" => $root)), null));
 	}
 	static function notFoundIsNotFound($notFoundName) {
-		$temp = new haxe_Template(php_io_File::getContent(org_silex_html_SilexIndex::$pathToNotFoundIsNotFound));
+		$temp = new haxe_Template(sys_io_File::getContent(org_silex_html_SilexIndex::$pathToNotFoundIsNotFound));
 		if($notFoundName === null) {
 			$notFoundName = "";
 		}

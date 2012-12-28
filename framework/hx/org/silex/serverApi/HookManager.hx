@@ -27,7 +27,8 @@ class HookManager
 	
 	public function callHooks(hookName : String, paramsArray : Array<Dynamic>)
 	{
-		externInstance.callHooks(hookName, Lib.toPhpArray(paramsArray));
+		var params = Lib.toPhpArray(paramsArray);
+		externInstance.callHooks(hookName, params);
 	}
 	
 	public function addHook(hookName : String, callBack : Dynamic->Dynamic)

@@ -5,10 +5,6 @@ class haxe_remoting_Context {
 		if(!php_Boot::$skip_constructor) {
 		$this->objects = new Hash();
 	}}
-	public $objects;
-	public function addObject($name, $obj, $recursive) {
-		$this->objects->set($name, _hx_anonymous(array("obj" => $obj, "rec" => $recursive)));
-	}
 	public function call($path, $params) {
 		if($path->length < 2) {
 			throw new HException("Invalid path '" . $path->join(".") . "'");
@@ -38,6 +34,10 @@ class haxe_remoting_Context {
 		}
 		return Reflect::callMethod($o, $m, $params);
 	}
+	public function addObject($name, $obj, $recursive = null) {
+		$this->objects->set($name, _hx_anonymous(array("obj" => $obj, "rec" => $recursive)));
+	}
+	public $objects;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

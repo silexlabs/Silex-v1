@@ -12,7 +12,7 @@ class org_silex_core_seo_LayerSeo {
 	static $COMPONENT_NODE_NAME = "component";
 	static $LINKS_NODE_NAME = "links";
 	static $LINK_NODE_NAME = "link";
-	static function read($fileName, $deeplink) {
+	static function read($fileName, $deeplink = null) {
 		if($deeplink === null) {
 			$deeplink = "";
 		}
@@ -22,7 +22,7 @@ class org_silex_core_seo_LayerSeo {
 		$layerSeoNativeArray = org_silex_core_seo_LayerSeo::layerSeoModel2PhpArray($layerSeoModel);
 		return $layerSeoNativeArray;
 	}
-	static function readLayerSeoModel($fileName, $deeplink) {
+	static function readLayerSeoModel($fileName, $deeplink = null) {
 		if($deeplink === null) {
 			$deeplink = "";
 		}
@@ -32,7 +32,7 @@ class org_silex_core_seo_LayerSeo {
 		$layerSeoModel = org_silex_core_seo_LayerSeo::xml2LayerSeoModel($layerSeoXml);
 		return $layerSeoModel;
 	}
-	static function readXml($fileName, $deeplink) {
+	static function readXml($fileName, $deeplink = null) {
 		if($deeplink === null) {
 			$deeplink = "";
 		}
@@ -68,7 +68,6 @@ class org_silex_core_seo_LayerSeo {
 	static function xml2LayerSeoModel($xml) {
 		$layerSeoModel = org_silex_core_seo_Utils::createLayerSeoModel();
 		$componentSeoModel = null;
-		$componentSeoLinkModel = null;
 		if($xml !== null) {
 			if(null == $xml) throw new HException('null iterable');
 			$»it = $xml->elements();
@@ -83,7 +82,7 @@ class org_silex_core_seo_LayerSeo {
 					$»it2 = $layerSeoProp->elements();
 					while($»it2->hasNext()) {
 						$component = $»it2->next();
-						$componentSeoModel = null;
+						$componentSeoModel = _hx_anonymous(array("playerName" => null, "className" => null, "iconIsIcon" => null, "htmlEquivalent" => null, "tags" => null, "description" => null, "specificProperties" => null, "links" => null));
 						$componentSeoModel->specificProperties = new Hash();
 						$componentSeoModel->links = new _hx_array(array());
 						if(null == $component) throw new HException('null iterable');
@@ -113,7 +112,7 @@ class org_silex_core_seo_LayerSeo {
 								$»it4 = $componentProp->elements();
 								while($»it4->hasNext()) {
 									$link = $»it4->next();
-									$componentSeoLinkModel = null;
+									$componentSeoLinkModel = _hx_anonymous(array("title" => null, "link" => null, "deeplink" => null, "description" => null));
 									if(null == $link) throw new HException('null iterable');
 									$»it5 = $link->elements();
 									while($»it5->hasNext()) {
@@ -123,6 +122,7 @@ class org_silex_core_seo_LayerSeo {
 										}
 									}
 									$componentSeoModel->links->push($componentSeoLinkModel);
+									unset($componentSeoLinkModel);
 								}
 							}
 						}
@@ -265,7 +265,7 @@ class org_silex_core_seo_LayerSeo {
 					while($_g1 < $linksArray->length) {
 						$link = $linksArray[$_g1];
 						++$_g1;
-						$componentSeoLinkModel = null;
+						$componentSeoLinkModel = _hx_anonymous(array("title" => null, "link" => null, "deeplink" => null, "description" => null));
 						if(null == new _hx_array(array("title", "link", "deeplink", "description"))) throw new HException('null iterable');
 						$»it = _hx_deref(new _hx_array(array("title", "link", "deeplink", "description")))->iterator();
 						while($»it->hasNext()) {
@@ -405,7 +405,7 @@ class org_silex_core_seo_LayerSeo {
 						$layerSeoXmlTemp->addChild($xmlContent);
 					}
 				} else {
-					haxe_Log::trace("Publication layer seo file is not in the v2 format for deeplink: " . $deeplink . ". Please save it manually via the Wysiwyg", _hx_anonymous(array("fileName" => "LayerSeo.hx", "lineNumber" => 607, "className" => "org.silex.core.seo.LayerSeo", "methodName" => "writeXml")));
+					haxe_Log::trace("Publication layer seo file is not in the v2 format for deeplink: " . $deeplink . ". Please save it manually via the Wysiwyg", _hx_anonymous(array("fileName" => "LayerSeo.hx", "lineNumber" => 625, "className" => "org.silex.core.seo.LayerSeo", "methodName" => "writeXml")));
 				}
 			}
 		}

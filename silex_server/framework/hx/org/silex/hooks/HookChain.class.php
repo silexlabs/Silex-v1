@@ -5,13 +5,14 @@ class org_silex_hooks_HookChain {
 		if(!php_Boot::$skip_constructor) {
 		$this->hooks = new _hx_array(array());
 	}}
-	public $hooks;
-	public function callHooks($value) {
+	public function removeHook($hook) {
 		$_g = 0; $_g1 = $this->hooks;
 		while($_g < $_g1->length) {
 			$hookRecord = $_g1[$_g];
 			++$_g;
-			$hookRecord->hook($value);
+			if($hookRecord->hook == $hook || Reflect::compareMethods((isset($hookRecord->hook) ? $hookRecord->hook: array($hookRecord, "hook")), $hook)) {
+				$this->hooks->remove($hookRecord);
+			}
 			unset($hookRecord);
 		}
 	}
@@ -29,17 +30,16 @@ class org_silex_hooks_HookChain {
 		}
 		$this->hooks->push(_hx_anonymous(array("priority" => $priority, "hook" => $hook)));
 	}
-	public function removeHook($hook) {
+	public function callHooks($value) {
 		$_g = 0; $_g1 = $this->hooks;
 		while($_g < $_g1->length) {
 			$hookRecord = $_g1[$_g];
 			++$_g;
-			if($hookRecord->hook === $hook || Reflect::compareMethods((isset($hookRecord->hook) ? $hookRecord->hook: array($hookRecord, "hook")), $hook)) {
-				$this->hooks->remove($hookRecord);
-			}
+			$hookRecord->hook($value);
 			unset($hookRecord);
 		}
 	}
+	public $hooks;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

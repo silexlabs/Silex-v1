@@ -82,7 +82,7 @@ class org_silex_core_XmlUtils {
 		$firstElement = $xml->firstElement();
 		return org_silex_core_XmlUtils::xml2StringIndentRecursive($firstElement, "");
 	}
-	static function xml2StringIndentRecursive($xml, $indentationLevel) {
+	static function xml2StringIndentRecursive($xml, $indentationLevel = null) {
 		if($indentationLevel === null) {
 			$indentationLevel = "";
 		}
@@ -102,7 +102,7 @@ class org_silex_core_XmlUtils {
 				$toReturn .= "<![CDATA[" . $firstChild->getNodeValue() . "]]>";
 			}break;
 			case Xml::$PCData:{
-				$toReturn .= $firstChild;
+				$toReturn .= Std::string($firstChild);
 			}break;
 			case Xml::$Element:{
 				$toReturn .= "\x0A";
@@ -122,7 +122,7 @@ class org_silex_core_XmlUtils {
 		$toReturn .= "</" . $xml->getNodeName() . ">\x0A";
 		return $toReturn;
 	}
-	static function Xml2Dynamic($xml, $oofLegacyWorkaround) {
+	static function Xml2Dynamic($xml, $oofLegacyWorkaround = null) {
 		if($oofLegacyWorkaround === null) {
 			$oofLegacyWorkaround = false;
 		}

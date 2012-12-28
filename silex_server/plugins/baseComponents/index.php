@@ -15,7 +15,7 @@ To read the license please visit http://www.gnu.org/copyleft/gpl.html
 
 	class BaseComponents extends PluginComponentLibraryBase
 	{
-		public function initHooks($hookManager)
+		public function initHooks(HookManager $hookManager)
 		{
 			parent::initHooks($hookManager);
 			$hookManager->addHook('index-head-end', array($this, 'registerJSFile'));

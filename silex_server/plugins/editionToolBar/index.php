@@ -25,7 +25,7 @@ class editionToolBar extends plugin_base
 		//$this->paramTable = array();
 	}
 	
-	public function initHooks($hookManager)
+	public function initHooks(HookManager $hookManager)
 	{
 		$hookManager->addHook('admin-body-end', array($this, 'editionToolBarAdminBodyEnd'));
 	}

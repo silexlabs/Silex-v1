@@ -226,7 +226,7 @@ class php_Web {
 	static function getCookies() {
 		return php_Lib::hashOfAssociativeArray($_COOKIE);
 	}
-	static function setCookie($key, $value, $expire, $domain, $path, $secure) {
+	static function setCookie($key, $value, $expire = null, $domain = null, $path = null, $secure = null) {
 		$t = (($expire === null) ? 0 : intval($expire->getTime() / 1000.0));
 		if($path === null) {
 			$path = "/";

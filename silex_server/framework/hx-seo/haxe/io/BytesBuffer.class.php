@@ -5,12 +5,10 @@ class haxe_io_BytesBuffer {
 		if(!php_Boot::$skip_constructor) {
 		$this->b = "";
 	}}
-	public $b;
-	public function addByte($byte) {
-		$this->b .= chr($byte);
-	}
-	public function add($src) {
-		$this->b .= $src->b;
+	public function getBytes() {
+		$bytes = new haxe_io_Bytes(strlen($this->b), $this->b);
+		$this->b = null;
+		return $bytes;
 	}
 	public function addBytes($src, $pos, $len) {
 		if($pos < 0 || $len < 0 || $pos + $len > $src->length) {
@@ -18,11 +16,13 @@ class haxe_io_BytesBuffer {
 		}
 		$this->b .= substr($src->b, $pos, $len);
 	}
-	public function getBytes() {
-		$bytes = new haxe_io_Bytes(strlen($this->b), $this->b);
-		$this->b = null;
-		return $bytes;
+	public function add($src) {
+		$this->b .= $src->b;
 	}
+	public function addByte($byte) {
+		$this->b .= chr($byte);
+	}
+	public $b;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

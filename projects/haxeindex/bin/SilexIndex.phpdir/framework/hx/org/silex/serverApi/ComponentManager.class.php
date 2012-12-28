@@ -5,7 +5,6 @@ class org_silex_serverApi_ComponentManager {
 		if(!php_Boot::$skip_constructor) {
 		$this->componentManagerExtern = new ComponentManager();
 	}}
-	public $componentManagerExtern;
 	public function getComponentDescriptors() {
 		$tmp = $this->componentManagerExtern->getComponentDescriptors();
 		$tmp = array_values($tmp);
@@ -21,6 +20,7 @@ class org_silex_serverApi_ComponentManager {
 		}
 		return $res;
 	}
+	public $componentManagerExtern;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

@@ -226,8 +226,8 @@ class php_Web {
 	static function getCookies() {
 		return php_Lib::hashOfAssociativeArray($_COOKIE);
 	}
-	static function setCookie($key, $value, $expire, $domain, $path, $secure) {
-		$t = php_Web_1($domain, $expire, $key, $path, $secure, $value);
+	static function setCookie($key, $value, $expire = null, $domain = null, $path = null, $secure = null) {
+		$t = (($expire === null) ? 0 : intval($expire->getTime() / 1000.0));
 		if($path === null) {
 			$path = "/";
 		}
@@ -258,7 +258,7 @@ class php_Web {
 		$h = new Hash();
 		$buf = null;
 		$curname = null;
-		php_Web::parseMultipart(array(new _hx_lambda(array(&$buf, &$curname, &$h, &$maxSize), "php_Web_2"), 'execute'), array(new _hx_lambda(array(&$buf, &$curname, &$h, &$maxSize), "php_Web_3"), 'execute'));
+		php_Web::parseMultipart(array(new _hx_lambda(array(&$buf, &$curname, &$h, &$maxSize), "php_Web_1"), 'execute'), array(new _hx_lambda(array(&$buf, &$curname, &$h, &$maxSize), "php_Web_2"), 'execute'));
 		if($curname !== null) {
 			$h->set($curname, $buf->b);
 		}
@@ -347,9 +347,7 @@ class php_Web {
 	static $isModNeko;
 	function __toString() { return 'php.Web'; }
 }
-{
-	php_Web::$isModNeko = !php_Lib::isCli();
-}
+php_Web::$isModNeko = !php_Lib::isCli();
 function php_Web_0(&$param, &$reg, &$res, $data) {
 	{
 		if($data === null || strlen($data) === 0) {
@@ -375,14 +373,7 @@ function php_Web_0(&$param, &$reg, &$res, $data) {
 		}
 	}
 }
-function php_Web_1(&$domain, &$expire, &$key, &$path, &$secure, &$value) {
-	if($expire === null) {
-		return 0;
-	} else {
-		return intval($expire->getTime() / 1000.0);
-	}
-}
-function php_Web_2(&$buf, &$curname, &$h, &$maxSize, $p, $_) {
+function php_Web_1(&$buf, &$curname, &$h, &$maxSize, $p, $_) {
 	{
 		if($curname !== null) {
 			$h->set($curname, $buf->b);
@@ -395,7 +386,7 @@ function php_Web_2(&$buf, &$curname, &$h, &$maxSize, $p, $_) {
 		}
 	}
 }
-function php_Web_3(&$buf, &$curname, &$h, &$maxSize, $str, $pos, $len) {
+function php_Web_2(&$buf, &$curname, &$h, &$maxSize, $str, $pos, $len) {
 	{
 		$maxSize -= $len;
 		if($maxSize < 0) {

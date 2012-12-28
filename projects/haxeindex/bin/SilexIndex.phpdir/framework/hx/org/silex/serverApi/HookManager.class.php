@@ -4,11 +4,12 @@ class org_silex_serverApi_HookManager {
 	public function __construct() { if(!php_Boot::$skip_constructor) {
 		org_silex_serverApi_HookManager::$externInstance = HookManager::getInstance();
 	}}
-	public function callHooks($hookName, $paramsArray) {
-		org_silex_serverApi_HookManager::$externInstance->callHooks($hookName, php_Lib::toPhpArray($paramsArray));
-	}
 	public function addHook($hookName, $callBack) {
 		org_silex_serverApi_HookManager::$externInstance->addHook($hookName, $callBack);
+	}
+	public function callHooks($hookName, $paramsArray) {
+		$params = php_Lib::toPhpArray($paramsArray);
+		org_silex_serverApi_HookManager::$externInstance->callHooks($hookName, $params);
 	}
 	static $externInstance;
 	static $managerInstance;
