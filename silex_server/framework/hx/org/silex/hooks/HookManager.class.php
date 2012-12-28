@@ -21,6 +21,4 @@ class org_silex_hooks_HookManager {
 	}
 	function __toString() { return 'org.silex.hooks.HookManager'; }
 }
-{
-	org_silex_hooks_HookManager::$hookChains = new Hash();
-}
+org_silex_hooks_HookManager::$hookChains = new Hash();

@@ -5,19 +5,29 @@ class IntHash implements IteratorAggregate{
 		if(!php_Boot::$skip_constructor) {
 		$this->h = array();
 	}}
-	public $h;
-	public function set($key, $value) {
-		$this->h[$key] = $value;
+	public function getIterator() {
+		return $this->iterator();
 	}
-	public function get($key) {
-		if(array_key_exists($key, $this->h)) {
-			return $this->h[$key];
-		} else {
-			return null;
+	public function toString() {
+		$s = "{";
+		$it = $this->keys();
+		$»it = $it;
+		while($»it->hasNext()) {
+			$i = $»it->next();
+			$s .= _hx_string_rec($i, "");
+			$s .= " => ";
+			$s .= Std::string($this->get($i));
+			if($it->hasNext()) {
+				$s .= ", ";
+			}
 		}
+		return $s . "}";
 	}
-	public function exists($key) {
-		return array_key_exists($key, $this->h);
+	public function iterator() {
+		return new _hx_array_iterator(array_values($this->h));
+	}
+	public function keys() {
+		return new _hx_array_iterator(array_keys($this->h));
 	}
 	public function remove($key) {
 		if(array_key_exists($key, $this->h)) {
@@ -27,30 +37,20 @@ class IntHash implements IteratorAggregate{
 			return false;
 		}
 	}
-	public function keys() {
-		return new _hx_array_iterator(array_keys($this->h));
+	public function exists($key) {
+		return array_key_exists($key, $this->h);
 	}
-	public function iterator() {
-		return new _hx_array_iterator(array_values($this->h));
-	}
-	public function toString() {
-		$s = "{";
-		$it = $this->keys();
-		$»it = $it;
-		while($»it->hasNext()) {
-			$i = $»it->next();
-			$s .= $i;
-			$s .= " => ";
-			$s .= Std::string($this->get($i));
-			if($it->hasNext()) {
-				$s .= ", ";
-			}
+	public function get($key) {
+		if(array_key_exists($key, $this->h)) {
+			return $this->h[$key];
+		} else {
+			return null;
 		}
-		return $s . "}";
 	}
-	public function getIterator() {
-		return $this->iterator();
+	public function set($key, $value) {
+		$this->h[$key] = $value;
 	}
+	public $h;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

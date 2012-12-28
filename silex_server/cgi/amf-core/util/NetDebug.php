@@ -15,7 +15,7 @@ class NetDebug
 	/**
 	 * Don't do anything, just in case something pops up that needs to be initialized
 	 */
-	function initialize()
+	static function initialize()
 	{
 		
 	}
@@ -25,12 +25,12 @@ class NetDebug
 	 * 
 	 * Note emulation of static variables
 	 */
-	function trace($what)
+	static function trace($what)
 	{
 		NetDebug::getTraceStack($what);
 	}
 		
-	function getTraceStack($val=NULL)
+	static function getTraceStack($val=NULL)
 	{
 		static $traceStack = array();
 		if($val !== NULL)

@@ -68,7 +68,7 @@ class Executive {
 	 * @param array $a Arguments to pass to the method
 	 * @return mixed The results from the method operation
 	 */
-	function doMethodCall(&$bodyObj, &$object, $method, $args) {
+	static function doMethodCall(&$bodyObj, &$object, $method, $args) {
 		/* 
 		::TODO:: 
 		Add the ability to use an object with named parameters as the first and only argument.  This will REQUIRE
@@ -86,7 +86,7 @@ class Executive {
 	 * Builds a class using a class name
 	 * If there is a failure, catch the error and return to caller
 	 */
-	function buildClass(&$bodyObj, $className)
+	static function buildClass(&$bodyObj, $className)
 	{
 		global $amfphp;
 		if(isset($amfphp['classInstances'][$className]))
@@ -105,7 +105,7 @@ class Executive {
 	 * Include a class
 	 * If there is an error, catch and return to caller
 	 */
-	function includeClass(&$bodyObj, $location)
+	static function includeClass(&$bodyObj, $location)
 	{
 		$included = include_once($location);
 		return $included !== FALSE;

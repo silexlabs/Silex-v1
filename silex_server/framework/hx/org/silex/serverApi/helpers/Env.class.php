@@ -12,5 +12,6 @@ class org_silex_serverApi_helpers_Env {
 	static function getPathSeparator() {
 		return PATH_SEPARATOR;
 	}
+	static $__properties__ = array("get_pathSeparator" => "getPathSeparator");
 	function __toString() { return 'org.silex.serverApi.helpers.Env'; }
 }

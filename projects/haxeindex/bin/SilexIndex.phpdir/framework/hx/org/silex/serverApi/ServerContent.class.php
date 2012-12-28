@@ -6,25 +6,25 @@ class org_silex_serverApi_ServerContent {
 		if(!php_Boot::$skip_constructor) {
 		$this->serverContentExtern = new server_content();
 	}}
-	public $serverContentExtern;
-	public function getLanguagesList() {
-		return $this->serverContentExtern->getLanguagesList();
+	public function listFolderContent($path, $isRecursive = null) {
+		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listFolderContent($path, $isRecursive));
 	}
-	public function listLanguageFolderContent() {
-		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listLanguageFolderContent());
-	}
-	public function listWebsiteFolderContent($id_site) {
-		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listWebsiteFolderContent($id_site));
+	public function listFtpFolderContent($path, $isRecursive = null) {
+		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listFtpFolderContent($path, $isRecursive));
 	}
 	public function listToolsFolderContent($path) {
 		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listToolsFolderContent($path));
 	}
-	public function listFtpFolderContent($path, $isRecursive) {
-		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listFtpFolderContent($path, $isRecursive));
+	public function listWebsiteFolderContent($id_site) {
+		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listWebsiteFolderContent($id_site));
 	}
-	public function listFolderContent($path, $isRecursive) {
-		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listFolderContent($path, $isRecursive));
+	public function listLanguageFolderContent() {
+		return org_silex_serverApi_FileSystemItem::parseFolderContent($this->serverContentExtern->listLanguageFolderContent());
 	}
+	public function getLanguagesList() {
+		return $this->serverContentExtern->getLanguagesList();
+	}
+	public $serverContentExtern;
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

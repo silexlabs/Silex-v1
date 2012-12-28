@@ -50,7 +50,7 @@ class php_Lib {
 	static function associativeArrayOfObject($ob) {
 		return (array) $ob;
 	}
-	static function mail($to, $subject, $message, $additionalHeaders, $additionalParameters) {
+	static function mail($to, $subject, $message, $additionalHeaders = null, $additionalParameters = null) {
 		if(null !== $additionalParameters) {
 			return mail($to, $subject, $message, $additionalHeaders, $additionalParameters);
 		} else {

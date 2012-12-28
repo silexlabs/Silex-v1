@@ -2,7 +2,7 @@
 
 class haxe_Log {
 	public function __construct(){}
-	static function trace($v, $infos) { return call_user_func_array(self::$trace, array($v, $infos)); }
+	static function trace($v, $infos = null) { return call_user_func_array(self::$trace, array($v, $infos)); }
 	public static $trace = null;
 	static function clear() { return call_user_func(self::$clear); }
 	public static $clear = null;

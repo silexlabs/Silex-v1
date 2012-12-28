@@ -16,7 +16,7 @@ require_once ROOTPATH.'cgi/includes/plugin_base.php';
 class AlertSimple extends plugin_base
 {
 	
-	public function initHooks($hookManager)
+	public function initHooks(HookManager $hookManager)
 	{
 		$hookManager->addHook('index-body-end', array($this, 'alertSimpleIndexBodyEnd'));
 		$hookManager->addHook('admin-body-end', array($this, 'alertSimpleAdminBodyEnd'));

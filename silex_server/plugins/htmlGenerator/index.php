@@ -39,7 +39,7 @@ class htmlGenerator extends plugin_base
 		);
 	}
 	
-	public function initHooks($hookManager)
+	public function initHooks(HookManager $hookManager)
 	{
 		
 		$hookManager->addHook('index-head-end', array($this,'indexHeadEnd'));

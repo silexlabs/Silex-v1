@@ -6,13 +6,6 @@ class haxe_remoting_HttpConnection implements haxe_remoting_Connection{
 		$this->__url = $url;
 		$this->__path = $path;
 	}}
-	public $__url;
-	public $__path;
-	public function resolve($name) {
-		$c = new haxe_remoting_HttpConnection($this->__url, $this->__path->copy());
-		$c->__path->push($name);
-		return $c;
-	}
 	public function call($params) {
 		$data = null;
 		$h = new haxe_Http($this->__url);
@@ -31,6 +24,13 @@ class haxe_remoting_HttpConnection implements haxe_remoting_Connection{
 		$data = _hx_substr($data, 3, null);
 		return _hx_deref(new haxe_Unserializer($data))->unserialize();
 	}
+	public function resolve($name) {
+		$c = new haxe_remoting_HttpConnection($this->__url, $this->__path->copy());
+		$c->__path->push($name);
+		return $c;
+	}
+	public $__path;
+	public $__url;
 	public $»dynamics = array();
 	public function __get($n) {
 		if(isset($this->»dynamics[$n]))

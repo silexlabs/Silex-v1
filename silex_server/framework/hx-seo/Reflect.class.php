@@ -16,7 +16,8 @@ class Reflect {
 			return null;
 		}
 		$cls = ((Std::is($o, _hx_qtype("Class"))) ? $o->__tname__ : get_class($o));
-		if($cls::$__properties__ && isset($cls::$__properties__['get_'.$field]) && ($field = $cls::$__properties__['get_'.$field])) {
+		$cls_vars = get_class_vars($cls);
+		if(isset($cls_vars['__properties__']) && isset($cls_vars['__properties__']['get_'.$field]) && ($field = $cls_vars['__properties__']['get_'.$field])) {
 			return $o->$field();
 		} else {
 			return $o->$field;
@@ -28,7 +29,8 @@ class Reflect {
 			return;
 		}
 		$cls = ((Std::is($o, _hx_qtype("Class"))) ? $o->__tname__ : get_class($o));
-		if($cls::$__properties__ && isset($cls::$__properties__['set_'.$field]) && ($field = $cls::$__properties__['set_'.$field])) {
+		$cls_vars = get_class_vars($cls);
+		if(isset($cls_vars['__properties__']) && isset($cls_vars['__properties__']['set_'.$field]) && ($field = $cls_vars['__properties__']['set_'.$field])) {
 			$o->$field($value);
 			return;
 		} else {

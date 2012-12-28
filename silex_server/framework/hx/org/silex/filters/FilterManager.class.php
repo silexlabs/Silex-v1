@@ -23,6 +23,4 @@ class org_silex_filters_FilterManager {
 	}
 	function __toString() { return 'org.silex.filters.FilterManager'; }
 }
-{
-	org_silex_filters_FilterManager::$filterChains = new Hash();
-}
+org_silex_filters_FilterManager::$filterChains = new Hash();

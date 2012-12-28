@@ -13,7 +13,7 @@ class haxe_Int32 {
 	}
 	static function toInt($x) {
 		if(($x >> 30 & 1) !== _hx_shift_right($x, 31)) {
-			throw new HException("Overflow " . $x);
+			throw new HException("Overflow " . Std::string($x));
 		}
 		return $x & -1;
 	}
@@ -27,13 +27,13 @@ class haxe_Int32 {
 		return $a - $b | 0;
 	}
 	static function mul($a, $b) {
-		return $a * $b | 0;
+		return $a * ($b & 65535) + ($a * (_hx_shift_right($b, 16)) << 16 | 0) | 0;
 	}
 	static function div($a, $b) {
 		return intval($a / $b);
 	}
 	static function mod($a, $b) {
-		return $a % $b;
+		return _hx_mod($a, $b);
 	}
 	static function shl($a, $b) {
 		return $a << $b;
@@ -70,9 +70,23 @@ class haxe_Int32 {
 	}
 	static function ucompare($a, $b) {
 		if($a < 0) {
-			return (($b < 0) ? ~$b - ~$a : 1);
+			return haxe_Int32_0($a, $b);
 		}
-		return (($b < 0) ? -1 : $a - $b);
+		return haxe_Int32_1($a, $b);
 	}
 	function __toString() { return 'haxe.Int32'; }
+}
+function haxe_Int32_0(&$a, &$b) {
+	if($b < 0) {
+		return ~$b - ~$a;
+	} else {
+		return 1;
+	}
+}
+function haxe_Int32_1(&$a, &$b) {
+	if($b < 0) {
+		return -1;
+	} else {
+		return $a - $b;
+	}
 }

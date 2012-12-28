@@ -21,6 +21,7 @@ class org_silex_serverApi_RootDir {
 		}
 		return "http://" . $_SERVER["SERVER_NAME"] . $portString . $goodUri . "/";
 	}
+	static $__properties__ = array("get_rootUrl" => "getRootUrl","get_rootPath" => "getRootPath");
 	function __toString() { return 'org.silex.serverApi.RootDir'; }
 }
 {
