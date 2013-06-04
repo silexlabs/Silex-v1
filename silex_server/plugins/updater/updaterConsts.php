@@ -21,5 +21,14 @@ define("TEMP_DIR_PATH", 'plugins' . DIRECTORY_SEPARATOR . 'updater' . DIRECTORY_
 	The path to the directory where the element's version files are kept
 */
 define("VERSIONS_DIR_PATH", 'plugins' . DIRECTORY_SEPARATOR . 'updater' . DIRECTORY_SEPARATOR . 'versions');
+
+/*
+	Constant: USE_FILE_SIGNATURE_CHECK
+	Use the file signatures to check integrity
+	This happens when downloading from Silex Labs server, either for plugins, themes, ... update or install
+	Or for Silex server update
+	? This is buggy since the new version of Silex Labs exchange platform on silexlabs.org (2013) ?
+*/
+define("USE_FILE_SIGNATURE_CHECK", false);
 	
 ?>

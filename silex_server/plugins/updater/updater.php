@@ -163,7 +163,7 @@ function indexAction()
 			// get and merge with online information
 			// To do: handle the performance issue here
 			$onlineItemsDoc = new DOMDocument();
-			$onlineItemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&_p=".$itemSilexElement->id );
+			$onlineItemsDoc->load( $exchangePlatform . "/index.php?feed=ep_get_item_info&format=rss2&_p=".$itemSilexElement->id );
 			
 			$node = $onlineItemsDoc->getElementsByTagName('item')->item(0);
 			
@@ -494,7 +494,7 @@ function installNewItemsAction()
 	$exchangePlatform = urldecode($_POST['exchange_platform_address']);
 	
 	$doc = new DOMDocument();
-	//if($doc->load( $exchangePlatform . "?feed=ep_child_categories&format=rss2" ))
+	//if($doc->load( $exchangePlatform . "/index.php?feed=ep_child_categories&format=rss2" ))
 	if($doc->load( $exchangePlatform . "/feed/ep_child_categories/?format=rss2&cat=5314" ))
 	{
 		$categories = array();
@@ -623,7 +623,7 @@ function browseItemAction()
 		$exchangePlatform = urldecode($_POST['exchange_platform_address']);
 		
 		$itemsDoc = new DOMDocument();
-		if($itemsDoc->load( $exchangePlatform . "?feed=ep_get_item_info&format=rss2&_p=" . $itemId ))
+		if($itemsDoc->load( $exchangePlatform . "/index.php?feed=ep_get_item_info&format=rss2&_p=" . $itemId ))
 		{
 			$itemRSS = null;
 			$node = $itemsDoc->getElementsByTagName('item')->item(0);
@@ -656,7 +656,7 @@ function browseItemAction()
 			}
 			
 			$isInstallable = false;
-			$itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $itemId );
+			$itemVersionData = file_get_contents( $exchangePlatform . '/index.php?feed=ep_download&file=version.xml&_p=' . $itemId );
 
 			if ( !empty($itemVersionData) ) 
 				$isInstallable = true;
@@ -665,7 +665,7 @@ function browseItemAction()
 			$view->item = $itemRSS;
 		
 		} else {
-			if ($logger) $logger->error('[CRITICAL ERROR] In browseItemAction : cannot load xml data from '.$exchangePlatform.'?feed=ep_get_item_info&format=rss2&_p='.$itemId);
+			if ($logger) $logger->error('[CRITICAL ERROR] In browseItemAction : cannot load xml data from '.$exchangePlatform.'/index.php?feed=ep_get_item_info&format=rss2&_p='.$itemId);
 			// TODO manage this error case
 		}
 		
@@ -720,7 +720,7 @@ function extractItemAndDependenciesElements($itemId, &$silexElements=array(), &$
 {
 	$exchangePlatform = urldecode($_POST['exchange_platform_address']);
 	
-	if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $itemId ) )
+	if( $itemVersionData = file_get_contents( $exchangePlatform . '/index.php?feed=ep_download&file=version.xml&_p=' . $itemId ) )
 	{
 		$itemVersionDoc = new DOMDocument();
 		$itemVersionDoc->loadXML($itemVersionData);
@@ -752,7 +752,7 @@ function extractItemAndDependenciesElements($itemId, &$silexElements=array(), &$
 			$versionFileName , "phparray");
 		
 	} else {
-		if ($logger) $logger->error('[CRITICAL ERROR] In extractItemAndDependenciesElements : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&_p='.$itemId.' ) failed');
+		if ($logger) $logger->error('[CRITICAL ERROR] In extractItemAndDependenciesElements : file_get_contents( '.$exchangePlatform.'/index.php?feed=ep_download&file=version.xml&_p='.$itemId.' ) failed');
 		// TODO ERROR : can't download item, return to error action, we shouldn't continue here
 	}
 }
@@ -780,7 +780,7 @@ function updateItemAction()
 		$view->tempDirReport = $tempDirReport;
 			
 		if(empty($tempDirReport))
-			if( $itemVersionData = file_get_contents( $exchangePlatform . '?feed=ep_download&file=version.xml&_p=' . $currentItem['id'] ) )
+			if( $itemVersionData = file_get_contents( $exchangePlatform . '/index.php?feed=ep_download&file=version.xml&_p=' . $currentItem['id'] ) )
 			{
 				$silexConfig = new silex_config();
 				$res = $silexConfig->parseConfig(ROOTPATH . VERSIONS_DIR_PATH . DIRECTORY_SEPARATOR . $currentItem['file'] , 'phparray');        
@@ -815,7 +815,7 @@ function updateItemAction()
 				$view->foldersAndFilesToDelete = $foldersAndFilesToDelete;
 		
 			} else {
-				if ($logger) $logger->error('[CRITICAL ERROR] In updateItemAction : file_get_contents( '.$exchangePlatform.'?feed=ep_download&file=version.xml&_p='.$currentItem['id'].' ) failed');
+				if ($logger) $logger->error('[CRITICAL ERROR] In updateItemAction : file_get_contents( '.$exchangePlatform.'/index.php?feed=ep_download&file=version.xml&_p='.$currentItem['id'].' ) failed');
 				// TODO manage fatal error
 			}
 	
@@ -861,7 +861,7 @@ function installItemAction()
 					if(!isset($itemId))
 						$itemId = $currentItem['id'];
 
-					$request = $exchangePlatform . "?feed=ep_download&_p=".$itemId."&file=".urlencode(str_replace( DIRECTORY_SEPARATOR, "/", $nextFile));
+					$request = $exchangePlatform . "/index.php?feed=ep_download&_p=".$itemId."&file=".urlencode(str_replace( DIRECTORY_SEPARATOR, "/", $nextFile));
 					
 					if( !downloadFile($request, getParameter($fileListSize."_file_path"), getParameter($fileListSize."_file_signature")) )
 						$view->signatureMismatch = getParameter($fileListSize."_file_path");

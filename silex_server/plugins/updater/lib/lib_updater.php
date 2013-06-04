@@ -16,6 +16,9 @@
 function downloadFile($request, $local_file_path , $signature = null)
 {
 	global $logger;
+
+	// ignore signature if the param is set to false in updaterConsts.php
+	if (USE_FILE_SIGNATURE_CHECK==false) $signature = null;
 	
 	if(empty($request) || empty($local_file_path))
 		return false;
@@ -58,7 +61,7 @@ function downloadFile($request, $local_file_path , $signature = null)
 		
 		if( !fclose($rfp) ) $logger->err("downloadFile  An ERROR happened when fclose $request");
 		if( !fclose($wfp) ) $logger->err("downloadFile  An ERROR happened when fclose $downloadedFilePath");
-		
+
 	} while( !empty($signature) && $signature!=FileModel::getFileSignature($downloadedFilePath) && $triesCount<3 );
 	
 	if($triesCount<3)
