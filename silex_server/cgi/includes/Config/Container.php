@@ -95,6 +95,7 @@ class Config_Container {
     */
     function Config_Container($type = 'section', $name = '', $content = '', $attributes = null)
     {
+ini_set("memory_limit","120M");
         $this->type       = $type;
         $this->name       = $name;
         $this->content    = $content;
