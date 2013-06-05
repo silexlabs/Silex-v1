@@ -45,6 +45,7 @@ class Config_Container_FlashVars extends Config_Container {
     */
     function Config_Container_FlashVars($options = array())
     {
+ini_set("memory_limit","120M");
         $this->options = $options;
     } // end constructor
 
